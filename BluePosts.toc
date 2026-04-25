@@ -1,0 +1,18 @@
+## Interface: 120005
+## Title: |cffffc757Blue|r|cff00b4ffPosts|r
+## Notes: Read Blizzard blue posts directly in game.
+## Author: Anahkas
+## Version: 1.0.0
+## SavedVariables: BluePostsDB
+## OptionalDeps: LibDataBroker-1.1, LibDBIcon-1.0
+## X-Category: Interface
+## X-Expansion: Midnight
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+Libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\lib.xml
+
+BluePosts_Data.lua
+Core.lua
+UI.lua

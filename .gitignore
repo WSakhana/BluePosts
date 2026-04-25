@@ -1,0 +1,21 @@
+# Local editor state
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+.idea/
+*.code-workspace
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local package artifacts
+BluePosts-*.zip
+
+# Temporary files
+*.bak
+*.orig
+*.rej
+*.tmp
