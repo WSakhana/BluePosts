@@ -777,6 +777,20 @@ BluePosts_Data = {
             { type = "p", text = "Thank you very much for your feedback and understanding." },
         },
     },
+    ["2026-04-23-bonus-roll-bug-fix-5ae0e10f79"] = {
+        id = "2026-04-23-bonus-roll-bug-fix-5ae0e10f79",
+        post_key = "5ae0e10f79",
+        title = "Bonus Roll Bug Fix",
+        category = "General Discussion (US)",
+        timestamp = 1776983116,
+        url = "https://us.forums.blizzard.com/en/wow/t/2296109/1",
+        content = {
+            { type = "p", text = "With hotfixes that began rolling out a couple of hours ago and are now applicable in all instances, we’ve preliminarily addressed a bug in 12.0.5 where rolling on loot did not remove the received item from the pool for subsequent Bonus Rolls, which made it possible for players to receive the same item from a Bonus Roll." },
+            { type = "p", text = "It is now safe to roll on loot. Newly rolled items will now correctly remove the item from the bonus pool." },
+            { type = "p", text = "We’ll have more information to share tomorrow about this issue and the next steps we’re taking to remediate the situation for affected players." },
+            { type = "p", text = "Thank you very much for your feedback and understanding." },
+        },
+    },
     ["2026-04-23-bonus-rolls-what-happened-and-next-steps-b5a982f679"] = {
         id = "2026-04-23-bonus-rolls-what-happened-and-next-steps-b5a982f679",
         post_key = "b5a982f679",
@@ -833,6 +847,20 @@ BluePosts_Data = {
             { type = "p", text = "If you did not spend any of your Voidcores before the fix, any bonus roll you now make will properly be accounted for and checked off the list, and you will not be at risk for any duplicate rolls." },
             { type = "h3", text = "Thank You For Your Patience And Understanding" },
             { type = "p", text = "We apologize for all of this. While it provided us with a better understanding of a potential design pitfall that we will ensure we avoid in the future, we regret disrupting the game for you. Thank you for your passionate feedback the last couple of days. We really appreciate it." },
+        },
+    },
+    ["2026-04-23-bonus-roll-bug-fix-b5ac941282"] = {
+        id = "2026-04-23-bonus-roll-bug-fix-b5ac941282",
+        post_key = "b5ac941282",
+        title = "Bonus Roll Bug Fix",
+        category = "General Discussion (EU)",
+        timestamp = 1776915798,
+        url = "https://eu.forums.blizzard.com/en/wow/t/617011/1",
+        content = {
+            { type = "p", text = "With hotfixes that began rolling out a couple of hours ago and are now applicable in all instances, we’ve preliminarily addressed a bug in 12.0.5 where rolling on loot did not remove the received item from the pool for subsequent Bonus Rolls, which made it possible for players to receive the same item from a Bonus Roll." },
+            { type = "p", text = "It is now safe to roll on loot. Newly rolled items will now correctly remove the item from the bonus pool." },
+            { type = "p", text = "We’ll have more information to share tomorrow about this issue and the next steps we’re taking to remediate the situation for affected players." },
+            { type = "p", text = "Thank you very much for your feedback and understanding." },
         },
     },
     ["2026-04-23-bonus-roll-bug-fix-5ae0e10f79"] = {

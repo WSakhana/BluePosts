@@ -1,5 +1,5 @@
 param(
-    [string]$SourcePath = "D:\BluePosts",
+    [string]$SourcePath = "G:\My Drive\BluePosts",
     [string]$OutputPath = "",
     [string]$MediaRoot = ""
 )
