@@ -24,9 +24,9 @@ The container uses a Google Drive service account through the Drive API.
 1. Create a service account in Google Cloud.
 2. Enable the Google Drive API.
 3. Share the `BluePosts` Drive folder with the service account email address.
-4. Mount the service account JSON into the container or pass its raw contents through `BLUEPOSTS_GOOGLE_CREDENTIALS`.
+4. Mount the service account JSON into the container at `/run/secrets/google-service-account.json`, or pass its raw contents or a custom path through `BLUEPOSTS_GOOGLE_CREDENTIALS`.
 
-Example mount path with `BLUEPOSTS_GOOGLE_CREDENTIALS=/run/secrets/google-service-account.json`:
+Default mount path used automatically by the container when `BLUEPOSTS_GOOGLE_CREDENTIALS` is not set:
 
 ```text
 /run/secrets/google-service-account.json
@@ -99,8 +99,9 @@ Minimum variables to provide to n8n:
 - `BLUEPOSTS_REPO_ROOT`
 - `BLUEPOSTS_REPO_URL`
 - `BLUEPOSTS_DRIVE_FOLDER_ID`
-- `BLUEPOSTS_GOOGLE_CREDENTIALS`
 - `BLUEPOSTS_GIT_BRANCH`
+
+If the secret is mounted at `/run/secrets/google-service-account.json`, `BLUEPOSTS_GOOGLE_CREDENTIALS` is optional.
 
 Optional variables:
 

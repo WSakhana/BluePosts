@@ -2,6 +2,8 @@ namespace BluePosts.Automation;
 
 internal static class CommandLine
 {
+    private const string DefaultGoogleCredentialsPath = "/run/secrets/google-service-account.json";
+
     public static string HelpText =>
         """
         BluePosts.Automation
@@ -87,7 +89,7 @@ internal static class CommandLine
         var mediaRoot = GetPathOption(options, "media-root", null)
             ?? Path.Combine(resolvedRepoRoot, "Media", "Posts");
         var driveFolderId = GetRequiredOption(options, "drive-folder-id", "BLUEPOSTS_DRIVE_FOLDER_ID");
-        var googleCredentials = GetRequiredOption(options, "google-credentials", "BLUEPOSTS_GOOGLE_CREDENTIALS");
+        var googleCredentials = GetGoogleCredentialsOption(options);
         var remoteName = GetOption(options, "remote", "BLUEPOSTS_GIT_REMOTE") ?? "origin";
         var branchName = GetOption(options, "branch", "BLUEPOSTS_GIT_BRANCH");
         var version = GetOption(options, "version", "BLUEPOSTS_VERSION");
@@ -184,6 +186,22 @@ internal static class CommandLine
         }
 
         return value;
+    }
+
+    private static string GetGoogleCredentialsOption(Dictionary<string, string?> options)
+    {
+        var value = GetOption(options, "google-credentials", "BLUEPOSTS_GOOGLE_CREDENTIALS");
+        if (!string.IsNullOrWhiteSpace(value))
+        {
+            return value;
+        }
+
+        if (File.Exists(DefaultGoogleCredentialsPath))
+        {
+            return DefaultGoogleCredentialsPath;
+        }
+
+        throw new CliException("Missing required option --google-credentials.");
     }
 
     private static string? GetPathOption(Dictionary<string, string?> options, string optionName, string? environmentName)
