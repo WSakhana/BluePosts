@@ -2,6 +2,12 @@ package-as: BluePosts
 
 enable-nolib-creation: no
 
+ignore:
+  - .Tools
+  - .github
+  - .gitignore
+  - .gitattributes
+
 manual-changelog:
   filename: CHANGELOG.md
   markup-type: markdown
