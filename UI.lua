@@ -40,6 +40,41 @@ local READER_FONT_OPTIONS = {
     { label = "XL", value = 17 },
 }
 
+local TOAST_DURATION_OPTIONS = {
+    { label = "2s", value = 2, width = 48 },
+    { label = "4s", value = 4, width = 52 },
+    { label = "8s", value = 8, width = 52 },
+    { label = "12s", value = 12, width = 56 },
+    { label = "16s", value = 16, width = 56 },
+}
+
+local TOAST_POSITION_OPTIONS = {
+    { label = "Top right", value = "TOPRIGHT", width = 84 },
+    { label = "Top left", value = "TOPLEFT", width = 80 },
+    { label = "Bottom right", value = "BOTTOMRIGHT", width = 98 },
+    { label = "Bottom left", value = "BOTTOMLEFT", width = 94 },
+}
+
+local TOAST_POSITION_META = {
+    TOPRIGHT = { point = "TOPRIGHT", relativePoint = "TOPRIGHT", xSign = -1, ySign = -1 },
+    TOPLEFT = { point = "TOPLEFT", relativePoint = "TOPLEFT", xSign = 1, ySign = -1 },
+    BOTTOMRIGHT = { point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT", xSign = -1, ySign = 1 },
+    BOTTOMLEFT = { point = "BOTTOMLEFT", relativePoint = "BOTTOMLEFT", xSign = 1, ySign = 1 },
+}
+
+local LEGACY_TOAST_POSITION_META = {
+    TOP = { position = "TOPRIGHT", x = 36, y = 150 },
+    BOTTOM = { position = "BOTTOMRIGHT", x = 36, y = 150 },
+}
+
+local TOAST_OFFSET_LIMIT_X = 200
+local TOAST_OFFSET_LIMIT_Y = 200
+
+local TOAST_DEFAULT_OFFSETS = {
+    x = 36,
+    y = 150,
+}
+
 local function SetColor(region, color)
     region:SetTextColor(color[1], color[2], color[3], color[4] or 1)
 end
@@ -58,6 +93,17 @@ local function SetShown(region, shown)
     else
         region:Hide()
     end
+end
+
+local function Clamp(value, minimum, maximum)
+    value = tonumber(value) or 0
+    if value < minimum then
+        return minimum
+    end
+    if value > maximum then
+        return maximum
+    end
+    return value
 end
 
 local function CreateFont(parent, size, color, flags)
@@ -682,6 +728,111 @@ function UI:GetReaderFontSize()
     return math.max(11, math.min(17, size))
 end
 
+function UI:GetToastDuration()
+    local db = self.core and self.core.db
+    local duration = tonumber(db and db.toastDuration) or 4
+    return math.max(2, math.min(16, duration))
+end
+
+function UI:GetToastPosition()
+    local db = self.core and self.core.db
+    local position = tostring(db and db.toastPosition or "TOPRIGHT")
+    if TOAST_POSITION_META[position] then
+        return position
+    end
+
+    local legacyPosition = LEGACY_TOAST_POSITION_META[position]
+    if legacyPosition then
+        return legacyPosition.position
+    end
+
+    return "TOPRIGHT"
+end
+
+function UI:GetDefaultToastOffsetX()
+    local db = self.core and self.core.db
+    local position = tostring(db and db.toastPosition or "TOPRIGHT")
+    local legacyPosition = LEGACY_TOAST_POSITION_META[position]
+    if legacyPosition then
+        return legacyPosition.x
+    end
+
+    return TOAST_DEFAULT_OFFSETS.x
+end
+
+function UI:GetDefaultToastOffsetY()
+    local db = self.core and self.core.db
+    local rawPosition = tostring(db and db.toastPosition or "TOPRIGHT")
+    local legacyPosition = LEGACY_TOAST_POSITION_META[rawPosition]
+    if legacyPosition then
+        return legacyPosition.y
+    end
+
+    return TOAST_DEFAULT_OFFSETS.y
+end
+
+function UI:GetToastOffsetX()
+    local db = self.core and self.core.db
+    if db and db.toastOffsetX ~= nil then
+        return Clamp(math.abs(tonumber(db.toastOffsetX) or 0), 0, TOAST_OFFSET_LIMIT_X)
+    end
+
+    return self:GetDefaultToastOffsetX()
+end
+
+function UI:GetToastOffsetY()
+    local db = self.core and self.core.db
+    if db and db.toastOffsetY ~= nil then
+        return Clamp(math.abs(tonumber(db.toastOffsetY) or 0), 0, TOAST_OFFSET_LIMIT_Y)
+    end
+
+    return self:GetDefaultToastOffsetY()
+end
+
+function UI:SetToastPosition(position)
+    if not self.core or not self.core.db then
+        return
+    end
+
+    local normalizedPosition = TOAST_POSITION_META[position] and position or "TOPRIGHT"
+    self.core.db.toastPosition = normalizedPosition
+    self:ApplyToastPosition()
+end
+
+function UI:SetToastOffsetX(offset)
+    if not self.core or not self.core.db then
+        return
+    end
+
+    self.core.db.toastOffsetX = Clamp(offset, 0, TOAST_OFFSET_LIMIT_X)
+    self:ApplyToastPosition()
+end
+
+function UI:SetToastOffsetY(offset)
+    if not self.core or not self.core.db then
+        return
+    end
+
+    self.core.db.toastOffsetY = Clamp(offset, 0, TOAST_OFFSET_LIMIT_Y)
+    self:ApplyToastPosition()
+end
+
+function UI:ApplyToastPosition()
+    if not self.toast then
+        return
+    end
+
+    local position = TOAST_POSITION_META[self:GetToastPosition()] or TOAST_POSITION_META.TOPRIGHT
+    self.toast:ClearAllPoints()
+    self.toast:SetPoint(
+        position.point,
+        UIParent,
+        position.relativePoint,
+        self:GetToastOffsetX() * (position.xSign or 1),
+        self:GetToastOffsetY() * (position.ySign or 1)
+    )
+end
+
 function UI:CreateSettingsCheckbox(parent, label, description, getValue, setValue)
     local row = CreateFrame("Button", nil, parent)
     row:SetHeight(58)
@@ -732,6 +883,195 @@ function UI:CreateSettingsCheckbox(parent, label, description, getValue, setValu
     return row
 end
 
+function UI:CreateSettingsChoiceRow(parent, label, description, options, getValue, setValue)
+    local row = CreateFrame("Frame", nil, parent)
+    row:SetHeight(90)
+    row.getValue = getValue
+    row.setValue = setValue
+    row.options = options
+    row.buttons = {}
+
+    row.label = CreateFont(row, 12, THEME.text, "")
+    row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+    row.label:SetPoint("TOPRIGHT", row, "TOPRIGHT", -118, 0)
+    row.label:SetHeight(16)
+    row.label:SetText(label)
+    row.label:SetWordWrap(false)
+
+    row.value = CreateFont(row, 11, THEME.blue, "")
+    row.value:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+    row.value:SetSize(114, 16)
+    row.value:SetJustifyH("RIGHT")
+    row.value:SetWordWrap(false)
+
+    row.description = CreateFont(row, 11, THEME.muted, "")
+    row.description:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -4)
+    row.description:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, -20)
+    row.description:SetHeight(28)
+    row.description:SetText(description)
+
+    local previousButton
+    for _, option in ipairs(options) do
+        local button = CreateFilterButton(row, option.label, option.width or 80)
+        if previousButton then
+            button:SetPoint("LEFT", previousButton, "RIGHT", 6, 0)
+        else
+            button:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -58)
+        end
+        button:SetScript("OnClick", function()
+            row.setValue(option.value)
+            self:RefreshSettingsPanel()
+        end)
+        button:SetScript("OnLeave", function()
+            self:StyleFilterButton(button, row.getValue() == option.value)
+        end)
+        row.buttons[option.value] = button
+        previousButton = button
+    end
+
+    table.insert(self.settingsChoiceRows, row)
+    return row
+end
+
+function UI:CreateSettingsSliderRow(parent, label, description, minimum, maximum, getValue, setValue, formatValue)
+    local row = CreateFrame("Frame", nil, parent)
+    row:SetHeight(108)
+    row.getValue = getValue
+    row.setValue = setValue
+    row.formatValue = formatValue
+    row.minimum = minimum
+    row.maximum = maximum
+
+    row.label = CreateFont(row, 12, THEME.text, "")
+    row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+    row.label:SetPoint("TOPRIGHT", row, "TOPRIGHT", -88, 0)
+    row.label:SetHeight(16)
+    row.label:SetText(label)
+    row.label:SetWordWrap(false)
+
+    row.value = CreateFont(row, 11, THEME.blue, "")
+    row.value:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+    row.value:SetSize(84, 16)
+    row.value:SetJustifyH("RIGHT")
+    row.value:SetWordWrap(false)
+
+    row.description = CreateFont(row, 11, THEME.muted, "")
+    row.description:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -4)
+    row.description:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, -20)
+    row.description:SetHeight(28)
+    row.description:SetText(description)
+
+    row.slider = CreateFrame("Slider", nil, row, "BackdropTemplate")
+    row.slider:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -58)
+    row.slider:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, -58)
+    row.slider:SetHeight(18)
+    row.slider:SetOrientation("HORIZONTAL")
+    row.slider:SetMinMaxValues(minimum, maximum)
+    row.slider:SetValueStep(1)
+    row.slider:EnableMouse(true)
+    row.slider:EnableMouseWheel(true)
+    row.slider:SetHitRectInsets(0, 0, -6, -10)
+    if row.slider.SetObeyStepOnDrag then
+        row.slider:SetObeyStepOnDrag(true)
+    end
+    row.slider:SetBackdrop(BACKDROP)
+    row.slider:SetBackdropColor(0.04, 0.04, 0.05, 0.95)
+    row.slider:SetBackdropBorderColor(THEME.void[1], THEME.void[2], THEME.void[3], 0.70)
+    row.slider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizontal")
+
+    local thumb = row.slider:GetThumbTexture()
+    if thumb then
+        thumb:SetSize(20, 24)
+        thumb:SetVertexColor(THEME.gold[1], THEME.gold[2], THEME.gold[3], 0.95)
+    end
+
+    row.slider.track = row.slider:CreateTexture(nil, "BACKGROUND")
+    row.slider.track:SetPoint("LEFT", row.slider, "LEFT", 8, 0)
+    row.slider.track:SetPoint("RIGHT", row.slider, "RIGHT", -8, 0)
+    row.slider.track:SetHeight(6)
+    row.slider.track:SetColorTexture(0.09, 0.09, 0.11, 0.98)
+
+    row.slider.fill = row.slider:CreateTexture(nil, "ARTWORK")
+    row.slider.fill:SetPoint("LEFT", row.slider.track, "LEFT", 1, 0)
+    row.slider.fill:SetHeight(6)
+    row.slider.fill:SetColorTexture(THEME.blue[1], THEME.blue[2], THEME.blue[3], 0.85)
+
+    row.minLabel = CreateFont(row, 10, THEME.muted, "")
+    row.minLabel:SetPoint("TOPLEFT", row.slider, "BOTTOMLEFT", 0, -4)
+    row.minLabel:SetHeight(12)
+    row.minLabel:SetText(tostring(minimum))
+    row.minLabel:SetWordWrap(false)
+
+    row.maxLabel = CreateFont(row, 10, THEME.muted, "")
+    row.maxLabel:SetPoint("TOPRIGHT", row.slider, "BOTTOMRIGHT", 0, -4)
+    row.maxLabel:SetHeight(12)
+    row.maxLabel:SetText(tostring(maximum))
+    row.maxLabel:SetJustifyH("RIGHT")
+    row.maxLabel:SetWordWrap(false)
+
+    local function RefreshSliderFill(slider)
+        local minValue, maxValue = slider:GetMinMaxValues()
+        local ratio = 0
+        if maxValue > minValue then
+            ratio = (slider:GetValue() - minValue) / (maxValue - minValue)
+        end
+
+        local width = math.max(0, (slider.track:GetWidth() or 0) - 2)
+        slider.fill:SetWidth(width * math.max(0, math.min(1, ratio)))
+    end
+
+    row.slider.RefreshFill = RefreshSliderFill
+    row.slider:SetScript("OnSizeChanged", function(slider)
+        slider:RefreshFill()
+    end)
+    row.slider:SetScript("OnMouseWheel", function(slider, delta)
+        local step = slider:GetValueStep() or 1
+        slider:SetValue((slider:GetValue() or minimum) + (delta > 0 and step or -step))
+    end)
+    row.slider:SetScript("OnValueChanged", function(slider, value)
+        value = Clamp(math.floor((tonumber(value) or 0) + 0.5), minimum, maximum)
+        if not slider.updating and math.abs((slider:GetValue() or value) - value) > 0.001 then
+            slider.updating = true
+            slider:SetValue(value)
+            slider.updating = false
+        end
+        slider:RefreshFill()
+        if slider.updating then
+            return
+        end
+
+        row.setValue(value)
+        row.value:SetText(row.formatValue and row.formatValue(value) or tostring(value))
+    end)
+
+    table.insert(self.settingsSliderRows, row)
+    return row
+end
+
+function UI:CreateSettingsButtonRow(parent, label, description, buttonLabel, onClick)
+    local row = CreateFrame("Frame", nil, parent)
+    row:SetHeight(68)
+
+    row.label = CreateFont(row, 12, THEME.text, "")
+    row.label:SetPoint("TOPLEFT", row, "TOPLEFT", 0, 0)
+    row.label:SetPoint("TOPRIGHT", row, "TOPRIGHT", -126, 0)
+    row.label:SetHeight(16)
+    row.label:SetText(label)
+    row.label:SetWordWrap(false)
+
+    row.description = CreateFont(row, 11, THEME.muted, "")
+    row.description:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -4)
+    row.description:SetPoint("TOPRIGHT", row, "TOPRIGHT", -126, -20)
+    row.description:SetHeight(34)
+    row.description:SetText(description)
+
+    row.button = CreateButton(row, buttonLabel, nil, 118)
+    row.button:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+    row.button:SetScript("OnClick", onClick)
+
+    return row
+end
+
 function UI:CreateSettingsPanel()
     local content = self.content
     local panel = CreateFrame("Frame", nil, content)
@@ -776,10 +1116,27 @@ function UI:CreateSettingsPanel()
     self.settingsChild = child
 
     self.settingsCheckboxes = {}
+    self.settingsChoiceRows = {}
+    self.settingsSliderRows = {}
     self.readerFontButtons = {}
 
     local y = -4
+    local firstSection = true
+    local function AddDivider()
+        local divider = child:CreateTexture(nil, "ARTWORK")
+        divider:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        divider:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+        divider:SetHeight(1)
+        divider:SetColorTexture(THEME.void[1], THEME.void[2], THEME.void[3], 0.7)
+        y = y - 18
+        return divider
+    end
+
     local function AddSection(text)
+        if not firstSection then
+            AddDivider()
+        end
+
         local heading = CreateFont(child, 13, THEME.gold, "")
         heading:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
         heading:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
@@ -787,6 +1144,7 @@ function UI:CreateSettingsPanel()
         heading:SetText(text)
         heading:SetWordWrap(false)
         y = y - 28
+        firstSection = false
         return heading
     end
 
@@ -798,8 +1156,32 @@ function UI:CreateSettingsPanel()
         return row
     end
 
+    local function AddChoiceRow(label, description, options, getValue, setValue)
+        local row = self:CreateSettingsChoiceRow(child, label, description, options, getValue, setValue)
+        row:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        row:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+        y = y - 96
+        return row
+    end
+
+    local function AddSliderRow(label, description, minimum, maximum, getValue, setValue, formatValue)
+        local row = self:CreateSettingsSliderRow(child, label, description, minimum, maximum, getValue, setValue, formatValue)
+        row:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        row:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+        y = y - 112
+        return row
+    end
+
+    local function AddButtonRow(label, description, buttonLabel, onClick)
+        local row = self:CreateSettingsButtonRow(child, label, description, buttonLabel, onClick)
+        row:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        row:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+        y = y - 74
+        return row
+    end
+
     AddSection("Notifications")
-    AddCheckbox("Login notifications", "Show a toast when a recent packaged blue post is available after login.", function()
+    AddCheckbox("Login notifications", "Show a toast after login when this addon snapshot includes new unread blue posts.", function()
         return self.core.db.showToasts ~= false
     end, function(enabled)
         self.core.db.showToasts = enabled
@@ -808,6 +1190,43 @@ function UI:CreateSettingsPanel()
         return self.core.db.toastSound ~= false
     end, function(enabled)
         self.core.db.toastSound = enabled
+    end)
+    AddChoiceRow("Toast duration", "Choose how long the notification stays on screen before it fades out.", TOAST_DURATION_OPTIONS, function()
+        return self:GetToastDuration()
+    end, function(value)
+        self.core.db.toastDuration = value
+    end)
+    AddChoiceRow("Toast position", "Choose which corner should anchor the notification.", TOAST_POSITION_OPTIONS, function()
+        return self:GetToastPosition()
+    end, function(value)
+        self:SetToastPosition(value)
+    end)
+    AddSliderRow("Toast offset X", "Set the horizontal distance from the selected screen edge.", 0, 200, function()
+        return self:GetToastOffsetX()
+    end, function(value)
+        self:SetToastOffsetX(value)
+    end, function(value)
+        return ("%d px"):format(tonumber(value) or 0)
+    end)
+    AddSliderRow("Toast offset Y", "Set the vertical distance from the selected screen edge.", 0, 200, function()
+        return self:GetToastOffsetY()
+    end, function(value)
+        self:SetToastOffsetY(value)
+    end, function(value)
+        return ("%d px"):format(tonumber(value) or 0)
+    end)
+    AddButtonRow("Toast preview", "Preview the current toast layout and timing without waiting for a login event.", "Test toast", function()
+        local post = self.core and self.core.GetToastPreviewPost and self.core:GetToastPreviewPost()
+        if not post then
+            if self.core and self.core.Print then
+                self.core:Print("No post available for toast preview.")
+            end
+            return
+        end
+
+        if self.core and self.core.ShowToast then
+            self.core:ShowToast(post, false)
+        end
     end)
 
     AddSection("Reading")
@@ -926,6 +1345,37 @@ function UI:RefreshSettingsPanel()
         else
             row.box:SetBackdropColor(0.04, 0.04, 0.05, 0.95)
             row.box:SetBackdropBorderColor(THEME.void[1], THEME.void[2], THEME.void[3], 0.70)
+        end
+    end
+
+    for _, row in ipairs(self.settingsChoiceRows or {}) do
+        local selectedValue = row.getValue and row.getValue() or nil
+        local selectedLabel = ""
+
+        for _, option in ipairs(row.options or {}) do
+            local button = row.buttons and row.buttons[option.value]
+            if button then
+                self:StyleFilterButton(button, option.value == selectedValue)
+            end
+            if option.value == selectedValue then
+                selectedLabel = option.label
+            end
+        end
+
+        row.value:SetText(selectedLabel)
+        SetColor(row.value, selectedLabel ~= "" and THEME.blue or THEME.muted)
+    end
+
+    for _, row in ipairs(self.settingsSliderRows or {}) do
+        local value = row.getValue and row.getValue() or 0
+        local label = row.formatValue and row.formatValue(value) or tostring(value)
+        row.value:SetText(label)
+        SetColor(row.value, THEME.blue)
+        if row.slider then
+            row.slider.updating = true
+            row.slider:SetValue(value)
+            row.slider.updating = false
+            row.slider:RefreshFill()
         end
     end
 
@@ -1606,30 +2056,58 @@ end
 
 function UI:CreateToast()
     local toast = CreateFrame("Button", "BluePostsToast", UIParent, "BackdropTemplate")
-    toast:SetSize(380, 92)
-    toast:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -36, -150)
+    toast:SetSize(446, 124)
     toast:SetFrameStrata("DIALOG")
     toast:SetBackdrop(BACKDROP)
-    toast:SetBackdropColor(0.06, 0.06, 0.07, 0.96)
-    toast:SetBackdropBorderColor(THEME.blue[1], THEME.blue[2], THEME.blue[3], 0.95)
+    toast:SetBackdropColor(0.04, 0.045, 0.06, 0.97)
+    toast:SetBackdropBorderColor(THEME.blue[1], THEME.blue[2], THEME.blue[3], 0.88)
+    toast:SetClampedToScreen(true)
     toast:Hide()
 
-    toast.icon = toast:CreateTexture(nil, "ARTWORK")
-    toast.icon:SetSize(42, 42)
-    toast.icon:SetPoint("LEFT", toast, "LEFT", 14, 0)
+    toast.accent = toast:CreateTexture(nil, "BORDER")
+    toast.accent:SetPoint("TOPLEFT", toast, "TOPLEFT", 0, 0)
+    toast.accent:SetPoint("BOTTOMLEFT", toast, "BOTTOMLEFT", 0, 0)
+    toast.accent:SetWidth(4)
+    toast.accent:SetColorTexture(THEME.blue[1], THEME.blue[2], THEME.blue[3], 0.95)
+
+    toast.iconFrame = CreateFrame("Frame", nil, toast, "BackdropTemplate")
+    toast.iconFrame:SetSize(52, 52)
+    toast.iconFrame:SetPoint("TOPLEFT", toast, "TOPLEFT", 16, -16)
+    toast.iconFrame:SetBackdrop(BACKDROP)
+    toast.iconFrame:SetBackdropColor(0.08, 0.08, 0.09, 0.96)
+    toast.iconFrame:SetBackdropBorderColor(THEME.gold[1], THEME.gold[2], THEME.gold[3], 0.30)
+
+    toast.icon = toast.iconFrame:CreateTexture(nil, "ARTWORK")
+    toast.icon:SetSize(40, 40)
+    toast.icon:SetPoint("CENTER", toast.iconFrame, "CENTER", 0, 0)
     toast.icon:SetTexture("Interface\\Icons\\INV_Letter_15")
     toast.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
 
     toast.label = CreateFont(toast, 11, THEME.blue, "")
-    toast.label:SetPoint("TOPLEFT", toast.icon, "TOPRIGHT", 12, 0)
-    toast.label:SetPoint("TOPRIGHT", toast, "TOPRIGHT", -14, -18)
+    toast.label:SetPoint("TOPLEFT", toast.iconFrame, "TOPRIGHT", 14, -1)
+    toast.label:SetPoint("TOPRIGHT", toast, "TOPRIGHT", -18, -16)
+    toast.label:SetHeight(14)
     toast.label:SetText("New Blue Post")
     toast.label:SetWordWrap(false)
 
-    toast.title = CreateFont(toast, 14, THEME.text, "")
-    toast.title:SetPoint("TOPLEFT", toast.label, "BOTTOMLEFT", 0, -4)
-    toast.title:SetPoint("RIGHT", toast, "RIGHT", -14, 0)
-    toast.title:SetHeight(42)
+    toast.meta = CreateFont(toast, 11, THEME.muted, "")
+    toast.meta:SetPoint("TOPLEFT", toast.label, "BOTTOMLEFT", 0, -4)
+    toast.meta:SetPoint("TOPRIGHT", toast, "TOPRIGHT", -18, -34)
+    toast.meta:SetHeight(14)
+    toast.meta:SetWordWrap(false)
+
+    toast.rule = toast:CreateTexture(nil, "ARTWORK")
+    toast.rule:SetPoint("TOPLEFT", toast.meta, "BOTTOMLEFT", 0, -8)
+    toast.rule:SetPoint("TOPRIGHT", toast, "TOPRIGHT", -18, -8)
+    toast.rule:SetHeight(1)
+    toast.rule:SetColorTexture(THEME.void[1], THEME.void[2], THEME.void[3], 0.55)
+
+    toast.title = CreateFont(toast, 13, THEME.text, "")
+    toast.title:SetPoint("TOPLEFT", toast.rule, "BOTTOMLEFT", 0, -8)
+    toast.title:SetPoint("BOTTOMRIGHT", toast, "BOTTOMRIGHT", -18, 16)
+    if toast.title.SetMaxLines then
+        toast.title:SetMaxLines(2)
+    end
 
     toast:SetScript("OnClick", function()
         if toast.post then
@@ -1648,15 +2126,36 @@ function UI:CreateToast()
     end)
 
     self.toast = toast
+    self:ApplyToastPosition()
 end
 
 function UI:ShowToast(post)
+    if not post then
+        return false
+    end
+
     if not self.toast then
         self:CreateToast()
     end
 
+    self:ApplyToastPosition()
+
     self.toast.post = post
-    self.toast.title:SetText(Truncate(post.title, 94))
+    local categoryMeta = CATEGORY_META[post.categoryKey or "NEWS"] or CATEGORY_META.NEWS
+    self.toast.icon:SetTexture((categoryMeta and categoryMeta.icon) or "Interface\\Icons\\INV_Letter_15")
+    self.toast.label:SetText("New Blue Post")
+
+    local category = StripRegion(post.category)
+    local dateText = post.dateText or ""
+    local metaText = category
+    if category ~= "" and dateText ~= "" then
+        metaText = ("%s  |  %s"):format(category, dateText)
+    elseif dateText ~= "" then
+        metaText = dateText
+    end
+
+    self.toast.meta:SetText(Truncate(metaText, 56))
+    self.toast.title:SetText(Truncate(post.title, 88))
     self.toast:Show()
     self.toast:SetAlpha(1)
 
@@ -1665,7 +2164,7 @@ function UI:ShowToast(post)
         PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
     end
 
-    C_Timer.After(8, function()
+    C_Timer.After(self:GetToastDuration(), function()
         if self.toast and self.toast:IsShown() and self.toast.post == post then
             if UIFrameFadeOut then
                 UIFrameFadeOut(self.toast, 0.35, self.toast:GetAlpha(), 0)
@@ -1680,6 +2179,8 @@ function UI:ShowToast(post)
             end
         end
     end)
+
+    return true
 end
 
 function UI:Show()

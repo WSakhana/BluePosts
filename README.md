@@ -13,8 +13,8 @@ The addon ships with preprocessed post content, bundled media, unread tracking, 
 - Toggle an unread-only view from the header.
 - Open posts from a minimap or LibDataBroker launcher.
 - Open an in-window settings panel from the title bar.
-- Show a login toast when a recent post is available.
-- Configure notifications, reader text size, minimap visibility, auto-read behavior, and guild share confirmation.
+- Show a login toast when the current addon snapshot bundles new unread blue posts.
+- Configure notifications, toast duration and position, reader text size, minimap visibility, auto-read behavior, and guild share confirmation.
 - Copy the original forum link for the selected post.
 - Share the selected post to guild chat.
 - Jump directly to class sections inside class hotfix posts.
@@ -37,7 +37,8 @@ No external dependencies are required for the release package. The required libr
 - `/bp` is the short command alias.
 - `/bp reset` resets the window position and size.
 - `/bp minimap` toggles the minimap icon.
-- `/bp toasts` toggles login notifications for recent posts.
+- `/bp toasts` toggles login notifications for newly packaged unread posts.
+- `/bp toasttest` previews the current toast without consuming the saved login notification state.
 - `/bp settings` or `/bp options` opens the settings panel.
 
 ## Included Files
@@ -55,4 +56,4 @@ Build scripts and local tooling are not part of the packaged addon.
 ## Notes
 
 - Post content is packaged with the addon release. New Blizzard posts require a newer addon package.
-- Read state, minimap visibility, window placement, reader preferences, and toast preferences are saved in `BluePostsDB`.
+- Read state, minimap visibility, window placement, reader preferences, and toast preferences are saved in `BluePostsDB` account-wide.

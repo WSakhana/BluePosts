@@ -81,30 +81,43 @@ internal sealed class BuildDataRunner
             .Select(post => new NewPostSummary(post.Id, post.Title))
             .ToList();
 
+        var packageTimestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
         var builder = new StringBuilder();
         builder.AppendLine("-- Generated data. Do not edit manually.");
         builder.AppendLine("BluePosts_Data = {");
+        builder.AppendLine($"    package_timestamp = {packageTimestamp},");
+        builder.AppendLine("    new_post_ids = {");
+
+        foreach (var newPost in newPosts)
+        {
+            builder.AppendLine($"        {GetLuaString(newPost.Id)},");
+        }
+
+        builder.AppendLine("    },");
+        builder.AppendLine("    posts = {");
 
         foreach (var post in orderedPosts)
         {
-            builder.AppendLine($"    [{GetLuaString(post.Id)}] = {{");
-            builder.AppendLine($"        id = {GetLuaString(post.Id)},");
-            builder.AppendLine($"        post_key = {GetLuaString(post.PostKey)},");
-            builder.AppendLine($"        title = {GetLuaString(post.Title)},");
-            builder.AppendLine($"        category = {GetLuaString(post.Category)},");
-            builder.AppendLine($"        timestamp = {post.Timestamp},");
-            builder.AppendLine($"        url = {GetLuaString(post.Url)},");
-            builder.AppendLine("        content = {");
+            builder.AppendLine($"        [{GetLuaString(post.Id)}] = {{");
+            builder.AppendLine($"            id = {GetLuaString(post.Id)},");
+            builder.AppendLine($"            post_key = {GetLuaString(post.PostKey)},");
+            builder.AppendLine($"            title = {GetLuaString(post.Title)},");
+            builder.AppendLine($"            category = {GetLuaString(post.Category)},");
+            builder.AppendLine($"            timestamp = {post.Timestamp},");
+            builder.AppendLine($"            url = {GetLuaString(post.Url)},");
+            builder.AppendLine("            content = {");
 
             foreach (var block in post.Content)
             {
                 WriteLuaBlock(builder, block);
             }
 
+            builder.AppendLine("            },");
             builder.AppendLine("        },");
-            builder.AppendLine("    },");
         }
 
+        builder.AppendLine("    },");
         builder.AppendLine("}");
         Console.WriteLine($"[build] Writing generated data file: {options.OutputPath}");
         await File.WriteAllTextAsync(options.OutputPath, builder.ToString(), new UTF8Encoding(false), cancellationToken);

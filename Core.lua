@@ -32,10 +32,16 @@ local DEFAULT_DB = {
     },
     showToasts = true,
     toastSound = true,
+    toastDuration = 4,
+    toastPosition = "TOPRIGHT",
+    toastOffsetX = 36,
+    toastOffsetY = 150,
     autoMarkRead = true,
     confirmGuildShare = true,
     readerFontSize = 13,
 }
+
+local RECENT_PACKAGE_WINDOW = 86400
 
 ns.THEME = {
     bg = { 0.10, 0.10, 0.10, 0.85 },
@@ -198,6 +204,17 @@ function Core:NormalizeData()
 
     local raw = BluePosts_Data or {}
     local source = raw.posts or raw
+    self.packageTimestamp = tonumber(raw.package_timestamp or raw.generated_at) or 0
+    self.packageNewPostIDs = {}
+    self.packageNewPostLookup = {}
+
+    for _, postID in ipairs(raw.new_post_ids or {}) do
+        postID = Trim(postID)
+        if postID ~= "" then
+            self.packageNewPostIDs[#self.packageNewPostIDs + 1] = postID
+            self.packageNewPostLookup[postID] = true
+        end
+    end
 
     for key, post in pairs(source) do
         if type(post) == "table" and post.title then
@@ -287,6 +304,16 @@ function Core:GetUnreadCount()
     return count
 end
 
+function Core:GetNewestUnreadPost()
+    for _, post in ipairs(self.posts or {}) do
+        if not self:IsRead(post) then
+            return post
+        end
+    end
+
+    return nil
+end
+
 function Core:GetNewestRecentPost()
     local now = time()
 
@@ -297,6 +324,49 @@ function Core:GetNewestRecentPost()
     end
 
     return nil
+end
+
+function Core:IsCurrentPackageRecent()
+    return self.packageTimestamp > 0 and (time() - self.packageTimestamp) <= RECENT_PACKAGE_WINDOW
+end
+
+function Core:GetNewestPackagedUnreadPost()
+    if not self:IsCurrentPackageRecent() then
+        return nil
+    end
+
+    if not next(self.packageNewPostLookup or {}) then
+        return nil
+    end
+
+    for _, post in ipairs(self.posts or {}) do
+        if self.packageNewPostLookup[post.id] and not self:IsRead(post) then
+            return post
+        end
+    end
+
+    return nil
+end
+
+function Core:GetToastPreviewPost()
+    if ns.UI and ns.UI.selectedPost then
+        return ns.UI.selectedPost
+    end
+
+    return self:GetNewestPackagedUnreadPost() or self:GetNewestUnreadPost() or self:GetNewestRecentPost() or self.posts[1]
+end
+
+function Core:ShowToast(post, rememberToastID)
+    if not post or not ns.UI or not ns.UI.ShowToast then
+        return false
+    end
+
+    local shown = ns.UI:ShowToast(post)
+    if shown and rememberToastID ~= false and self.db then
+        self.db.lastToastID = post.id
+    end
+
+    return shown and true or false
 end
 
 function Core:Show(postID)
@@ -515,6 +585,19 @@ function Core:HandleSlash(message)
         return
     end
 
+    if command == "toasttest" then
+        local post = self:GetToastPreviewPost()
+        if not post then
+            self:Print("No post available for toast preview.")
+            return
+        end
+
+        if not self:ShowToast(post, false) then
+            self:Print("Toast preview failed.")
+        end
+        return
+    end
+
     if command == "settings" or command == "options" then
         self:Show()
         if ns.UI and ns.UI.ShowSettings then
@@ -539,16 +622,14 @@ function Core:MaybeShowLoginToast()
         return
     end
 
-    local post = self:GetNewestRecentPost()
+    local post = self:GetNewestPackagedUnreadPost()
     if not post or self.db.lastToastID == post.id then
         return
     end
 
-    self.db.lastToastID = post.id
-
     C_Timer.After(2.0, function()
-        if ns.UI then
-            ns.UI:ShowToast(post)
+        if not self:IsRead(post) then
+            self:ShowToast(post)
         end
     end)
 end
