@@ -57,6 +57,22 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
         var version = await ResolveVersionAsync(options, git, cancellationToken);
         Console.WriteLine($"[pipeline] Resolved release version: {version}");
 
+        var filesToCommit = new List<string> { "BluePosts_Data.lua", "Media/Posts" };
+        if (buildResult.NewPosts.Count > 0)
+        {
+            Console.WriteLine($"[pipeline] Detected {buildResult.NewPosts.Count} new blue post(s) for changelog update.");
+
+            var changelogUpdated = await RunStepAsync("Updating CHANGELOG.md", () =>
+                new ChangelogUpdater(Path.Combine(options.RepoRoot, "CHANGELOG.md"))
+                    .PrependNewPostsEntryAsync(version.ToString(), buildResult.NewPosts, cancellationToken));
+
+            if (changelogUpdated)
+            {
+                filesToCommit.Add("CHANGELOG.md");
+                Console.WriteLine("[pipeline] Updated changelog: CHANGELOG.md");
+            }
+        }
+
         if (options.DryRun)
         {
             Console.WriteLine("[pipeline] Dry run enabled. Skipping commit, tag, and push.");
@@ -68,7 +84,7 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
 
         await RunStepAsync($"Creating git commit '{commitMessage}' and tag '{tagName}'", async () =>
         {
-            await git.AddAsync(["BluePosts_Data.lua", "Media/Posts"], cancellationToken);
+            await git.AddAsync(filesToCommit, cancellationToken);
             await git.CommitAsync(commitMessage, cancellationToken);
             await git.TagAsync(tagName, tagName, cancellationToken);
         });

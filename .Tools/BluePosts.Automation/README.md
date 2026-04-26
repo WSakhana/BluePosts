@@ -12,6 +12,7 @@ Console .NET 10 qui remplace `BuildData.ps1` et automatise le pipeline complet d
   - fait `git fetch` puis `git pull --ff-only`
   - synchronise le dossier Google Drive `BluePosts` en ne telechargeant que les fichiers nouveaux ou modifies
   - regenere `BluePosts_Data.lua` et `Media/Posts`
+  - met a jour `CHANGELOG.md` apres `# Changelog` quand de nouveaux blue posts sont detectes
   - cree le commit git
   - cree le tag git
   - pousse le commit et le tag

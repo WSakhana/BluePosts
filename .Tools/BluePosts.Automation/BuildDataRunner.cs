@@ -14,6 +14,7 @@ namespace BluePosts.Automation;
 internal sealed class BuildDataRunner
 {
     private static readonly Regex DeveloperNoteRegex = new("^(?i:Developers.? notes:)\\s*", RegexOptions.Compiled);
+    private static readonly Regex GeneratedPostIdRegex = new(@"^\s*\[""(?<id>[^""]+)""\]\s*=\s*\{$", RegexOptions.Compiled);
     private static readonly Regex WhitespaceRegex = new("\\s+", RegexOptions.Compiled);
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
@@ -26,6 +27,8 @@ internal sealed class BuildDataRunner
         {
             throw new InvalidOperationException($"Source path not found: {options.SourcePath}");
         }
+
+        var existingPostIds = await ReadExistingPostIdsAsync(options.OutputPath, cancellationToken);
 
         Directory.CreateDirectory(Path.GetDirectoryName(options.OutputPath) ?? throw new InvalidOperationException("Output path must include a directory."));
         Directory.CreateDirectory(options.MediaRoot);
@@ -73,6 +76,11 @@ internal sealed class BuildDataRunner
             .ThenBy(post => post.Title, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
+        var newPosts = orderedPosts
+            .Where(post => !existingPostIds.Contains(post.Id))
+            .Select(post => new NewPostSummary(post.Id, post.Title))
+            .ToList();
+
         var builder = new StringBuilder();
         builder.AppendLine("-- Generated data. Do not edit manually.");
         builder.AppendLine("BluePosts_Data = {");
@@ -101,8 +109,9 @@ internal sealed class BuildDataRunner
         Console.WriteLine($"[build] Writing generated data file: {options.OutputPath}");
         await File.WriteAllTextAsync(options.OutputPath, builder.ToString(), new UTF8Encoding(false), cancellationToken);
         Console.WriteLine($"[build] Rebuilt {orderedPosts.Count} post(s) and refreshed media in {options.MediaRoot}");
+        Console.WriteLine($"[build] Detected {newPosts.Count} new post(s)");
 
-        return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot);
+        return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot, newPosts);
     }
 
     private static async Task<SourceMetadata> ReadMetadataAsync(string metadataPath, CancellationToken cancellationToken)
@@ -110,6 +119,28 @@ internal sealed class BuildDataRunner
         await using var stream = File.OpenRead(metadataPath);
         var metadata = await JsonSerializer.DeserializeAsync<SourceMetadata>(stream, JsonOptions, cancellationToken);
         return metadata ?? throw new InvalidOperationException($"Could not deserialize metadata from {metadataPath}");
+    }
+
+    private static async Task<HashSet<string>> ReadExistingPostIdsAsync(string outputPath, CancellationToken cancellationToken)
+    {
+        if (!File.Exists(outputPath))
+        {
+            return [];
+        }
+
+        var lines = await File.ReadAllLinesAsync(outputPath, cancellationToken);
+        var postIds = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var line in lines)
+        {
+            var match = GeneratedPostIdRegex.Match(line);
+            if (match.Success)
+            {
+                postIds.Add(match.Groups["id"].Value);
+            }
+        }
+
+        return postIds;
     }
 
     private static void ClearDirectoryContents(string path)
@@ -593,7 +624,9 @@ internal sealed class BuildDataRunner
         [property: JsonPropertyName("source_url")] string? SourceUrl);
 }
 
-internal sealed record BuildDataResult(int PostCount, string OutputPath, string MediaRoot);
+internal sealed record BuildDataResult(int PostCount, string OutputPath, string MediaRoot, IReadOnlyList<NewPostSummary> NewPosts);
+
+internal sealed record NewPostSummary(string Id, string Title);
 
 internal sealed record PostRecord(string Id, string PostKey, string Title, string Category, long Timestamp, string Url, IReadOnlyList<PostBlock> Content);
 
