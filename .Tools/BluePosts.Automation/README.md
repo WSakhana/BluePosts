@@ -1,48 +1,48 @@
 # BluePosts.Automation
 
-Console .NET 10 qui remplace `BuildData.ps1` et automatise le pipeline complet dans Docker/Linux pour un déclenchement par n8n.
+A .NET 10 console application that replaces `BuildData.ps1` and automates the full BluePosts pipeline in Docker/Linux for n8n-triggered runs.
 
-## Ce que fait le binaire
+## What the binary does
 
-- `build-data` : reconstruit `BluePosts_Data.lua` et `Media/Posts` a partir d'un export local `BluePosts`.
-- `pipeline` :
-  - prepare les dossiers de travail et nettoie seulement le clone git temporaire si necessaire
-  - clone le repo dans un dossier temporaire si `BLUEPOSTS_REPO_ROOT` ne contient pas deja un repo git
-  - verifie un repo git local propre
-  - fait `git fetch` puis `git pull --ff-only`
-  - synchronise le dossier Google Drive `BluePosts` en ne telechargeant que les fichiers nouveaux ou modifies
-  - regenere `BluePosts_Data.lua` et `Media/Posts`
-  - met a jour `CHANGELOG.md` en tete du fichier, avec la liste des nouveaux blue posts ou, a defaut, le message de commit genere
-  - cree le commit git
-  - cree le tag git
-  - pousse le commit et le tag
+- `build-data`: rebuilds `BluePosts_Data.lua` and `Media/Posts` from a local `BluePosts` export.
+- `pipeline`:
+  - prepares working directories and cleans the temporary git clone only when needed
+  - clones the repository into a temporary directory if `BLUEPOSTS_REPO_ROOT` does not already contain a git repo
+  - validates that the local git repository is clean
+  - runs `git fetch` and `git pull --ff-only`
+  - syncs the Google Drive `BluePosts` folder by downloading only new or changed files
+  - regenerates `BluePosts_Data.lua` and `Media/Posts`
+  - updates `CHANGELOG.md` at the top of the file with either new blue post titles or the generated commit message
+  - creates the git commit
+  - creates the git tag
+  - pushes the commit and tag
 
-## Auth Google Drive
+## Google Drive authentication
 
-Le conteneur utilise un compte de service Google Drive via l'API Drive.
+The container uses a Google Drive service account through the Drive API.
 
-1. Cree un service account dans Google Cloud.
-2. Active l'API Google Drive.
-3. Partage le dossier Drive `BluePosts` avec l'email du service account.
-4. Monte le JSON du service account dans le conteneur ou passe son contenu brut via `BLUEPOSTS_GOOGLE_CREDENTIALS`.
+1. Create a service account in Google Cloud.
+2. Enable the Google Drive API.
+3. Share the `BluePosts` Drive folder with the service account email address.
+4. Mount the service account JSON into the container or pass its raw contents through `BLUEPOSTS_GOOGLE_CREDENTIALS`.
 
-Exemple de montage avec `BLUEPOSTS_GOOGLE_CREDENTIALS=/run/secrets/google-service-account.json`:
+Example mount path with `BLUEPOSTS_GOOGLE_CREDENTIALS=/run/secrets/google-service-account.json`:
 
 ```text
 /run/secrets/google-service-account.json
 ```
 
-Le fichier doit etre le JSON original telecharge depuis Google Cloud. Ne commitez jamais ce fichier ni son contenu dans le repo, meme pour un exemple de documentation.
+The file must be the original JSON downloaded from Google Cloud. Never commit this file or its contents to the repository, even in examples.
 
-## Build Docker
+## Build the Docker image
 
-Depuis la racine du repo:
+From the repository root:
 
 ```bash
 docker build -t blueposts-automation .Tools/BluePosts.Automation
 ```
 
-Pour publier l'image sur Docker Hub avec un tag explicite:
+To publish the image to Docker Hub with an explicit tag:
 
 ```bash
 docker login
@@ -50,20 +50,20 @@ docker build -t sakhana88/blueposts.automation:tagname .Tools/BluePosts.Automati
 docker push sakhana88/blueposts.automation:tagname
 ```
 
-Si l'image locale `blueposts-automation` existe deja, vous pouvez aussi simplement la re-tagger avant le push:
+If the local `blueposts-automation` image already exists, you can also retag it before pushing:
 
 ```bash
 docker tag blueposts-automation sakhana88/blueposts.automation:tagname
 docker push sakhana88/blueposts.automation:tagname
 ```
 
-## Execution Docker
+## Run with Docker
 
-Exemple recommande pour un conteneur ephemere qui ne conserve rien apres execution:
+Recommended example for an ephemeral container run:
 
-Les chemins declares dans le `--env-file` sont lus par le processus dans le conteneur Linux. Utilisez donc des chemins comme `/tmp/...` ou `/run/secrets/...` dans `.env`, meme si le chemin monte cote hote est un chemin Windows.
+Paths defined in `--env-file` are read by the process inside the Linux container. Use container paths such as `/tmp/...` or `/run/secrets/...` in `.env`, even if the mounted host path is a Windows path.
 
-Pour l'auth GitHub en HTTPS, laissez `BLUEPOSTS_REPO_URL` sans credentials et fournissez plutot `BLUEPOSTS_GITHUB_TOKEN` via un secret ou une variable d'environnement.
+For GitHub HTTPS authentication, keep `BLUEPOSTS_REPO_URL` free of embedded credentials and provide `BLUEPOSTS_GITHUB_TOKEN` through a secret or environment variable instead.
 
 ```bash
 docker run --rm \
@@ -72,13 +72,13 @@ docker run --rm \
   blueposts-automation
 ```
 
-Dans ce mode, le repo peut etre clone dans un dossier temporaire du conteneur. Ce clone temporaire est nettoye au debut du lancement suivant s'il est distinct du repo courant. Le dossier Google Drive local est conserve pour permettre une synchronisation incrementale.
+In this mode, the repo can be cloned into a temporary container directory. That temporary clone is cleaned at the start of the next run if it is different from the current repo. The local Google Drive mirror is preserved to support incremental syncs.
 
-L'image Docker definit aussi une identite git par defaut pour permettre les `git commit` et `git tag` dans un conteneur ephemere. Pour la remplacer, passez `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME` et `GIT_COMMITTER_EMAIL` au `docker run` ou via votre orchestrateur.
+The Docker image also defines a default git identity so `git commit` and `git tag` work in an ephemeral container. To override it, pass `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME`, and `GIT_COMMITTER_EMAIL` through `docker run` or your orchestrator.
 
-Le clone git temporaire est nettoye au debut du lancement suivant s'il est distinct du repo courant. Le dossier Google Drive local n'est pas purge entre les runs: il est synchronise comme un miroir incremental, avec telechargement des nouveaux fichiers, mise a jour des fichiers modifies et suppression des elements locaux devenus obsoletes.
+The temporary git clone is cleaned at the start of the next run if it is separate from the current repo. The local Google Drive folder is not purged between runs. It is synced as an incremental mirror, downloading new files, refreshing modified files, and deleting stale local items.
 
-Le `CMD` par defaut lance `pipeline`. Pour ne lancer que la conversion locale:
+The default `CMD` runs `pipeline`. To run only the local conversion step:
 
 ```bash
 docker run --rm \
@@ -89,12 +89,12 @@ docker run --rm \
 
 ## n8n
 
-Deux integrations simples:
+Two straightforward integrations:
 
-1. `Execute Command` : lance la commande `docker run ... blueposts-automation`.
-2. `Docker` node : demarre l'image avec le volume du repo, le secret Google et les variables d'environnement.
+1. `Execute Command`: runs `docker run ... blueposts-automation`.
+2. `Docker` node: starts the image with the repository volume, Google secret, and environment variables.
 
-Variables minimales a fournir a n8n:
+Minimum variables to provide to n8n:
 
 - `BLUEPOSTS_REPO_ROOT`
 - `BLUEPOSTS_REPO_URL`
@@ -102,16 +102,16 @@ Variables minimales a fournir a n8n:
 - `BLUEPOSTS_GOOGLE_CREDENTIALS`
 - `BLUEPOSTS_GIT_BRANCH`
 
-Variables optionnelles:
+Optional variables:
 
-- `BLUEPOSTS_GITHUB_TOKEN` pour authentifier `git clone`, `fetch`, `pull` et `push` en HTTPS sans mettre le token dans `BLUEPOSTS_REPO_URL`
+- `BLUEPOSTS_GITHUB_TOKEN` to authenticate `git clone`, `fetch`, `pull`, and `push` over HTTPS without embedding the token in `BLUEPOSTS_REPO_URL`
 - `BLUEPOSTS_REPO_URL`
 - `BLUEPOSTS_SOURCE_PATH`
 - `BLUEPOSTS_VERSION`
 - `BLUEPOSTS_VERSION_BUMP`
 - `BLUEPOSTS_GIT_REMOTE`
 
-## Commandes locales
+## Local commands
 
 ```bash
 dotnet build .Tools/BluePosts.Automation/BluePosts.Automation.csproj
@@ -119,27 +119,27 @@ dotnet run --project .Tools/BluePosts.Automation/BluePosts.Automation.csproj -- 
 dotnet run --project .Tools/BluePosts.Automation/BluePosts.Automation.csproj -- build-data --source-path /path/to/BluePosts
 ```
 
-## Exemples Windows hors conteneur
+## Windows examples outside Docker
 
-Ces chemins Windows s'appliquent a `dotnet run` lance sur l'hote. Pour `docker run --env-file`, utilisez des chemins du conteneur Linux comme `/tmp/...` et `/run/secrets/...`.
+These Windows paths apply to `dotnet run` executed on the host. For `docker run --env-file`, use Linux container paths such as `/tmp/...` and `/run/secrets/...`.
 
-Dry run complet:
+Full dry run:
 
 ```powershell
 dotnet run --project ".Tools\BluePosts.Automation\BluePosts.Automation.csproj" --pipeline --repo-root "D:\Temp\blueposts-repo" --repo-url "https://github.com/WSakhana/BluePosts.git" --source-path "D:\Temp\blueposts-source" --drive-folder-id "153osz5cXU3C0Ju07AJ0YArt2LQbbsjny" --google-credentials "D:\VM\n8n-gdrive-493909-c9fa3e30cfcf.json" --remote "origin" --branch "main" --version-bump "patch" --dry-run
 ```
 
-Execution complete:
+Full execution:
 
 ```powershell
 dotnet run --project ".Tools\BluePosts.Automation\BluePosts.Automation.csproj" --pipeline --repo-root "D:\Temp\blueposts-repo" --repo-url "https://github.com/WSakhana/BluePosts.git" --source-path "D:\Temp\blueposts-source" --drive-folder-id "153osz5cXU3C0Ju07AJ0YArt2LQbbsjny" --google-credentials "D:\VM\n8n-gdrive-493909-c9fa3e30cfcf.json" --remote "origin" --branch "main" --version-bump "patch"
 ```
 
-## Notes d'exploitation
+## Operational notes
 
-- Le pipeline echoue si le repo contient deja des changements locaux, sauf avec `--allow-dirty`.
-- Si la regeneration ne modifie pas `BluePosts_Data.lua` ou `Media/Posts`, aucun commit, tag ou push n'est cree.
-- Les tags git doivent etre au format direct `1.0.2`, sans prefixe `v`.
-- Le versioning est calcule depuis le dernier tag valide, puis incremente automatiquement au format `1.0.2 -> 1.0.3 -> ... -> 1.0.9 -> 1.1.0`.
-- Le pipeline conserve `BLUEPOSTS_SOURCE_PATH` entre les runs et le synchronise de facon incrementale avec Google Drive.
-- Si `BLUEPOSTS_REPO_ROOT` est un dossier temporaire separe du repo courant, il est aussi nettoye au debut d'un lancement avant reclonage.
+- The pipeline fails if the repository already contains local changes, unless `--allow-dirty` is used.
+- If regeneration does not change `BluePosts_Data.lua` or `Media/Posts`, no commit, tag, or push is created.
+- Git tags must use the direct `1.0.2` format without a `v` prefix.
+- Versioning is calculated from the latest valid tag, then incremented automatically following `1.0.2 -> 1.0.3 -> ... -> 1.0.9 -> 1.1.0`.
+- The pipeline preserves `BLUEPOSTS_SOURCE_PATH` between runs and keeps it in sync with Google Drive incrementally.
+- If `BLUEPOSTS_REPO_ROOT` is a separate temporary directory outside the current repo, it is also cleaned before recloning.

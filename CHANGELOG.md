@@ -1,11 +1,24 @@
 ## 1.0.6
-- chore: refresh blueposts data for 1.0.6
+- Refreshed the bundled blue posts snapshot.
+- Improved automated changelog generation for future updates.
+
+## 1.0.5
+- Refreshed the bundled blue posts snapshot.
+
+## 1.0.4
+- Improved release packaging and deployment reliability.
+
+## 1.0.3
+- Refreshed the bundled blue posts snapshot.
+- Improved the automated release pipeline.
+
+## 1.0.2
+- Improved addon packaging for release builds.
 
 ## 1.0.1
-- Add settings panel and configuration options
+- Added a settings panel and more configuration options.
 
 ## 1.0.0 - 2026-04-25
-
 - Initial public release.
 - Added an in-game browser for bundled Blizzard blue posts.
 - Added search, category filters, region filters, and unread tracking.
