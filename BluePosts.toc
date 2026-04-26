@@ -2,7 +2,7 @@
 ## Title: |cffffc757Blue|r|cff00b4ffPosts|r
 ## Notes: Read Blizzard blue posts directly in game.
 ## Author: Anahkas
-## Version: 1.0.1
+## Version: @project-version@
 ## SavedVariables: BluePostsDB
 ## OptionalDeps: LibDataBroker-1.1, LibDBIcon-1.0
 ## X-Category: Interface
