@@ -31,6 +31,10 @@ local DEFAULT_DB = {
         region = "ALL",
     },
     showToasts = true,
+    toastSound = true,
+    autoMarkRead = true,
+    confirmGuildShare = true,
+    readerFontSize = 13,
 }
 
 ns.THEME = {
@@ -249,6 +253,27 @@ function Core:SetRead(post, read)
     if ns.UI then
         ns.UI:RefreshPostList()
         ns.UI:UpdateToolbar()
+        ns.UI:RefreshSettingsPanel()
+    end
+end
+
+function Core:SetAllRead(read)
+    if not self.db or not self.db.read then
+        return
+    end
+
+    if read then
+        for _, post in ipairs(self.posts or {}) do
+            self.db.read[post.id] = true
+        end
+    else
+        wipe(self.db.read)
+    end
+
+    if ns.UI then
+        ns.UI:RefreshPostList()
+        ns.UI:UpdateToolbar()
+        ns.UI:RefreshSettingsPanel()
     end
 end
 
@@ -323,6 +348,11 @@ function Core:ConfirmAnnounceGuild(post)
 
     if not IsInGuild() then
         self:Print("You are not in a guild.")
+        return
+    end
+
+    if self.db and self.db.confirmGuildShare == false then
+        self:AnnounceGuild(post)
         return
     end
 
@@ -453,6 +483,10 @@ function Core:UpdateMinimapVisibility()
     elseif not self.db.minimap.hide then
         self:CreateFallbackMinimapButton()
     end
+
+    if ns.UI and ns.UI.RefreshSettingsPanel then
+        ns.UI:RefreshSettingsPanel()
+    end
 end
 
 function Core:HandleSlash(message)
@@ -474,7 +508,18 @@ function Core:HandleSlash(message)
 
     if command == "toasts" then
         self.db.showToasts = not self.db.showToasts
+        if ns.UI and ns.UI.RefreshSettingsPanel then
+            ns.UI:RefreshSettingsPanel()
+        end
         self:Print(self.db.showToasts and "Toasts enabled." or "Toasts disabled.")
+        return
+    end
+
+    if command == "settings" or command == "options" then
+        self:Show()
+        if ns.UI and ns.UI.ShowSettings then
+            ns.UI:ShowSettings()
+        end
         return
     end
 

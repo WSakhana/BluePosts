@@ -31,12 +31,33 @@ local READ_BUTTON_TEXTURES = {
     MARK_UNREAD = "Interface\\RaidFrame\\ReadyCheck-NotReady",
 }
 
+local SETTINGS_BUTTON_ICON = "Interface\\Icons\\Trade_Engineering"
+
+local READER_FONT_OPTIONS = {
+    { label = "Small", value = 12 },
+    { label = "Normal", value = 13 },
+    { label = "Large", value = 15 },
+    { label = "XL", value = 17 },
+}
+
 local function SetColor(region, color)
     region:SetTextColor(color[1], color[2], color[3], color[4] or 1)
 end
 
 local function SetBackdropColor(frame, color)
     frame:SetBackdropColor(color[1], color[2], color[3], color[4] or 1)
+end
+
+local function SetShown(region, shown)
+    if not region then
+        return
+    end
+
+    if shown then
+        region:Show()
+    else
+        region:Hide()
+    end
 end
 
 local function CreateFont(parent, size, color, flags)
@@ -157,7 +178,10 @@ function UI:Initialize(core)
     self.currentCategory = CATEGORY_META[filters.category or "ALL"] and filters.category or "ALL"
     self.currentRegion = REGION_META[filters.region or "ALL"] and filters.region or "ALL"
     self.currentUnreadOnly = false
+    self.viewMode = "reader"
     self.navButtons = {}
+    self.settingsCheckboxes = {}
+    self.readerFontButtons = {}
     self.activeBlocks = {}
     self.blockPools = {
         font = {},
@@ -279,7 +303,9 @@ function UI:CreateMainFrame()
     end)
 
     self:CreateMaximizeButton(titleBar, close)
+    self:CreateSettingsButton(titleBar, self.maximizeButton or close)
     self:UpdateMaximizeButton()
+    self:UpdateSettingsButton()
 
     self.rail = CreatePanel(frame)
     self.rail:SetPoint("TOPLEFT", frame, "TOPLEFT", 14, -64)
@@ -293,6 +319,7 @@ function UI:CreateMainFrame()
 
     self:CreateRail()
     self:CreateReader()
+    self:CreateSettingsPanel()
 
     frame:Hide()
 end
@@ -304,6 +331,11 @@ function UI:RefreshLayout()
 
     local scrollOffset = self.readerScroll:GetVerticalScroll() or 0
     self:RefreshPostList()
+
+    if self.viewMode == "settings" then
+        self:RefreshSettingsPanel()
+        return
+    end
 
     if self.selectedPost then
         self:RenderPost(self.selectedPost)
@@ -356,6 +388,57 @@ function UI:CreateMaximizeButton(titleBar, closeButton)
     end)
 
     self.maximizeButton = button
+end
+
+function UI:CreateSettingsButton(titleBar, anchorButton)
+    local button = CreateFrame("Button", nil, titleBar, "BackdropTemplate")
+    button:SetSize(22, 22)
+    button:SetPoint("RIGHT", anchorButton, "LEFT", -4, 0)
+    button:SetBackdrop(BACKDROP)
+
+    button.icon = button:CreateTexture(nil, "ARTWORK")
+    button.icon:SetSize(14, 14)
+    button.icon:SetPoint("CENTER", button, "CENTER", 0, 0)
+    button.icon:SetTexture(SETTINGS_BUTTON_ICON)
+    button.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+
+    button:SetScript("OnClick", function()
+        if self.viewMode == "settings" then
+            self:ShowReader()
+        else
+            self:ShowSettings()
+        end
+    end)
+
+    button:SetScript("OnEnter", function()
+        GameTooltip:SetOwner(button, "ANCHOR_LEFT")
+        GameTooltip:SetText(self.viewMode == "settings" and "Back to article" or "Settings", 1, 1, 1, 1, true)
+        GameTooltip:Show()
+        button:SetBackdropColor(0.16, 0.12, 0.20, 0.95)
+        button:SetBackdropBorderColor(THEME.gold[1], THEME.gold[2], THEME.gold[3], 0.95)
+    end)
+
+    button:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+        self:UpdateSettingsButton()
+    end)
+
+    self.settingsButton = button
+end
+
+function UI:UpdateSettingsButton()
+    local button = self.settingsButton
+    if not button then
+        return
+    end
+
+    if self.viewMode == "settings" then
+        button:SetBackdropColor(0.20, 0.13, 0.24, 0.95)
+        button:SetBackdropBorderColor(THEME.gold[1], THEME.gold[2], THEME.gold[3], 0.95)
+    else
+        button:SetBackdropColor(0.11, 0.11, 0.13, 0.85)
+        button:SetBackdropBorderColor(THEME.void[1], THEME.void[2], THEME.void[3], 0.70)
+    end
 end
 
 function UI:UpdateMaximizeButton()
@@ -580,6 +663,7 @@ function UI:CreateReader()
     divider:SetPoint("TOPRIGHT", toolbar, "BOTTOMRIGHT", 0, -8)
     divider:SetHeight(1)
     divider:SetColorTexture(THEME.void[1], THEME.void[2], THEME.void[3], 0.8)
+    self.readerDivider = divider
 
     local scroll = CreateFrame("ScrollFrame", nil, content, "UIPanelScrollFrameTemplate")
     scroll:SetPoint("TOPLEFT", content, "TOPLEFT", 18, -140)
@@ -590,6 +674,308 @@ function UI:CreateReader()
     child:SetSize(600, 1)
     scroll:SetScrollChild(child)
     self.readerChild = child
+end
+
+function UI:GetReaderFontSize()
+    local db = self.core and self.core.db
+    local size = tonumber(db and db.readerFontSize) or 13
+    return math.max(11, math.min(17, size))
+end
+
+function UI:CreateSettingsCheckbox(parent, label, description, getValue, setValue)
+    local row = CreateFrame("Button", nil, parent)
+    row:SetHeight(58)
+    row.getValue = getValue
+    row.setValue = setValue
+
+    row.box = CreateFrame("Frame", nil, row, "BackdropTemplate")
+    row.box:SetSize(20, 20)
+    row.box:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -2)
+    row.box:SetBackdrop(BACKDROP)
+
+    row.check = row.box:CreateTexture(nil, "ARTWORK")
+    row.check:SetSize(18, 18)
+    row.check:SetPoint("CENTER", row.box, "CENTER", 0, 0)
+    row.check:SetTexture("Interface\\Buttons\\UI-CheckBox-Check")
+
+    row.label = CreateFont(row, 12, THEME.text, "")
+    row.label:SetPoint("TOPLEFT", row.box, "TOPRIGHT", 10, 0)
+    row.label:SetPoint("TOPRIGHT", row, "TOPRIGHT", -58, 0)
+    row.label:SetHeight(16)
+    row.label:SetText(label)
+    row.label:SetWordWrap(false)
+
+    row.value = CreateFont(row, 11, THEME.muted, "")
+    row.value:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, 0)
+    row.value:SetSize(50, 16)
+    row.value:SetJustifyH("RIGHT")
+    row.value:SetWordWrap(false)
+
+    row.description = CreateFont(row, 11, THEME.muted, "")
+    row.description:SetPoint("TOPLEFT", row.label, "BOTTOMLEFT", 0, -4)
+    row.description:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, -20)
+    row.description:SetHeight(32)
+    row.description:SetText(description)
+
+    row:SetScript("OnClick", function()
+        row.setValue(not row.getValue())
+        self:RefreshSettingsPanel()
+    end)
+    row:SetScript("OnEnter", function()
+        SetColor(row.label, THEME.gold)
+    end)
+    row:SetScript("OnLeave", function()
+        SetColor(row.label, THEME.text)
+    end)
+
+    table.insert(self.settingsCheckboxes, row)
+    return row
+end
+
+function UI:CreateSettingsPanel()
+    local content = self.content
+    local panel = CreateFrame("Frame", nil, content)
+    panel:SetAllPoints(content)
+    panel:Hide()
+    self.settingsPanel = panel
+
+    local title = CreateFont(panel, 20, THEME.gold, "")
+    title:SetPoint("TOPLEFT", panel, "TOPLEFT", 18, -16)
+    title:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -18, -16)
+    title:SetHeight(24)
+    title:SetText("Settings")
+    title:SetWordWrap(false)
+
+    local subtitle = CreateFont(panel, 12, THEME.muted, "")
+    subtitle:SetPoint("TOPLEFT", panel, "TOPLEFT", 18, -45)
+    subtitle:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -18, -45)
+    subtitle:SetHeight(16)
+    subtitle:SetText("Tune notifications, reading behavior, launcher visibility, and saved state.")
+    subtitle:SetWordWrap(false)
+
+    self.settingsStats = CreateFont(panel, 12, THEME.blue, "")
+    self.settingsStats:SetPoint("TOPLEFT", panel, "TOPLEFT", 18, -67)
+    self.settingsStats:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -18, -67)
+    self.settingsStats:SetHeight(16)
+    self.settingsStats:SetWordWrap(false)
+
+    local divider = panel:CreateTexture(nil, "ARTWORK")
+    divider:SetPoint("TOPLEFT", panel, "TOPLEFT", 14, -86)
+    divider:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -14, -86)
+    divider:SetHeight(1)
+    divider:SetColorTexture(THEME.void[1], THEME.void[2], THEME.void[3], 0.8)
+
+    local scroll = CreateFrame("ScrollFrame", nil, panel, "UIPanelScrollFrameTemplate")
+    scroll:SetPoint("TOPLEFT", panel, "TOPLEFT", 18, -102)
+    scroll:SetPoint("BOTTOMRIGHT", panel, "BOTTOMRIGHT", -34, 16)
+    self.settingsScroll = scroll
+
+    local child = CreateFrame("Frame", nil, scroll)
+    child:SetSize(560, 1)
+    scroll:SetScrollChild(child)
+    self.settingsChild = child
+
+    self.settingsCheckboxes = {}
+    self.readerFontButtons = {}
+
+    local y = -4
+    local function AddSection(text)
+        local heading = CreateFont(child, 13, THEME.gold, "")
+        heading:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        heading:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+        heading:SetHeight(18)
+        heading:SetText(text)
+        heading:SetWordWrap(false)
+        y = y - 28
+        return heading
+    end
+
+    local function AddCheckbox(label, description, getValue, setValue)
+        local row = self:CreateSettingsCheckbox(child, label, description, getValue, setValue)
+        row:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        row:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+        y = y - 64
+        return row
+    end
+
+    AddSection("Notifications")
+    AddCheckbox("Login notifications", "Show a toast when a recent packaged blue post is available after login.", function()
+        return self.core.db.showToasts ~= false
+    end, function(enabled)
+        self.core.db.showToasts = enabled
+    end)
+    AddCheckbox("Notification sound", "Play a short sound when a BluePosts toast appears.", function()
+        return self.core.db.toastSound ~= false
+    end, function(enabled)
+        self.core.db.toastSound = enabled
+    end)
+
+    AddSection("Reading")
+    AddCheckbox("Auto mark read", "Mark posts as read as soon as you open them.", function()
+        return self.core.db.autoMarkRead ~= false
+    end, function(enabled)
+        self.core.db.autoMarkRead = enabled
+    end)
+
+    local fontLabel = CreateFont(child, 12, THEME.text, "")
+    fontLabel:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+    fontLabel:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+    fontLabel:SetHeight(16)
+    fontLabel:SetText("Reader text size")
+    fontLabel:SetWordWrap(false)
+    y = y - 22
+
+    local fontDescription = CreateFont(child, 11, THEME.muted, "")
+    fontDescription:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+    fontDescription:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+    fontDescription:SetHeight(28)
+    fontDescription:SetText("Change article body size without changing the rest of the addon.")
+    y = y - 34
+
+    local previousFontButton
+    for _, option in ipairs(READER_FONT_OPTIONS) do
+        local button = CreateFilterButton(child, option.label, 74)
+        if previousFontButton then
+            button:SetPoint("LEFT", previousFontButton, "RIGHT", 6, 0)
+        else
+            button:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        end
+        button:SetScript("OnClick", function()
+            self.core.db.readerFontSize = option.value
+            if self.selectedPost then
+                self:RenderPost(self.selectedPost)
+            end
+            self:RefreshSettingsPanel()
+        end)
+        button:SetScript("OnLeave", function()
+            self:StyleFilterButton(button, self:GetReaderFontSize() == option.value)
+        end)
+        self.readerFontButtons[option.value] = button
+        previousFontButton = button
+    end
+    y = y - 50
+
+    AddSection("Launcher and sharing")
+    AddCheckbox("Minimap launcher", "Show the minimap or LibDataBroker launcher button.", function()
+        return not self.core.db.minimap.hide
+    end, function(enabled)
+        self.core.db.minimap.hide = not enabled
+        self.core:UpdateMinimapVisibility()
+    end)
+    AddCheckbox("Guild share confirmation", "Ask before sending the selected post link to guild chat.", function()
+        return self.core.db.confirmGuildShare ~= false
+    end, function(enabled)
+        self.core.db.confirmGuildShare = enabled
+    end)
+
+    AddSection("Actions")
+    local actions = CreateFrame("Frame", nil, child)
+    actions:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+    actions:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+    actions:SetHeight(70)
+    self.settingsActions = actions
+
+    local resetWindow = CreateButton(actions, "Reset window", nil, 134)
+    resetWindow:SetPoint("TOPLEFT", actions, "TOPLEFT", 0, 0)
+    resetWindow:SetScript("OnClick", function()
+        self:ResetPosition()
+        self:ShowSettings()
+    end)
+
+    local resetFilters = CreateButton(actions, "Reset filters", nil, 126)
+    resetFilters:SetPoint("LEFT", resetWindow, "RIGHT", 8, 0)
+    resetFilters:SetScript("OnClick", function()
+        self:ResetAllFilters()
+        self:RefreshSettingsPanel()
+    end)
+
+    local markRead = CreateButton(actions, "Mark all read", nil, 132)
+    markRead:SetPoint("TOPLEFT", actions, "TOPLEFT", 0, -38)
+    markRead:SetScript("OnClick", function()
+        self.core:SetAllRead(true)
+    end)
+
+    local markUnread = CreateButton(actions, "Mark all unread", nil, 150)
+    markUnread:SetPoint("LEFT", markRead, "RIGHT", 8, 0)
+    markUnread:SetScript("OnClick", function()
+        self.core:SetAllRead(false)
+    end)
+    y = y - 82
+
+    child:SetHeight(math.max(-y + 16, 1))
+    self:RefreshSettingsPanel()
+end
+
+function UI:RefreshSettingsPanel()
+    if not self.settingsPanel then
+        return
+    end
+
+    if self.settingsScroll and self.settingsChild then
+        self.settingsChild:SetWidth(math.max(520, self.settingsScroll:GetWidth() - 18))
+    end
+
+    for _, row in ipairs(self.settingsCheckboxes or {}) do
+        local enabled = row.getValue and row.getValue() or false
+        SetShown(row.check, enabled)
+        row.value:SetText(enabled and "On" or "Off")
+        SetColor(row.value, enabled and THEME.blue or THEME.muted)
+        if enabled then
+            row.box:SetBackdropColor(0.09, 0.15, 0.18, 0.95)
+            row.box:SetBackdropBorderColor(THEME.blue[1], THEME.blue[2], THEME.blue[3], 0.95)
+        else
+            row.box:SetBackdropColor(0.04, 0.04, 0.05, 0.95)
+            row.box:SetBackdropBorderColor(THEME.void[1], THEME.void[2], THEME.void[3], 0.70)
+        end
+    end
+
+    local selectedFontSize = self:GetReaderFontSize()
+    for _, option in ipairs(READER_FONT_OPTIONS) do
+        local button = self.readerFontButtons and self.readerFontButtons[option.value]
+        if button then
+            self:StyleFilterButton(button, option.value == selectedFontSize)
+        end
+    end
+
+    if self.settingsStats and self.core then
+        local total = #(self.core.posts or {})
+        local unread = self.core:GetUnreadCount()
+        self.settingsStats:SetText(("%d posts  |  %d unread  |  %d read"):format(total, unread, total - unread))
+    end
+end
+
+function UI:SetReaderVisible(visible)
+    SetShown(self.readerTitle, visible)
+    SetShown(self.readerTitleHitbox, visible)
+    SetShown(self.readerMeta, visible)
+    SetShown(self.toolbar, visible)
+    SetShown(self.readerDivider, visible)
+    SetShown(self.readerScroll, visible)
+
+    if not visible and self.classMenu then
+        self.classMenu:Hide()
+    end
+end
+
+function UI:ShowReader()
+    self.viewMode = "reader"
+    SetShown(self.settingsPanel, false)
+    self:SetReaderVisible(true)
+    self:UpdateSettingsButton()
+
+    if self.selectedPost then
+        self:RenderPost(self.selectedPost)
+    else
+        self:ShowEmptyState()
+    end
+end
+
+function UI:ShowSettings()
+    self.viewMode = "settings"
+    self:SetReaderVisible(false)
+    SetShown(self.settingsPanel, true)
+    self:RefreshSettingsPanel()
+    self:UpdateSettingsButton()
 end
 
 function UI:ApplySavedPosition()
@@ -690,6 +1076,27 @@ function UI:ResetLocalFilters()
         self.searchBox:ClearFocus()
     end
 
+    self:RefreshCategoryButtons()
+    self:RefreshSubtitle(false, false)
+    self:RefreshPostList()
+end
+
+function UI:ResetAllFilters()
+    self.currentCategory = "ALL"
+    self.currentRegion = "ALL"
+    self.currentUnreadOnly = false
+
+    if self.core and self.core.db and self.core.db.filters then
+        self.core.db.filters.category = "ALL"
+        self.core.db.filters.region = "ALL"
+    end
+
+    if self.searchBox then
+        self.searchBox:SetText("")
+        self.searchBox:ClearFocus()
+    end
+
+    self:RefreshRegionButtons()
     self:RefreshCategoryButtons()
     self:RefreshSubtitle(false, false)
     self:RefreshPostList()
@@ -934,11 +1341,16 @@ function UI:SelectPost(postID)
         return
     end
 
+    if self.viewMode == "settings" then
+        self:ShowReader()
+    end
+
     self.selectedPost = post
     self.readerTitle:SetText(post.title)
     self.readerMeta:SetText(("%s  |  %s"):format(StripRegion(post.category), post.dateText or ""))
     self.readerScroll:SetVerticalScroll(0)
-    if not self.core:IsRead(post) then
+    local autoMarkRead = not self.core.db or self.core.db.autoMarkRead ~= false
+    if autoMarkRead and not self.core:IsRead(post) then
         self.core:SetRead(post, true)
     end
     self:RenderPost(post)
@@ -1005,6 +1417,7 @@ function UI:RenderPost(post)
 
     local width = math.max(520, self.readerScroll:GetWidth() - 18)
     self.readerChild:SetWidth(width)
+    local bodyFontSize = self:GetReaderFontSize()
 
     local y = -4
 
@@ -1034,7 +1447,7 @@ function UI:RenderPost(post)
             y = y - imageHeight - 28
         else
             local font = self:AcquireFont()
-            local fontSize = 13
+            local fontSize = bodyFontSize
             local color = THEME.text
             local flags = ""
             local prefix = ""
@@ -1042,22 +1455,22 @@ function UI:RenderPost(post)
             local spacing = 3
 
             if block.type == "h1" then
-                fontSize = 20
+                fontSize = bodyFontSize + 7
                 color = THEME.gold
                 flags = "OUTLINE"
                 y = y - 10
             elseif block.type == "h2" then
-                fontSize = 17
+                fontSize = bodyFontSize + 4
                 color = THEME.gold
                 flags = ""
                 y = y - 12
             elseif block.type == "h3" then
-                fontSize = 14
+                fontSize = bodyFontSize + 1
                 color = THEME.blue
                 flags = ""
                 y = y - 8
             elseif block.type == "dev_note" then
-                fontSize = 13
+                fontSize = bodyFontSize
                 color = THEME.blue
                 prefix = "Dev note: "
                 left = 14 + ((block.level or 0) * 18)
@@ -1086,7 +1499,7 @@ function UI:RenderPost(post)
 
     if #(post.content or {}) == 0 then
         local font = self:AcquireFont()
-        font:SetFont(STANDARD_TEXT_FONT, 14, "")
+        font:SetFont(STANDARD_TEXT_FONT, bodyFontSize + 1, "")
         font:SetTextColor(THEME.muted[1], THEME.muted[2], THEME.muted[3], 1)
         font:SetWidth(width)
         font:SetHeight(4096)
@@ -1247,7 +1660,8 @@ function UI:ShowToast(post)
     self.toast:Show()
     self.toast:SetAlpha(1)
 
-    if PlaySound and SOUNDKIT and SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON then
+    local playSound = not self.core or not self.core.db or self.core.db.toastSound ~= false
+    if playSound and PlaySound and SOUNDKIT and SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON then
         PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
     end
 

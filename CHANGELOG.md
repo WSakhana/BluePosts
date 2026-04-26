@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.1
+- Add settings panel and configuration options
+
 ## 1.0.0 - 2026-04-25
 
 - Initial public release.
