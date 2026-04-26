@@ -57,20 +57,27 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
         var version = await ResolveVersionAsync(options, git, cancellationToken);
         Console.WriteLine($"[pipeline] Resolved release version: {version}");
 
+        var tagName = version.ToString();
+        var commitMessage = $"chore: refresh blueposts data for {version}";
+
         var filesToCommit = new List<string> { "BluePosts_Data.lua", "Media/Posts" };
         if (buildResult.NewPosts.Count > 0)
         {
             Console.WriteLine($"[pipeline] Detected {buildResult.NewPosts.Count} new blue post(s) for changelog update.");
+        }
+        else
+        {
+            Console.WriteLine("[pipeline] No new blue posts detected. Recording the commit message in CHANGELOG.md.");
+        }
 
-            var changelogUpdated = await RunStepAsync("Updating CHANGELOG.md", () =>
-                new ChangelogUpdater(Path.Combine(options.RepoRoot, "CHANGELOG.md"))
-                    .PrependNewPostsEntryAsync(version.ToString(), buildResult.NewPosts, cancellationToken));
+        var changelogUpdated = await RunStepAsync("Updating CHANGELOG.md", () =>
+            new ChangelogUpdater(Path.Combine(options.RepoRoot, "CHANGELOG.md"))
+                .PrependEntryAsync(tagName, buildResult.NewPosts, commitMessage, cancellationToken));
 
-            if (changelogUpdated)
-            {
-                filesToCommit.Add("CHANGELOG.md");
-                Console.WriteLine("[pipeline] Updated changelog: CHANGELOG.md");
-            }
+        if (changelogUpdated)
+        {
+            filesToCommit.Add("CHANGELOG.md");
+            Console.WriteLine("[pipeline] Updated changelog: CHANGELOG.md");
         }
 
         if (options.DryRun)
@@ -78,9 +85,6 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
             Console.WriteLine("[pipeline] Dry run enabled. Skipping commit, tag, and push.");
             return;
         }
-
-        var commitMessage = $"chore: refresh blueposts data for {version}";
-        var tagName = version.ToString();
 
         await RunStepAsync($"Creating git commit '{commitMessage}' and tag '{tagName}'", async () =>
         {

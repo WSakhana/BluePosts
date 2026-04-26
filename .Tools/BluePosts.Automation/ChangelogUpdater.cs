@@ -5,9 +5,13 @@ namespace BluePosts.Automation;
 
 internal sealed class ChangelogUpdater(string changelogPath)
 {
-    public async Task<bool> PrependNewPostsEntryAsync(string tag, IReadOnlyList<NewPostSummary> newPosts, CancellationToken cancellationToken)
+    public async Task<bool> PrependEntryAsync(
+        string tag,
+        IReadOnlyList<NewPostSummary> newPosts,
+        string commitMessage,
+        CancellationToken cancellationToken)
     {
-        if (newPosts.Count == 0)
+        if (newPosts.Count == 0 && string.IsNullOrWhiteSpace(commitMessage))
         {
             return false;
         }
@@ -22,25 +26,37 @@ internal sealed class ChangelogUpdater(string changelogPath)
         var lines = content.Split(["\r\n", "\n"], StringSplitOptions.None);
         var headingIndex = Array.FindIndex(lines, line => line.Equals("# Changelog", StringComparison.Ordinal));
 
-        if (headingIndex < 0)
-        {
-            throw new InvalidOperationException($"Could not find '# Changelog' heading in {changelogPath}");
-        }
+        var prefixLines = headingIndex >= 0
+            ? lines.Take(headingIndex + 1).ToList()
+            : [];
 
-        var restIndex = headingIndex + 1;
+        var restIndex = headingIndex >= 0 ? headingIndex + 1 : 0;
         while (restIndex < lines.Length && string.IsNullOrWhiteSpace(lines[restIndex]))
         {
             restIndex++;
         }
 
         var updatedLines = new List<string>(lines.Length + newPosts.Count + 4);
-        updatedLines.AddRange(lines.Take(headingIndex + 1));
-        updatedLines.Add(string.Empty);
-        updatedLines.Add($"## {tag} - {DateTime.UtcNow.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture)} - New Blue Posts");
-
-        foreach (var newPost in newPosts)
+        updatedLines.AddRange(prefixLines);
+        if (updatedLines.Count > 0)
         {
-            updatedLines.Add($"- {newPost.Title}");
+            updatedLines.Add(string.Empty);
+        }
+
+        var today = DateTime.UtcNow.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+        if (newPosts.Count > 0)
+        {
+            updatedLines.Add($"## {tag} - {today} - New Blue Posts");
+
+            foreach (var newPost in newPosts)
+            {
+                updatedLines.Add($"- {newPost.Title}");
+            }
+        }
+        else
+        {
+            updatedLines.Add($"## {tag} - {today}");
+            updatedLines.Add($"- {commitMessage}");
         }
 
         if (restIndex < lines.Length)

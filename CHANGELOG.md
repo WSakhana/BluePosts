@@ -1,4 +1,5 @@
-# Changelog
+## 1.0.6
+- chore: refresh blueposts data for 1.0.6
 
 ## 1.0.1
 - Add settings panel and configuration options
