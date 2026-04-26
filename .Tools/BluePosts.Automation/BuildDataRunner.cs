@@ -38,40 +38,28 @@ internal sealed class BuildDataRunner
         Directory.CreateDirectory(options.MediaRoot);
         var generatedMediaFiles = new HashSet<string>(PathComparer);
 
-        var sourceFolders = Directory.GetDirectories(options.SourcePath)
-            .OrderBy(path => Path.GetFileName(path), StringComparer.OrdinalIgnoreCase)
-            .Where(folderPath =>
-                File.Exists(Path.Combine(folderPath, "metadata.json"))
-                && File.Exists(Path.Combine(folderPath, "index.html")))
-            .ToList();
+        var sourceFolders = await DiscoverSourcePostFoldersAsync(options.SourcePath, cancellationToken);
 
-        Console.WriteLine($"[build] Found {sourceFolders.Count} post folder(s) in {options.SourcePath}");
+        Console.WriteLine($"[build] Found {sourceFolders.Count} usable post folder(s) in {options.SourcePath}");
 
         var posts = new List<PostRecord>();
         for (var index = 0; index < sourceFolders.Count; index++)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            var folderPath = sourceFolders[index];
-            var metadataPath = Path.Combine(folderPath, "metadata.json");
-            var htmlPath = Path.Combine(folderPath, "index.html");
+            var sourceFolder = sourceFolders[index];
 
-            var metadata = await ReadMetadataAsync(metadataPath, cancellationToken);
-            var postId = string.IsNullOrWhiteSpace(metadata.FolderName)
-                ? Path.GetFileName(folderPath)
-                : metadata.FolderName!;
+            Console.WriteLine($"[build] [{index + 1}/{sourceFolders.Count}] Processing {sourceFolder.Id}");
 
-            Console.WriteLine($"[build] [{index + 1}/{sourceFolders.Count}] Processing {postId}");
-
-            var html = await File.ReadAllTextAsync(htmlPath, cancellationToken);
-            var content = ConvertHtmlToBlocks(html, folderPath, postId, options.MediaRoot, generatedMediaFiles);
+            var html = await File.ReadAllTextAsync(sourceFolder.HtmlPath, cancellationToken);
+            var content = ConvertHtmlToBlocks(html, sourceFolder.FolderPath, sourceFolder.Id, options.MediaRoot, generatedMediaFiles);
             posts.Add(new PostRecord(
-                Id: postId,
-                PostKey: metadata.PostKey ?? string.Empty,
-                Title: metadata.Title ?? string.Empty,
-                Category: metadata.Category ?? string.Empty,
-                Timestamp: GetUnixTimestamp(metadata.ExportedAt),
-                Url: metadata.SourceUrl ?? string.Empty,
+                Id: sourceFolder.Id,
+                PostKey: sourceFolder.PostKey,
+                Title: sourceFolder.Metadata.Title ?? string.Empty,
+                Category: sourceFolder.Metadata.Category ?? string.Empty,
+                Timestamp: sourceFolder.Timestamp,
+                Url: sourceFolder.Metadata.SourceUrl ?? string.Empty,
                 Content: content));
         }
 
@@ -109,6 +97,113 @@ internal sealed class BuildDataRunner
 
         return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot, newPosts);
     }
+
+    private static async Task<List<SourcePostFolder>> DiscoverSourcePostFoldersAsync(string sourcePath, CancellationToken cancellationToken)
+    {
+        var folderPaths = Directory.GetDirectories(sourcePath)
+            .OrderBy(path => Path.GetFileName(path), StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        var candidates = new List<SourcePostFolder>(folderPaths.Count);
+        var skippedIncomplete = 0;
+
+        foreach (var folderPath in folderPaths)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var metadataPath = Path.Combine(folderPath, "metadata.json");
+            var htmlPath = Path.Combine(folderPath, "index.html");
+            var missingFiles = new List<string>(2);
+            if (!File.Exists(metadataPath))
+            {
+                missingFiles.Add("metadata.json");
+            }
+
+            if (!File.Exists(htmlPath))
+            {
+                missingFiles.Add("index.html");
+            }
+
+            if (missingFiles.Count > 0)
+            {
+                skippedIncomplete++;
+                Console.WriteLine($"[build] Skipping incomplete post folder {Path.GetFileName(folderPath)}: missing {string.Join(", ", missingFiles)}");
+                continue;
+            }
+
+            var metadata = await ReadMetadataAsync(metadataPath, cancellationToken);
+            var postId = string.IsNullOrWhiteSpace(metadata.FolderName)
+                ? Path.GetFileName(folderPath)
+                : metadata.FolderName!;
+            var timestamp = GetUnixTimestamp(metadata.ExportedAt);
+
+            candidates.Add(new SourcePostFolder(
+                FolderPath: folderPath,
+                HtmlPath: htmlPath,
+                Id: postId,
+                PostKey: metadata.PostKey ?? string.Empty,
+                Timestamp: timestamp,
+                Metadata: metadata));
+        }
+
+        if (skippedIncomplete > 0)
+        {
+            Console.WriteLine($"[build] Ignored {skippedIncomplete} incomplete post folder(s).");
+        }
+
+        return SelectLatestPostFolders(candidates);
+    }
+
+    private static List<SourcePostFolder> SelectLatestPostFolders(IReadOnlyList<SourcePostFolder> candidates)
+    {
+        var selectedByPostKey = new Dictionary<string, SourcePostFolder>(StringComparer.Ordinal);
+        var postsWithoutKey = new List<SourcePostFolder>();
+
+        foreach (var candidate in candidates)
+        {
+            if (string.IsNullOrWhiteSpace(candidate.PostKey))
+            {
+                postsWithoutKey.Add(candidate);
+                continue;
+            }
+
+            if (!selectedByPostKey.TryGetValue(candidate.PostKey, out var existing)
+                || candidate.Timestamp > existing.Timestamp)
+            {
+                selectedByPostKey[candidate.PostKey] = candidate;
+            }
+        }
+
+        var duplicateGroups = candidates
+            .Where(candidate => !string.IsNullOrWhiteSpace(candidate.PostKey))
+            .GroupBy(candidate => candidate.PostKey, StringComparer.Ordinal)
+            .Where(group => group.Count() > 1)
+            .ToList();
+
+        foreach (var group in duplicateGroups)
+        {
+            var selected = selectedByPostKey[group.Key];
+            var skipped = group
+                .Where(candidate => !PathComparer.Equals(candidate.FolderPath, selected.FolderPath))
+                .Select(candidate => $"{candidate.Id} ({FormatTimestamp(candidate.Timestamp)})")
+                .OrderBy(value => value, StringComparer.OrdinalIgnoreCase);
+
+            Console.WriteLine($"[build] post_key {group.Key}: keeping {selected.Id} ({FormatTimestamp(selected.Timestamp)}), skipping {string.Join(", ", skipped)}");
+        }
+
+        if (duplicateGroups.Count > 0)
+        {
+            var skippedDuplicateCount = duplicateGroups.Sum(group => group.Count() - 1);
+            Console.WriteLine($"[build] Ignored {skippedDuplicateCount} older duplicate post folder(s) by post_key/exported_at.");
+        }
+
+        return selectedByPostKey.Values
+            .Concat(postsWithoutKey)
+            .OrderBy(candidate => Path.GetFileName(candidate.FolderPath), StringComparer.OrdinalIgnoreCase)
+            .ToList();
+    }
+
+    private static string FormatTimestamp(long timestamp) =>
+        DateTimeOffset.FromUnixTimeSeconds(timestamp).UtcDateTime.ToString("yyyy-MM-dd HH:mm:ss 'UTC'", CultureInfo.InvariantCulture);
 
     private static async Task<SourceMetadata> ReadMetadataAsync(string metadataPath, CancellationToken cancellationToken)
     {
@@ -762,6 +857,14 @@ internal sealed class BuildDataRunner
         [property: JsonPropertyName("category")] string? Category,
         [property: JsonPropertyName("exported_at")] JsonElement ExportedAt,
         [property: JsonPropertyName("source_url")] string? SourceUrl);
+
+    private sealed record SourcePostFolder(
+        string FolderPath,
+        string HtmlPath,
+        string Id,
+        string PostKey,
+        long Timestamp,
+        SourceMetadata Metadata);
 
     private sealed record ExistingGeneratedData(string? Content, long? PackageTimestamp, HashSet<string> PostIds);
 }
