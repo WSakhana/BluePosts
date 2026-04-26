@@ -1,8 +1,20 @@
-# BluePosts
+# BluePosts - Blizzard Blue Posts Reader for WoW
 
-BluePosts is a World of Warcraft Retail addon for Midnight 12.0.5 that lets you browse bundled Blizzard blue posts directly in game.
+**BluePosts** is a lightweight World of Warcraft Retail addon for Midnight that lets you read bundled Blizzard blue posts directly in game.
 
-The addon ships with preprocessed post content, bundled media, unread tracking, and a searchable interface so the latest packaged snapshot can be read without leaving the client.
+Stay informed about **class changes, hotfixes, announcements and community updates** without alt-tabbing. BluePosts includes a clean in-game reader with search, category filters, unread tracking, login notifications, minimap support and quick links to the original Blizzard forum posts.
+
+[![CurseForge](https://img.shields.io/badge/CurseForge-BluePosts-orange?logo=curseforge)](https://www.curseforge.com/wow/addons/blueposts)
+![WoW Retail](https://img.shields.io/badge/WoW-Retail-blue)
+![Game Version](https://img.shields.io/badge/Midnight-12.0.5-blueviolet)
+![Language](https://img.shields.io/badge/Lua-90%25-2C2D72)
+![License](https://img.shields.io/badge/License-Apache--2.0-green)
+
+## Why BluePosts?
+
+Blizzard blue posts often contain important information about WoW updates, class tuning, hotfixes and upcoming changes. BluePosts brings those packaged official posts into your World of Warcraft UI so you can browse them from inside the game client.
+
+BluePosts does not fetch live forum data while you play. Posts are bundled with each addon release for a fast, lightweight and reliable in-game archive. With CurseForge automatic updates enabled, new BluePosts releases can be installed automatically when they become available.
 
 ## Features
 
