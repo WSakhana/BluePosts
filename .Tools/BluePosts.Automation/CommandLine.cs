@@ -7,7 +7,7 @@ internal static class CommandLine
         BluePosts.Automation
 
         Commands:
-                pipeline    Pull the repo, download Google Drive source data, rebuild addon data, commit, tag, push, then delete downloaded data.
+                pipeline    Pull the repo, sync Google Drive source data, rebuild addon data, commit, tag, and push.
           build-data  Rebuild BluePosts_Data.lua and Media/Posts from a local exported BluePosts folder.
           help        Show this help.
 
@@ -15,7 +15,7 @@ internal static class CommandLine
                 --repo-root <path>             Repository root. Temporary clone folders are cleaned before startup.
           --repo-url <url>               Optional git URL used to clone the repository when repo-root does not exist yet.
             --github-token <value>         Optional GitHub token used for authenticated HTTPS clone, fetch, pull, and push.
-                --source-path <path>           Temporary local folder used for the downloaded Google Drive tree. Cleaned before startup.
+                --source-path <path>           Temporary local folder used as an incremental mirror of the Google Drive tree.
           --drive-folder-id <id>         Google Drive folder ID containing the exported BluePosts data.
           --google-credentials <value>   Path to a service account JSON file or the raw JSON content itself.
           --remote <name>                Git remote name. Default: origin.

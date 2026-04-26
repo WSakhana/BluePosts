@@ -16,7 +16,7 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
         Console.WriteLine($"[pipeline] Google Drive export path: {options.SourcePath}");
         Console.WriteLine($"[pipeline] Generated data output: {options.OutputPath}");
 
-        await RunStepAsync("Cleaning temporary directories", () => CleanupTemporaryDirectoriesAsync(options, cancellationToken));
+        await RunStepAsync("Preparing working directories", () => PrepareWorkingDirectoriesAsync(options, cancellationToken));
 
         var git = new GitClient(options.RepoRoot, options.GithubToken);
         await RunStepAsync("Ensuring repository is available", () => git.EnsureRepositoryAsync(options.RepoUrl, options.BranchName, cancellationToken));
@@ -105,9 +105,9 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
             ? elapsed.ToString(@"m\:ss")
             : $"{elapsed.TotalSeconds:F1}s";
 
-    private static async Task CleanupTemporaryDirectoriesAsync(PipelineOptions options, CancellationToken cancellationToken)
+    private static async Task PrepareWorkingDirectoriesAsync(PipelineOptions options, CancellationToken cancellationToken)
     {
-        await CleanupDirectoryAsync(options.SourcePath, "downloaded Google Drive data", cancellationToken);
+        Directory.CreateDirectory(options.SourcePath);
 
         if (ShouldCleanupRepoRoot(options.RepoRoot))
         {

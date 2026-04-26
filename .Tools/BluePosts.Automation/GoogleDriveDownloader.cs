@@ -6,8 +6,14 @@ namespace BluePosts.Automation;
 
 internal sealed class GoogleDriveDownloader
 {
+    private static readonly StringComparer EntryNameComparer = OperatingSystem.IsWindows() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
+    private static readonly TimeSpan ModifiedTimeTolerance = TimeSpan.FromSeconds(2);
+
     private readonly DriveService driveService;
     private int downloadedFileCount;
+    private int skippedFileCount;
+    private int deletedEntryCount;
+    private int ignoredDuplicateCount;
     private int visitedFolderCount;
     private string? rootDestinationPath;
 
@@ -26,23 +32,21 @@ internal sealed class GoogleDriveDownloader
 
     public async Task DownloadFolderAsync(string folderId, string destinationPath, CancellationToken cancellationToken)
     {
-        PrepareDestination(destinationPath);
+        EnsureDestination(destinationPath);
         downloadedFileCount = 0;
+        skippedFileCount = 0;
+        deletedEntryCount = 0;
+        ignoredDuplicateCount = 0;
         visitedFolderCount = 0;
         rootDestinationPath = Path.GetFullPath(destinationPath);
 
         Console.WriteLine($"[drive] Export destination: {rootDestinationPath}");
         await DownloadFolderRecursiveAsync(folderId, rootDestinationPath, cancellationToken, 0);
-        Console.WriteLine($"[drive] Download complete: {downloadedFileCount} file(s) across {visitedFolderCount} folder(s)");
+        Console.WriteLine($"[drive] Sync complete: {downloadedFileCount} downloaded, {skippedFileCount} unchanged, {deletedEntryCount} stale item(s) removed, {ignoredDuplicateCount} duplicate Drive item(s) ignored across {visitedFolderCount} folder(s)");
     }
 
-    private static void PrepareDestination(string destinationPath)
+    private static void EnsureDestination(string destinationPath)
     {
-        if (Directory.Exists(destinationPath))
-        {
-            Directory.Delete(destinationPath, true);
-        }
-
         Directory.CreateDirectory(destinationPath);
     }
 
@@ -57,7 +61,12 @@ internal sealed class GoogleDriveDownloader
         Console.WriteLine($"{folderIndent}[drive] Found {items.Count} item(s) in {displayPath}");
 
         var itemIndent = GetIndent(depth + 1);
-        foreach (var item in items)
+        var uniqueItems = SelectUniqueItems(items, destinationPath, itemIndent);
+        var remoteEntryNames = uniqueItems
+            .Select(item => item.Name)
+            .ToHashSet(EntryNameComparer);
+
+        foreach (var item in uniqueItems)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -65,17 +74,41 @@ internal sealed class GoogleDriveDownloader
             var relativeTargetPath = GetDisplayPath(targetPath);
             if (item.MimeType == "application/vnd.google-apps.folder")
             {
+                if (File.Exists(targetPath))
+                {
+                    DeleteFile(targetPath);
+                    deletedEntryCount++;
+                    Console.WriteLine($"{itemIndent}[drive] Removed stale file before folder sync: {relativeTargetPath}");
+                }
+
                 Console.WriteLine($"{itemIndent}[drive] Entering folder: {relativeTargetPath}");
                 Directory.CreateDirectory(targetPath);
                 await DownloadFolderRecursiveAsync(item.Id, targetPath, cancellationToken, depth + 1);
             }
             else
             {
-                downloadedFileCount++;
-                Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadedFileCount}: {relativeTargetPath}");
-                await DownloadFileAsync(item.Id, targetPath, cancellationToken);
+                if (Directory.Exists(targetPath))
+                {
+                    DeleteDirectory(targetPath);
+                    deletedEntryCount++;
+                    Console.WriteLine($"{itemIndent}[drive] Removed stale folder before file sync: {relativeTargetPath}");
+                }
+
+                if (ShouldDownloadFile(item, targetPath))
+                {
+                    downloadedFileCount++;
+                    Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadedFileCount}: {relativeTargetPath}");
+                    await DownloadFileAsync(item, targetPath, cancellationToken);
+                }
+                else
+                {
+                    skippedFileCount++;
+                    Console.WriteLine($"{itemIndent}[drive] Skipping unchanged file #{skippedFileCount}: {relativeTargetPath}");
+                }
             }
         }
+
+        RemoveStaleEntries(destinationPath, remoteEntryNames, itemIndent);
     }
 
     private string GetDisplayPath(string path)
@@ -100,7 +133,7 @@ internal sealed class GoogleDriveDownloader
         {
             var request = driveService.Files.List();
             request.Q = $"'{folderId}' in parents and trashed = false";
-            request.Fields = "nextPageToken, files(id, name, mimeType)";
+            request.Fields = "nextPageToken, files(id, name, mimeType, modifiedTime, size)";
             request.PageSize = 1000;
             request.IncludeItemsFromAllDrives = true;
             request.SupportsAllDrives = true;
@@ -113,7 +146,9 @@ internal sealed class GoogleDriveDownloader
                 items.AddRange(response.Files.Select(file => new DriveItem(
                     file.Id ?? throw new InvalidOperationException("Google Drive file id is missing."),
                     file.Name ?? throw new InvalidOperationException("Google Drive file name is missing."),
-                    file.MimeType ?? string.Empty)));
+                    file.MimeType ?? string.Empty,
+                    file.ModifiedTimeDateTimeOffset,
+                    file.Size)));
             }
 
             pageToken = response.NextPageToken;
@@ -123,14 +158,128 @@ internal sealed class GoogleDriveDownloader
         return items;
     }
 
-    private async Task DownloadFileAsync(string fileId, string destinationPath, CancellationToken cancellationToken)
+    private IReadOnlyList<DriveItem> SelectUniqueItems(IReadOnlyList<DriveItem> items, string destinationPath, string itemIndent)
+    {
+        var uniqueItems = new List<DriveItem>();
+
+        foreach (var group in items.GroupBy(item => item.Name, EntryNameComparer))
+        {
+            var preferredItem = group
+                .OrderByDescending(IsFolder)
+                .ThenByDescending(item => item.ModifiedTime ?? DateTimeOffset.MinValue)
+                .ThenByDescending(item => item.Size ?? -1)
+                .ThenBy(item => item.Id, StringComparer.Ordinal)
+                .First();
+
+            uniqueItems.Add(preferredItem);
+
+            var skippedItems = group
+                .Where(item => !string.Equals(item.Id, preferredItem.Id, StringComparison.Ordinal))
+                .ToList();
+
+            if (skippedItems.Count == 0)
+            {
+                continue;
+            }
+
+            ignoredDuplicateCount += skippedItems.Count;
+            var relativeTargetPath = GetDisplayPath(Path.Combine(destinationPath, preferredItem.Name));
+            var preferredKind = IsFolder(preferredItem) ? "folder" : "file";
+            Console.WriteLine($"{itemIndent}[drive] Ignoring {skippedItems.Count} duplicate Drive item(s) for {relativeTargetPath}; keeping the preferred {preferredKind}.");
+        }
+
+        return uniqueItems;
+    }
+
+    private static bool IsFolder(DriveItem item) => item.MimeType == "application/vnd.google-apps.folder";
+
+    private bool ShouldDownloadFile(DriveItem item, string destinationPath)
+    {
+        if (!File.Exists(destinationPath))
+        {
+            return true;
+        }
+
+        var fileInfo = new FileInfo(destinationPath);
+        if (item.Size.HasValue && fileInfo.Length != item.Size.Value)
+        {
+            return true;
+        }
+
+        if (!item.ModifiedTime.HasValue)
+        {
+            return false;
+        }
+
+        return fileInfo.LastWriteTimeUtc.Add(ModifiedTimeTolerance) < item.ModifiedTime.Value.UtcDateTime;
+    }
+
+    private async Task DownloadFileAsync(DriveItem item, string destinationPath, CancellationToken cancellationToken)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(destinationPath) ?? throw new InvalidOperationException("Destination path must include a directory."));
         await using var stream = File.Create(destinationPath);
-        var request = driveService.Files.Get(fileId);
+        var request = driveService.Files.Get(item.Id);
         request.SupportsAllDrives = true;
         await request.DownloadAsync(stream, cancellationToken);
+
+        if (item.ModifiedTime.HasValue)
+        {
+            File.SetLastWriteTimeUtc(destinationPath, item.ModifiedTime.Value.UtcDateTime);
+        }
     }
 
-    private sealed record DriveItem(string Id, string Name, string MimeType);
+    private void RemoveStaleEntries(string destinationPath, HashSet<string> remoteEntryNames, string itemIndent)
+    {
+        foreach (var entryPath in Directory.EnumerateFileSystemEntries(destinationPath))
+        {
+            var entryName = Path.GetFileName(entryPath);
+            if (remoteEntryNames.Contains(entryName))
+            {
+                continue;
+            }
+
+            var relativePath = GetDisplayPath(entryPath);
+            if (Directory.Exists(entryPath))
+            {
+                DeleteDirectory(entryPath);
+                Console.WriteLine($"{itemIndent}[drive] Removed stale folder: {relativePath}");
+            }
+            else
+            {
+                DeleteFile(entryPath);
+                Console.WriteLine($"{itemIndent}[drive] Removed stale file: {relativePath}");
+            }
+
+            deletedEntryCount++;
+        }
+    }
+
+    private static void DeleteDirectory(string path)
+    {
+        ResetAttributes(path);
+        Directory.Delete(path, true);
+    }
+
+    private static void DeleteFile(string path)
+    {
+        File.SetAttributes(path, FileAttributes.Normal);
+        File.Delete(path);
+    }
+
+    private static void ResetAttributes(string path)
+    {
+        foreach (var filePath in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
+        {
+            File.SetAttributes(filePath, FileAttributes.Normal);
+        }
+
+        foreach (var directoryPath in Directory.EnumerateDirectories(path, "*", SearchOption.AllDirectories))
+        {
+            File.SetAttributes(directoryPath, FileAttributes.Normal);
+        }
+
+        File.SetAttributes(path, FileAttributes.Normal);
+    }
+
+    private sealed record DriveItem(string Id, string Name, string MimeType, DateTimeOffset? ModifiedTime, long? Size);
 }

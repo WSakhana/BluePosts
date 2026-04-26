@@ -6,11 +6,11 @@ Console .NET 10 qui remplace `BuildData.ps1` et automatise le pipeline complet d
 
 - `build-data` : reconstruit `BluePosts_Data.lua` et `Media/Posts` a partir d'un export local `BluePosts`.
 - `pipeline` :
-  - nettoie les dossiers temporaires configures avant de demarrer
+  - prepare les dossiers de travail et nettoie seulement le clone git temporaire si necessaire
   - clone le repo dans un dossier temporaire si `BLUEPOSTS_REPO_ROOT` ne contient pas deja un repo git
   - verifie un repo git local propre
   - fait `git fetch` puis `git pull --ff-only`
-  - telecharge le dossier Google Drive `BluePosts`
+  - synchronise le dossier Google Drive `BluePosts` en ne telechargeant que les fichiers nouveaux ou modifies
   - regenere `BluePosts_Data.lua` et `Media/Posts`
   - cree le commit git
   - cree le tag git
@@ -71,11 +71,11 @@ docker run --rm \
   blueposts-automation
 ```
 
-Dans ce mode, le repo est clone dans un dossier temporaire du conteneur, puis supprime apres le `git push`. Le dossier Google Drive telecharge est aussi supprime.
+Dans ce mode, le repo peut etre clone dans un dossier temporaire du conteneur. Ce clone temporaire est nettoye au debut du lancement suivant s'il est distinct du repo courant. Le dossier Google Drive local est conserve pour permettre une synchronisation incrementale.
 
 L'image Docker definit aussi une identite git par defaut pour permettre les `git commit` et `git tag` dans un conteneur ephemere. Pour la remplacer, passez `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME` et `GIT_COMMITTER_EMAIL` au `docker run` ou via votre orchestrateur.
 
-Les dossiers temporaires sont nettoyes au debut du lancement suivant. Ils ne sont plus supprimes automatiquement en fin d'execution.
+Le clone git temporaire est nettoye au debut du lancement suivant s'il est distinct du repo courant. Le dossier Google Drive local n'est pas purge entre les runs: il est synchronise comme un miroir incremental, avec telechargement des nouveaux fichiers, mise a jour des fichiers modifies et suppression des elements locaux devenus obsoletes.
 
 Le `CMD` par defaut lance `pipeline`. Pour ne lancer que la conversion locale:
 
@@ -140,5 +140,5 @@ dotnet run --project ".Tools\BluePosts.Automation\BluePosts.Automation.csproj" -
 - Si la regeneration ne modifie pas `BluePosts_Data.lua` ou `Media/Posts`, aucun commit, tag ou push n'est cree.
 - Les tags git doivent etre au format direct `1.0.2`, sans prefixe `v`.
 - Le versioning est calcule depuis le dernier tag valide, puis incremente automatiquement au format `1.0.2 -> 1.0.3 -> ... -> 1.0.9 -> 1.1.0`.
-- Le pipeline nettoie `BLUEPOSTS_SOURCE_PATH` au debut d'un lancement.
+- Le pipeline conserve `BLUEPOSTS_SOURCE_PATH` entre les runs et le synchronise de facon incrementale avec Google Drive.
 - Si `BLUEPOSTS_REPO_ROOT` est un dossier temporaire separe du repo courant, il est aussi nettoye au debut d'un lancement avant reclonage.
