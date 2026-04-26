@@ -15,7 +15,11 @@ internal sealed class BuildDataRunner
 {
     private static readonly Regex DeveloperNoteRegex = new("^(?i:Developers.? notes:)\\s*", RegexOptions.Compiled);
     private static readonly Regex GeneratedPostIdRegex = new(@"^\s*\[""(?<id>[^""]+)""\]\s*=\s*\{$", RegexOptions.Compiled);
+    private static readonly Regex PackageTimestampRegex = new(@"^\s*package_timestamp\s*=\s*(?<timestamp>\d+)\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex WhitespaceRegex = new("\\s+", RegexOptions.Compiled);
+    private static readonly StringComparer PathComparer = OperatingSystem.IsWindows()
+        ? StringComparer.OrdinalIgnoreCase
+        : StringComparer.Ordinal;
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         PropertyNameCaseInsensitive = true
@@ -28,11 +32,11 @@ internal sealed class BuildDataRunner
             throw new InvalidOperationException($"Source path not found: {options.SourcePath}");
         }
 
-        var existingPostIds = await ReadExistingPostIdsAsync(options.OutputPath, cancellationToken);
+        var existingData = await ReadExistingGeneratedDataAsync(options.OutputPath, cancellationToken);
 
         Directory.CreateDirectory(Path.GetDirectoryName(options.OutputPath) ?? throw new InvalidOperationException("Output path must include a directory."));
         Directory.CreateDirectory(options.MediaRoot);
-        ClearDirectoryContents(options.MediaRoot);
+        var generatedMediaFiles = new HashSet<string>(PathComparer);
 
         var sourceFolders = Directory.GetDirectories(options.SourcePath)
             .OrderBy(path => Path.GetFileName(path), StringComparer.OrdinalIgnoreCase)
@@ -60,7 +64,7 @@ internal sealed class BuildDataRunner
             Console.WriteLine($"[build] [{index + 1}/{sourceFolders.Count}] Processing {postId}");
 
             var html = await File.ReadAllTextAsync(htmlPath, cancellationToken);
-            var content = ConvertHtmlToBlocks(html, folderPath, postId, options.MediaRoot);
+            var content = ConvertHtmlToBlocks(html, folderPath, postId, options.MediaRoot, generatedMediaFiles);
             posts.Add(new PostRecord(
                 Id: postId,
                 PostKey: metadata.PostKey ?? string.Empty,
@@ -77,12 +81,131 @@ internal sealed class BuildDataRunner
             .ToList();
 
         var newPosts = orderedPosts
-            .Where(post => !existingPostIds.Contains(post.Id))
+            .Where(post => !existingData.PostIds.Contains(post.Id))
             .Select(post => new NewPostSummary(post.Id, post.Title))
             .ToList();
 
-        var packageTimestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        PruneStaleMedia(options.MediaRoot, generatedMediaFiles);
 
+        var generatedContent = BuildLuaData(
+            orderedPosts,
+            newPosts,
+            existingData.PackageTimestamp ?? DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+
+        var dataFileChanged = !GeneratedPayloadEquals(existingData.Content, generatedContent);
+        if (dataFileChanged)
+        {
+            generatedContent = BuildLuaData(orderedPosts, newPosts, DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+            Console.WriteLine($"[build] Writing generated data file: {options.OutputPath}");
+            await File.WriteAllTextAsync(options.OutputPath, generatedContent, new UTF8Encoding(false), cancellationToken);
+        }
+        else
+        {
+            Console.WriteLine($"[build] Generated data payload unchanged; keeping existing file: {options.OutputPath}");
+        }
+
+        Console.WriteLine($"[build] Rebuilt {orderedPosts.Count} post(s) and synchronized media in {options.MediaRoot}");
+        Console.WriteLine($"[build] Detected {newPosts.Count} new post(s)");
+
+        return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot, newPosts);
+    }
+
+    private static async Task<SourceMetadata> ReadMetadataAsync(string metadataPath, CancellationToken cancellationToken)
+    {
+        await using var stream = File.OpenRead(metadataPath);
+        var metadata = await JsonSerializer.DeserializeAsync<SourceMetadata>(stream, JsonOptions, cancellationToken);
+        return metadata ?? throw new InvalidOperationException($"Could not deserialize metadata from {metadataPath}");
+    }
+
+    private static async Task<ExistingGeneratedData> ReadExistingGeneratedDataAsync(string outputPath, CancellationToken cancellationToken)
+    {
+        if (!File.Exists(outputPath))
+        {
+            return new ExistingGeneratedData(null, null, []);
+        }
+
+        var content = await File.ReadAllTextAsync(outputPath, cancellationToken);
+        var postIds = new HashSet<string>(StringComparer.Ordinal);
+        long? packageTimestamp = null;
+
+        using var reader = new StringReader(content);
+        while (reader.ReadLine() is { } line)
+        {
+            var postIdMatch = GeneratedPostIdRegex.Match(line);
+            if (postIdMatch.Success)
+            {
+                postIds.Add(postIdMatch.Groups["id"].Value);
+                continue;
+            }
+
+            if (packageTimestamp is not null)
+            {
+                continue;
+            }
+
+            var timestampMatch = PackageTimestampRegex.Match(line);
+            if (timestampMatch.Success
+                && long.TryParse(timestampMatch.Groups["timestamp"].Value, CultureInfo.InvariantCulture, out var parsedTimestamp))
+            {
+                packageTimestamp = parsedTimestamp;
+            }
+        }
+
+        return new ExistingGeneratedData(content, packageTimestamp, postIds);
+    }
+
+    private static bool GeneratedPayloadEquals(string? existingContent, string generatedContent)
+    {
+        if (existingContent is null)
+        {
+            return false;
+        }
+
+        return string.Equals(
+            NormalizeGeneratedPayload(existingContent),
+            NormalizeGeneratedPayload(generatedContent),
+            StringComparison.Ordinal);
+    }
+
+    private static string NormalizeGeneratedPayload(string content)
+    {
+        var normalized = content.Replace("\r\n", "\n", StringComparison.Ordinal);
+        var builder = new StringBuilder(normalized.Length);
+        using var reader = new StringReader(normalized);
+        var skippingNewPostIds = false;
+
+        while (reader.ReadLine() is { } line)
+        {
+            var trimmed = line.TrimStart();
+            if (trimmed.StartsWith("package_timestamp = ", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            if (!skippingNewPostIds && trimmed.StartsWith("new_post_ids = {", StringComparison.Ordinal))
+            {
+                skippingNewPostIds = true;
+                continue;
+            }
+
+            if (skippingNewPostIds)
+            {
+                if (trimmed.StartsWith("},", StringComparison.Ordinal))
+                {
+                    skippingNewPostIds = false;
+                }
+
+                continue;
+            }
+
+            builder.AppendLine(line);
+        }
+
+        return builder.ToString();
+    }
+
+    private static string BuildLuaData(IReadOnlyList<PostRecord> orderedPosts, IReadOnlyList<NewPostSummary> newPosts, long packageTimestamp)
+    {
         var builder = new StringBuilder();
         builder.AppendLine("-- Generated data. Do not edit manually.");
         builder.AppendLine("BluePosts_Data = {");
@@ -119,62 +242,44 @@ internal sealed class BuildDataRunner
 
         builder.AppendLine("    },");
         builder.AppendLine("}");
-        Console.WriteLine($"[build] Writing generated data file: {options.OutputPath}");
-        await File.WriteAllTextAsync(options.OutputPath, builder.ToString(), new UTF8Encoding(false), cancellationToken);
-        Console.WriteLine($"[build] Rebuilt {orderedPosts.Count} post(s) and refreshed media in {options.MediaRoot}");
-        Console.WriteLine($"[build] Detected {newPosts.Count} new post(s)");
-
-        return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot, newPosts);
+        return builder.ToString();
     }
 
-    private static async Task<SourceMetadata> ReadMetadataAsync(string metadataPath, CancellationToken cancellationToken)
+    private static void PruneStaleMedia(string mediaRoot, HashSet<string> generatedMediaFiles)
     {
-        await using var stream = File.OpenRead(metadataPath);
-        var metadata = await JsonSerializer.DeserializeAsync<SourceMetadata>(stream, JsonOptions, cancellationToken);
-        return metadata ?? throw new InvalidOperationException($"Could not deserialize metadata from {metadataPath}");
-    }
-
-    private static async Task<HashSet<string>> ReadExistingPostIdsAsync(string outputPath, CancellationToken cancellationToken)
-    {
-        if (!File.Exists(outputPath))
-        {
-            return [];
-        }
-
-        var lines = await File.ReadAllLinesAsync(outputPath, cancellationToken);
-        var postIds = new HashSet<string>(StringComparer.Ordinal);
-
-        foreach (var line in lines)
-        {
-            var match = GeneratedPostIdRegex.Match(line);
-            if (match.Success)
-            {
-                postIds.Add(match.Groups["id"].Value);
-            }
-        }
-
-        return postIds;
-    }
-
-    private static void ClearDirectoryContents(string path)
-    {
-        if (!Directory.Exists(path))
+        if (!Directory.Exists(mediaRoot))
         {
             return;
         }
 
-        foreach (var directory in Directory.GetDirectories(path))
+        foreach (var file in Directory.GetFiles(mediaRoot, "*", SearchOption.AllDirectories))
         {
-            Directory.Delete(directory, true);
+            var fullPath = Path.GetFullPath(file);
+            if (!generatedMediaFiles.Contains(fullPath))
+            {
+                File.Delete(fullPath);
+            }
         }
 
-        foreach (var file in Directory.GetFiles(path))
+        var directories = Directory.GetDirectories(mediaRoot, "*", SearchOption.AllDirectories)
+            .OrderByDescending(path => path.Length)
+            .ToList();
+
+        foreach (var directory in directories)
         {
-            File.Delete(file);
+            if (!Directory.EnumerateFileSystemEntries(directory).Any())
+            {
+                Directory.Delete(directory);
+            }
         }
     }
 
-    private static List<PostBlock> ConvertHtmlToBlocks(string html, string folderPath, string postId, string mediaRoot)
+    private static List<PostBlock> ConvertHtmlToBlocks(
+        string html,
+        string folderPath,
+        string postId,
+        string mediaRoot,
+        HashSet<string> generatedMediaFiles)
     {
         var normalizedHtml = html.Replace("&nbsp;", "&#160;", StringComparison.Ordinal);
         var document = new HtmlDocument();
@@ -190,7 +295,7 @@ internal sealed class BuildDataRunner
 
         foreach (var node in root.ChildNodes)
         {
-            ProcessNode(node, blocks, folderPath, postId, mediaRoot, imageCache);
+            ProcessNode(node, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles);
         }
 
         return blocks;
@@ -202,7 +307,8 @@ internal sealed class BuildDataRunner
         string folderPath,
         string postId,
         string mediaRoot,
-        Dictionary<string, GeneratedImageEntry> imageCache)
+        Dictionary<string, GeneratedImageEntry> imageCache,
+        HashSet<string> generatedMediaFiles)
     {
         if (node.NodeType != HtmlNodeType.Element)
         {
@@ -233,17 +339,17 @@ internal sealed class BuildDataRunner
                 return;
 
             case "img":
-                AddImageBlock(node, blocks, folderPath, postId, mediaRoot, imageCache);
+                AddImageBlock(node, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles);
                 return;
 
             case "p":
-                ProcessParagraph(node, blocks, folderPath, postId, mediaRoot, imageCache);
+                ProcessParagraph(node, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles);
                 return;
 
             case "ul":
                 foreach (var child in node.ChildNodes.Where(child => child.NodeType == HtmlNodeType.Element && child.Name.Equals("li", StringComparison.OrdinalIgnoreCase)))
                 {
-                    ProcessListItem(child, blocks, folderPath, postId, mediaRoot, imageCache, 0);
+                    ProcessListItem(child, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles, 0);
                 }
 
                 return;
@@ -251,7 +357,7 @@ internal sealed class BuildDataRunner
             default:
                 foreach (var child in node.ChildNodes)
                 {
-                    ProcessNode(child, blocks, folderPath, postId, mediaRoot, imageCache);
+                    ProcessNode(child, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles);
                 }
 
                 return;
@@ -264,14 +370,15 @@ internal sealed class BuildDataRunner
         string folderPath,
         string postId,
         string mediaRoot,
-        Dictionary<string, GeneratedImageEntry> imageCache)
+        Dictionary<string, GeneratedImageEntry> imageCache,
+        HashSet<string> generatedMediaFiles)
     {
         var images = node.SelectNodes(".//img");
         if (images is { Count: > 0 })
         {
             foreach (var image in images)
             {
-                AddImageBlock(image, blocks, folderPath, postId, mediaRoot, imageCache);
+                AddImageBlock(image, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles);
             }
 
             return;
@@ -299,6 +406,7 @@ internal sealed class BuildDataRunner
         string postId,
         string mediaRoot,
         Dictionary<string, GeneratedImageEntry> imageCache,
+        HashSet<string> generatedMediaFiles,
         int level)
     {
         var text = GetInlineTextWithoutNestedLists(node);
@@ -313,12 +421,12 @@ internal sealed class BuildDataRunner
             {
                 foreach (var nested in child.ChildNodes.Where(nested => nested.NodeType == HtmlNodeType.Element && nested.Name.Equals("li", StringComparison.OrdinalIgnoreCase)))
                 {
-                    ProcessListItem(nested, blocks, folderPath, postId, mediaRoot, imageCache, level + 1);
+                    ProcessListItem(nested, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles, level + 1);
                 }
             }
             else if (child.Name.Equals("img", StringComparison.OrdinalIgnoreCase))
             {
-                AddImageBlock(child, blocks, folderPath, postId, mediaRoot, imageCache);
+                AddImageBlock(child, blocks, folderPath, postId, mediaRoot, imageCache, generatedMediaFiles);
             }
         }
     }
@@ -329,7 +437,8 @@ internal sealed class BuildDataRunner
         string folderPath,
         string postId,
         string mediaRoot,
-        Dictionary<string, GeneratedImageEntry> imageCache)
+        Dictionary<string, GeneratedImageEntry> imageCache,
+        HashSet<string> generatedMediaFiles)
     {
         var src = node.GetAttributeValue("src", string.Empty);
         if (string.IsNullOrWhiteSpace(src))
@@ -338,7 +447,7 @@ internal sealed class BuildDataRunner
         }
 
         var sourceFile = Path.Combine(folderPath, Uri.UnescapeDataString(src).Replace('/', Path.DirectorySeparatorChar));
-        var entry = GetGeneratedImageEntry(sourceFile, postId, mediaRoot, imageCache);
+        var entry = GetGeneratedImageEntry(sourceFile, postId, mediaRoot, imageCache, generatedMediaFiles);
         if (entry is null)
         {
             return;
@@ -359,7 +468,8 @@ internal sealed class BuildDataRunner
         string sourceFile,
         string postId,
         string mediaRoot,
-        Dictionary<string, GeneratedImageEntry> imageCache)
+        Dictionary<string, GeneratedImageEntry> imageCache,
+        HashSet<string> generatedMediaFiles)
     {
         if (!File.Exists(sourceFile))
         {
@@ -376,6 +486,7 @@ internal sealed class BuildDataRunner
         Directory.CreateDirectory(postMedia);
 
         var destinationFile = Path.Combine(postMedia, $"{baseName}.jpg");
+        generatedMediaFiles.Add(Path.GetFullPath(destinationFile));
         var result = ConvertImageToJpeg(sourceFile, destinationFile);
         var entry = new GeneratedImageEntry(
             File: $"Interface\\AddOns\\BluePosts\\Media\\Posts\\{postId}\\{baseName}.jpg",
@@ -411,7 +522,9 @@ internal sealed class BuildDataRunner
         ExpandEdgePadding(bitmap, drawWidth, drawHeight);
 
         Directory.CreateDirectory(Path.GetDirectoryName(destinationFile) ?? throw new InvalidOperationException("Destination file must include a directory."));
-        bitmap.SaveAsJpeg(destinationFile, new JpegEncoder());
+        using var stream = new MemoryStream();
+        bitmap.SaveAsJpeg(stream, new JpegEncoder());
+        WriteBytesIfChanged(destinationFile, stream.ToArray());
 
         return new GeneratedImageEntry(
             File: destinationFile,
@@ -462,6 +575,20 @@ internal sealed class BuildDataRunner
         }
 
         return Math.Max(16, power);
+    }
+
+    private static void WriteBytesIfChanged(string path, byte[] content)
+    {
+        if (File.Exists(path))
+        {
+            var existing = File.ReadAllBytes(path);
+            if (existing.AsSpan().SequenceEqual(content))
+            {
+                return;
+            }
+        }
+
+        File.WriteAllBytes(path, content);
     }
 
     private static void AddBlock(
@@ -635,6 +762,8 @@ internal sealed class BuildDataRunner
         [property: JsonPropertyName("category")] string? Category,
         [property: JsonPropertyName("exported_at")] JsonElement ExportedAt,
         [property: JsonPropertyName("source_url")] string? SourceUrl);
+
+    private sealed record ExistingGeneratedData(string? Content, long? PackageTimestamp, HashSet<string> PostIds);
 }
 
 internal sealed record BuildDataResult(int PostCount, string OutputPath, string MediaRoot, IReadOnlyList<NewPostSummary> NewPosts);
