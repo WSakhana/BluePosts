@@ -19,3 +19,8 @@ BluePosts-*.zip
 *.orig
 *.rej
 *.tmp
+
+# Local .NET build output
+.Tools/**/bin/
+.Tools/**/obj/
+.Tools/**/artifacts/
