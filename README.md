@@ -5,10 +5,10 @@
 Stay informed about **class changes, hotfixes, announcements and community updates** without alt-tabbing. BluePosts includes a clean in-game reader with search, category filters, unread tracking, login notifications, minimap support and quick links to the original Blizzard forum posts.
 
 [![CurseForge](https://img.shields.io/badge/CurseForge-BluePosts-orange?logo=curseforge)](https://www.curseforge.com/wow/addons/blueposts)
-![WoW Retail](https://img.shields.io/badge/WoW-Retail-blue)
-![Game Version](https://img.shields.io/badge/Midnight-12.0.5-blueviolet)
-![Language](https://img.shields.io/badge/Lua-90%25-2C2D72)
-![License](https://img.shields.io/badge/License-Apache--2.0-green)
+[![WoW Retail](https://img.shields.io/badge/WoW-Retail-blue)](https://worldofwarcraft.blizzard.com/)
+[![Game Version](https://img.shields.io/badge/Midnight-12.0.5-blueviolet)](https://news.blizzard.com/en-gb/article/24266871/the-12-0-5-content-update-now-live)
+[![Language](https://img.shields.io/badge/Lua-90%25-2C2D72)](https://www.lua.org/)
+[![License](https://img.shields.io/badge/License-Apache--2.0-green)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ## Why BluePosts?
 
