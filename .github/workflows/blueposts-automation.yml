@@ -1,0 +1,46 @@
+name: BluePosts Automation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      BLUEPOSTS_IMAGE: sakhana88/blueposts.automation:latest
+      BLUEPOSTS_REPO_URL: https://github.com/${{ github.repository }}.git
+      BLUEPOSTS_GIT_BRANCH: ${{ github.ref_name }}
+      BLUEPOSTS_DRIVE_FOLDER_ID: 153osz5cXU3C0Ju07AJ0YArt2LQbbsjny
+
+    steps:
+      - name: Write Google service account secret
+        shell: bash
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.BLUEPOSTS_GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$GOOGLE_SERVICE_ACCOUNT_JSON" ]; then
+            echo "Missing BLUEPOSTS_GOOGLE_SERVICE_ACCOUNT_JSON secret." >&2
+            exit 1
+          fi
+
+          secret_path="$RUNNER_TEMP/google-service-account.json"
+          printf '%s' "$GOOGLE_SERVICE_ACCOUNT_JSON" > "$secret_path"
+          chmod 600 "$secret_path"
+          echo "GOOGLE_SERVICE_ACCOUNT_PATH=$secret_path" >> "$GITHUB_ENV"
+
+      - name: Run BluePosts automation container
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          docker run --rm \
+            -v "${GOOGLE_SERVICE_ACCOUNT_PATH}:/run/secrets/google-service-account.json:ro" \
+            -e BLUEPOSTS_REPO_URL="${BLUEPOSTS_REPO_URL}" \
+            -e BLUEPOSTS_GITHUB_TOKEN="${GH_TOKEN}" \
+            -e BLUEPOSTS_GIT_BRANCH="${BLUEPOSTS_GIT_BRANCH}" \
+            -e BLUEPOSTS_DRIVE_FOLDER_ID="${BLUEPOSTS_DRIVE_FOLDER_ID}" \
+            -e BLUEPOSTS_VERSION_BUMP="patch" \
+            "${BLUEPOSTS_IMAGE}"

@@ -67,8 +67,28 @@ For GitHub HTTPS authentication, keep `BLUEPOSTS_REPO_URL` free of embedded cred
 
 ```bash
 docker run --rm \
+  -v D:/VM/n8n-gdrive-493909-c9fa3e30cfcf.json:/run/secrets/google-service-account.json:ro \
+  --env-file .Tools/BluePosts.Automation/.env \
+  sakhana88/blueposts.automation:latest
+```
+
+If you prefer a named local container so it can be inspected more easily between failures, keep the same mounts and env file and replace `--rm` with `--name blueposts-automation`:
+
+```bash
+docker run --name blueposts-automation \
+  -v D:/VM/n8n-gdrive-493909-c9fa3e30cfcf.json:/run/secrets/google-service-account.json:ro \
+  --env-file .Tools/BluePosts.Automation/.env \
+  sakhana88/blueposts.automation:latest
+```
+
+Copy `.Tools/BluePosts.Automation/.env.example` to `.Tools/BluePosts.Automation/.env` before the first local run.
+
+If you want to run a locally built image instead of the published Docker Hub image:
+
+```bash
+docker run --rm \
   -v /path/to/google-service-account.json:/run/secrets/google-service-account.json:ro \
-  --env-file .Tools/BluePosts.Automation/.env.example \
+  --env-file .Tools/BluePosts.Automation/.env \
   blueposts-automation
 ```
 
@@ -111,6 +131,16 @@ Optional variables:
 - `BLUEPOSTS_VERSION`
 - `BLUEPOSTS_VERSION_BUMP`
 - `BLUEPOSTS_GIT_REMOTE`
+
+## GitHub Actions
+
+The repository now includes `.github/workflows/blueposts-automation.yml` for manual runs from the Actions tab.
+
+Required repository secret:
+
+- `BLUEPOSTS_GOOGLE_SERVICE_ACCOUNT_JSON`: the full JSON contents of the Google service account key.
+
+The workflow uses the published `sakhana88/blueposts.automation:latest` image, mounts the secret JSON at `/run/secrets/google-service-account.json`, authenticates git operations with the built-in `github.token`, and always runs with `BLUEPOSTS_VERSION_BUMP=patch`.
 
 ## Local commands
 
