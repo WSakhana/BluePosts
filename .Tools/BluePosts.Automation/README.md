@@ -45,6 +45,8 @@ docker build -t blueposts-automation .Tools/BluePosts.Automation
 
 Exemple recommande pour un conteneur ephemere qui ne conserve rien apres execution:
 
+Les chemins declares dans le `--env-file` sont lus par le processus dans le conteneur Linux. Utilisez donc des chemins comme `/tmp/...` ou `/run/secrets/...` dans `.env`, meme si le chemin monte cote hote est un chemin Windows.
+
 ```bash
 docker run --rm \
   -v /path/to/google-service-account.json:/run/secrets/google-service-account.json:ro \
@@ -96,7 +98,9 @@ dotnet run --project .Tools/BluePosts.Automation/BluePosts.Automation.csproj -- 
 dotnet run --project .Tools/BluePosts.Automation/BluePosts.Automation.csproj -- build-data --source-path /path/to/BluePosts
 ```
 
-## Exemples Windows
+## Exemples Windows hors conteneur
+
+Ces chemins Windows s'appliquent a `dotnet run` lance sur l'hote. Pour `docker run --env-file`, utilisez des chemins du conteneur Linux comme `/tmp/...` et `/run/secrets/...`.
 
 Dry run complet:
 

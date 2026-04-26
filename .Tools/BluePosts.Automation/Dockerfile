@@ -12,5 +12,14 @@ RUN apt-get update \
 WORKDIR /workspace
 COPY --from=build /app/publish /app
 
-ENTRYPOINT ["dotnet", "/app/BluePosts.Automation.dll"]
+ENV BLUEPOSTS_REPO_ROOT=/tmp/blueposts-repo \
+    BLUEPOSTS_REPO_URL=https://github.com/WSakhana/BluePosts.git \
+    BLUEPOSTS_SOURCE_PATH=/tmp/blueposts-source \
+    BLUEPOSTS_DRIVE_FOLDER_ID=153osz5cXU3C0Ju07AJ0YArt2LQbbsjny \
+    BLUEPOSTS_GOOGLE_CREDENTIALS=/run/secrets/google-service-account.json \
+    BLUEPOSTS_GIT_REMOTE=origin \
+    BLUEPOSTS_GIT_BRANCH=main \
+    BLUEPOSTS_VERSION_BUMP=patch
+
+ENTRYPOINT ["/app/BluePosts.Automation"]
 CMD ["pipeline"]

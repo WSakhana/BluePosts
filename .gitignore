@@ -20,6 +20,9 @@ BluePosts-*.zip
 *.rej
 *.tmp
 
+# Local env files
+.Tools/**/.env
+
 # Local .NET build output
 .Tools/**/bin/
 .Tools/**/obj/
