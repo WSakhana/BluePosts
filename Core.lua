@@ -41,6 +41,19 @@ local DEFAULT_DB = {
     readerFontSize = 13,
 }
 
+local RESETTABLE_SETTING_KEYS = {
+    "minimap",
+    "showToasts",
+    "toastSound",
+    "toastDuration",
+    "toastPosition",
+    "toastOffsetX",
+    "toastOffsetY",
+    "autoMarkRead",
+    "confirmGuildShare",
+    "readerFontSize",
+}
+
 local RECENT_PACKAGE_WINDOW = 86400
 
 ns.THEME = {
@@ -113,6 +126,30 @@ local function CopyDefaults(src, dst)
             dst[key] = value
         end
     end
+end
+
+local function CopyValue(value)
+    if type(value) ~= "table" then
+        return value
+    end
+
+    local copy = {}
+    for key, child in pairs(value) do
+        copy[key] = CopyValue(child)
+    end
+    return copy
+end
+
+local function ResetValue(defaultValue, targetValue)
+    if type(defaultValue) == "table" and type(targetValue) == "table" then
+        wipe(targetValue)
+        for key, child in pairs(defaultValue) do
+            targetValue[key] = CopyValue(child)
+        end
+        return targetValue
+    end
+
+    return CopyValue(defaultValue)
 end
 
 local function Trim(value)
@@ -292,6 +329,29 @@ function Core:SetAllRead(read)
         ns.UI:UpdateToolbar()
         ns.UI:RefreshSettingsPanel()
     end
+end
+
+function Core:ResetSettingsToDefaults()
+    if not self.db then
+        return
+    end
+
+    for _, key in ipairs(RESETTABLE_SETTING_KEYS) do
+        self.db[key] = ResetValue(DEFAULT_DB[key], self.db[key])
+    end
+
+    self:UpdateMinimapVisibility()
+
+    if ns.UI then
+        if ns.UI.ApplyToastPosition then
+            ns.UI:ApplyToastPosition()
+        end
+        if ns.UI.RefreshSettingsPanel then
+            ns.UI:RefreshSettingsPanel()
+        end
+    end
+
+    self:Print("Settings reset to defaults.")
 end
 
 function Core:GetUnreadCount()

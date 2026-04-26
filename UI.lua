@@ -49,16 +49,20 @@ local TOAST_DURATION_OPTIONS = {
 }
 
 local TOAST_POSITION_OPTIONS = {
-    { label = "Top right", value = "TOPRIGHT", width = 84 },
     { label = "Top left", value = "TOPLEFT", width = 80 },
+    { label = "Top center", value = "TOPCENTER", width = 96 },
+    { label = "Top right", value = "TOPRIGHT", width = 84 },
+    { label = "Bottom left", value = "BOTTOMLEFT", width = 94, newLine = true },
+    { label = "Bottom center", value = "BOTTOMCENTER", width = 112 },
     { label = "Bottom right", value = "BOTTOMRIGHT", width = 98 },
-    { label = "Bottom left", value = "BOTTOMLEFT", width = 94 },
 }
 
 local TOAST_POSITION_META = {
     TOPRIGHT = { point = "TOPRIGHT", relativePoint = "TOPRIGHT", xSign = -1, ySign = -1 },
+    TOPCENTER = { point = "TOP", relativePoint = "TOP", xSign = 1, ySign = -1 },
     TOPLEFT = { point = "TOPLEFT", relativePoint = "TOPLEFT", xSign = 1, ySign = -1 },
     BOTTOMRIGHT = { point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT", xSign = -1, ySign = 1 },
+    BOTTOMCENTER = { point = "BOTTOM", relativePoint = "BOTTOM", xSign = 1, ySign = 1 },
     BOTTOMLEFT = { point = "BOTTOMLEFT", relativePoint = "BOTTOMLEFT", xSign = 1, ySign = 1 },
 }
 
@@ -71,8 +75,12 @@ local TOAST_OFFSET_LIMIT_X = 200
 local TOAST_OFFSET_LIMIT_Y = 200
 
 local TOAST_DEFAULT_OFFSETS = {
-    x = 36,
-    y = 150,
+    TOPRIGHT = { x = 36, y = 150 },
+    TOPCENTER = { x = 0, y = 150 },
+    TOPLEFT = { x = 36, y = 150 },
+    BOTTOMRIGHT = { x = 36, y = 150 },
+    BOTTOMCENTER = { x = 0, y = 150 },
+    BOTTOMLEFT = { x = 36, y = 150 },
 }
 
 local function SetColor(region, color)
@@ -749,26 +757,28 @@ function UI:GetToastPosition()
     return "TOPRIGHT"
 end
 
-function UI:GetDefaultToastOffsetX()
+function UI:GetDefaultToastOffsetX(position)
     local db = self.core and self.core.db
-    local position = tostring(db and db.toastPosition or "TOPRIGHT")
+    position = tostring(position or (db and db.toastPosition) or "TOPRIGHT")
     local legacyPosition = LEGACY_TOAST_POSITION_META[position]
     if legacyPosition then
         return legacyPosition.x
     end
 
-    return TOAST_DEFAULT_OFFSETS.x
+    local offsets = TOAST_DEFAULT_OFFSETS[position] or TOAST_DEFAULT_OFFSETS.TOPRIGHT
+    return offsets.x
 end
 
-function UI:GetDefaultToastOffsetY()
+function UI:GetDefaultToastOffsetY(position)
     local db = self.core and self.core.db
-    local rawPosition = tostring(db and db.toastPosition or "TOPRIGHT")
-    local legacyPosition = LEGACY_TOAST_POSITION_META[rawPosition]
+    position = tostring(position or (db and db.toastPosition) or "TOPRIGHT")
+    local legacyPosition = LEGACY_TOAST_POSITION_META[position]
     if legacyPosition then
         return legacyPosition.y
     end
 
-    return TOAST_DEFAULT_OFFSETS.y
+    local offsets = TOAST_DEFAULT_OFFSETS[position] or TOAST_DEFAULT_OFFSETS.TOPRIGHT
+    return offsets.y
 end
 
 function UI:GetToastOffsetX()
@@ -794,8 +804,17 @@ function UI:SetToastPosition(position)
         return
     end
 
+    local previousPosition = self:GetToastPosition()
+    local previousOffsetX = self:GetToastOffsetX()
+    local previousOffsetY = self:GetToastOffsetY()
     local normalizedPosition = TOAST_POSITION_META[position] and position or "TOPRIGHT"
     self.core.db.toastPosition = normalizedPosition
+    if previousOffsetX == self:GetDefaultToastOffsetX(previousPosition) then
+        self.core.db.toastOffsetX = self:GetDefaultToastOffsetX(normalizedPosition)
+    end
+    if previousOffsetY == self:GetDefaultToastOffsetY(previousPosition) then
+        self.core.db.toastOffsetY = self:GetDefaultToastOffsetY(normalizedPosition)
+    end
     self:ApplyToastPosition()
 end
 
@@ -911,12 +930,18 @@ function UI:CreateSettingsChoiceRow(parent, label, description, options, getValu
     row.description:SetText(description)
 
     local previousButton
+    local buttonRow = 1
     for _, option in ipairs(options) do
+        if option.newLine then
+            previousButton = nil
+            buttonRow = buttonRow + 1
+        end
+
         local button = CreateFilterButton(row, option.label, option.width or 80)
         if previousButton then
             button:SetPoint("LEFT", previousButton, "RIGHT", 6, 0)
         else
-            button:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -58)
+            button:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -58 - ((buttonRow - 1) * 32))
         end
         button:SetScript("OnClick", function()
             row.setValue(option.value)
@@ -928,6 +953,7 @@ function UI:CreateSettingsChoiceRow(parent, label, description, options, getValu
         row.buttons[option.value] = button
         previousButton = button
     end
+    row:SetHeight(58 + (buttonRow * 32))
 
     table.insert(self.settingsChoiceRows, row)
     return row
@@ -1160,7 +1186,7 @@ function UI:CreateSettingsPanel()
         local row = self:CreateSettingsChoiceRow(child, label, description, options, getValue, setValue)
         row:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
         row:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
-        y = y - 96
+        y = y - ((row:GetHeight() or 90) + 6)
         return row
     end
 
@@ -1196,19 +1222,19 @@ function UI:CreateSettingsPanel()
     end, function(value)
         self.core.db.toastDuration = value
     end)
-    AddChoiceRow("Toast position", "Choose which corner should anchor the notification.", TOAST_POSITION_OPTIONS, function()
+    AddChoiceRow("Toast position", "Choose where the notification anchors on screen.", TOAST_POSITION_OPTIONS, function()
         return self:GetToastPosition()
     end, function(value)
         self:SetToastPosition(value)
     end)
-    AddSliderRow("Toast offset X", "Set the horizontal distance from the selected screen edge.", 0, 200, function()
+    AddSliderRow("Toast offset X", "Nudge the notification horizontally from the selected anchor.", 0, 200, function()
         return self:GetToastOffsetX()
     end, function(value)
         self:SetToastOffsetX(value)
     end, function(value)
         return ("%d px"):format(tonumber(value) or 0)
     end)
-    AddSliderRow("Toast offset Y", "Set the vertical distance from the selected screen edge.", 0, 200, function()
+    AddSliderRow("Toast offset Y", "Set the vertical distance from the selected screen anchor.", 0, 200, function()
         return self:GetToastOffsetY()
     end, function(value)
         self:SetToastOffsetY(value)
@@ -1306,6 +1332,14 @@ function UI:CreateSettingsPanel()
     resetFilters:SetScript("OnClick", function()
         self:ResetAllFilters()
         self:RefreshSettingsPanel()
+    end)
+
+    local resetSettings = CreateButton(actions, "Reset settings", nil, 138)
+    resetSettings:SetPoint("LEFT", resetFilters, "RIGHT", 8, 0)
+    resetSettings:SetScript("OnClick", function()
+        if self.core and self.core.ResetSettingsToDefaults then
+            self.core:ResetSettingsToDefaults()
+        end
     end)
 
     local markRead = CreateButton(actions, "Mark all read", nil, 132)
