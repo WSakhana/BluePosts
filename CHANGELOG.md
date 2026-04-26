@@ -1,3 +1,8 @@
+## 1.0.7
+- Refreshed the bundled blue posts snapshot.
+- Added more settings over login toasts with duration, screen position, and a quick preview option.
+- Added a reset settings action and improved login toasts.
+
 ## 1.0.6
 - Refreshed the bundled blue posts snapshot.
 - Improved automated changelog generation for future updates.
