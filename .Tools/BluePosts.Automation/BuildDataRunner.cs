@@ -31,23 +31,30 @@ internal sealed class BuildDataRunner
         Directory.CreateDirectory(options.MediaRoot);
         ClearDirectoryContents(options.MediaRoot);
 
+        var sourceFolders = Directory.GetDirectories(options.SourcePath)
+            .OrderBy(path => Path.GetFileName(path), StringComparer.OrdinalIgnoreCase)
+            .Where(folderPath =>
+                File.Exists(Path.Combine(folderPath, "metadata.json"))
+                && File.Exists(Path.Combine(folderPath, "index.html")))
+            .ToList();
+
+        Console.WriteLine($"[build] Found {sourceFolders.Count} post folder(s) in {options.SourcePath}");
+
         var posts = new List<PostRecord>();
-        foreach (var folderPath in Directory.GetDirectories(options.SourcePath)
-                 .OrderBy(path => Path.GetFileName(path), StringComparer.OrdinalIgnoreCase))
+        for (var index = 0; index < sourceFolders.Count; index++)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
+            var folderPath = sourceFolders[index];
             var metadataPath = Path.Combine(folderPath, "metadata.json");
             var htmlPath = Path.Combine(folderPath, "index.html");
-            if (!File.Exists(metadataPath) || !File.Exists(htmlPath))
-            {
-                continue;
-            }
 
             var metadata = await ReadMetadataAsync(metadataPath, cancellationToken);
             var postId = string.IsNullOrWhiteSpace(metadata.FolderName)
                 ? Path.GetFileName(folderPath)
                 : metadata.FolderName!;
+
+            Console.WriteLine($"[build] [{index + 1}/{sourceFolders.Count}] Processing {postId}");
 
             var html = await File.ReadAllTextAsync(htmlPath, cancellationToken);
             var content = ConvertHtmlToBlocks(html, folderPath, postId, options.MediaRoot);
@@ -91,7 +98,9 @@ internal sealed class BuildDataRunner
         }
 
         builder.AppendLine("}");
+        Console.WriteLine($"[build] Writing generated data file: {options.OutputPath}");
         await File.WriteAllTextAsync(options.OutputPath, builder.ToString(), new UTF8Encoding(false), cancellationToken);
+        Console.WriteLine($"[build] Rebuilt {orderedPosts.Count} post(s) and refreshed media in {options.MediaRoot}");
 
         return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot);
     }

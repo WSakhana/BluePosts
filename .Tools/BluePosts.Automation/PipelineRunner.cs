@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace BluePosts.Automation;
 
 internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
@@ -9,57 +11,99 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
             throw new InvalidOperationException("Repository root is required.");
         }
 
-        await CleanupTemporaryDirectoriesAsync(options, cancellationToken);
+        Console.WriteLine("[pipeline] Starting BluePosts automation pipeline");
+        Console.WriteLine($"[pipeline] Repository root: {options.RepoRoot}");
+        Console.WriteLine($"[pipeline] Google Drive export path: {options.SourcePath}");
+        Console.WriteLine($"[pipeline] Generated data output: {options.OutputPath}");
+
+        await RunStepAsync("Cleaning temporary directories", () => CleanupTemporaryDirectoriesAsync(options, cancellationToken));
 
         var git = new GitClient(options.RepoRoot, options.GithubToken);
-        await git.EnsureRepositoryAsync(options.RepoUrl, options.BranchName, cancellationToken);
+        await RunStepAsync("Ensuring repository is available", () => git.EnsureRepositoryAsync(options.RepoUrl, options.BranchName, cancellationToken));
 
         if (!options.AllowDirty)
         {
-            await git.EnsureCleanWorkingTreeAsync(cancellationToken);
+            await RunStepAsync("Validating clean working tree", () => git.EnsureCleanWorkingTreeAsync(cancellationToken));
         }
 
-        Console.WriteLine("Fetching and fast-forwarding the repository...");
-        await git.FetchAsync(options.RemoteName, cancellationToken);
-        await git.PullAsync(options.RemoteName, options.BranchName, cancellationToken);
+        await RunStepAsync("Fetching and fast-forwarding the repository", async () =>
+        {
+            await git.FetchAsync(options.RemoteName, cancellationToken);
+            await git.PullAsync(options.RemoteName, options.BranchName, cancellationToken);
+        });
 
-        Console.WriteLine("Downloading Google Drive export...");
         var downloader = new GoogleDriveDownloader(options.GoogleCredentials);
-        await downloader.DownloadFolderAsync(options.DriveFolderId, options.SourcePath, cancellationToken);
+        await RunStepAsync("Downloading Google Drive export", () => downloader.DownloadFolderAsync(options.DriveFolderId, options.SourcePath, cancellationToken));
 
-        Console.WriteLine("Rebuilding addon data...");
-        _ = await buildDataRunner.RunAsync(
+        var buildResult = await RunStepAsync("Rebuilding addon data", () => buildDataRunner.RunAsync(
             new BuildDataOptions(options.SourcePath, options.OutputPath, options.MediaRoot),
-            cancellationToken);
+            cancellationToken));
+        Console.WriteLine($"[pipeline] Generated {buildResult.PostCount} post(s) -> {buildResult.OutputPath}");
+        Console.WriteLine($"[pipeline] Refreshed media assets in {buildResult.MediaRoot}");
 
         var changedGeneratedFiles = await git.GetStatusAsync(["BluePosts_Data.lua", "Media/Posts"], cancellationToken);
         if (changedGeneratedFiles.Count == 0)
         {
-            Console.WriteLine("No generated content changes detected. Nothing to commit.");
+            Console.WriteLine("[pipeline] No generated content changes detected. Nothing to commit.");
             return;
+        }
+
+        Console.WriteLine($"[pipeline] Detected {changedGeneratedFiles.Count} generated change(s):");
+        foreach (var changedGeneratedFile in changedGeneratedFiles)
+        {
+            Console.WriteLine($"[pipeline]   {changedGeneratedFile}");
         }
 
         var version = await ResolveVersionAsync(options, git, cancellationToken);
-        Console.WriteLine($"Resolved release version: {version}");
+        Console.WriteLine($"[pipeline] Resolved release version: {version}");
 
         if (options.DryRun)
         {
-            Console.WriteLine("Dry run enabled. Skipping commit, tag, and push.");
+            Console.WriteLine("[pipeline] Dry run enabled. Skipping commit, tag, and push.");
             return;
         }
 
-        Console.WriteLine("Creating git commit and tag...");
-        await git.AddAsync(["BluePosts_Data.lua", "Media/Posts"], cancellationToken);
-
         var commitMessage = $"chore: refresh blueposts data for {version}";
         var tagName = version.ToString();
-        await git.CommitAsync(commitMessage, cancellationToken);
-        await git.TagAsync(tagName, tagName, cancellationToken);
 
-        Console.WriteLine("Pushing commit and tag...");
-        await git.PushAsync(options.RemoteName, options.BranchName, cancellationToken);
-        await git.PushTagAsync(options.RemoteName, tagName, cancellationToken);
+        await RunStepAsync($"Creating git commit '{commitMessage}' and tag '{tagName}'", async () =>
+        {
+            await git.AddAsync(["BluePosts_Data.lua", "Media/Posts"], cancellationToken);
+            await git.CommitAsync(commitMessage, cancellationToken);
+            await git.TagAsync(tagName, tagName, cancellationToken);
+        });
+
+        await RunStepAsync("Pushing commit and tag", async () =>
+        {
+            await git.PushAsync(options.RemoteName, options.BranchName, cancellationToken);
+            await git.PushTagAsync(options.RemoteName, tagName, cancellationToken);
+        });
+
+        Console.WriteLine("[pipeline] Pipeline completed successfully.");
     }
+
+    private static async Task RunStepAsync(string description, Func<Task> action)
+    {
+        await RunStepAsync(description, async () =>
+        {
+            await action();
+            return true;
+        });
+    }
+
+    private static async Task<T> RunStepAsync<T>(string description, Func<Task<T>> action)
+    {
+        Console.WriteLine($"[pipeline] Starting: {description}");
+        var stopwatch = Stopwatch.StartNew();
+        var result = await action();
+        Console.WriteLine($"[pipeline] Completed: {description} ({FormatElapsed(stopwatch.Elapsed)})");
+        return result;
+    }
+
+    private static string FormatElapsed(TimeSpan elapsed) =>
+        elapsed.TotalMinutes >= 1
+            ? elapsed.ToString(@"m\:ss")
+            : $"{elapsed.TotalSeconds:F1}s";
 
     private static async Task CleanupTemporaryDirectoriesAsync(PipelineOptions options, CancellationToken cancellationToken)
     {

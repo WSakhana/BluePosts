@@ -7,6 +7,9 @@ namespace BluePosts.Automation;
 internal sealed class GoogleDriveDownloader
 {
     private readonly DriveService driveService;
+    private int downloadedFileCount;
+    private int visitedFolderCount;
+    private string? rootDestinationPath;
 
     public GoogleDriveDownloader(string credentials)
     {
@@ -24,7 +27,13 @@ internal sealed class GoogleDriveDownloader
     public async Task DownloadFolderAsync(string folderId, string destinationPath, CancellationToken cancellationToken)
     {
         PrepareDestination(destinationPath);
-        await DownloadFolderRecursiveAsync(folderId, destinationPath, cancellationToken);
+        downloadedFileCount = 0;
+        visitedFolderCount = 0;
+        rootDestinationPath = Path.GetFullPath(destinationPath);
+
+        Console.WriteLine($"[drive] Export destination: {rootDestinationPath}");
+        await DownloadFolderRecursiveAsync(folderId, rootDestinationPath, cancellationToken, 0);
+        Console.WriteLine($"[drive] Download complete: {downloadedFileCount} file(s) across {visitedFolderCount} folder(s)");
     }
 
     private static void PrepareDestination(string destinationPath)
@@ -37,25 +46,50 @@ internal sealed class GoogleDriveDownloader
         Directory.CreateDirectory(destinationPath);
     }
 
-    private async Task DownloadFolderRecursiveAsync(string folderId, string destinationPath, CancellationToken cancellationToken)
+    private async Task DownloadFolderRecursiveAsync(string folderId, string destinationPath, CancellationToken cancellationToken, int depth)
     {
+        var folderIndent = GetIndent(depth);
+        var displayPath = GetDisplayPath(destinationPath);
+
+        Console.WriteLine($"{folderIndent}[drive] Listing folder: {displayPath}");
         var items = await ListFolderItemsAsync(folderId, cancellationToken);
+        visitedFolderCount++;
+        Console.WriteLine($"{folderIndent}[drive] Found {items.Count} item(s) in {displayPath}");
+
+        var itemIndent = GetIndent(depth + 1);
         foreach (var item in items)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
             var targetPath = Path.Combine(destinationPath, item.Name);
+            var relativeTargetPath = GetDisplayPath(targetPath);
             if (item.MimeType == "application/vnd.google-apps.folder")
             {
+                Console.WriteLine($"{itemIndent}[drive] Entering folder: {relativeTargetPath}");
                 Directory.CreateDirectory(targetPath);
-                await DownloadFolderRecursiveAsync(item.Id, targetPath, cancellationToken);
+                await DownloadFolderRecursiveAsync(item.Id, targetPath, cancellationToken, depth + 1);
             }
             else
             {
+                downloadedFileCount++;
+                Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadedFileCount}: {relativeTargetPath}");
                 await DownloadFileAsync(item.Id, targetPath, cancellationToken);
             }
         }
     }
+
+    private string GetDisplayPath(string path)
+    {
+        if (string.IsNullOrWhiteSpace(rootDestinationPath))
+        {
+            return path;
+        }
+
+        var relativePath = Path.GetRelativePath(rootDestinationPath, path);
+        return relativePath == "." ? rootDestinationPath : relativePath;
+    }
+
+    private static string GetIndent(int depth) => new(' ', depth * 2);
 
     private async Task<IReadOnlyList<DriveItem>> ListFolderItemsAsync(string folderId, CancellationToken cancellationToken)
     {

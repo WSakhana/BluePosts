@@ -41,6 +41,21 @@ Depuis la racine du repo:
 docker build -t blueposts-automation .Tools/BluePosts.Automation
 ```
 
+Pour publier l'image sur Docker Hub avec un tag explicite:
+
+```bash
+docker login
+docker build -t sakhana88/blueposts.automation:tagname .Tools/BluePosts.Automation
+docker push sakhana88/blueposts.automation:tagname
+```
+
+Si l'image locale `blueposts-automation` existe deja, vous pouvez aussi simplement la re-tagger avant le push:
+
+```bash
+docker tag blueposts-automation sakhana88/blueposts.automation:tagname
+docker push sakhana88/blueposts.automation:tagname
+```
+
 ## Execution Docker
 
 Exemple recommande pour un conteneur ephemere qui ne conserve rien apres execution:

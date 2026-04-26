@@ -121,12 +121,20 @@ internal sealed class GitClient(string repoRoot, string? githubToken)
 
     private async Task<string> GetRemoteUrlAsync(string remoteName, CancellationToken cancellationToken)
     {
-        var result = await RunGitAsync(repoRoot, ["remote", "get-url", remoteName], cancellationToken);
+        var result = await RunGitAsync(repoRoot, ["remote", "get-url", remoteName], cancellationToken, logOutput: false);
         return result.StandardOutput;
     }
 
-    private async Task<GitCommandResult> RunGitAsync(string workingDirectory, IReadOnlyList<string> arguments, CancellationToken cancellationToken, string? authenticatedUrl = null)
+    private async Task<GitCommandResult> RunGitAsync(
+        string workingDirectory,
+        IReadOnlyList<string> arguments,
+        CancellationToken cancellationToken,
+        string? authenticatedUrl = null,
+        bool logOutput = true)
     {
+        var commandText = FormatCommandForDisplay(arguments);
+        Console.WriteLine($"[git] Starting: {commandText}");
+
         var startInfo = new ProcessStartInfo("git")
         {
             WorkingDirectory = workingDirectory,
@@ -145,22 +153,100 @@ internal sealed class GitClient(string repoRoot, string? githubToken)
         }
 
         using var process = new Process { StartInfo = startInfo };
+        var stopwatch = Stopwatch.StartNew();
         process.Start();
 
         var standardOutputTask = process.StandardOutput.ReadToEndAsync(cancellationToken);
         var standardErrorTask = process.StandardError.ReadToEndAsync(cancellationToken);
 
         await process.WaitForExitAsync(cancellationToken);
+        stopwatch.Stop();
         var standardOutput = (await standardOutputTask).Trim();
         var standardError = (await standardErrorTask).Trim();
 
         if (process.ExitCode != 0)
         {
-            throw new InvalidOperationException($"git {string.Join(' ', arguments)} failed with exit code {process.ExitCode}.{Environment.NewLine}{standardError}");
+            throw new InvalidOperationException($"git {commandText} failed with exit code {process.ExitCode}.{Environment.NewLine}{FormatFailureOutput(standardOutput, standardError)}");
         }
+
+        if (logOutput)
+        {
+            WriteCommandOutput("stdout", standardOutput);
+            WriteCommandOutput("stderr", standardError);
+        }
+
+        Console.WriteLine($"[git] Completed: {commandText} ({FormatElapsed(stopwatch.Elapsed)})");
 
         return new GitCommandResult(standardOutput, standardError);
     }
+
+    private static string FormatCommandForDisplay(IReadOnlyList<string> arguments) =>
+        string.Join(' ', arguments.Select(argument => FormatArgumentForDisplay(SanitizeSensitiveText(argument))));
+
+    private static string FormatArgumentForDisplay(string argument) =>
+        argument.Contains(' ', StringComparison.Ordinal) ? $"\"{argument}\"" : argument;
+
+    private static void WriteCommandOutput(string streamName, string output)
+    {
+        if (string.IsNullOrWhiteSpace(output))
+        {
+            return;
+        }
+
+        foreach (var line in output.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries))
+        {
+            Console.WriteLine($"[git]   {streamName}: {SanitizeSensitiveText(line)}");
+        }
+    }
+
+    private static string FormatFailureOutput(string standardOutput, string standardError)
+    {
+        var lines = new List<string>();
+
+        if (!string.IsNullOrWhiteSpace(standardError))
+        {
+            lines.AddRange(standardError
+                .Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries)
+                .Select(line => $"stderr: {SanitizeSensitiveText(line)}"));
+        }
+
+        if (!string.IsNullOrWhiteSpace(standardOutput))
+        {
+            lines.AddRange(standardOutput
+                .Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries)
+                .Select(line => $"stdout: {SanitizeSensitiveText(line)}"));
+        }
+
+        return lines.Count == 0 ? "No git output was captured." : string.Join(Environment.NewLine, lines);
+    }
+
+    private static string SanitizeSensitiveText(string text)
+    {
+        var tokens = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (tokens.Length == 0)
+        {
+            return text;
+        }
+
+        return string.Join(' ', tokens.Select(SanitizeToken));
+    }
+
+    private static string SanitizeToken(string token)
+    {
+        if (!token.Contains("://", StringComparison.Ordinal)
+            || !Uri.TryCreate(token, UriKind.Absolute, out var uri))
+        {
+            return token;
+        }
+
+        var path = string.IsNullOrEmpty(uri.AbsolutePath) ? "/" : uri.AbsolutePath;
+        return $"{uri.Scheme}://{uri.Host}{path}";
+    }
+
+    private static string FormatElapsed(TimeSpan elapsed) =>
+        elapsed.TotalMinutes >= 1
+            ? elapsed.ToString(@"m\:ss")
+            : $"{elapsed.TotalSeconds:F1}s";
 
     private void ApplyGitHubAuthentication(ProcessStartInfo startInfo, string? authenticatedUrl)
     {
