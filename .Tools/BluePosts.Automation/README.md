@@ -12,7 +12,7 @@ A .NET 10 console application that replaces `BuildData.ps1` and automates the fu
   - runs `git fetch` and `git pull --ff-only`
   - syncs the Google Drive `BluePosts` folder by downloading only new or changed files
   - regenerates `BluePosts_Data.lua` and `Media/Posts`
-  - updates `CHANGELOG.md` at the top of the file with either new blue post titles or the generated commit message
+  - updates `CHANGELOG.md` at the top of the file with player-friendly release notes and any newly bundled blue post titles
   - creates the git commit
   - creates the git tag
   - pushes the commit and tag

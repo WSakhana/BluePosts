@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Text;
 
 namespace BluePosts.Automation;
@@ -8,14 +7,8 @@ internal sealed class ChangelogUpdater(string changelogPath)
     public async Task<bool> PrependEntryAsync(
         string tag,
         IReadOnlyList<NewPostSummary> newPosts,
-        string commitMessage,
         CancellationToken cancellationToken)
     {
-        if (newPosts.Count == 0 && string.IsNullOrWhiteSpace(commitMessage))
-        {
-            return false;
-        }
-
         if (!File.Exists(changelogPath))
         {
             throw new InvalidOperationException($"Changelog not found: {changelogPath}");
@@ -43,20 +36,17 @@ internal sealed class ChangelogUpdater(string changelogPath)
             updatedLines.Add(string.Empty);
         }
 
-        var today = DateTime.UtcNow.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+        updatedLines.Add($"## {tag}");
+        updatedLines.Add("- Refreshed the bundled blue posts snapshot.");
+
         if (newPosts.Count > 0)
         {
-            updatedLines.Add($"## {tag} - {today} - New Blue Posts");
+            updatedLines.Add($"- Added {newPosts.Count} new blue post{(newPosts.Count == 1 ? string.Empty : "s")} to the in-game reader.");
 
             foreach (var newPost in newPosts)
             {
                 updatedLines.Add($"- {newPost.Title}");
             }
-        }
-        else
-        {
-            updatedLines.Add($"## {tag} - {today}");
-            updatedLines.Add($"- {commitMessage}");
         }
 
         if (restIndex < lines.Length)
