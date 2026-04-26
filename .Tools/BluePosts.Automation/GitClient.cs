@@ -1,9 +1,12 @@
 using System.Diagnostics;
+using System.Text;
 
 namespace BluePosts.Automation;
 
-internal sealed class GitClient(string repoRoot)
+internal sealed class GitClient(string repoRoot, string? githubToken)
 {
+    private readonly string? normalizedGitHubToken = string.IsNullOrWhiteSpace(githubToken) ? null : githubToken.Trim();
+
     public async Task EnsureRepositoryAsync(string? repoUrl, string? branchName, CancellationToken cancellationToken)
     {
         if (Directory.Exists(Path.Combine(repoRoot, ".git")))
@@ -24,7 +27,7 @@ internal sealed class GitClient(string repoRoot)
         }
 
         arguments.AddRange([repoUrl, repoRoot]);
-        await RunGitAsync(Directory.GetParent(repoRoot)!.FullName, arguments, cancellationToken);
+        await RunGitAsync(Directory.GetParent(repoRoot)!.FullName, arguments, cancellationToken, repoUrl);
     }
 
     public async Task EnsureCleanWorkingTreeAsync(CancellationToken cancellationToken)
@@ -39,19 +42,22 @@ internal sealed class GitClient(string repoRoot)
 
     public async Task FetchAsync(string remoteName, CancellationToken cancellationToken)
     {
-        await RunGitAsync(repoRoot, ["fetch", remoteName, "--tags", "--prune"], cancellationToken);
+        var remoteUrl = await GetRemoteUrlAsync(remoteName, cancellationToken);
+        await RunGitAsync(repoRoot, ["fetch", remoteName, "--tags", "--prune"], cancellationToken, remoteUrl);
     }
 
     public async Task PullAsync(string remoteName, string? branchName, CancellationToken cancellationToken)
     {
+        var remoteUrl = await GetRemoteUrlAsync(remoteName, cancellationToken);
+
         if (!string.IsNullOrWhiteSpace(branchName))
         {
             await RunGitAsync(repoRoot, ["checkout", branchName], cancellationToken);
-            await RunGitAsync(repoRoot, ["pull", "--ff-only", remoteName, branchName], cancellationToken);
+            await RunGitAsync(repoRoot, ["pull", "--ff-only", remoteName, branchName], cancellationToken, remoteUrl);
             return;
         }
 
-        await RunGitAsync(repoRoot, ["pull", "--ff-only", remoteName], cancellationToken);
+        await RunGitAsync(repoRoot, ["pull", "--ff-only", remoteName], cancellationToken, remoteUrl);
     }
 
     public async Task<IReadOnlyList<string>> GetStatusAsync(IReadOnlyList<string> paths, CancellationToken cancellationToken)
@@ -88,18 +94,21 @@ internal sealed class GitClient(string repoRoot)
 
     public async Task PushAsync(string remoteName, string? branchName, CancellationToken cancellationToken)
     {
+        var remoteUrl = await GetRemoteUrlAsync(remoteName, cancellationToken);
+
         if (!string.IsNullOrWhiteSpace(branchName))
         {
-            await RunGitAsync(repoRoot, ["push", remoteName, branchName], cancellationToken);
+            await RunGitAsync(repoRoot, ["push", remoteName, branchName], cancellationToken, remoteUrl);
             return;
         }
 
-        await RunGitAsync(repoRoot, ["push", remoteName, "HEAD"], cancellationToken);
+        await RunGitAsync(repoRoot, ["push", remoteName, "HEAD"], cancellationToken, remoteUrl);
     }
 
     public async Task PushTagAsync(string remoteName, string tagName, CancellationToken cancellationToken)
     {
-        await RunGitAsync(repoRoot, ["push", remoteName, tagName], cancellationToken);
+        var remoteUrl = await GetRemoteUrlAsync(remoteName, cancellationToken);
+        await RunGitAsync(repoRoot, ["push", remoteName, tagName], cancellationToken, remoteUrl);
     }
 
     public async Task<IReadOnlyList<string>> GetTagsAsync(CancellationToken cancellationToken)
@@ -110,7 +119,13 @@ internal sealed class GitClient(string repoRoot)
             .ToList();
     }
 
-    private static async Task<GitCommandResult> RunGitAsync(string workingDirectory, IReadOnlyList<string> arguments, CancellationToken cancellationToken)
+    private async Task<string> GetRemoteUrlAsync(string remoteName, CancellationToken cancellationToken)
+    {
+        var result = await RunGitAsync(repoRoot, ["remote", "get-url", remoteName], cancellationToken);
+        return result.StandardOutput;
+    }
+
+    private async Task<GitCommandResult> RunGitAsync(string workingDirectory, IReadOnlyList<string> arguments, CancellationToken cancellationToken, string? authenticatedUrl = null)
     {
         var startInfo = new ProcessStartInfo("git")
         {
@@ -120,6 +135,9 @@ internal sealed class GitClient(string repoRoot)
             UseShellExecute = false,
             CreateNoWindow = true
         };
+
+        startInfo.Environment["GIT_TERMINAL_PROMPT"] = "0";
+        ApplyGitHubAuthentication(startInfo, authenticatedUrl);
 
         foreach (var argument in arguments)
         {
@@ -142,6 +160,39 @@ internal sealed class GitClient(string repoRoot)
         }
 
         return new GitCommandResult(standardOutput, standardError);
+    }
+
+    private void ApplyGitHubAuthentication(ProcessStartInfo startInfo, string? authenticatedUrl)
+    {
+        if (string.IsNullOrWhiteSpace(normalizedGitHubToken)
+            || !TryBuildGitHubExtraHeaderConfig(authenticatedUrl, normalizedGitHubToken, out var configKey, out var configValue))
+        {
+            return;
+        }
+
+        startInfo.Environment["GIT_CONFIG_COUNT"] = "1";
+        startInfo.Environment["GIT_CONFIG_KEY_0"] = configKey;
+        startInfo.Environment["GIT_CONFIG_VALUE_0"] = configValue;
+    }
+
+    private static bool TryBuildGitHubExtraHeaderConfig(string? remoteUrl, string token, out string configKey, out string configValue)
+    {
+        configKey = string.Empty;
+        configValue = string.Empty;
+
+        if (string.IsNullOrWhiteSpace(remoteUrl)
+            || !Uri.TryCreate(remoteUrl, UriKind.Absolute, out var uri)
+            || !uri.Scheme.Equals("https", StringComparison.OrdinalIgnoreCase)
+            || !uri.Host.Contains("github", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        var urlPrefix = uri.GetLeftPart(UriPartial.Authority) + "/";
+        var basicAuthValue = Convert.ToBase64String(Encoding.UTF8.GetBytes($"x-access-token:{token}"));
+        configKey = $"http.{urlPrefix}.extraheader";
+        configValue = $"AUTHORIZATION: basic {basicAuthValue}";
+        return true;
     }
 
     private sealed record GitCommandResult(string StandardOutput, string StandardError);

@@ -14,6 +14,7 @@ internal static class CommandLine
         pipeline options:
                 --repo-root <path>             Repository root. Temporary clone folders are cleaned before startup.
           --repo-url <url>               Optional git URL used to clone the repository when repo-root does not exist yet.
+            --github-token <value>         Optional GitHub token used for authenticated HTTPS clone, fetch, pull, and push.
                 --source-path <path>           Temporary local folder used for the downloaded Google Drive tree. Cleaned before startup.
           --drive-folder-id <id>         Google Drive folder ID containing the exported BluePosts data.
           --google-credentials <value>   Path to a service account JSON file or the raw JSON content itself.
@@ -32,6 +33,7 @@ internal static class CommandLine
         Environment variables:
           BLUEPOSTS_REPO_ROOT
           BLUEPOSTS_REPO_URL
+          BLUEPOSTS_GITHUB_TOKEN
           BLUEPOSTS_SOURCE_PATH
           BLUEPOSTS_DRIVE_FOLDER_ID
           BLUEPOSTS_GOOGLE_CREDENTIALS
@@ -91,10 +93,12 @@ internal static class CommandLine
         var version = GetOption(options, "version", "BLUEPOSTS_VERSION");
         var versionBump = (GetOption(options, "version-bump", "BLUEPOSTS_VERSION_BUMP") ?? "patch").ToLowerInvariant();
         var repoUrl = GetOption(options, "repo-url", "BLUEPOSTS_REPO_URL");
+        var githubToken = GetOption(options, "github-token", "BLUEPOSTS_GITHUB_TOKEN");
 
         return new PipelineCommand(new PipelineOptions(
             RepoRoot: resolvedRepoRoot,
             RepoUrl: repoUrl,
+            GithubToken: githubToken,
             SourcePath: Path.GetFullPath(sourcePath),
             DriveFolderId: driveFolderId,
             GoogleCredentials: googleCredentials,
@@ -239,6 +243,7 @@ internal sealed record BuildDataOptions(string SourcePath, string OutputPath, st
 internal sealed record PipelineOptions(
     string RepoRoot,
     string? RepoUrl,
+    string? GithubToken,
     string SourcePath,
     string DriveFolderId,
     string GoogleCredentials,
@@ -252,7 +257,7 @@ internal sealed record PipelineOptions(
     bool AllowDirty)
 {
     public PipelineOptions()
-        : this(string.Empty, null, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, "origin", null, null, VersionBump.Patch, false, false)
+        : this(string.Empty, null, null, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, "origin", null, null, VersionBump.Patch, false, false)
     {
     }
 }

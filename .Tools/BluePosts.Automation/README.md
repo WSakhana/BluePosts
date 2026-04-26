@@ -47,6 +47,8 @@ Exemple recommande pour un conteneur ephemere qui ne conserve rien apres executi
 
 Les chemins declares dans le `--env-file` sont lus par le processus dans le conteneur Linux. Utilisez donc des chemins comme `/tmp/...` ou `/run/secrets/...` dans `.env`, meme si le chemin monte cote hote est un chemin Windows.
 
+Pour l'auth GitHub en HTTPS, laissez `BLUEPOSTS_REPO_URL` sans credentials et fournissez plutot `BLUEPOSTS_GITHUB_TOKEN` via un secret ou une variable d'environnement.
+
 ```bash
 docker run --rm \
   -v /path/to/google-service-account.json:/run/secrets/google-service-account.json:ro \
@@ -55,6 +57,8 @@ docker run --rm \
 ```
 
 Dans ce mode, le repo est clone dans un dossier temporaire du conteneur, puis supprime apres le `git push`. Le dossier Google Drive telecharge est aussi supprime.
+
+L'image Docker definit aussi une identite git par defaut pour permettre les `git commit` et `git tag` dans un conteneur ephemere. Pour la remplacer, passez `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME` et `GIT_COMMITTER_EMAIL` au `docker run` ou via votre orchestrateur.
 
 Les dossiers temporaires sont nettoyes au debut du lancement suivant. Ils ne sont plus supprimes automatiquement en fin d'execution.
 
@@ -84,6 +88,7 @@ Variables minimales a fournir a n8n:
 
 Variables optionnelles:
 
+- `BLUEPOSTS_GITHUB_TOKEN` pour authentifier `git clone`, `fetch`, `pull` et `push` en HTTPS sans mettre le token dans `BLUEPOSTS_REPO_URL`
 - `BLUEPOSTS_REPO_URL`
 - `BLUEPOSTS_SOURCE_PATH`
 - `BLUEPOSTS_VERSION`

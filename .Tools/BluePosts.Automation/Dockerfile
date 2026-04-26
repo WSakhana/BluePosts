@@ -19,7 +19,11 @@ ENV BLUEPOSTS_REPO_ROOT=/tmp/blueposts-repo \
     BLUEPOSTS_GOOGLE_CREDENTIALS=/run/secrets/google-service-account.json \
     BLUEPOSTS_GIT_REMOTE=origin \
     BLUEPOSTS_GIT_BRANCH=main \
-    BLUEPOSTS_VERSION_BUMP=patch
+    BLUEPOSTS_VERSION_BUMP=patch \
+    GIT_AUTHOR_NAME="BluePosts Automation" \
+    GIT_AUTHOR_EMAIL=blueposts-automation@local \
+    GIT_COMMITTER_NAME="BluePosts Automation" \
+    GIT_COMMITTER_EMAIL=blueposts-automation@local
 
 ENTRYPOINT ["/app/BluePosts.Automation"]
 CMD ["pipeline"]

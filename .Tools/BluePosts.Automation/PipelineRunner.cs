@@ -11,7 +11,7 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
 
         await CleanupTemporaryDirectoriesAsync(options, cancellationToken);
 
-        var git = new GitClient(options.RepoRoot);
+        var git = new GitClient(options.RepoRoot, options.GithubToken);
         await git.EnsureRepositoryAsync(options.RepoUrl, options.BranchName, cancellationToken);
 
         if (!options.AllowDirty)
