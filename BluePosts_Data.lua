@@ -1,9 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777231539,
+    package_timestamp = 1777273812,
     new_post_ids = {
+        "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2",
     },
     posts = {
+        ["2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2"] = {
+            id = "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2",
+            post_key = "75ad7ca4b2",
+            title = "Adventure with Orphans of Azeroth During Children&#x27;s Week",
+            category = "General Discussion (EU)",
+            timestamp = 1777273407,
+            url = "https://eu.forums.blizzard.com/en/wow/t/617548/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2\\image-1.jpg" },
+            { type = "p", text = "Champion the orphaned when you give back to the children of Azeroth during Children's Week—take an orphan under your wing and show them what the hero's life is like!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-04-25-bonus-rolls-what-happened-and-next-steps-b5a982f679"] = {
             id = "2026-04-25-bonus-rolls-what-happened-and-next-steps-b5a982f679",
             post_key = "b5a982f679",
