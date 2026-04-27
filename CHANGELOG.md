@@ -1,3 +1,8 @@
+## 1.1.1
+- Refreshed the bundled blue posts snapshot.
+- Added 1 new blue post to the in-game reader.
+- Adventure with Orphans of Azeroth During Children&#x27;s Week
+
 ## 1.1.0
 - Refreshed the bundled blue posts snapshot.
 - Added 1 new blue post to the in-game reader.
@@ -39,4 +44,5 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 

@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777273812,
+    package_timestamp = 1777311717,
     new_post_ids = {
-        "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2",
+        "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e",
     },
     posts = {
+        ["2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e"] = {
+            id = "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e",
+            post_key = "954fc5e77e",
+            title = "Adventure with Orphans of Azeroth During Children&#x27;s Week",
+            category = "General Discussion (US)",
+            timestamp = 1777311444,
+            url = "https://us.forums.blizzard.com/en/wow/t/2298702/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e\\image-1.jpg" },
+            { type = "p", text = "Champion the orphaned when you give back to the children of Azeroth during Children's Week—take an orphan under your wing and show them what the hero's life is like!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2"] = {
             id = "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-75ad7ca4b2",
             post_key = "75ad7ca4b2",
