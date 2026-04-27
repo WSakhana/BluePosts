@@ -1,10 +1,45 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777311717,
+    package_timestamp = 1777329860,
     new_post_ids = {
-        "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e",
+        "2026-04-27-m-dungeon-updates-incoming-april-28-74f9f845f0",
+        "2026-04-27-m-dungeon-updates-incoming-29-april-154f9dc8d2",
     },
     posts = {
+        ["2026-04-27-m-dungeon-updates-incoming-april-28-74f9f845f0"] = {
+            id = "2026-04-27-m-dungeon-updates-incoming-april-28-74f9f845f0",
+            post_key = "74f9f845f0",
+            title = "M+ Dungeon Updates Incoming - April 28",
+            category = "General Discussion (US)",
+            timestamp = 1777329454,
+            url = "https://us.forums.blizzard.com/en/wow/t/2298830/1",
+            content = {
+            { type = "p", text = "With the weekly reset, we’re making these adjustments:" },
+            { type = "h3", text = "Dungeons" },
+            { type = "list_item", text = "Algeth’ar Academy", level = 0 },
+            { type = "list_item", text = "Timer increased 31 minutes (was 30 minutes).", level = 1 },
+            { type = "list_item", text = "Maisara Caverns", level = 0 },
+            { type = "list_item", text = "Muro’jin and Nekraxx", level = 1 },
+            { type = "list_item", text = "Coordinated Assault damage reduced by 30%, and now ignores armor.", level = 2 },
+            },
+        },
+        ["2026-04-27-m-dungeon-updates-incoming-29-april-154f9dc8d2"] = {
+            id = "2026-04-27-m-dungeon-updates-incoming-29-april-154f9dc8d2",
+            post_key = "154f9dc8d2",
+            title = "M+ Dungeon Updates Incoming - 29 April",
+            category = "General Discussion (EU)",
+            timestamp = 1777329450,
+            url = "https://eu.forums.blizzard.com/en/wow/t/617673/1",
+            content = {
+            { type = "p", text = "With the weekly reset, we’re making these adjustments:" },
+            { type = "h3", text = "Dungeons" },
+            { type = "list_item", text = "Algeth’ar Academy", level = 0 },
+            { type = "list_item", text = "Timer increased 31 minutes (was 30 minutes).", level = 1 },
+            { type = "list_item", text = "Maisara Caverns", level = 0 },
+            { type = "list_item", text = "Muro’jin and Nekraxx", level = 1 },
+            { type = "list_item", text = "Coordinated Assault damage reduced by 30%, and now ignores armor.", level = 2 },
+            },
+        },
         ["2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e"] = {
             id = "2026-04-27-adventure-with-orphans-of-azeroth-during-childrenx27s-week-954fc5e77e",
             post_key = "954fc5e77e",

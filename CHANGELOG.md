@@ -1,3 +1,9 @@
+## 1.1.2
+- Refreshed the bundled blue posts snapshot.
+- Added 2 new blue posts to the in-game reader.
+- M+ Dungeon Updates Incoming - April 28
+- M+ Dungeon Updates Incoming - 29 April
+
 ## 1.1.1
 - Refreshed the bundled blue posts snapshot.
 - Added 1 new blue post to the in-game reader.
@@ -44,5 +50,6 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
