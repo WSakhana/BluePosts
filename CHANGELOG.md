@@ -1,3 +1,6 @@
+## 1.1.4
+- feat: remove unused package recent check and optimize toast handling
+
 ## 1.1.3
 - Refreshed the bundled blue posts snapshot.
 - Added 3 new blue posts to the in-game reader.
