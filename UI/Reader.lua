@@ -83,6 +83,8 @@ function UI:CreateReader()
     child:SetSize(600, 1)
     scroll:SetScrollChild(child)
     self.readerChild = child
+
+    self:CreateEmptyState()
 end
 
 function UI:GetReaderFontSize()
@@ -92,12 +94,15 @@ function UI:GetReaderFontSize()
 end
 
 function UI:SetReaderVisible(visible)
+    local hasPost = self.selectedPost ~= nil
+
     Helpers.SetShown(self.readerTitle, visible)
     Helpers.SetShown(self.readerTitleHitbox, visible)
     Helpers.SetShown(self.readerMeta, visible)
-    Helpers.SetShown(self.toolbar, visible)
-    Helpers.SetShown(self.readerDivider, visible)
-    Helpers.SetShown(self.readerScroll, visible)
+    Helpers.SetShown(self.toolbar, visible and hasPost)
+    Helpers.SetShown(self.readerDivider, visible and hasPost)
+    Helpers.SetShown(self.readerScroll, visible and hasPost)
+    Helpers.SetShown(self.emptyState, visible and not hasPost)
 
     if not visible and self.classMenu then
         self.classMenu:Hide()
@@ -123,6 +128,12 @@ function UI:ShowSettings()
     Helpers.SetShown(self.settingsPanel, true)
     self:RefreshSettingsPanel()
     self:UpdateSettingsButton()
+end
+
+function UI:ShowHome()
+    self.selectedPost = nil
+    self:ShowReader()
+    self:RefreshPostList()
 end
 
 function UI:ReleaseBlocks()
@@ -179,14 +190,339 @@ function UI:AcquireImage()
     return frame
 end
 
+function UI:CreateEmptyActionButton(parent, label, iconPath, width, primary)
+    local button = Helpers.CreateButton(parent, label, iconPath, width)
+    button.primary = primary and true or false
+
+    button:SetScript("OnEnter", function()
+        if not button:IsEnabled() then
+            return
+        end
+
+        button:SetBackdropColor(0.16, 0.12, 0.20, 0.96)
+        button:SetBackdropBorderColor(Constants.THEME.gold[1], Constants.THEME.gold[2], Constants.THEME.gold[3], 0.95)
+    end)
+
+    button:SetScript("OnLeave", function()
+        self:StyleEmptyActionButton(button, button:IsEnabled(), button.primary)
+    end)
+
+    return button
+end
+
+function UI:CreateEmptyState()
+    local empty = CreateFrame("Frame", nil, self.content, "BackdropTemplate")
+    empty:SetPoint("TOPLEFT", self.content, "TOPLEFT", 18, -96)
+    empty:SetPoint("BOTTOMRIGHT", self.content, "BOTTOMRIGHT", -18, 18)
+    empty:SetBackdrop(Constants.BACKDROP)
+    empty:SetBackdropColor(0.045, 0.045, 0.055, 0.74)
+    empty:SetBackdropBorderColor(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.48)
+    empty:Hide()
+    self.emptyState = empty
+
+    local topAccent = empty:CreateTexture(nil, "ARTWORK")
+    topAccent:SetPoint("TOPLEFT", empty, "TOPLEFT", 1, -1)
+    topAccent:SetPoint("TOPRIGHT", empty, "TOPRIGHT", -1, -1)
+    topAccent:SetHeight(2)
+    topAccent:SetColorTexture(Constants.THEME.blue[1], Constants.THEME.blue[2], Constants.THEME.blue[3], 0.70)
+
+    local iconFrame = CreateFrame("Frame", nil, empty, "BackdropTemplate")
+    iconFrame:SetSize(58, 58)
+    iconFrame:SetPoint("TOPLEFT", empty, "TOPLEFT", 34, -34)
+    iconFrame:SetBackdrop(Constants.BACKDROP)
+    iconFrame:SetBackdropColor(0.08, 0.08, 0.09, 0.95)
+    iconFrame:SetBackdropBorderColor(Constants.THEME.gold[1], Constants.THEME.gold[2], Constants.THEME.gold[3], 0.36)
+
+    local icon = iconFrame:CreateTexture(nil, "ARTWORK")
+    icon:SetSize(36, 36)
+    icon:SetPoint("CENTER", iconFrame, "CENTER", 0, 0)
+    icon:SetTexture("Interface\\Icons\\INV_Letter_15")
+    icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+
+    local kicker = Helpers.CreateFont(empty, 11, Constants.THEME.blue, "")
+    kicker:SetPoint("TOPLEFT", iconFrame, "TOPRIGHT", 18, -1)
+    kicker:SetPoint("TOPRIGHT", empty, "TOPRIGHT", -34, -35)
+    kicker:SetHeight(16)
+    kicker:SetWordWrap(false)
+    self.emptyKicker = kicker
+
+    local heading = Helpers.CreateFont(empty, 22, Constants.THEME.gold, "")
+    heading:SetPoint("TOPLEFT", kicker, "BOTTOMLEFT", 0, -4)
+    heading:SetPoint("TOPRIGHT", empty, "TOPRIGHT", -34, -54)
+    heading:SetHeight(30)
+    heading:SetWordWrap(false)
+    self.emptyHeading = heading
+
+    local body = Helpers.CreateFont(empty, 12, Constants.THEME.text, "")
+    body:SetPoint("TOPLEFT", heading, "BOTTOMLEFT", 0, -8)
+    body:SetPoint("TOPRIGHT", empty, "TOPRIGHT", -34, -92)
+    body:SetHeight(42)
+    body:SetSpacing(3)
+    self.emptyBody = body
+
+    local featured = CreateFrame("Button", nil, empty, "BackdropTemplate")
+    featured:SetPoint("TOPLEFT", empty, "TOPLEFT", 34, -150)
+    featured:SetPoint("TOPRIGHT", empty, "TOPRIGHT", -34, -150)
+    featured:SetHeight(92)
+    featured:SetBackdrop(Constants.BACKDROP)
+    featured:SetBackdropColor(0.065, 0.065, 0.076, 0.92)
+    featured:SetBackdropBorderColor(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.64)
+    featured:RegisterForClicks("LeftButtonUp")
+    self.emptyFeatured = featured
+
+    featured.accent = featured:CreateTexture(nil, "ARTWORK")
+    featured.accent:SetPoint("TOPLEFT", featured, "TOPLEFT", 0, 0)
+    featured.accent:SetPoint("BOTTOMLEFT", featured, "BOTTOMLEFT", 0, 0)
+    featured.accent:SetWidth(3)
+    featured.accent:SetColorTexture(Constants.THEME.blue[1], Constants.THEME.blue[2], Constants.THEME.blue[3], 0.82)
+
+    featured.icon = featured:CreateTexture(nil, "ARTWORK")
+    featured.icon:SetSize(28, 28)
+    featured.icon:SetPoint("LEFT", featured, "LEFT", 18, 0)
+    featured.icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+
+    featured.label = Helpers.CreateFont(featured, 11, Constants.THEME.blue, "")
+    featured.label:SetPoint("TOPLEFT", featured, "TOPLEFT", 58, -15)
+    featured.label:SetPoint("TOPRIGHT", featured, "TOPRIGHT", -22, -15)
+    featured.label:SetHeight(16)
+    featured.label:SetWordWrap(false)
+
+    featured.title = Helpers.CreateFont(featured, 14, Constants.THEME.text, "")
+    featured.title:SetPoint("TOPLEFT", featured.label, "BOTTOMLEFT", 0, -3)
+    featured.title:SetPoint("TOPRIGHT", featured, "TOPRIGHT", -22, -34)
+    featured.title:SetHeight(36)
+
+    featured.meta = Helpers.CreateFont(featured, 11, Constants.THEME.muted, "")
+    featured.meta:SetPoint("TOPLEFT", featured.title, "BOTTOMLEFT", 0, -2)
+    featured.meta:SetPoint("TOPRIGHT", featured, "TOPRIGHT", -22, -72)
+    featured.meta:SetHeight(14)
+    featured.meta:SetWordWrap(false)
+
+    featured:SetScript("OnClick", function()
+        if self.emptyRecommendedPost then
+            self:SelectPost(self.emptyRecommendedPost.id)
+        end
+    end)
+
+    featured:SetScript("OnEnter", function()
+        if not self.emptyRecommendedPost then
+            return
+        end
+        featured:SetBackdropColor(0.10, 0.08, 0.12, 0.96)
+        featured:SetBackdropBorderColor(Constants.THEME.gold[1], Constants.THEME.gold[2], Constants.THEME.gold[3], 0.88)
+    end)
+
+    featured:SetScript("OnLeave", function()
+        featured:SetBackdropColor(0.065, 0.065, 0.076, 0.92)
+        featured:SetBackdropBorderColor(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.64)
+    end)
+
+    local actions = CreateFrame("Frame", nil, empty)
+    actions:SetPoint("TOPLEFT", featured, "BOTTOMLEFT", 0, -16)
+    actions:SetPoint("TOPRIGHT", featured, "BOTTOMRIGHT", 0, -16)
+    actions:SetHeight(32)
+    self.emptyActions = actions
+
+    self.emptyOpenUnreadButton = self:CreateEmptyActionButton(actions, "Open unread", Constants.READ_BUTTON_TEXTURES.MARK_READ, 136, true)
+    self.emptyOpenUnreadButton:SetPoint("LEFT", actions, "LEFT", 0, 0)
+    self.emptyOpenUnreadButton.icon:SetTexCoord(0, 1, 0, 1)
+    self.emptyOpenUnreadButton:SetScript("OnClick", function()
+        local post = self:GetEmptyStateStats().firstUnread
+        if post then
+            self:SelectPost(post.id)
+        end
+    end)
+
+    self.emptyLatestButton = self:CreateEmptyActionButton(actions, "Latest post", "Interface\\Icons\\INV_Letter_15", 132, false)
+    self.emptyLatestButton:SetPoint("LEFT", self.emptyOpenUnreadButton, "RIGHT", 8, 0)
+    self.emptyLatestButton:SetScript("OnClick", function()
+        local post = self:GetEmptyStateStats().firstPost
+        if post then
+            self:SelectPost(post.id)
+        end
+    end)
+
+    self.emptyClearButton = self:CreateEmptyActionButton(actions, "Clear filters", "Interface\\Icons\\Spell_Holy_DispelMagic", 132, false)
+    self.emptyClearButton:SetPoint("LEFT", self.emptyLatestButton, "RIGHT", 8, 0)
+    self.emptyClearButton:SetScript("OnClick", function()
+        self:ResetAllFilters()
+        self:UpdateEmptyState()
+    end)
+
+    local footer = CreateFrame("Frame", nil, empty, "BackdropTemplate")
+    footer:SetPoint("TOPLEFT", actions, "BOTTOMLEFT", 0, -22)
+    footer:SetPoint("TOPRIGHT", actions, "BOTTOMRIGHT", 0, -22)
+    footer:SetHeight(74)
+    footer:SetBackdrop(Constants.BACKDROP)
+    footer:SetBackdropColor(0.035, 0.035, 0.045, 0.70)
+    footer:SetBackdropBorderColor(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.42)
+    self.emptyFooter = footer
+
+    footer.label = Helpers.CreateFont(footer, 11, Constants.THEME.blue, "")
+    footer.label:SetPoint("TOPLEFT", footer, "TOPLEFT", 14, -12)
+    footer.label:SetPoint("TOPRIGHT", footer, "TOPRIGHT", -14, -12)
+    footer.label:SetHeight(14)
+    footer.label:SetText("Current view")
+    footer.label:SetWordWrap(false)
+
+    footer.text = Helpers.CreateFont(footer, 12, Constants.THEME.muted, "")
+    footer.text:SetPoint("TOPLEFT", footer.label, "BOTTOMLEFT", 0, -7)
+    footer.text:SetPoint("TOPRIGHT", footer, "TOPRIGHT", -14, -33)
+    footer.text:SetHeight(34)
+    footer.text:SetSpacing(3)
+    self.emptyFilterSummary = footer.text
+end
+
+function UI:StyleEmptyActionButton(button, enabled, primary)
+    if not button then
+        return
+    end
+
+    button:SetEnabled(enabled)
+    button:SetAlpha(enabled and 1 or 0.44)
+
+    if primary and enabled then
+        button:SetBackdropColor(0.11, 0.12, 0.15, 0.96)
+        button:SetBackdropBorderColor(Constants.THEME.blue[1], Constants.THEME.blue[2], Constants.THEME.blue[3], 0.88)
+    else
+        button:SetBackdropColor(0.11, 0.11, 0.13, 0.85)
+        button:SetBackdropBorderColor(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.70)
+    end
+end
+
+function UI:HasActiveFilters()
+    local searchText = self.searchBox and self.searchBox:GetText() or ""
+    return (self.currentCategory and self.currentCategory ~= "ALL")
+        or (self.currentRegion and self.currentRegion ~= "ALL")
+        or self.currentUnreadOnly
+        or searchText ~= ""
+end
+
+function UI:PostMatchesCurrentView(post)
+    if not post then
+        return false
+    end
+
+    local categoryMatches = self.currentCategory == "ALL" or post.categoryKey == self.currentCategory
+    local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
+    local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
+    local unreadMatches = not self.currentUnreadOnly or not self.core:IsRead(post)
+    local searchText = self.searchBox and self.searchBox:GetText() or ""
+    return categoryMatches and regionMatches and unreadMatches and Helpers.MatchesSearch(post, searchText)
+end
+
+function UI:GetEmptyStateStats()
+    local stats = {
+        total = 0,
+        unread = 0,
+        firstPost = nil,
+        firstUnread = nil,
+    }
+
+    for _, post in ipairs(self.core.posts or {}) do
+        if self:PostMatchesCurrentView(post) then
+            stats.total = stats.total + 1
+
+            if not stats.firstPost then
+                stats.firstPost = post
+            end
+
+            if not self.core:IsRead(post) then
+                stats.unread = stats.unread + 1
+                if not stats.firstUnread then
+                    stats.firstUnread = post
+                end
+            end
+        end
+    end
+
+    return stats
+end
+
+function UI:GetFilterSummary(stats)
+    local parts = {}
+
+    parts[#parts + 1] = Constants.REGION_META[self.currentRegion or "ALL"] or "All regions"
+
+    local category = Constants.CATEGORY_META[self.currentCategory or "ALL"]
+    parts[#parts + 1] = category and category.label or "All"
+
+    if self.currentUnreadOnly then
+        parts[#parts + 1] = "Unread only"
+    end
+
+    local searchText = self.searchBox and self.searchBox:GetText() or ""
+    if searchText ~= "" then
+        parts[#parts + 1] = ("Search: %s"):format(Helpers.Truncate(searchText, 28))
+    end
+
+    local summary = table.concat(parts, "  |  ")
+    return ("%d shown, %d unread  |  %s"):format(stats.total or 0, stats.unread or 0, summary)
+end
+
+function UI:UpdateEmptyState()
+    if not self.emptyState then
+        return
+    end
+
+    local stats = self:GetEmptyStateStats()
+    local totalPosts = #(self.core.posts or {})
+    local unreadPosts = self.core:GetUnreadCount()
+    local recommendedPost = stats.firstUnread or stats.firstPost
+    self.emptyRecommendedPost = recommendedPost
+
+    self.readerMeta:SetText(("%d posts available  |  %d unread"):format(totalPosts, unreadPosts))
+    self.emptyKicker:SetText(self:HasActiveFilters() and "Filtered view" or "Ready when you are")
+
+    if stats.total == 0 then
+        self.readerTitle:SetText("No posts in this view")
+        self.emptyHeading:SetText("No matching posts")
+        self.emptyBody:SetText("Clear the current filters or search to bring the full blue post list back.")
+    elseif stats.unread > 0 then
+        self.readerTitle:SetText("Welcome back")
+        self.emptyHeading:SetText("Start with the latest unread post")
+        self.emptyBody:SetText("A fresh post is queued up for this view. Open it now, jump to the newest post, or pick a topic from the list.")
+    else
+        self.readerTitle:SetText("You are caught up")
+        self.emptyHeading:SetText("Everything in this view is read")
+        self.emptyBody:SetText("Open the newest post again, adjust the filters, or keep the window ready for the next update.")
+    end
+
+    if recommendedPost then
+        local meta = Constants.CATEGORY_META[recommendedPost.categoryKey] or Constants.CATEGORY_META.NEWS
+        self.emptyFeatured.icon:SetTexture(meta.icon)
+        self.emptyFeatured.label:SetText(stats.firstUnread and "Recommended unread" or "Newest in view")
+        self.emptyFeatured.title:SetText(recommendedPost.title or "")
+        self.emptyFeatured.meta:SetText(("%s  |  %s"):format(Helpers.StripRegion(recommendedPost.category), recommendedPost.dateText or ""))
+        self.emptyFeatured:SetAlpha(1)
+    else
+        self.emptyFeatured.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
+        self.emptyFeatured.label:SetText("Nothing to show")
+        self.emptyFeatured.title:SetText("No posts match the current filters")
+        self.emptyFeatured.meta:SetText("Clear filters to return to the full list.")
+        self.emptyFeatured:SetAlpha(0.72)
+    end
+
+    self.emptyOpenUnreadButton.text:SetText(stats.firstUnread and "Open unread" or "All caught up")
+    self.emptyLatestButton.text:SetText(stats.firstPost and "Latest post" or "No latest")
+    self.emptyFilterSummary:SetText(self:GetFilterSummary(stats))
+
+    self:StyleEmptyActionButton(self.emptyOpenUnreadButton, stats.firstUnread ~= nil, true)
+    self:StyleEmptyActionButton(self.emptyLatestButton, stats.firstPost ~= nil, false)
+    self:StyleEmptyActionButton(self.emptyClearButton, self:HasActiveFilters(), false)
+end
+
 function UI:ShowEmptyState()
     self.selectedPost = nil
-    self.readerTitle:SetText("Select a post")
-    self.readerMeta:SetText("Posts are parsed only when opened to keep the interface responsive.")
     self.classButton:Hide()
+    if self.classMenu then
+        self.classMenu:Hide()
+    end
     self:ReleaseBlocks()
     self.readerScroll:SetVerticalScroll(0)
     self.readerChild:SetHeight(self.readerScroll:GetHeight())
+    self:SetReaderVisible(true)
+    self:UpdateEmptyState()
     self:UpdateToolbar()
 end
 
@@ -201,6 +537,7 @@ function UI:SelectPost(postID)
     end
 
     self.selectedPost = post
+    self:SetReaderVisible(true)
     self.readerTitle:SetText(post.title)
     self.readerMeta:SetText(("%s  |  %s"):format(Helpers.StripRegion(post.category), post.dateText or ""))
     self.readerScroll:SetVerticalScroll(0)

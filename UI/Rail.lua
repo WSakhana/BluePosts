@@ -343,4 +343,8 @@ function UI:RefreshPostList()
 
     self.navChild:SetHeight(math.max(y, self.navScroll:GetHeight()))
     self:RefreshSubtitle(false, false)
+
+    if not self.selectedPost and self.UpdateEmptyState then
+        self:UpdateEmptyState()
+    end
 end

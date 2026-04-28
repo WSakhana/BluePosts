@@ -1,5 +1,6 @@
 ## 1.1.6
 - Improved the addon UI structure.
+- Added a home screen with quick actions and current-view context.
 
 ## 1.1.5
 - feat: enhance class menu with scroll functionality and dynamic button display
