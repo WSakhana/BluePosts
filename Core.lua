@@ -54,8 +54,6 @@ local RESETTABLE_SETTING_KEYS = {
     "readerFontSize",
 }
 
-local RECENT_PACKAGE_WINDOW = 86400
-
 ns.THEME = {
     bg = { 0.10, 0.10, 0.10, 0.85 },
     panel = { 0.07, 0.07, 0.08, 0.88 },
@@ -386,15 +384,7 @@ function Core:GetNewestRecentPost()
     return nil
 end
 
-function Core:IsCurrentPackageRecent()
-    return self.packageTimestamp > 0 and (time() - self.packageTimestamp) <= RECENT_PACKAGE_WINDOW
-end
-
 function Core:GetNewestPackagedUnreadPost()
-    if not self:IsCurrentPackageRecent() then
-        return nil
-    end
-
     if not next(self.packageNewPostLookup or {}) then
         return nil
     end

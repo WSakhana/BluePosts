@@ -2148,7 +2148,12 @@ function UI:CreateToast()
             self:Show()
             self:SelectPost(toast.post.id)
         end
+        self.toastToken = (self.toastToken or 0) + 1
+        if UIFrameFadeRemoveFrame then
+            UIFrameFadeRemoveFrame(toast)
+        end
         toast:Hide()
+        toast:SetAlpha(1)
     end)
 
     toast:SetScript("OnEnter", function()
@@ -2173,6 +2178,12 @@ function UI:ShowToast(post)
     end
 
     self:ApplyToastPosition()
+
+    self.toastToken = (self.toastToken or 0) + 1
+    local toastToken = self.toastToken
+    if UIFrameFadeRemoveFrame then
+        UIFrameFadeRemoveFrame(self.toast)
+    end
 
     self.toast.post = post
     local categoryMeta = CATEGORY_META[post.categoryKey or "NEWS"] or CATEGORY_META.NEWS
@@ -2199,11 +2210,11 @@ function UI:ShowToast(post)
     end
 
     C_Timer.After(self:GetToastDuration(), function()
-        if self.toast and self.toast:IsShown() and self.toast.post == post then
+        if self.toast and self.toast:IsShown() and self.toastToken == toastToken then
             if UIFrameFadeOut then
                 UIFrameFadeOut(self.toast, 0.35, self.toast:GetAlpha(), 0)
                 C_Timer.After(0.4, function()
-                    if self.toast then
+                    if self.toast and self.toastToken == toastToken then
                         self.toast:Hide()
                         self.toast:SetAlpha(1)
                     end
