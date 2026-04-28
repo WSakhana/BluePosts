@@ -1,3 +1,6 @@
+## 1.1.5
+- feat: enhance class menu with scroll functionality and dynamic button display
+
 ## 1.1.4
 - feat: remove unused package recent check and optimize toast handling
 
