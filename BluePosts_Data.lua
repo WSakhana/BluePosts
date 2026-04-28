@@ -1,12 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777339825,
+    package_timestamp = 1777396521,
     new_post_ids = {
-        "2026-04-28-hotfixes-april-27-2026-c95f9c9047",
-        "2026-04-28-world-of-warcraft-midnight-hotfixes-april-27-2026-cd1b478a91",
-        "2026-04-28-world-of-warcraft-midnight-hotfixes-27-april-645e4b5acd",
+        "2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-14-may-7ca220f049",
+        "2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-may-14-64cef848c0",
     },
     posts = {
+        ["2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-14-may-7ca220f049"] = {
+            id = "2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-14-may-7ca220f049",
+            post_key = "7ca220f049",
+            title = "BCC Anniversary Edition: Overlords of Outland Arrives 14 May",
+            category = "General Discussion (EU)",
+            timestamp = 1777396056,
+            url = "https://eu.forums.blizzard.com/en/wow/t/617765/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-14-may-7ca220f049\\image-1.jpg" },
+            { type = "p", text = "Lady Vashj and Kael'thas Sunstrider, the cunning overlords of Outland, have long served Illidan Stormrage, the Betrayer. Retake Outland on 14 May, when Overlords of Outland launches globally on all realms at 23:00 BST." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-may-14-64cef848c0"] = {
+            id = "2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-may-14-64cef848c0",
+            post_key = "64cef848c0",
+            title = "BCC Anniversary Edition: Overlords of Outland Arrives May 14",
+            category = "General Discussion (US)",
+            timestamp = 1777396052,
+            url = "https://us.forums.blizzard.com/en/wow/t/2299164/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-28-bcc-anniversary-edition-overlords-of-outland-arrives-may-14-64cef848c0\\image-1.jpg" },
+            { type = "p", text = "Lady Vashj and Kael'thas Sunstrider, the cunning overlords of Outland, have long served Illidan Stormrage, the Betrayer. Retake Outland on May 14, when Overlords of Outland launches globally on all realms at 3:00 PM PDT / 23:00 BST." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-04-28-hotfixes-april-27-2026-c95f9c9047"] = {
             id = "2026-04-28-hotfixes-april-27-2026-c95f9c9047",
             post_key = "c95f9c9047",

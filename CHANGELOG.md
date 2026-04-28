@@ -1,3 +1,9 @@
+## 1.1.7
+- Refreshed the bundled blue posts snapshot.
+- Added 2 new blue posts to the in-game reader.
+- BCC Anniversary Edition: Overlords of Outland Arrives 14 May
+- BCC Anniversary Edition: Overlords of Outland Arrives May 14
+
 ## 1.1.6
 - Improved the addon UI structure.
 - Added a home screen with quick actions and current-view context.
@@ -67,6 +73,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
