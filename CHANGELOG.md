@@ -1,6 +1,8 @@
+## 1.1.6
+- Improved the addon UI structure.
+
 ## 1.1.5
 - feat: enhance class menu with scroll functionality and dynamic button display
-- Improved the addon UI structure for easier maintenance without changing how it works.
 
 ## 1.1.4
 - feat: remove unused package recent check and optimize toast handling
