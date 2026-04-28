@@ -15,4 +15,10 @@ Libs\LibDBIcon-1.0\lib.xml
 
 BluePosts_Data.lua
 Core.lua
-UI.lua
+UI\Shared.lua
+UI\Window.lua
+UI\Rail.lua
+UI\Reader.lua
+UI\ClassMenu.lua
+UI\Toast.lua
+UI\Settings.lua
