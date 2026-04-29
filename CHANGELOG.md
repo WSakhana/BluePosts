@@ -1,3 +1,9 @@
+## 1.1.8
+- Refreshed the bundled blue posts snapshot.
+- Added 2 new blue posts to the in-game reader.
+- World of Warcraft: Midnight Hotfixes - 28 April
+- World of Warcraft: Midnight Hotfixes - April 28, 2026
+
 ## 1.1.7
 - Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
@@ -73,6 +79,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
