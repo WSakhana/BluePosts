@@ -1,3 +1,9 @@
+## 1.1.9
+- Refreshed the bundled blue posts snapshot.
+- Added 2 new blue posts to the in-game reader.
+- Get Decked Out with Gilnean Flair at May’s Trading Post
+- Get Decked Out with Gilnean Flair at May’s Trading Post
+
 ## 1.1.8
 - Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
@@ -79,6 +85,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
