@@ -1,11 +1,51 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777565428,
+    package_timestamp = 1777577190,
     new_post_ids = {
-        "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d",
-        "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-a306652e0f",
+        "2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-391bbd1338",
+        "2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-d16fdd3a2d",
+        "2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-bd68992daf",
     },
     posts = {
+        ["2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-391bbd1338"] = {
+            id = "2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-391bbd1338",
+            post_key = "391bbd1338",
+            title = "Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount",
+            category = "General Discussion (US)",
+            timestamp = 1777576668,
+            url = "https://us.forums.blizzard.com/en/wow/t/2300369/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-391bbd1338\\image-1.jpg" },
+            { type = "p", text = "Climb atop a Blooming Arboon Mount adorned in vibrant fuchsia or warm amber hues to carry you and the strength of the forest wherever they roam." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-d16fdd3a2d"] = {
+            id = "2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-d16fdd3a2d",
+            post_key = "d16fdd3a2d",
+            title = "Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount",
+            category = "General Discussion (EU)",
+            timestamp = 1777576664,
+            url = "https://eu.forums.blizzard.com/en/wow/t/618011/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-d16fdd3a2d\\image-1.jpg" },
+            { type = "p", text = "Climb atop a Blooming Arboon Mount adorned in vibrant fuchsia or warm amber hues to carry you and the strength of the forest wherever they roam." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-bd68992daf"] = {
+            id = "2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-bd68992daf",
+            post_key = "bd68992daf",
+            title = "Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount",
+            category = "General Discussion (EU)",
+            timestamp = 1777576660,
+            url = "https://eu.forums.blizzard.com/en/wow/t/618012/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-30-azeroth-blossoms-anew-choose-your-blooming-arboon-mount-bd68992daf\\image-1.jpg" },
+            { type = "p", text = "Climb atop a Blooming Arboon Mount adorned in vibrant fuchsia or warm amber hues to carry you and the strength of the forest wherever they roam." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d"] = {
             id = "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d",
             post_key = "fdde9ce77d",
