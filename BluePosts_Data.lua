@@ -1,12 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777513634,
+    package_timestamp = 1777565428,
     new_post_ids = {
-        "2026-04-30-hotfixes-april-29-2026-4e1e598eb8",
-        "2026-04-30-world-of-warcraft-midnight-hotfixes-april-29-2026-cd1b478a91",
-        "2026-04-30-world-of-warcraft-midnight-hotfixes-28-april-645e4b5acd",
+        "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d",
+        "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-a306652e0f",
     },
     posts = {
+        ["2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d"] = {
+            id = "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d",
+            post_key = "fdde9ce77d",
+            title = "Take a First Look at the Midnight: Revelations Content Update",
+            category = "General Discussion (EU)",
+            timestamp = 1777564898,
+            url = "https://eu.forums.blizzard.com/en/wow/t/617988/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-fdde9ce77d\\image-1.jpg" },
+            { type = "p", text = "In the next content update, take the next step in thwarting the forces of the Void—hunting down their leaders and uncovering new sources of power. Players will also face a new single-boss raid in Sporefall and Turbulent Timeways returns with Dragonflight dungeons and a new slate of rewards." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-a306652e0f"] = {
+            id = "2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-a306652e0f",
+            post_key = "a306652e0f",
+            title = "Take a First Look at the Midnight: Revelations Content Update",
+            category = "General Discussion (US)",
+            timestamp = 1777564894,
+            url = "https://us.forums.blizzard.com/en/wow/t/2300161/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-30-take-a-first-look-at-the-midnight-revelations-content-update-a306652e0f\\image-1.jpg" },
+            { type = "p", text = "In the next content update, take the next step in thwarting the forces of the Void—hunting down their leaders and uncovering new sources of power. Players will also face a new single-boss raid in Sporefall and Turbulent Timeways returns with Dragonflight dungeons and a new slate of rewards." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-04-30-hotfixes-april-29-2026-4e1e598eb8"] = {
             id = "2026-04-30-hotfixes-april-29-2026-4e1e598eb8",
             post_key = "4e1e598eb8",
