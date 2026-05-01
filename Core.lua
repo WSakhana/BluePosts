@@ -524,19 +524,13 @@ function Core:InitializeBroker()
             label = ADDON_DISPLAY_NAME,
             text = ADDON_DISPLAY_NAME,
             OnClick = function(_, button)
-                if button == "RightButton" then
-                    self.db.minimap.hide = true
-                    if self.dbIcon then
-                        self.dbIcon:Hide("BluePosts")
-                    end
-                    return
+                if button == "LeftButton" then
+                    self:Toggle()
                 end
-                self:Toggle()
             end,
             OnTooltipShow = function(tooltip)
                 tooltip:AddLine(ADDON_DISPLAY_NAME)
                 tooltip:AddLine("Left click: open", 0.8, 0.8, 0.8)
-                tooltip:AddLine("Right click: hide icon", 0.8, 0.8, 0.8)
                 tooltip:AddLine(("Unread: %d"):format(self:GetUnreadCount()), 0.0, 0.7, 1.0)
             end,
         })
@@ -560,7 +554,7 @@ function Core:CreateFallbackMinimapButton()
     button:SetSize(32, 32)
     button:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -2, -2)
     button:SetFrameStrata("MEDIUM")
-    button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+    button:RegisterForClicks("LeftButtonUp")
 
     button.icon = button:CreateTexture(nil, "ARTWORK")
     button.icon:SetAllPoints(button)
@@ -569,13 +563,7 @@ function Core:CreateFallbackMinimapButton()
 
     button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
 
-    button:SetScript("OnClick", function(_, mouseButton)
-        if mouseButton == "RightButton" then
-            self.db.minimap.hide = true
-            button:Hide()
-            self:Print("Minimap icon hidden. Type /bp minimap to show it again.")
-            return
-        end
+    button:SetScript("OnClick", function()
         self:Toggle()
     end)
 
@@ -583,7 +571,6 @@ function Core:CreateFallbackMinimapButton()
         GameTooltip:SetOwner(button, "ANCHOR_LEFT")
         GameTooltip:AddLine(ADDON_DISPLAY_NAME)
         GameTooltip:AddLine("Left click: open", 0.8, 0.8, 0.8)
-        GameTooltip:AddLine("Right click: hide", 0.8, 0.8, 0.8)
         GameTooltip:Show()
     end)
 
