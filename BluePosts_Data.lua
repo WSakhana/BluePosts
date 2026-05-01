@@ -1,6 +1,6 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777613861,
+    package_timestamp = 1777620968,
     new_post_ids = {
         "2026-05-01-world-of-warcraft-midnight-hotfixes-30-april-645e4b5acd",
         "2026-05-01-world-of-warcraft-midnight-hotfixes-april-30-2026-cd1b478a91",
@@ -1559,32 +1559,6 @@ BluePosts_Data = {
             url = "https://us.forums.blizzard.com/en/wow/t/2296735/1",
             content = {
             { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-24-a-message-regarding-the-1205-launch-c6a6a471f7\\image-1.jpg" },
-            { type = "p", text = "The 12.0.5 patch launch was not up to our standards, and we know this disrupted your time and caused justified frustration." },
-            { type = "p", text = "View Full Article" },
-            },
-        },
-        ["2026-04-24-a-message-regarding-the-1205-launch-2a9d6b0e39"] = {
-            id = "2026-04-24-a-message-regarding-the-1205-launch-2a9d6b0e39",
-            post_key = "2a9d6b0e39",
-            title = "A Message Regarding the 12.0.5 Launch",
-            category = "General Discussion (EU)",
-            timestamp = 1776999697,
-            url = "https://eu.forums.blizzard.com/en/wow/t/617149/1",
-            content = {
-            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-24-a-message-regarding-the-1205-launch-2a9d6b0e39\\image-1.jpg" },
-            { type = "p", text = "The 12.0.5 patch launch was not up to our standards, and we know this disrupted your time and caused justified frustration." },
-            { type = "p", text = "View Full Article" },
-            },
-        },
-        ["2026-04-24-a-message-regarding-the-1205-launch-95837c4620"] = {
-            id = "2026-04-24-a-message-regarding-the-1205-launch-95837c4620",
-            post_key = "95837c4620",
-            title = "A Message Regarding the 12.0.5 Launch",
-            category = "General Discussion (US)",
-            timestamp = 1776999693,
-            url = "https://us.forums.blizzard.com/en/wow/t/2296736/1",
-            content = {
-            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-04-24-a-message-regarding-the-1205-launch-95837c4620\\image-1.jpg" },
             { type = "p", text = "The 12.0.5 patch launch was not up to our standards, and we know this disrupted your time and caused justified frustration." },
             { type = "p", text = "View Full Article" },
             },
