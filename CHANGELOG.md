@@ -1,3 +1,6 @@
+## 1.2.6a
+- feat: implement region filtering for posts and enhance region handling
+
 ## 1.2.5
 - Simplify minimap button click handling and tooltip instructions
 - Update changelog handling to include latest changelog file
