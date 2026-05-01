@@ -1,48 +1,36 @@
 ## 1.2.4
-- Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
 - World of Warcraft: Midnight Hotfixes - 30 April
 - World of Warcraft: Midnight Hotfixes - April 30, 2026
 
 ## 1.2.3
-- Refreshed the bundled blue posts snapshot.
 - Added 1 new blue post to the in-game reader.
 - Transform Your Home With the Cozy Treehouse Retreat Bundle and More!
 
 ## 1.2.2
-- Refreshed the bundled blue posts snapshot.
 - Added 3 new blue posts to the in-game reader.
-- Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount
-- Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount
 - Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount
 
 ## 1.2.1
-- Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
-- Take a First Look at the Midnight: Revelations Content Update
 - Take a First Look at the Midnight: Revelations Content Update
 
 ## 1.2.0
-- Refreshed the bundled blue posts snapshot.
 - Added 3 new blue posts to the in-game reader.
 - Hotfixes: April 29, 2026
 - World of Warcraft: Midnight Hotfixes - April 29, 2026
 - World of Warcraft: Midnight Hotfixes - 28 April
 
 ## 1.1.9
-- Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
-- Get Decked Out with Gilnean Flair at May’s Trading Post
 - Get Decked Out with Gilnean Flair at May’s Trading Post
 
 ## 1.1.8
-- Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
 - World of Warcraft: Midnight Hotfixes - 28 April
 - World of Warcraft: Midnight Hotfixes - April 28, 2026
 
 ## 1.1.7
-- Refreshed the bundled blue posts snapshot.
 - Added 2 new blue posts to the in-game reader.
 - BCC Anniversary Edition: Overlords of Outland Arrives 14 May
 - BCC Anniversary Edition: Overlords of Outland Arrives May 14
@@ -58,48 +46,48 @@
 - feat: remove unused package recent check and optimize toast handling
 
 ## 1.1.3
-- Refreshed the bundled blue posts snapshot.
+
 - Added 3 new blue posts to the in-game reader.
 - Hotfixes: April 27, 2026
 - World of Warcraft: Midnight Hotfixes - April 27, 2026
 - World of Warcraft: Midnight Hotfixes - 27 April
 
 ## 1.1.2
-- Refreshed the bundled blue posts snapshot.
+
 - Added 2 new blue posts to the in-game reader.
 - M+ Dungeon Updates Incoming - April 28
 - M+ Dungeon Updates Incoming - 29 April
 
 ## 1.1.1
-- Refreshed the bundled blue posts snapshot.
+
 - Added 1 new blue post to the in-game reader.
-- Adventure with Orphans of Azeroth During Children&#x27;s Week
+- Adventure with Orphans of Azeroth During Children's Week
 
 ## 1.1.0
-- Refreshed the bundled blue posts snapshot.
+
 - Added 1 new blue post to the in-game reader.
-- Adventure with Orphans of Azeroth During Children&#x27;s Week
+- Adventure with Orphans of Azeroth During Children's Week
 
 ## 1.0.9
-- Refreshed the bundled blue posts snapshot.
+
 
 ## 1.0.7
-- Refreshed the bundled blue posts snapshot.
+
 - Added more settings over login toasts with duration, screen position, and a quick preview option.
 - Added a reset settings action and improved login toasts.
 
 ## 1.0.6
-- Refreshed the bundled blue posts snapshot.
+
 - Improved automated changelog generation for future updates.
 
 ## 1.0.5
-- Refreshed the bundled blue posts snapshot.
+
 
 ## 1.0.4
 - Improved release packaging and deployment reliability.
 
 ## 1.0.3
-- Refreshed the bundled blue posts snapshot.
+
 - Improved the automated release pipeline.
 
 ## 1.0.2

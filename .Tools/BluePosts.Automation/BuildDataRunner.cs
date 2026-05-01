@@ -15,6 +15,8 @@ internal sealed class BuildDataRunner
 {
     private static readonly Regex DeveloperNoteRegex = new("^(?i:Developers.? notes:)\\s*", RegexOptions.Compiled);
     private static readonly Regex GeneratedPostIdRegex = new(@"^\s*\[""(?<id>[^""]+)""\]\s*=\s*\{$", RegexOptions.Compiled);
+    private static readonly Regex GeneratedPostKeyRegex = new(@"^\s*post_key\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
+    private static readonly Regex GeneratedUrlRegex = new(@"^\s*url\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex PackageTimestampRegex = new(@"^\s*package_timestamp\s*=\s*(?<timestamp>\d+)\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex WhitespaceRegex = new("\\s+", RegexOptions.Compiled);
     private static readonly StringComparer PathComparer = OperatingSystem.IsWindows()
@@ -69,7 +71,7 @@ internal sealed class BuildDataRunner
             .ToList();
 
         var newPosts = orderedPosts
-            .Where(post => !existingData.PostIds.Contains(post.Id))
+            .Where(post => !IsKnownPost(post, existingData))
             .Select(post => new NewPostSummary(post.Id, post.Title))
             .ToList();
 
@@ -155,51 +157,83 @@ internal sealed class BuildDataRunner
 
     private static List<SourcePostFolder> SelectLatestPostFolders(IReadOnlyList<SourcePostFolder> candidates)
     {
-        var selectedByPostKey = new Dictionary<string, SourcePostFolder>(StringComparer.Ordinal);
-        var postsWithoutKey = new List<SourcePostFolder>();
+        var selected = new List<SourcePostFolder>();
+        var selectedByIdentity = new Dictionary<string, SourcePostFolder>(StringComparer.Ordinal);
+        var duplicateCount = 0;
 
-        foreach (var candidate in candidates)
+        foreach (var candidate in candidates
+            .OrderByDescending(candidate => candidate.Timestamp)
+            .ThenBy(candidate => candidate.Id, StringComparer.OrdinalIgnoreCase))
         {
-            if (string.IsNullOrWhiteSpace(candidate.PostKey))
+            var identities = GetPostIdentities(candidate.PostKey, candidate.Metadata.SourceUrl).ToList();
+            if (identities.Count == 0)
             {
-                postsWithoutKey.Add(candidate);
+                selected.Add(candidate);
                 continue;
             }
 
-            if (!selectedByPostKey.TryGetValue(candidate.PostKey, out var existing)
-                || candidate.Timestamp > existing.Timestamp)
+            SourcePostFolder? duplicateOf = null;
+            string? duplicateIdentity = null;
+            foreach (var identity in identities)
             {
-                selectedByPostKey[candidate.PostKey] = candidate;
+                if (selectedByIdentity.TryGetValue(identity, out duplicateOf))
+                {
+                    duplicateIdentity = identity;
+                    break;
+                }
+            }
+
+            if (duplicateOf is null)
+            {
+                selected.Add(candidate);
+                duplicateOf = candidate;
+            }
+            else
+            {
+                duplicateCount++;
+                Console.WriteLine($"[build] duplicate {FormatPostIdentity(duplicateIdentity!)}: keeping {duplicateOf.Id} ({FormatTimestamp(duplicateOf.Timestamp)}), skipping {candidate.Id} ({FormatTimestamp(candidate.Timestamp)})");
+            }
+
+            foreach (var identity in identities)
+            {
+                selectedByIdentity.TryAdd(identity, duplicateOf);
             }
         }
 
-        var duplicateGroups = candidates
-            .Where(candidate => !string.IsNullOrWhiteSpace(candidate.PostKey))
-            .GroupBy(candidate => candidate.PostKey, StringComparer.Ordinal)
-            .Where(group => group.Count() > 1)
-            .ToList();
-
-        foreach (var group in duplicateGroups)
+        if (duplicateCount > 0)
         {
-            var selected = selectedByPostKey[group.Key];
-            var skipped = group
-                .Where(candidate => !PathComparer.Equals(candidate.FolderPath, selected.FolderPath))
-                .Select(candidate => $"{candidate.Id} ({FormatTimestamp(candidate.Timestamp)})")
-                .OrderBy(value => value, StringComparer.OrdinalIgnoreCase);
-
-            Console.WriteLine($"[build] post_key {group.Key}: keeping {selected.Id} ({FormatTimestamp(selected.Timestamp)}), skipping {string.Join(", ", skipped)}");
+            Console.WriteLine($"[build] Ignored {duplicateCount} older duplicate post folder(s) by post_key/source_url.");
         }
 
-        if (duplicateGroups.Count > 0)
-        {
-            var skippedDuplicateCount = duplicateGroups.Sum(group => group.Count() - 1);
-            Console.WriteLine($"[build] Ignored {skippedDuplicateCount} older duplicate post folder(s) by post_key/exported_at.");
-        }
-
-        return selectedByPostKey.Values
-            .Concat(postsWithoutKey)
+        return selected
             .OrderBy(candidate => Path.GetFileName(candidate.FolderPath), StringComparer.OrdinalIgnoreCase)
             .ToList();
+    }
+
+    private static IEnumerable<string> GetPostIdentities(string? postKey, string? url)
+    {
+        var normalizedPostKey = NormalizePostKey(postKey);
+        if (normalizedPostKey.Length > 0)
+        {
+            yield return $"post_key:{normalizedPostKey}";
+        }
+
+        var normalizedUrl = NormalizeUrl(url);
+        if (normalizedUrl.Length > 0)
+        {
+            yield return $"url:{normalizedUrl}";
+        }
+    }
+
+    private static string FormatPostIdentity(string identity)
+    {
+        var separatorIndex = identity.IndexOf(':', StringComparison.Ordinal);
+        if (separatorIndex < 0)
+        {
+            return identity;
+        }
+
+        return $"{identity[..separatorIndex]} {identity[(separatorIndex + 1)..]}";
     }
 
     private static string FormatTimestamp(long timestamp) =>
@@ -216,11 +250,13 @@ internal sealed class BuildDataRunner
     {
         if (!File.Exists(outputPath))
         {
-            return new ExistingGeneratedData(null, null, []);
+            return new ExistingGeneratedData(null, null, [], [], []);
         }
 
         var content = await File.ReadAllTextAsync(outputPath, cancellationToken);
         var postIds = new HashSet<string>(StringComparer.Ordinal);
+        var postKeys = new HashSet<string>(StringComparer.Ordinal);
+        var urls = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         long? packageTimestamp = null;
 
         using var reader = new StringReader(content);
@@ -230,6 +266,30 @@ internal sealed class BuildDataRunner
             if (postIdMatch.Success)
             {
                 postIds.Add(postIdMatch.Groups["id"].Value);
+                continue;
+            }
+
+            var postKeyMatch = GeneratedPostKeyRegex.Match(line);
+            if (postKeyMatch.Success)
+            {
+                var postKey = NormalizePostKey(UnescapeLuaString(postKeyMatch.Groups["value"].Value));
+                if (postKey.Length > 0)
+                {
+                    postKeys.Add(postKey);
+                }
+
+                continue;
+            }
+
+            var urlMatch = GeneratedUrlRegex.Match(line);
+            if (urlMatch.Success)
+            {
+                var url = NormalizeUrl(UnescapeLuaString(urlMatch.Groups["value"].Value));
+                if (url.Length > 0)
+                {
+                    urls.Add(url);
+                }
+
                 continue;
             }
 
@@ -246,7 +306,75 @@ internal sealed class BuildDataRunner
             }
         }
 
-        return new ExistingGeneratedData(content, packageTimestamp, postIds);
+        return new ExistingGeneratedData(content, packageTimestamp, postIds, postKeys, urls);
+    }
+
+    private static bool IsKnownPost(PostRecord post, ExistingGeneratedData existingData)
+    {
+        if (existingData.PostIds.Contains(post.Id))
+        {
+            return true;
+        }
+
+        var postKey = NormalizePostKey(post.PostKey);
+        if (postKey.Length > 0 && existingData.PostKeys.Contains(postKey))
+        {
+            return true;
+        }
+
+        var url = NormalizeUrl(post.Url);
+        return url.Length > 0 && existingData.Urls.Contains(url);
+    }
+
+    private static string NormalizePostKey(string? postKey) =>
+        postKey?.Trim() ?? string.Empty;
+
+    private static string NormalizeUrl(string? url)
+    {
+        var trimmed = url?.Trim() ?? string.Empty;
+        if (trimmed.Length == 0)
+        {
+            return string.Empty;
+        }
+
+        if (!Uri.TryCreate(trimmed, UriKind.Absolute, out var uri))
+        {
+            return trimmed.TrimEnd('/');
+        }
+
+        var builder = new UriBuilder(uri)
+        {
+            Fragment = string.Empty,
+            Host = uri.Host.ToLowerInvariant(),
+            Scheme = uri.Scheme.ToLowerInvariant()
+        };
+
+        return builder.Uri.GetComponents(UriComponents.SchemeAndServer | UriComponents.PathAndQuery, UriFormat.UriEscaped).TrimEnd('/');
+    }
+
+    private static string UnescapeLuaString(string value)
+    {
+        var builder = new StringBuilder(value.Length);
+        for (var index = 0; index < value.Length; index++)
+        {
+            var current = value[index];
+            if (current != '\\' || index + 1 >= value.Length)
+            {
+                builder.Append(current);
+                continue;
+            }
+
+            var next = value[++index];
+            builder.Append(next switch
+            {
+                'n' => '\n',
+                'r' => '\r',
+                't' => '\t',
+                _ => next
+            });
+        }
+
+        return builder.ToString();
     }
 
     private static bool GeneratedPayloadEquals(string? existingContent, string generatedContent)
@@ -866,7 +994,7 @@ internal sealed class BuildDataRunner
         long Timestamp,
         SourceMetadata Metadata);
 
-    private sealed record ExistingGeneratedData(string? Content, long? PackageTimestamp, HashSet<string> PostIds);
+    private sealed record ExistingGeneratedData(string? Content, long? PackageTimestamp, HashSet<string> PostIds, HashSet<string> PostKeys, HashSet<string> Urls);
 }
 
 internal sealed record BuildDataResult(int PostCount, string OutputPath, string MediaRoot, IReadOnlyList<NewPostSummary> NewPosts);

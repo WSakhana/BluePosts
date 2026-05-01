@@ -37,15 +37,21 @@ internal sealed class ChangelogUpdater(string changelogPath)
         }
 
         updatedLines.Add($"## {tag}");
-        updatedLines.Add("- Refreshed the bundled blue posts snapshot.");
 
         if (newPosts.Count > 0)
         {
             updatedLines.Add($"- Added {newPosts.Count} new blue post{(newPosts.Count == 1 ? string.Empty : "s")} to the in-game reader.");
 
+            var seenTitles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var newPost in newPosts)
             {
-                updatedLines.Add($"- {newPost.Title}");
+                var title = newPost.Title.Trim();
+                if (title.Length == 0 || !seenTitles.Add(title))
+                {
+                    continue;
+                }
+
+                updatedLines.Add($"- {title}");
             }
         }
 
