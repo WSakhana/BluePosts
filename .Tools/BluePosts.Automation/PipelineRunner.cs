@@ -67,17 +67,20 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
         }
         else
         {
-            Console.WriteLine("[pipeline] No new blue posts detected. Writing a snapshot refresh entry to CHANGELOG.md.");
+            Console.WriteLine("[pipeline] No new blue posts detected. Writing changelog entries.");
         }
 
-        var changelogUpdated = await RunStepAsync("Updating CHANGELOG.md", () =>
-            new ChangelogUpdater(Path.Combine(options.RepoRoot, "CHANGELOG.md"))
+        var changelogUpdated = await RunStepAsync("Updating changelogs", () =>
+            new ChangelogUpdater(
+                    Path.Combine(options.RepoRoot, "CHANGELOG.md"),
+                    Path.Combine(options.RepoRoot, "LATEST_CHANGELOG.md"))
                 .PrependEntryAsync(tagName, buildResult.NewPosts, cancellationToken));
 
         if (changelogUpdated)
         {
             filesToCommit.Add("CHANGELOG.md");
-            Console.WriteLine("[pipeline] Updated changelog: CHANGELOG.md");
+            filesToCommit.Add("LATEST_CHANGELOG.md");
+            Console.WriteLine("[pipeline] Updated changelogs: CHANGELOG.md, LATEST_CHANGELOG.md");
         }
 
         if (options.DryRun)

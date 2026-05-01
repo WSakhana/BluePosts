@@ -2,7 +2,7 @@ using System.Text;
 
 namespace BluePosts.Automation;
 
-internal sealed class ChangelogUpdater(string changelogPath)
+internal sealed class ChangelogUpdater(string changelogPath, string latestChangelogPath)
 {
     public async Task<bool> PrependEntryAsync(
         string tag,
@@ -31,16 +31,35 @@ internal sealed class ChangelogUpdater(string changelogPath)
 
         var updatedLines = new List<string>(lines.Length + newPosts.Count + 4);
         updatedLines.AddRange(prefixLines);
-        if (updatedLines.Count > 0)
+        updatedLines.AddRange(BuildEntryLines(tag, newPosts, includeLeadingBlank: updatedLines.Count > 0));
+
+        if (restIndex < lines.Length)
         {
             updatedLines.Add(string.Empty);
+            updatedLines.AddRange(lines.Skip(restIndex));
         }
 
-        updatedLines.Add($"## {tag}");
+        var updatedContent = string.Join(newline, updatedLines) + newline;
+        await File.WriteAllTextAsync(changelogPath, updatedContent, new UTF8Encoding(false), cancellationToken);
+
+        var latestContent = string.Join(newline, BuildEntryLines(tag, newPosts, includeLeadingBlank: false)) + newline;
+        await File.WriteAllTextAsync(latestChangelogPath, latestContent, new UTF8Encoding(false), cancellationToken);
+        return true;
+    }
+
+    private static List<string> BuildEntryLines(string tag, IReadOnlyList<NewPostSummary> newPosts, bool includeLeadingBlank)
+    {
+        var lines = new List<string>(newPosts.Count + 3);
+        if (includeLeadingBlank)
+        {
+            lines.Add(string.Empty);
+        }
+
+        lines.Add($"## {tag}");
 
         if (newPosts.Count > 0)
         {
-            updatedLines.Add($"- Added {newPosts.Count} new blue post{(newPosts.Count == 1 ? string.Empty : "s")} to the in-game reader.");
+            lines.Add($"- Added {newPosts.Count} new blue post{(newPosts.Count == 1 ? string.Empty : "s")} to the in-game reader.");
 
             var seenTitles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var newPost in newPosts)
@@ -51,18 +70,10 @@ internal sealed class ChangelogUpdater(string changelogPath)
                     continue;
                 }
 
-                updatedLines.Add($"- {title}");
+                lines.Add($"- {title}");
             }
         }
 
-        if (restIndex < lines.Length)
-        {
-            updatedLines.Add(string.Empty);
-            updatedLines.AddRange(lines.Skip(restIndex));
-        }
-
-        var updatedContent = string.Join(newline, updatedLines) + newline;
-        await File.WriteAllTextAsync(changelogPath, updatedContent, new UTF8Encoding(false), cancellationToken);
-        return true;
+        return lines;
     }
 }
