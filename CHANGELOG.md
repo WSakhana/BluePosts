@@ -1,3 +1,7 @@
+## 1.2.7
+- Added 2 new blue posts to the in-game reader.
+- WoW Weekly: Classic Anniversary Edition, May&#x27;s Trading Post, Children&#x27;s Week, and More!
+
 ## 1.2.6
 - Implement region filtering for posts and enhance region handling
 - Add source link functionality to Reader and update Window state management
@@ -113,6 +117,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

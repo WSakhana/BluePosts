@@ -1,3 +1,3 @@
-## 1.2.6
-- Implement region filtering for posts and enhance region handling
-- Add source link functionality to Reader and update Window state management
+## 1.2.7
+- Added 2 new blue posts to the in-game reader.
+- WoW Weekly: Classic Anniversary Edition, May&#x27;s Trading Post, Children&#x27;s Week, and More!
