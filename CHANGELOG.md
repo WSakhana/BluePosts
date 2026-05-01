@@ -1,5 +1,6 @@
-## 1.2.6a
-- feat: implement region filtering for posts and enhance region handling
+## 1.2.6
+- Implement region filtering for posts and enhance region handling
+- Add source link functionality to Reader and update Window state management
 
 ## 1.2.5
 - Simplify minimap button click handling and tooltip instructions
