@@ -1,3 +1,8 @@
+## 1.2.3
+- Refreshed the bundled blue posts snapshot.
+- Added 1 new blue post to the in-game reader.
+- Transform Your Home With the Cozy Treehouse Retreat Bundle and More!
+
 ## 1.2.2
 - Refreshed the bundled blue posts snapshot.
 - Added 3 new blue posts to the in-game reader.
@@ -105,6 +110,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
