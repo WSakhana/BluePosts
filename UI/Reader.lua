@@ -190,6 +190,44 @@ function UI:AcquireImage()
     return frame
 end
 
+function UI:AcquireSourceLink()
+    local pool = self.blockPools.sourceLink
+    local button = table.remove(pool)
+    if not button then
+        button = CreateFrame("Button", nil, self.readerChild)
+        button.poolKind = "sourceLink"
+        button:RegisterForClicks("LeftButtonUp")
+        button.text = Helpers.CreateFont(button, 12, Constants.THEME.muted, "")
+        button.text:SetPoint("TOPLEFT", button, "TOPLEFT", 0, 0)
+        button.text:SetPoint("TOPRIGHT", button, "TOPRIGHT", 0, 0)
+        button.text:SetSpacing(3)
+        button.text:SetWordWrap(true)
+        if button.text.SetNonSpaceWrap then
+            button.text:SetNonSpaceWrap(true)
+        end
+
+        button:SetScript("OnClick", function(sourceButton)
+            if sourceButton.url then
+                self:ShowCopyBox(sourceButton.url)
+            end
+        end)
+        button:SetScript("OnEnter", function(sourceButton)
+            sourceButton.text:SetTextColor(Constants.THEME.gold[1], Constants.THEME.gold[2], Constants.THEME.gold[3], 1)
+            Helpers.ShowTextTooltip(sourceButton, "Click to copy the source link.", "ANCHOR_TOP")
+        end)
+        button:SetScript("OnLeave", function(sourceButton)
+            sourceButton.text:SetTextColor(Constants.THEME.muted[1], Constants.THEME.muted[2], Constants.THEME.muted[3], 1)
+            GameTooltip:Hide()
+        end)
+    end
+
+    button:SetParent(self.readerChild)
+    button:ClearAllPoints()
+    button:Show()
+    table.insert(self.activeBlocks, button)
+    return button
+end
+
 function UI:CreateEmptyActionButton(parent, label, iconPath, width, primary)
     local button = Helpers.CreateButton(parent, label, iconPath, width)
     button.primary = primary and true or false
@@ -677,6 +715,30 @@ function UI:RenderPost(post)
         font:SetPoint("TOPLEFT", self.readerChild, "TOPLEFT", 0, -8)
         font:SetText("This post does not contain any readable blocks.")
         y = -80
+    end
+
+    if post.url and post.url ~= "" then
+        local line = self:AcquireLine()
+        line:SetPoint("TOPLEFT", self.readerChild, "TOPLEFT", 0, y - 8)
+        line:SetSize(width, 1)
+        line:SetColorTexture(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.55)
+        y = y - 24
+
+        local source = self:AcquireSourceLink()
+        local safeUrl = tostring(post.url):gsub("|", "||")
+        source.url = post.url
+        source:SetPoint("TOPLEFT", self.readerChild, "TOPLEFT", 0, y)
+        source:SetWidth(width)
+        source.text:SetFont(STANDARD_TEXT_FONT, math.max(11, bodyFontSize - 1), "")
+        source.text:SetTextColor(Constants.THEME.muted[1], Constants.THEME.muted[2], Constants.THEME.muted[3], 1)
+        source.text:SetWidth(width)
+        source.text:SetHeight(4096)
+        source.text:SetText(("Source: |cff00b4ff%s|r"):format(safeUrl))
+
+        local height = math.max(source.text:GetStringHeight(), bodyFontSize + 4)
+        source:SetHeight(height + 6)
+        source.text:SetHeight(height + 2)
+        y = y - height - 14
     end
 
     self.readerChild:SetHeight(math.max(-y + 32, self.readerScroll:GetHeight()))

@@ -19,6 +19,7 @@ function UI:Initialize(core)
         font = {},
         line = {},
         image = {},
+        sourceLink = {},
     }
 
     self:CreateMainFrame()
