@@ -113,6 +113,43 @@ local CLASS_NAMES = {
 
 ns.CLASS_NAMES = CLASS_NAMES
 
+local REGION_FILTER_KEYS = {
+    ALL = true,
+    EU = true,
+    US = true,
+}
+
+local function NormalizeRegionFilter(region)
+    region = tostring(region or ""):upper()
+    if region == "NA" then
+        region = "US"
+    end
+
+    return REGION_FILTER_KEYS[region] and region or nil
+end
+
+local function DetectClientRegion()
+    local regionID = GetCurrentRegion and GetCurrentRegion()
+    if regionID == 3 or (_G.LE_REGION_EU and regionID == _G.LE_REGION_EU) then
+        return "EU"
+    end
+
+    if regionID == 1
+        or (_G.LE_REGION_AMERICAS and regionID == _G.LE_REGION_AMERICAS)
+        or (_G.LE_REGION_US and regionID == _G.LE_REGION_US) then
+        return "US"
+    end
+
+    local portal
+    if C_CVar and C_CVar.GetCVar then
+        portal = C_CVar.GetCVar("portal")
+    elseif GetCVar then
+        portal = GetCVar("portal")
+    end
+
+    return NormalizeRegionFilter(portal)
+end
+
 local function CopyDefaults(src, dst)
     for key, value in pairs(src) do
         if type(value) == "table" then
@@ -205,6 +242,16 @@ local function GetPostRegion(post)
     return "OTHER"
 end
 
+local function PostMatchesRegionFilter(post, regionFilter)
+    regionFilter = NormalizeRegionFilter(regionFilter) or "ALL"
+    if regionFilter == "ALL" then
+        return true
+    end
+
+    local postRegion = NormalizeRegionFilter(post and post.region) or GetPostRegion(post)
+    return postRegion == regionFilter
+end
+
 local function FormatDate(timestamp)
     timestamp = tonumber(timestamp) or 0
     if timestamp <= 0 then
@@ -217,18 +264,68 @@ ns.FormatDate = FormatDate
 ns.NormalizeText = NormalizeText
 ns.GetCategoryKey = GetCategoryKey
 ns.GetPostRegion = GetPostRegion
+ns.NormalizeRegionFilter = NormalizeRegionFilter
 
 function Core:Print(message)
     DEFAULT_CHAT_FRAME:AddMessage(ADDON_DISPLAY_NAME .. " " .. tostring(message))
 end
 
+function Core:GetDefaultRegionFilter()
+    return self.detectedRegion or "ALL"
+end
+
+function Core:GetRegionFilter()
+    local filters = self.db and self.db.filters
+    return NormalizeRegionFilter(filters and filters.region) or self:GetDefaultRegionFilter()
+end
+
+function Core:SetRegionFilter(region, automatic)
+    if not self.db then
+        return
+    end
+
+    self.db.filters = self.db.filters or {}
+    region = NormalizeRegionFilter(region) or self:GetDefaultRegionFilter()
+    self.db.filters.region = region
+    self.db.regionFilterAutoRegion = automatic and region ~= "ALL" and region or nil
+end
+
+function Core:PostMatchesRegionFilter(post, regionFilter)
+    return PostMatchesRegionFilter(post, regionFilter)
+end
+
 function Core:InitializeDB()
+    local hadRegionFilter = BluePostsDB
+        and BluePostsDB.filters
+        and BluePostsDB.filters.region ~= nil
+
     BluePostsDB = BluePostsDB or {}
+    self.detectedRegion = DetectClientRegion()
     CopyDefaults(DEFAULT_DB, BluePostsDB)
+    self.db = BluePostsDB
     if BluePostsDB.filters then
         BluePostsDB.filters.unreadOnly = nil
     end
-    self.db = BluePostsDB
+
+    BluePostsDB.filters = BluePostsDB.filters or {}
+    local defaultRegion = self:GetDefaultRegionFilter()
+    local savedRegion = NormalizeRegionFilter(BluePostsDB.filters.region)
+    local autoRegion = NormalizeRegionFilter(BluePostsDB.regionFilterAutoRegion)
+
+    if not hadRegionFilter then
+        self:SetRegionFilter(defaultRegion, defaultRegion ~= "ALL")
+    elseif autoRegion and savedRegion == autoRegion then
+        if defaultRegion ~= "ALL" and defaultRegion ~= autoRegion then
+            self:SetRegionFilter(defaultRegion, true)
+        else
+            BluePostsDB.filters.region = savedRegion
+        end
+    elseif savedRegion then
+        BluePostsDB.filters.region = savedRegion
+        BluePostsDB.regionFilterAutoRegion = nil
+    else
+        self:SetRegionFilter(defaultRegion, defaultRegion ~= "ALL")
+    end
 end
 
 function Core:NormalizeData()
@@ -362,9 +459,9 @@ function Core:GetUnreadCount()
     return count
 end
 
-function Core:GetNewestUnreadPost()
+function Core:GetNewestUnreadPost(regionFilter)
     for _, post in ipairs(self.posts or {}) do
-        if not self:IsRead(post) then
+        if PostMatchesRegionFilter(post, regionFilter) and not self:IsRead(post) then
             return post
         end
     end
@@ -372,11 +469,14 @@ function Core:GetNewestUnreadPost()
     return nil
 end
 
-function Core:GetNewestRecentPost()
+function Core:GetNewestRecentPost(regionFilter)
     local now = time()
 
     for _, post in ipairs(self.posts or {}) do
-        if post.timestamp and post.timestamp > 0 and (now - post.timestamp) <= 86400 then
+        if PostMatchesRegionFilter(post, regionFilter)
+            and post.timestamp
+            and post.timestamp > 0
+            and (now - post.timestamp) <= 86400 then
             return post
         end
     end
@@ -384,13 +484,15 @@ function Core:GetNewestRecentPost()
     return nil
 end
 
-function Core:GetNewestPackagedUnreadPost()
+function Core:GetNewestPackagedUnreadPost(regionFilter)
     if not next(self.packageNewPostLookup or {}) then
         return nil
     end
 
     for _, post in ipairs(self.posts or {}) do
-        if self.packageNewPostLookup[post.id] and not self:IsRead(post) then
+        if self.packageNewPostLookup[post.id]
+            and PostMatchesRegionFilter(post, regionFilter)
+            and not self:IsRead(post) then
             return post
         end
     end
@@ -403,7 +505,11 @@ function Core:GetToastPreviewPost()
         return ns.UI.selectedPost
     end
 
-    return self:GetNewestPackagedUnreadPost() or self:GetNewestUnreadPost() or self:GetNewestRecentPost() or self.posts[1]
+    local regionFilter = self:GetRegionFilter()
+    return self:GetNewestPackagedUnreadPost(regionFilter)
+        or self:GetNewestUnreadPost(regionFilter)
+        or self:GetNewestRecentPost(regionFilter)
+        or self.posts[1]
 end
 
 function Core:ShowToast(post, rememberToastID)
@@ -659,13 +765,14 @@ function Core:MaybeShowLoginToast()
         return
     end
 
-    local post = self:GetNewestPackagedUnreadPost()
+    local regionFilter = self:GetRegionFilter()
+    local post = self:GetNewestPackagedUnreadPost(regionFilter)
     if not post or self.db.lastToastID == post.id then
         return
     end
 
     C_Timer.After(2.0, function()
-        if not self:IsRead(post) then
+        if not self:IsRead(post) and PostMatchesRegionFilter(post, self:GetRegionFilter()) then
             self:ShowToast(post)
         end
     end)

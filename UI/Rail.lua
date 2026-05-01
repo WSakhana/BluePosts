@@ -44,7 +44,9 @@ function UI:CreateRail()
         end
         button:SetScript("OnClick", function()
             self.currentRegion = key
-            if self.core.db and self.core.db.filters then
+            if self.core.SetRegionFilter then
+                self.core:SetRegionFilter(key, false)
+            elseif self.core.db and self.core.db.filters then
                 self.core.db.filters.region = key
             end
             self:RefreshRegionButtons()
@@ -158,12 +160,16 @@ end
 
 function UI:ResetAllFilters()
     self.currentCategory = "ALL"
-    self.currentRegion = "ALL"
+    self.currentRegion = self.core and self.core.GetDefaultRegionFilter and self.core:GetDefaultRegionFilter() or "ALL"
     self.currentUnreadOnly = false
 
     if self.core and self.core.db and self.core.db.filters then
         self.core.db.filters.category = "ALL"
-        self.core.db.filters.region = "ALL"
+        if self.core.SetRegionFilter then
+            self.core:SetRegionFilter(self.currentRegion, self.currentRegion ~= "ALL")
+        else
+            self.core.db.filters.region = self.currentRegion
+        end
     end
 
     if self.searchBox then

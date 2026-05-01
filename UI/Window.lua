@@ -7,7 +7,8 @@ function UI:Initialize(core)
     self.core = core
     local filters = core.db and core.db.filters or {}
     self.currentCategory = Constants.CATEGORY_META[filters.category or "ALL"] and filters.category or "ALL"
-    self.currentRegion = Constants.REGION_META[filters.region or "ALL"] and filters.region or "ALL"
+    local region = core.GetRegionFilter and core:GetRegionFilter() or filters.region or "ALL"
+    self.currentRegion = Constants.REGION_META[region] and region or "ALL"
     self.currentUnreadOnly = false
     self.viewMode = "reader"
     self.navButtons = {}
