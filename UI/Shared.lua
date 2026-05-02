@@ -49,6 +49,7 @@ local TOAST_DURATION_OPTIONS = {
     { label = "8s", value = 8, width = 52 },
     { label = "12s", value = 12, width = 56 },
     { label = "16s", value = 16, width = 56 },
+    { label = "30s", value = 30, width = 56 },
 }
 
 local TOAST_POSITION_OPTIONS = {

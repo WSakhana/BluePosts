@@ -6,7 +6,7 @@ local Helpers = UI.Helpers
 function UI:GetToastDuration()
     local db = self.core and self.core.db
     local duration = tonumber(db and db.toastDuration) or 4
-    return math.max(2, math.min(16, duration))
+    return math.max(2, math.min(30, duration))
 end
 
 function UI:GetToastPosition()
@@ -123,6 +123,7 @@ function UI:CreateToast()
     local toast = CreateFrame("Button", "BluePostsToast", UIParent, "BackdropTemplate")
     toast:SetSize(446, 124)
     toast:SetFrameStrata("DIALOG")
+    toast:RegisterForClicks("LeftButtonUp", "RightButtonUp")
     toast:SetBackdrop(Constants.BACKDROP)
     toast:SetBackdropColor(0.04, 0.045, 0.06, 0.97)
     toast:SetBackdropBorderColor(Constants.THEME.blue[1], Constants.THEME.blue[2], Constants.THEME.blue[3], 0.88)
@@ -174,17 +175,12 @@ function UI:CreateToast()
         toast.title:SetMaxLines(2)
     end
 
-    toast:SetScript("OnClick", function()
-        if toast.post then
+    toast:SetScript("OnClick", function(_, button)
+        if button ~= "RightButton" and toast.post then
             self:Show()
             self:SelectPost(toast.post.id)
         end
-        self.toastToken = (self.toastToken or 0) + 1
-        if UIFrameFadeRemoveFrame then
-            UIFrameFadeRemoveFrame(toast)
-        end
-        toast:Hide()
-        toast:SetAlpha(1)
+        self:HideToast()
     end)
 
     toast:SetScript("OnEnter", function()
@@ -197,6 +193,19 @@ function UI:CreateToast()
 
     self.toast = toast
     self:ApplyToastPosition()
+end
+
+function UI:HideToast()
+    self.toastToken = (self.toastToken or 0) + 1
+    if not self.toast then
+        return
+    end
+
+    if UIFrameFadeRemoveFrame then
+        UIFrameFadeRemoveFrame(self.toast)
+    end
+    self.toast:Hide()
+    self.toast:SetAlpha(1)
 end
 
 function UI:ShowToast(post)
