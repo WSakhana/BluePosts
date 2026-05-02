@@ -1,5 +1,6 @@
-## 1.2.8b
+## 1.2.9b
 - Add 30s duration option for toast notifications and improve click handling
+- Clean up post titles and categories
 
 ## 1.2.8
 - Added 5 new blue posts to the in-game reader.
