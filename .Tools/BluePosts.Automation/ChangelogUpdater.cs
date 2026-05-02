@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 
 namespace BluePosts.Automation;
@@ -64,7 +65,7 @@ internal sealed class ChangelogUpdater(string changelogPath, string latestChange
             var seenTitles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var newPost in newPosts)
             {
-                var title = newPost.Title.Trim();
+                var title = GetMarkdownText(newPost.Title);
                 if (title.Length == 0 || !seenTitles.Add(title))
                 {
                     continue;
@@ -75,5 +76,12 @@ internal sealed class ChangelogUpdater(string changelogPath, string latestChange
         }
 
         return lines;
+    }
+
+    private static string GetMarkdownText(string value)
+    {
+        var decoded = WebUtility.HtmlDecode(value) ?? string.Empty;
+        decoded = decoded.Replace('\u00a0', ' ');
+        return string.Join(' ', decoded.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
     }
 }

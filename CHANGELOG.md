@@ -1,3 +1,6 @@
+## 1.2.8b
+- Add 30s duration option for toast notifications and improve click handling
+
 ## 1.2.8
 - Added 5 new blue posts to the in-game reader.
 - Hotfixes: May 1, 2026
@@ -8,7 +11,7 @@
 
 ## 1.2.7
 - Added 2 new blue posts to the in-game reader.
-- WoW Weekly: Classic Anniversary Edition, May&#x27;s Trading Post, Children&#x27;s Week, and More!
+- WoW Weekly: Classic Anniversary Edition, May's Trading Post, Children's Week, and More!
 
 ## 1.2.6
 - Implement region filtering for posts and enhance region handling

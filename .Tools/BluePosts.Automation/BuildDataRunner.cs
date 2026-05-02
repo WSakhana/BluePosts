@@ -58,8 +58,8 @@ internal sealed class BuildDataRunner
             posts.Add(new PostRecord(
                 Id: sourceFolder.Id,
                 PostKey: sourceFolder.PostKey,
-                Title: sourceFolder.Metadata.Title ?? string.Empty,
-                Category: sourceFolder.Metadata.Category ?? string.Empty,
+                Title: GetCleanText(sourceFolder.Metadata.Title),
+                Category: GetCleanText(sourceFolder.Metadata.Category),
                 Timestamp: sourceFolder.Timestamp,
                 Url: sourceFolder.Metadata.SourceUrl ?? string.Empty,
                 Content: content));
