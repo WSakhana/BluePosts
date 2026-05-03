@@ -412,6 +412,11 @@ function UI:CreateSettingsPanel()
     end, function(enabled)
         self.core.db.autoMarkRead = enabled
     end)
+    AddCheckbox("Resume last post", "Reopen the last post you viewed when you open BluePosts again.", function()
+        return self:IsResumeLastPostEnabled()
+    end, function(enabled)
+        self.core.db.resumeLastPost = enabled
+    end)
 
     local fontLabel = Helpers.CreateFont(child, 12, Constants.THEME.text, "")
     fontLabel:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)

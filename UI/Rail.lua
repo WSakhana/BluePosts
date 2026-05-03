@@ -140,9 +140,22 @@ function UI:ToggleUnreadFilter()
     self:SetUnreadFilter(not self.currentUnreadOnly)
 end
 
+function UI:SetNewFilter(enabled)
+    enabled = enabled and true or false
+    self.currentNewOnly = enabled
+
+    self:RefreshSubtitle(false, false, false)
+    self:RefreshPostList()
+end
+
+function UI:ToggleNewFilter()
+    self:SetNewFilter(not self.currentNewOnly)
+end
+
 function UI:ResetLocalFilters()
     self.currentCategory = "ALL"
     self.currentUnreadOnly = false
+    self.currentNewOnly = false
 
     if self.core and self.core.db and self.core.db.filters then
         self.core.db.filters.category = "ALL"
@@ -162,6 +175,7 @@ function UI:ResetAllFilters()
     self.currentCategory = "ALL"
     self.currentRegion = self.core and self.core.GetDefaultRegionFilter and self.core:GetDefaultRegionFilter() or "ALL"
     self.currentUnreadOnly = false
+    self.currentNewOnly = false
 
     if self.core and self.core.db and self.core.db.filters then
         self.core.db.filters.category = "ALL"
@@ -197,8 +211,22 @@ function UI:GetUnreadCountForCurrentRegion()
     return count
 end
 
-function UI:RefreshSubtitle(postsHovered, unreadHovered)
-    if not self.subtitlePosts or not self.subtitleUnread then
+function UI:GetNewCountForCurrentRegion()
+    local count = 0
+
+    for _, post in ipairs(self.core.posts or {}) do
+        local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
+        local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
+        if regionMatches and self.core:IsPackagedNewPost(post) then
+            count = count + 1
+        end
+    end
+
+    return count
+end
+
+function UI:RefreshSubtitle(postsHovered, unreadHovered, newHovered)
+    if not self.subtitlePosts or not self.subtitleUnread or not self.subtitleNew then
         return
     end
 
@@ -206,6 +234,8 @@ function UI:RefreshSubtitle(postsHovered, unreadHovered)
     self.subtitlePostsButton:SetWidth((self.subtitlePosts:GetStringWidth() or 0) + 2)
     self.subtitleUnread:SetText(("%d unread"):format(self:GetUnreadCountForCurrentRegion()))
     self.subtitleUnreadButton:SetWidth((self.subtitleUnread:GetStringWidth() or 0) + 2)
+    self.subtitleNew:SetText(("%d new"):format(self:GetNewCountForCurrentRegion()))
+    self.subtitleNewButton:SetWidth((self.subtitleNew:GetStringWidth() or 0) + 2)
 
     if postsHovered then
         Helpers.SetColor(self.subtitlePosts, Constants.THEME.gold)
@@ -218,6 +248,13 @@ function UI:RefreshSubtitle(postsHovered, unreadHovered)
         Helpers.SetColor(self.subtitleUnread, Constants.THEME.gold)
     else
         Helpers.SetColor(self.subtitleUnread, Constants.THEME.blue)
+    end
+
+    Helpers.SetColor(self.subtitleNewDivider, Constants.THEME.muted)
+    if self.currentNewOnly or newHovered then
+        Helpers.SetColor(self.subtitleNew, Constants.THEME.gold)
+    else
+        Helpers.SetColor(self.subtitleNew, Constants.THEME.muted)
     end
 end
 
@@ -252,7 +289,7 @@ function UI:AcquireNavButton(index)
 
     button.dateLabel = Helpers.CreateFont(button, 10, Constants.THEME.muted, "")
     button.dateLabel:SetPoint("TOPLEFT", button, "TOPLEFT", 46, -52)
-    button.dateLabel:SetPoint("TOPRIGHT", button, "TOPRIGHT", -12, -52)
+    button.dateLabel:SetPoint("TOPRIGHT", button, "TOPRIGHT", -52, -52)
     button.dateLabel:SetHeight(14)
     button.dateLabel:SetWordWrap(false)
 
@@ -265,6 +302,19 @@ function UI:AcquireNavButton(index)
     button.unread:SetSize(5, 5)
     button.unread:SetPoint("CENTER", button.unreadGlow, "CENTER", 0, 0)
     button.unread:SetColorTexture(Constants.THEME.blue[1], Constants.THEME.blue[2], Constants.THEME.blue[3], 1.0)
+
+    button.newBadge = CreateFrame("Frame", nil, button, "BackdropTemplate")
+    button.newBadge:SetSize(34, 14)
+    button.newBadge:SetPoint("LEFT", button.dateLabel, "RIGHT", 6, 0)
+    button.newBadge:SetBackdrop(Constants.BACKDROP)
+    button.newBadge:SetBackdropColor(0.18, 0.12, 0.02, 0.95)
+    button.newBadge:SetBackdropBorderColor(Constants.THEME.gold[1], Constants.THEME.gold[2], Constants.THEME.gold[3], 0.88)
+    button.newBadge.text = Helpers.CreateFont(button.newBadge, 9, Constants.THEME.gold, "")
+    button.newBadge.text:SetPoint("CENTER", button.newBadge, "CENTER", 0, 0)
+    button.newBadge.text:SetJustifyH("CENTER")
+    button.newBadge.text:SetWordWrap(false)
+    button.newBadge.text:SetText("NEW")
+    button.newBadge:Hide()
 
     button:SetScript("OnEnter", function()
         if button.post ~= self.selectedPost then
@@ -315,7 +365,8 @@ function UI:RefreshPostList()
         local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
         local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
         local unreadMatches = not self.currentUnreadOnly or not self.core:IsRead(post)
-        if categoryMatches and regionMatches and unreadMatches and Helpers.MatchesSearch(post, searchText) then
+        local newMatches = not self.currentNewOnly or self.core:IsPackagedNewPost(post)
+        if categoryMatches and regionMatches and unreadMatches and newMatches and Helpers.MatchesSearch(post, searchText) then
             table.insert(visible, post)
         end
     end
@@ -335,8 +386,10 @@ function UI:RefreshPostList()
         button.category:SetText(Helpers.StripRegion(post.category) or meta.label)
         button.dateLabel:SetText(post.dateText or "")
         local isUnread = not self.core:IsRead(post)
+        local isNew = self.core:IsPackagedNewPost(post)
         Helpers.SetShown(button.unread, isUnread)
         Helpers.SetShown(button.unreadGlow, isUnread)
+        Helpers.SetShown(button.newBadge, isNew)
         self:StyleNavButton(button)
 
         y = y + 82

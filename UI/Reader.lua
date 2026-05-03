@@ -136,6 +136,26 @@ function UI:ShowHome()
     self:RefreshPostList()
 end
 
+function UI:IsResumeLastPostEnabled()
+    return not self.core or not self.core.db or self.core.db.resumeLastPost ~= false
+end
+
+function UI:RestoreLastSelectedPost()
+    local db = self.core and self.core.db
+    local postID = db and db.lastSelectedPostID
+    if not postID or postID == "" then
+        return false
+    end
+
+    if not self.core:GetPost(postID) then
+        db.lastSelectedPostID = nil
+        return false
+    end
+
+    self:SelectPost(postID)
+    return true
+end
+
 function UI:ReleaseBlocks()
     for _, object in ipairs(self.activeBlocks) do
         object:Hide()
@@ -433,6 +453,7 @@ function UI:HasActiveFilters()
     return (self.currentCategory and self.currentCategory ~= "ALL")
         or (self.currentRegion and self.currentRegion ~= "ALL")
         or self.currentUnreadOnly
+    or self.currentNewOnly
         or searchText ~= ""
 end
 
@@ -445,8 +466,9 @@ function UI:PostMatchesCurrentView(post)
     local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
     local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
     local unreadMatches = not self.currentUnreadOnly or not self.core:IsRead(post)
+    local newMatches = not self.currentNewOnly or self.core:IsPackagedNewPost(post)
     local searchText = self.searchBox and self.searchBox:GetText() or ""
-    return categoryMatches and regionMatches and unreadMatches and Helpers.MatchesSearch(post, searchText)
+    return categoryMatches and regionMatches and unreadMatches and newMatches and Helpers.MatchesSearch(post, searchText)
 end
 
 function UI:GetEmptyStateStats()
@@ -487,6 +509,10 @@ function UI:GetFilterSummary(stats)
 
     if self.currentUnreadOnly then
         parts[#parts + 1] = "Unread only"
+    end
+
+    if self.currentNewOnly then
+        parts[#parts + 1] = "New only"
     end
 
     local searchText = self.searchBox and self.searchBox:GetText() or ""
@@ -575,6 +601,9 @@ function UI:SelectPost(postID)
     end
 
     self.selectedPost = post
+    if self.core and self.core.db then
+        self.core.db.lastSelectedPostID = post.id
+    end
     self:SetReaderVisible(true)
     self.readerTitle:SetText(post.title)
     self.readerMeta:SetText(("%s  |  %s"):format(Helpers.StripRegion(post.category), post.dateText or ""))

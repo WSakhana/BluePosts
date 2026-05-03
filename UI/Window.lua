@@ -10,6 +10,7 @@ function UI:Initialize(core)
     local region = core.GetRegionFilter and core:GetRegionFilter() or filters.region or "ALL"
     self.currentRegion = Constants.REGION_META[region] and region or "ALL"
     self.currentUnreadOnly = false
+    self.currentNewOnly = false
     self.viewMode = "reader"
     self.navButtons = {}
     self.settingsCheckboxes = {}
@@ -102,7 +103,7 @@ function UI:CreateMainFrame()
     subtitlePostsButton:SetScript("OnEnter", function()
         self:RefreshSubtitle(true, false)
         GameTooltip:SetOwner(subtitlePostsButton, "ANCHOR_BOTTOMLEFT")
-        GameTooltip:SetText("Click to clear search, category and unread filters", 1, 1, 1, 1, true)
+        GameTooltip:SetText("Click to clear search, category, unread, and new filters", 1, 1, 1, 1, true)
         GameTooltip:Show()
     end)
     subtitlePostsButton:SetScript("OnLeave", function()
@@ -147,6 +148,37 @@ function UI:CreateMainFrame()
     subtitleUnread:SetPoint("CENTER", subtitleUnreadButton, "CENTER", 0, 0)
     subtitleUnread:SetWordWrap(false)
     self.subtitleUnread = subtitleUnread
+
+    local subtitleNewDivider = Helpers.CreateFont(titleBar, 12, Constants.THEME.muted, "")
+    subtitleNewDivider:SetPoint("LEFT", subtitleUnreadButton, "RIGHT", 6, 0)
+    subtitleNewDivider:SetText("|")
+    subtitleNewDivider:SetWordWrap(false)
+    self.subtitleNewDivider = subtitleNewDivider
+
+    local subtitleNewButton = CreateFrame("Button", nil, titleBar)
+    subtitleNewButton:SetHeight(18)
+    subtitleNewButton:SetPoint("LEFT", subtitleNewDivider, "RIGHT", 6, 0)
+    subtitleNewButton:RegisterForClicks("LeftButtonUp")
+    subtitleNewButton:SetScript("OnClick", function()
+        self:ToggleNewFilter()
+    end)
+    subtitleNewButton:SetScript("OnEnter", function()
+        self:RefreshSubtitle(false, false, true)
+        GameTooltip:SetOwner(subtitleNewButton, "ANCHOR_BOTTOMLEFT")
+        GameTooltip:SetText(self.currentNewOnly and "Click to show all posts" or "Click to filter posts bundled as new in this addon update", 1, 1, 1, 1, true)
+        GameTooltip:Show()
+    end)
+    subtitleNewButton:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+        self:RefreshSubtitle(false, false, false)
+    end)
+    self.subtitleNewButton = subtitleNewButton
+
+    local subtitleNew = Helpers.CreateFont(subtitleNewButton, 12, Constants.THEME.muted, "")
+    subtitleNew:SetPoint("LEFT", subtitleNewButton, "LEFT", 0, 0)
+    subtitleNew:SetPoint("CENTER", subtitleNewButton, "CENTER", 0, 0)
+    subtitleNew:SetWordWrap(false)
+    self.subtitleNew = subtitleNew
 
     local close = CreateFrame("Button", nil, titleBar, "UIPanelCloseButton")
     close:SetPoint("TOPRIGHT", titleBar, "TOPRIGHT", -8, -8)
@@ -398,6 +430,16 @@ function UI:ResetPosition()
 end
 
 function UI:Show()
+    if self.viewMode ~= "settings" then
+        if self:IsResumeLastPostEnabled() then
+            if not self.selectedPost and not self:RestoreLastSelectedPost() then
+                self:ShowHome()
+            end
+        elseif self.selectedPost then
+            self:ShowHome()
+        end
+    end
+
     self.frame:Show()
 end
 

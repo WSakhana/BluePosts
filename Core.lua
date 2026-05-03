@@ -39,6 +39,7 @@ local DEFAULT_DB = {
     autoMarkRead = true,
     confirmGuildShare = true,
     readerFontSize = 13,
+    resumeLastPost = true,
 }
 
 local RESETTABLE_SETTING_KEYS = {
@@ -52,6 +53,7 @@ local RESETTABLE_SETTING_KEYS = {
     "autoMarkRead",
     "confirmGuildShare",
     "readerFontSize",
+    "resumeLastPost",
 }
 
 ns.THEME = {
@@ -113,6 +115,21 @@ local CLASS_NAMES = {
 
 ns.CLASS_NAMES = CLASS_NAMES
 
+local CATEGORY_FILTER_KEYS = {
+    ALL = true,
+    NEWS = true,
+    PTR = true,
+    FIXES = true,
+    CLASS = true,
+}
+
+local CATEGORY_KEYS = {
+    NEWS = true,
+    PTR = true,
+    FIXES = true,
+    CLASS = true,
+}
+
 local REGION_FILTER_KEYS = {
     ALL = true,
     EU = true,
@@ -126,6 +143,24 @@ local function NormalizeRegionFilter(region)
     end
 
     return REGION_FILTER_KEYS[region] and region or nil
+end
+
+local function NormalizeCategoryFilter(category)
+    category = tostring(category or ""):upper()
+    if category == "BLOG" then
+        category = "NEWS"
+    end
+
+    return CATEGORY_FILTER_KEYS[category] and category or nil
+end
+
+local function NormalizeCategoryKey(category)
+    category = tostring(category or ""):upper()
+    if category == "BLOG" then
+        category = "NEWS"
+    end
+
+    return CATEGORY_KEYS[category] and category or nil
 end
 
 local function DetectClientRegion()
@@ -220,7 +255,7 @@ local function GetCategoryKey(post)
     end
 
     if Contains(category, "blog") or Contains(category, "blogs") then
-        return "BLOG"
+        return "NEWS"
     end
 
     return "NEWS"
@@ -264,6 +299,7 @@ ns.FormatDate = FormatDate
 ns.NormalizeText = NormalizeText
 ns.GetCategoryKey = GetCategoryKey
 ns.GetPostRegion = GetPostRegion
+ns.NormalizeCategoryFilter = NormalizeCategoryFilter
 ns.NormalizeRegionFilter = NormalizeRegionFilter
 
 function Core:Print(message)
@@ -308,6 +344,7 @@ function Core:InitializeDB()
     end
 
     BluePostsDB.filters = BluePostsDB.filters or {}
+    BluePostsDB.filters.category = NormalizeCategoryFilter(BluePostsDB.filters.category) or "ALL"
     local defaultRegion = self:GetDefaultRegionFilter()
     local savedRegion = NormalizeRegionFilter(BluePostsDB.filters.region)
     local autoRegion = NormalizeRegionFilter(BluePostsDB.regionFilterAutoRegion)
@@ -364,9 +401,10 @@ function Core:NormalizeData()
             normalized.url = Trim(normalized.url or normalized.source_url)
             normalized.timestamp = tonumber(normalized.timestamp) or 0
             normalized.dateText = FormatDate(normalized.timestamp)
-            normalized.categoryKey = normalized.categoryKey or GetCategoryKey(normalized)
+            normalized.categoryKey = NormalizeCategoryKey(normalized.categoryKey) or GetCategoryKey(normalized)
             normalized.region = normalized.region or GetPostRegion(normalized)
             normalized.content = type(normalized.content) == "table" and normalized.content or {}
+            normalized.isPackagedNew = self.packageNewPostLookup[id] == true
 
             table.insert(self.posts, normalized)
             self.postsByID[id] = normalized
@@ -459,6 +497,19 @@ function Core:GetUnreadCount()
     return count
 end
 
+function Core:IsPackagedNewPost(post)
+    if type(post) == "table" then
+        if post.isPackagedNew ~= nil then
+            return post.isPackagedNew == true
+        end
+
+        post = post.id
+    end
+
+    post = Trim(post)
+    return post ~= "" and self.packageNewPostLookup and self.packageNewPostLookup[post] == true or false
+end
+
 function Core:GetNewestUnreadPost(regionFilter)
     for _, post in ipairs(self.posts or {}) do
         if PostMatchesRegionFilter(post, regionFilter) and not self:IsRead(post) then
@@ -490,7 +541,7 @@ function Core:GetNewestPackagedUnreadPost(regionFilter)
     end
 
     for _, post in ipairs(self.posts or {}) do
-        if self.packageNewPostLookup[post.id]
+        if self:IsPackagedNewPost(post)
             and PostMatchesRegionFilter(post, regionFilter)
             and not self:IsRead(post) then
             return post
