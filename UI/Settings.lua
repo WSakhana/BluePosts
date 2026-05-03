@@ -349,6 +349,51 @@ function UI:CreateSettingsPanel()
         return row
     end
 
+    local function AddSliderPairRow(leftConfig, rightConfig)
+        local leftRow = self:CreateSettingsSliderRow(
+            child,
+            leftConfig.label,
+            leftConfig.description,
+            leftConfig.minimum,
+            leftConfig.maximum,
+            leftConfig.getValue,
+            leftConfig.setValue,
+            leftConfig.formatValue
+        )
+        leftRow:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
+        leftRow:SetPoint("TOPRIGHT", child, "TOP", -6, y)
+
+        local rightRow = self:CreateSettingsSliderRow(
+            child,
+            rightConfig.label,
+            rightConfig.description,
+            rightConfig.minimum,
+            rightConfig.maximum,
+            rightConfig.getValue,
+            rightConfig.setValue,
+            rightConfig.formatValue
+        )
+        rightRow:SetPoint("TOPLEFT", child, "TOP", 6, y)
+        rightRow:SetPoint("TOPRIGHT", child, "TOPRIGHT", 0, y)
+
+        for _, row in ipairs({ leftRow, rightRow }) do
+            if row.description then
+                row.description:Hide()
+            end
+
+            if row.slider then
+                row.slider:ClearAllPoints()
+                row.slider:SetPoint("TOPLEFT", row, "TOPLEFT", 0, -26)
+                row.slider:SetPoint("TOPRIGHT", row, "TOPRIGHT", 0, -26)
+            end
+
+            row:SetHeight(76)
+        end
+
+        y = y - 80
+        return leftRow, rightRow
+    end
+
     local function AddButtonRow(label, description, buttonLabel, onClick)
         local row = self:CreateSettingsButtonRow(child, label, description, buttonLabel, onClick)
         row:SetPoint("TOPLEFT", child, "TOPLEFT", 0, y)
@@ -378,20 +423,35 @@ function UI:CreateSettingsPanel()
     end, function(value)
         self:SetToastPosition(value)
     end)
-    AddSliderRow("Toast offset X", "Nudge the notification horizontally from the selected anchor.", 0, 200, function()
-        return self:GetToastOffsetX()
-    end, function(value)
-        self:SetToastOffsetX(value)
-    end, function(value)
-        return ("%d px"):format(tonumber(value) or 0)
-    end)
-    AddSliderRow("Toast offset Y", "Set the vertical distance from the selected screen anchor.", 0, 200, function()
-        return self:GetToastOffsetY()
-    end, function(value)
-        self:SetToastOffsetY(value)
-    end, function(value)
-        return ("%d px"):format(tonumber(value) or 0)
-    end)
+    AddSliderPairRow({
+        label = "Toast offset X",
+        description = "Nudge the notification horizontally from the selected anchor.",
+        minimum = 0,
+        maximum = 200,
+        getValue = function()
+            return self:GetToastOffsetX()
+        end,
+        setValue = function(value)
+            self:SetToastOffsetX(value)
+        end,
+        formatValue = function(value)
+            return ("%d px"):format(tonumber(value) or 0)
+        end,
+    }, {
+        label = "Toast offset Y",
+        description = "Set the vertical distance from the selected screen anchor.",
+        minimum = 0,
+        maximum = 200,
+        getValue = function()
+            return self:GetToastOffsetY()
+        end,
+        setValue = function(value)
+            self:SetToastOffsetY(value)
+        end,
+        formatValue = function(value)
+            return ("%d px"):format(tonumber(value) or 0)
+        end,
+    })
     AddButtonRow("Toast preview", "Preview the current toast layout and timing without waiting for a login event.", "Test toast", function()
         local post = self.core and self.core.GetToastPreviewPost and self.core:GetToastPreviewPost()
         if not post then

@@ -26,7 +26,7 @@ local REGION_META = {
 local BACKDROP = {
     bgFile = "Interface\\Buttons\\WHITE8x8",
     edgeFile = "Interface\\Buttons\\WHITE8x8",
-    edgeSize = 1,
+    edgeSize = 1.2
 }
 
 local READ_BUTTON_TEXTURES = {

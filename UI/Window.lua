@@ -430,6 +430,8 @@ function UI:ResetPosition()
 end
 
 function UI:Show()
+    self.frame:Show()
+
     if self.viewMode ~= "settings" then
         if self:IsResumeLastPostEnabled() then
             if not self.selectedPost and not self:RestoreLastSelectedPost() then
@@ -439,8 +441,6 @@ function UI:Show()
             self:ShowHome()
         end
     end
-
-    self.frame:Show()
 end
 
 function UI:Hide()

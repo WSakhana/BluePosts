@@ -244,9 +244,10 @@ function UI:ShowToast(post)
     self.toast:Show()
     self.toast:SetAlpha(1)
 
+    local toastSoundKit = SOUNDKIT and (SOUNDKIT.UI_BNET_TOAST or SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
     local playSound = not self.core or not self.core.db or self.core.db.toastSound ~= false
-    if playSound and PlaySound and SOUNDKIT and SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON then
-        PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
+    if playSound and PlaySound and toastSoundKit then
+        PlaySound(toastSoundKit, "SFX", false)
     end
 
     C_Timer.After(self:GetToastDuration(), function()
