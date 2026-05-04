@@ -1,6 +1,3 @@
-## 1.2.9
-- Add 30s duration option for toast notifications and improve click handling
-- Clean up post titles and categories
-- Enhance toast settings with new offset sliders and update default duration and position
-- Add resume last post functionality and new post filter options
-- fix: toast playsound
+## 1.3.0
+- Added 1 new blue post to the in-game reader.
+- PTR Raid Testing: Mythic Sporefall (15-25)

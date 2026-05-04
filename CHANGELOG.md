@@ -1,3 +1,7 @@
+## 1.3.0
+- Added 1 new blue post to the in-game reader.
+- PTR Raid Testing: Mythic Sporefall (15-25)
+
 ## 1.2.9
 - Add 30s duration option for toast notifications and improve click handling
 - Clean up post titles and categories
@@ -132,6 +136,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,14 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777684823,
+    package_timestamp = 1777925696,
     new_post_ids = {
-        "2026-05-02-hotfixes-may-1-2026-2cf540d75e",
-        "2026-05-02-class-tuning-incoming-may-5-2bd262637d",
-        "2026-05-02-class-tuning-incoming-6-may-a08eb87373",
-        "2026-05-02-raid-tuning-incoming-may-5-65397a48be",
-        "2026-05-02-raid-tuning-incoming-6-may-cd6bec3a4b",
+        "2026-05-04-ptr-raid-testing-mythic-sporefall-15-25-904cd4c270",
     },
     posts = {
+        ["2026-05-04-ptr-raid-testing-mythic-sporefall-15-25-904cd4c270"] = {
+            id = "2026-05-04-ptr-raid-testing-mythic-sporefall-15-25-904cd4c270",
+            post_key = "904cd4c270",
+            title = "PTR Raid Testing: Mythic Sporefall (15-25)",
+            category = "Midnight: Revelations Public Test Realm (US)",
+            timestamp = 1777925459,
+            url = "https://us.forums.blizzard.com/en/wow/t/2302398/1",
+            content = {
+            { type = "p", text = "Hello everyone," },
+            { type = "p", text = "We will be running a 1-hour test of Sporefall on the public test realm from 1-2pm Pacific Daylight Time (GMT-7) on Thursday, May 14th. During that time players will be able to enter the instance on Mythic difficulty and enjoy the entire raid experience." },
+            { type = "p", text = "This will be our first test using the Flexible Raiding feature in Mythic difficulty, so we would benefit greatly from your participation and feedback." },
+            },
+        },
         ["2026-05-02-hotfixes-may-1-2026-2cf540d75e"] = {
             id = "2026-05-02-hotfixes-may-1-2026-2cf540d75e",
             post_key = "2cf540d75e",
