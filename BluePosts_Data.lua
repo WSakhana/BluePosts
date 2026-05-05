@@ -1,9 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1777941228,
+    package_timestamp = 1778000961,
     new_post_ids = {
+        "2026-05-05-the-mythic-dungeon-international-returns-e06c9caa92",
+        "2026-05-05-the-mythic-dungeon-international-returns-6606038294",
     },
     posts = {
+        ["2026-05-05-the-mythic-dungeon-international-returns-e06c9caa92"] = {
+            id = "2026-05-05-the-mythic-dungeon-international-returns-e06c9caa92",
+            post_key = "e06c9caa92",
+            title = "The Mythic Dungeon International Returns!",
+            category = "General Discussion (EU)",
+            timestamp = 1778000258,
+            url = "https://eu.forums.blizzard.com/en/wow/t/618515/1",
+            content = {
+            { type = "image", width = 720, height = 411, u = 0.703125, v = 0.802734, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-05-the-mythic-dungeon-international-returns-e06c9caa92\\image-1.jpg" },
+            { type = "p", text = "The Mythic Dungeon International celebrates its homecoming in the first season of Midnight, starting on May 8!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-05-05-the-mythic-dungeon-international-returns-6606038294"] = {
+            id = "2026-05-05-the-mythic-dungeon-international-returns-6606038294",
+            post_key = "6606038294",
+            title = "The Mythic Dungeon International Returns!",
+            category = "General Discussion (US)",
+            timestamp = 1778000252,
+            url = "https://us.forums.blizzard.com/en/wow/t/2302717/1",
+            content = {
+            { type = "image", width = 720, height = 411, u = 0.703125, v = 0.802734, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-05-the-mythic-dungeon-international-returns-6606038294\\image-1.jpg" },
+            { type = "p", text = "The Mythic Dungeon International celebrates its homecoming in the first season of Midnight, starting on May 8!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-05-05-raid-tuning-incoming-may-5-65397a48be"] = {
             id = "2026-05-05-raid-tuning-incoming-may-5-65397a48be",
             post_key = "65397a48be",
@@ -2530,20 +2558,6 @@ BluePosts_Data = {
             { type = "p", text = "We apologize for all of this. While it provided us with a better understanding of a potential design pitfall that we will ensure we avoid in the future, we regret disrupting the game for you. Thank you for your passionate feedback the last couple of days. We really appreciate it." },
             },
         },
-        ["2026-04-22-housing-temporarily-disabled-in-this-region-enabled-at-730-am-pdt-apri-ef592da93d"] = {
-            id = "2026-04-22-housing-temporarily-disabled-in-this-region-enabled-at-730-am-pdt-apri-ef592da93d",
-            post_key = "ef592da93d",
-            title = "Housing Temporarily Disabled in this Region - Enabled at 7:30 a.m. PDT April 22",
-            category = "General Discussion (US)",
-            timestamp = 1776880637,
-            url = "https://us.forums.blizzard.com/en/wow/t/2294724/1",
-            content = {
-            { type = "p", text = "During our routine testing with realms offline to deploy the new patch, we discovered a critical bug in Housing that would cause unacceptable errors for some players." },
-            { type = "p", text = "Fixing this bug is a top priority for us, and while we work on it, we’ve decided to open realms on patch 12.0.5 with Housing and Neighborhoods disabled in this region (The Americas and Oceania)." },
-            { type = "p", text = "Once we have a fix developed and tested, we will perform an additional brief maintenance in this region to bring Housing back online for everyone." },
-            { type = "p", text = "Thank you very much for your patience and understanding." },
-            },
-        },
         ["2026-04-22-price-update-on-subscription-options-and-game-time-for-world-of-warcra-256a2e2a93"] = {
             id = "2026-04-22-price-update-on-subscription-options-and-game-time-for-world-of-warcra-256a2e2a93",
             post_key = "256a2e2a93",
@@ -2668,28 +2682,6 @@ BluePosts_Data = {
             { type = "list_item", text = "Druid Swift Flight Form", level = 0 },
             { type = "hr" },
             { type = "p", text = "Get ready to adventure across the shattered skies and torn lands of Outland as you continue to protect Azeroth from the threat of destruction, beginning 14 May." },
-            },
-        },
-        ["2026-04-22-adjustments-to-reduce-non-participation-in-dungeons-8bb90b5d10"] = {
-            id = "2026-04-22-adjustments-to-reduce-non-participation-in-dungeons-8bb90b5d10",
-            post_key = "8bb90b5d10",
-            title = "Adjustments to Reduce Non-Participation in Dungeons",
-            category = "The Burning Crusade Classic (EU)",
-            timestamp = 1776867641,
-            url = "https://eu.forums.blizzard.com/en/wow/t/615824/1",
-            content = {
-            { type = "h3", text = "Update April 14, 04:15 CEST" },
-            { type = "p", text = "Yesterday, we implemented the hotfixes described above to support core gameplay in instances in Burning Crusade Classic Anniversary. Unfortunately, these changes were impaired by bugs that did not appear in our pre-release testing. The result was unintended behavior of drops for both solo and group players. For example: one bug resulted in some players becoming completely disallowed from rolling on loot." },
-            { type = "p", text = "With an update we sent to the live game a few minutes ago, we have reverted the original changes while we investigate these bugs." },
-            { type = "p", text = "Thank you for your feedback." },
-            { type = "hr" },
-            { type = "p", text = "We’ve observed a significant number of Burning Crusade players entering dungeons and then participating in no meaningful gameplay, often while only one party member plays through the instance. When this is prominent, it can lead to detrimental economic effects, among other concerns, so we’re implementing a series of hotfixes to address it." },
-            { type = "h3", text = "The Burning Crusade Classic" },
-            { type = "list_item", text = "Dungeons", level = 0 },
-            { type = "list_item", text = "Players must participate in combat to receive experience from dungeons.", level = 1 },
-            { type = "list_item", text = "The amount of loot dropped by non-boss enemies in high-level dungeons is now determined by how many players participate in the kill.", level = 1 },
-            { type = "p", text = "The vast majority of players who participate in dungeon groups as usual should see no difference after these updates." },
-            { type = "p", text = "These changes will go into effect with scheduled weekly maintenance in each region." },
             },
         },
         ["2026-04-22-hunt-or-be-hunted-in-decor-duels-e00293fd23"] = {
