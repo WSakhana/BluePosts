@@ -10,12 +10,22 @@ A .NET 10 console application that replaces `BuildData.ps1` and automates the fu
   - clones the repository into a temporary directory if `BLUEPOSTS_REPO_ROOT` does not already contain a git repo
   - validates that the local git repository is clean
   - runs `git fetch` and `git pull --ff-only`
-  - syncs the Google Drive `BluePosts` folder by downloading only new or changed files
+  - syncs the Google Drive `BluePosts` folder as an incremental mirror, downloading only new or changed files and deleting stale local items
+  - downloads up to 6 Google Drive files at the same time during sync
   - regenerates `BluePosts_Data.lua` and `Media/Posts`
-  - updates `CHANGELOG.md` at the top of the file and rewrites `LATEST_CHANGELOG.md` with only the current release notes
+  - detects added, updated, and removed bundled blue posts by comparing the rebuilt data against the previous generated file
+  - updates `CHANGELOG.md` at the top of the file and rewrites `LATEST_CHANGELOG.md` with only the current release notes, using concrete player-facing lines such as `Added: ...`, `Updated: ...`, and `Removed: ...`
   - creates the git commit
   - creates the git tag
   - pushes the commit and tag
+
+## Release behavior
+
+- A normal data refresh creates a direct tag such as `1.3.3`.
+- If the release also includes addon `.lua` changes other than `BluePosts_Data.lua`, the pipeline creates a beta tag such as `1.3.3-beta` and adds those Lua files to the changelog entry.
+- In practice, addon `.lua` changes are only included when the pipeline is allowed to run on a dirty working tree, for example with `--allow-dirty`, because the default behavior still requires a clean repository before the run starts.
+- Generated changelog entries prefer concrete lines only. They list changed post titles and addon Lua files instead of generic boilerplate summaries whenever specific details are available.
+- If no releasable generated content or addon Lua release files changed, the pipeline exits without creating a commit, tag, or push.
 
 ## Google Drive authentication
 
@@ -92,11 +102,11 @@ docker run --rm \
   blueposts-automation
 ```
 
-In this mode, the repo can be cloned into a temporary container directory. That temporary clone is cleaned at the start of the next run if it is different from the current repo. The local Google Drive mirror is preserved to support incremental syncs.
+In this mode, the repo can be cloned into a temporary container directory. That temporary clone is cleaned at the start of the next run if it is different from the current repo. The local Google Drive mirror is preserved to support incremental syncs and parallel file downloads.
 
 The Docker image also defines a default git identity so `git commit` and `git tag` work in an ephemeral container. To override it, pass `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`, `GIT_COMMITTER_NAME`, and `GIT_COMMITTER_EMAIL` through `docker run` or your orchestrator.
 
-The temporary git clone is cleaned at the start of the next run if it is separate from the current repo. The local Google Drive folder is not purged between runs. It is synced as an incremental mirror, downloading new files, refreshing modified files, and deleting stale local items.
+The temporary git clone is cleaned at the start of the next run if it is separate from the current repo. The local Google Drive folder is not purged between runs. It is synced as an incremental mirror, downloading new files, refreshing modified files, deleting stale local items, and processing up to 6 file downloads concurrently.
 
 The default `CMD` runs `pipeline`. To run only the local conversion step:
 
@@ -169,8 +179,9 @@ dotnet run --project ".Tools\BluePosts.Automation\BluePosts.Automation.csproj" -
 ## Operational notes
 
 - The pipeline fails if the repository already contains local changes, unless `--allow-dirty` is used.
-- If regeneration does not change `BluePosts_Data.lua` or `Media/Posts`, no commit, tag, or push is created.
-- Git tags must use the direct `1.0.2` format without a `v` prefix.
-- Versioning is calculated from the latest valid tag, then incremented automatically following `1.0.2 -> 1.0.3 -> ... -> 1.0.9 -> 1.1.0`.
+- If regeneration does not change `BluePosts_Data.lua`, `Media/Posts`, or releasable addon `.lua` files, no commit, tag, or push is created.
+- Release tags use `1.0.2` for normal releases and `1.0.2-beta` when addon Lua files are included. Do not use a `v` prefix.
+- Versioning is calculated from the latest valid numeric tag core, then incremented automatically following `1.0.2 -> 1.0.3 -> ... -> 1.0.9 -> 1.1.0`. The optional `-beta` suffix is ignored when resolving the next version number.
 - The pipeline preserves `BLUEPOSTS_SOURCE_PATH` between runs and keeps it in sync with Google Drive incrementally.
+- During changelog generation, the pipeline compares the rebuilt data with the previous generated file so it can describe added, updated, and removed bundled posts instead of writing empty release notes.
 - If `BLUEPOSTS_REPO_ROOT` is a separate temporary directory outside the current repo, it is also cleaned before recloning.

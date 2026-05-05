@@ -161,8 +161,8 @@ internal sealed class GitClient(string repoRoot, string? githubToken)
 
         await process.WaitForExitAsync(cancellationToken);
         stopwatch.Stop();
-        var standardOutput = (await standardOutputTask).Trim();
-        var standardError = (await standardErrorTask).Trim();
+        var standardOutput = TrimTrailingLineEndings(await standardOutputTask);
+        var standardError = TrimTrailingLineEndings(await standardErrorTask);
 
         if (process.ExitCode != 0)
         {
@@ -179,6 +179,9 @@ internal sealed class GitClient(string repoRoot, string? githubToken)
 
         return new GitCommandResult(standardOutput, standardError);
     }
+
+    private static string TrimTrailingLineEndings(string value) =>
+        value.TrimEnd('\r', '\n');
 
     private static string FormatCommandForDisplay(IReadOnlyList<string> arguments) =>
         string.Join(' ', arguments.Select(argument => FormatArgumentForDisplay(SanitizeSensitiveText(argument))));

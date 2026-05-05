@@ -41,40 +41,79 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
         Console.WriteLine($"[pipeline] Generated {buildResult.PostCount} post(s) -> {buildResult.OutputPath}");
         Console.WriteLine($"[pipeline] Refreshed media assets in {buildResult.MediaRoot}");
 
-        var changedGeneratedFiles = await git.GetStatusAsync(["BluePosts_Data.lua", "Media/Posts"], cancellationToken);
-        if (changedGeneratedFiles.Count == 0)
+        var changedPaths = ParseStatusPaths(await git.GetStatusAsync(Array.Empty<string>(), cancellationToken));
+        var generatedChangePaths = changedPaths
+            .Where(IsGeneratedContentPath)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+        var addonLuaFiles = changedPaths
+            .Where(IsAddonLuaReleasePath)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        if (generatedChangePaths.Count == 0 && addonLuaFiles.Count == 0)
         {
-            Console.WriteLine("[pipeline] No generated content changes detected. Nothing to commit.");
+            Console.WriteLine("[pipeline] No releasable generated content or addon Lua changes detected. Nothing to commit.");
             return;
         }
 
-        Console.WriteLine($"[pipeline] Detected {changedGeneratedFiles.Count} generated change(s):");
-        foreach (var changedGeneratedFile in changedGeneratedFiles)
+        if (generatedChangePaths.Count > 0)
         {
-            Console.WriteLine($"[pipeline]   {changedGeneratedFile}");
+            Console.WriteLine($"[pipeline] Detected {generatedChangePaths.Count} generated change(s):");
+            foreach (var generatedChangePath in generatedChangePaths)
+            {
+                Console.WriteLine($"[pipeline]   {generatedChangePath}");
+            }
+        }
+
+        if (addonLuaFiles.Count > 0)
+        {
+            Console.WriteLine($"[pipeline] Detected {addonLuaFiles.Count} addon Lua file change(s); this release will use a beta tag:");
+            foreach (var addonLuaFile in addonLuaFiles)
+            {
+                Console.WriteLine($"[pipeline]   {addonLuaFile}");
+            }
         }
 
         var version = await ResolveVersionAsync(options, git, cancellationToken);
         Console.WriteLine($"[pipeline] Resolved release version: {version}");
 
-        var tagName = version.ToString();
-        var commitMessage = $"chore: refresh blueposts data for {version}";
+        var isBetaRelease = addonLuaFiles.Count > 0;
+        var tagName = BuildTagName(version, isBetaRelease);
+        var commitMessage = isBetaRelease
+            ? $"chore: prepare blueposts beta {tagName}"
+            : $"chore: refresh blueposts data for {tagName}";
 
-        var filesToCommit = new List<string> { "BluePosts_Data.lua", "Media/Posts" };
-        if (buildResult.NewPosts.Count > 0)
+        var filesToCommit = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        if (generatedChangePaths.Count > 0)
         {
-            Console.WriteLine($"[pipeline] Detected {buildResult.NewPosts.Count} new blue post(s) for changelog update.");
+            filesToCommit.Add("BluePosts_Data.lua");
+            filesToCommit.Add("Media/Posts");
+        }
+
+        foreach (var addonLuaFile in addonLuaFiles)
+        {
+            filesToCommit.Add(addonLuaFile);
+        }
+
+        if (buildResult.PostChanges.HasVisibleChanges)
+        {
+            Console.WriteLine($"[pipeline] Post change summary: {buildResult.PostChanges.AddedPosts.Count} added, {buildResult.PostChanges.ModifiedPosts.Count} modified, {buildResult.PostChanges.RemovedPosts.Count} removed.");
         }
         else
         {
-            Console.WriteLine("[pipeline] No new blue posts detected. Writing changelog entries.");
+            Console.WriteLine(generatedChangePaths.Count > 0
+                ? "[pipeline] No added/modified/removed blue posts detected. Writing fallback changelog notes."
+                : "[pipeline] No blue post content diff detected. Writing beta changelog notes for addon Lua changes.");
         }
 
         var changelogUpdated = await RunStepAsync("Updating changelogs", () =>
             new ChangelogUpdater(
                     Path.Combine(options.RepoRoot, "CHANGELOG.md"),
                     Path.Combine(options.RepoRoot, "LATEST_CHANGELOG.md"))
-                .PrependEntryAsync(tagName, buildResult.NewPosts, cancellationToken));
+                .PrependEntryAsync(tagName, buildResult.PostChanges, addonLuaFiles, generatedChangePaths.Count > 0, cancellationToken));
 
         if (changelogUpdated)
         {
@@ -91,7 +130,7 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
 
         await RunStepAsync($"Creating git commit '{commitMessage}' and tag '{tagName}'", async () =>
         {
-            await git.AddAsync(filesToCommit, cancellationToken);
+            await git.AddAsync(filesToCommit.OrderBy(path => path, StringComparer.OrdinalIgnoreCase).ToList(), cancellationToken);
             await git.CommitAsync(commitMessage, cancellationToken);
             await git.TagAsync(tagName, tagName, cancellationToken);
         });
@@ -214,7 +253,7 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
     {
         if (!string.IsNullOrWhiteSpace(options.Version))
         {
-            return SemanticVersion.Parse(options.Version);
+            return SemanticVersion.Parse(StripTagSuffix(options.Version));
         }
 
         var knownVersions = (await git.GetTagsAsync(cancellationToken))
@@ -228,5 +267,65 @@ internal sealed class PipelineRunner(BuildDataRunner buildDataRunner)
     }
 
     private static SemanticVersion? NormalizeTag(string tag) =>
-        SemanticVersion.TryParse(tag, out var version) ? version : null;
+        SemanticVersion.TryParse(StripTagSuffix(tag), out var version) ? version : null;
+
+    private static string BuildTagName(SemanticVersion version, bool isBetaRelease) =>
+        isBetaRelease ? $"{version}-beta" : version.ToString();
+
+    private static string StripTagSuffix(string tag)
+    {
+        var separatorIndex = tag.IndexOf('-', StringComparison.Ordinal);
+        return separatorIndex >= 0 ? tag[..separatorIndex] : tag;
+    }
+
+    private static List<string> ParseStatusPaths(IReadOnlyList<string> statusLines)
+    {
+        var paths = new List<string>(statusLines.Count);
+        foreach (var statusLine in statusLines)
+        {
+            var pathStartIndex = statusLine.Length > 2 && statusLine[2] == ' '
+                ? 3
+                : statusLine.Length > 1 && statusLine[1] == ' '
+                    ? 2
+                    : -1;
+
+            if (pathStartIndex < 0 || statusLine.Length <= pathStartIndex)
+            {
+                continue;
+            }
+
+            var path = statusLine[pathStartIndex..].Trim();
+            var renameSeparatorIndex = path.IndexOf(" -> ", StringComparison.Ordinal);
+            if (renameSeparatorIndex >= 0)
+            {
+                path = path[(renameSeparatorIndex + 4)..];
+            }
+
+            if (path.Length == 0)
+            {
+                continue;
+            }
+
+            paths.Add(path.Replace('\\', '/'));
+        }
+
+        return paths;
+    }
+
+    private static bool IsGeneratedContentPath(string path) =>
+        path.Equals("BluePosts_Data.lua", StringComparison.OrdinalIgnoreCase)
+        || path.StartsWith("Media/Posts/", StringComparison.OrdinalIgnoreCase);
+
+    private static bool IsAddonLuaReleasePath(string path)
+    {
+        if (!path.EndsWith(".lua", StringComparison.OrdinalIgnoreCase)
+            || path.Equals("BluePosts_Data.lua", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        return path
+            .Split('/', StringSplitOptions.RemoveEmptyEntries)
+            .All(segment => !segment.StartsWith(".", StringComparison.Ordinal));
+    }
 }

@@ -6,10 +6,12 @@ namespace BluePosts.Automation;
 
 internal sealed class GoogleDriveDownloader
 {
+    private const int MaxConcurrentDownloads = 6;
     private static readonly StringComparer EntryNameComparer = OperatingSystem.IsWindows() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
     private static readonly TimeSpan ModifiedTimeTolerance = TimeSpan.FromSeconds(2);
 
     private readonly DriveService driveService;
+    private readonly SemaphoreSlim downloadSemaphore = new(MaxConcurrentDownloads, MaxConcurrentDownloads);
     private int downloadedFileCount;
     private int skippedFileCount;
     private int deletedEntryCount;
@@ -57,7 +59,7 @@ internal sealed class GoogleDriveDownloader
 
         Console.WriteLine($"{folderIndent}[drive] Listing folder: {displayPath}");
         var items = await ListFolderItemsAsync(folderId, cancellationToken);
-        visitedFolderCount++;
+        Interlocked.Increment(ref visitedFolderCount);
         Console.WriteLine($"{folderIndent}[drive] Found {items.Count} item(s) in {displayPath}");
 
         var itemIndent = GetIndent(depth + 1);
@@ -66,49 +68,53 @@ internal sealed class GoogleDriveDownloader
             .Select(item => item.Name)
             .ToHashSet(EntryNameComparer);
 
-        foreach (var item in uniqueItems)
-        {
-            cancellationToken.ThrowIfCancellationRequested();
-
-            var targetPath = Path.Combine(destinationPath, item.Name);
-            var relativeTargetPath = GetDisplayPath(targetPath);
-            if (item.MimeType == "application/vnd.google-apps.folder")
-            {
-                if (File.Exists(targetPath))
-                {
-                    DeleteFile(targetPath);
-                    deletedEntryCount++;
-                    Console.WriteLine($"{itemIndent}[drive] Removed stale file before folder sync: {relativeTargetPath}");
-                }
-
-                Console.WriteLine($"{itemIndent}[drive] Entering folder: {relativeTargetPath}");
-                Directory.CreateDirectory(targetPath);
-                await DownloadFolderRecursiveAsync(item.Id, targetPath, cancellationToken, depth + 1);
-            }
-            else
-            {
-                if (Directory.Exists(targetPath))
-                {
-                    DeleteDirectory(targetPath);
-                    deletedEntryCount++;
-                    Console.WriteLine($"{itemIndent}[drive] Removed stale folder before file sync: {relativeTargetPath}");
-                }
-
-                if (ShouldDownloadFile(item, targetPath))
-                {
-                    downloadedFileCount++;
-                    Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadedFileCount}: {relativeTargetPath}");
-                    await DownloadFileAsync(item, targetPath, cancellationToken);
-                }
-                else
-                {
-                    skippedFileCount++;
-                    Console.WriteLine($"{itemIndent}[drive] Skipping unchanged file #{skippedFileCount}: {relativeTargetPath}");
-                }
-            }
-        }
+        var itemTasks = uniqueItems
+            .Select(item => ProcessItemAsync(item, destinationPath, depth, cancellationToken))
+            .ToList();
+        await Task.WhenAll(itemTasks);
 
         RemoveStaleEntries(destinationPath, remoteEntryNames, itemIndent);
+    }
+
+    private async Task ProcessItemAsync(DriveItem item, string destinationPath, int depth, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        var itemIndent = GetIndent(depth + 1);
+        var targetPath = Path.Combine(destinationPath, item.Name);
+        var relativeTargetPath = GetDisplayPath(targetPath);
+        if (item.MimeType == "application/vnd.google-apps.folder")
+        {
+            if (File.Exists(targetPath))
+            {
+                DeleteFile(targetPath);
+                Interlocked.Increment(ref deletedEntryCount);
+                Console.WriteLine($"{itemIndent}[drive] Removed stale file before folder sync: {relativeTargetPath}");
+            }
+
+            Console.WriteLine($"{itemIndent}[drive] Entering folder: {relativeTargetPath}");
+            Directory.CreateDirectory(targetPath);
+            await DownloadFolderRecursiveAsync(item.Id, targetPath, cancellationToken, depth + 1);
+            return;
+        }
+
+        if (Directory.Exists(targetPath))
+        {
+            DeleteDirectory(targetPath);
+            Interlocked.Increment(ref deletedEntryCount);
+            Console.WriteLine($"{itemIndent}[drive] Removed stale folder before file sync: {relativeTargetPath}");
+        }
+
+        if (ShouldDownloadFile(item, targetPath))
+        {
+            var downloadIndex = Interlocked.Increment(ref downloadedFileCount);
+            Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadIndex}: {relativeTargetPath}");
+            await DownloadFileWithConcurrencyAsync(item, targetPath, cancellationToken);
+            return;
+        }
+
+        var skippedIndex = Interlocked.Increment(ref skippedFileCount);
+        Console.WriteLine($"{itemIndent}[drive] Skipping unchanged file #{skippedIndex}: {relativeTargetPath}");
     }
 
     private string GetDisplayPath(string path)
@@ -182,7 +188,7 @@ internal sealed class GoogleDriveDownloader
                 continue;
             }
 
-            ignoredDuplicateCount += skippedItems.Count;
+            Interlocked.Add(ref ignoredDuplicateCount, skippedItems.Count);
             var relativeTargetPath = GetDisplayPath(Path.Combine(destinationPath, preferredItem.Name));
             var preferredKind = IsFolder(preferredItem) ? "folder" : "file";
             Console.WriteLine($"{itemIndent}[drive] Ignoring {skippedItems.Count} duplicate Drive item(s) for {relativeTargetPath}; keeping the preferred {preferredKind}.");
@@ -228,6 +234,19 @@ internal sealed class GoogleDriveDownloader
         }
     }
 
+    private async Task DownloadFileWithConcurrencyAsync(DriveItem item, string destinationPath, CancellationToken cancellationToken)
+    {
+        await downloadSemaphore.WaitAsync(cancellationToken);
+        try
+        {
+            await DownloadFileAsync(item, destinationPath, cancellationToken);
+        }
+        finally
+        {
+            downloadSemaphore.Release();
+        }
+    }
+
     private void RemoveStaleEntries(string destinationPath, HashSet<string> remoteEntryNames, string itemIndent)
     {
         foreach (var entryPath in Directory.EnumerateFileSystemEntries(destinationPath))
@@ -250,7 +269,7 @@ internal sealed class GoogleDriveDownloader
                 Console.WriteLine($"{itemIndent}[drive] Removed stale file: {relativePath}");
             }
 
-            deletedEntryCount++;
+            Interlocked.Increment(ref deletedEntryCount);
         }
     }
 

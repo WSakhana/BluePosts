@@ -7,7 +7,9 @@ internal sealed class ChangelogUpdater(string changelogPath, string latestChange
 {
     public async Task<bool> PrependEntryAsync(
         string tag,
-        IReadOnlyList<NewPostSummary> newPosts,
+        PostChangeSummary postChanges,
+        IReadOnlyList<string> addonLuaFiles,
+        bool generatedDataChanged,
         CancellationToken cancellationToken)
     {
         if (!File.Exists(changelogPath))
@@ -30,9 +32,9 @@ internal sealed class ChangelogUpdater(string changelogPath, string latestChange
             restIndex++;
         }
 
-        var updatedLines = new List<string>(lines.Length + newPosts.Count + 4);
+        var updatedLines = new List<string>(lines.Length + postChanges.AddedPosts.Count + postChanges.ModifiedPosts.Count + postChanges.RemovedPosts.Count + addonLuaFiles.Count + 8);
         updatedLines.AddRange(prefixLines);
-        updatedLines.AddRange(BuildEntryLines(tag, newPosts, includeLeadingBlank: updatedLines.Count > 0));
+        updatedLines.AddRange(BuildEntryLines(tag, postChanges, addonLuaFiles, generatedDataChanged, includeLeadingBlank: updatedLines.Count > 0));
 
         if (restIndex < lines.Length)
         {
@@ -43,14 +45,19 @@ internal sealed class ChangelogUpdater(string changelogPath, string latestChange
         var updatedContent = string.Join(newline, updatedLines) + newline;
         await File.WriteAllTextAsync(changelogPath, updatedContent, new UTF8Encoding(false), cancellationToken);
 
-        var latestContent = string.Join(newline, BuildEntryLines(tag, newPosts, includeLeadingBlank: false)) + newline;
+        var latestContent = string.Join(newline, BuildEntryLines(tag, postChanges, addonLuaFiles, generatedDataChanged, includeLeadingBlank: false)) + newline;
         await File.WriteAllTextAsync(latestChangelogPath, latestContent, new UTF8Encoding(false), cancellationToken);
         return true;
     }
 
-    private static List<string> BuildEntryLines(string tag, IReadOnlyList<NewPostSummary> newPosts, bool includeLeadingBlank)
+    private static List<string> BuildEntryLines(
+        string tag,
+        PostChangeSummary postChanges,
+        IReadOnlyList<string> addonLuaFiles,
+        bool generatedDataChanged,
+        bool includeLeadingBlank)
     {
-        var lines = new List<string>(newPosts.Count + 3);
+        var lines = new List<string>(postChanges.AddedPosts.Count + postChanges.ModifiedPosts.Count + postChanges.RemovedPosts.Count + addonLuaFiles.Count + 8);
         if (includeLeadingBlank)
         {
             lines.Add(string.Empty);
@@ -58,24 +65,81 @@ internal sealed class ChangelogUpdater(string changelogPath, string latestChange
 
         lines.Add($"## {tag}");
 
-        if (newPosts.Count > 0)
+        AppendPostChangeLines(lines, "Added", postChanges.AddedPosts);
+        AppendPostChangeLines(lines, "Updated", postChanges.ModifiedPosts);
+        AppendPostChangeLines(lines, "Removed", postChanges.RemovedPosts);
+
+        if (addonLuaFiles.Count > 0)
         {
-            lines.Add($"- Added {newPosts.Count} new blue post{(newPosts.Count == 1 ? string.Empty : "s")} to the in-game reader.");
+            lines.Add($"- Addon Lua changes: {FormatAddonLuaFiles(addonLuaFiles)}.");
+        }
 
-            var seenTitles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            foreach (var newPost in newPosts)
-            {
-                var title = GetMarkdownText(newPost.Title);
-                if (title.Length == 0 || !seenTitles.Add(title))
-                {
-                    continue;
-                }
-
-                lines.Add($"- {title}");
-            }
+        if (lines.Count == (includeLeadingBlank ? 2 : 1))
+        {
+            lines.Add(generatedDataChanged
+                ? "- Updated bundled blue post data."
+                : "- Updated addon release files.");
         }
 
         return lines;
+    }
+
+    private static void AppendPostChangeLines(
+        List<string> lines,
+        string action,
+        IReadOnlyList<PostSummary> posts)
+    {
+        if (posts.Count == 0)
+        {
+            return;
+        }
+
+        var seenTitles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var listedTitles = 0;
+        var hiddenTitles = 0;
+
+        foreach (var post in posts)
+        {
+            var title = GetDisplayTitle(post);
+            if (!seenTitles.Add(title))
+            {
+                continue;
+            }
+
+            if (listedTitles < 6)
+            {
+                lines.Add($"- {action}: {title}");
+                listedTitles++;
+                continue;
+            }
+
+            hiddenTitles++;
+        }
+
+        if (hiddenTitles > 0)
+        {
+            lines.Add($"- {action}: {hiddenTitles} more post{(hiddenTitles == 1 ? string.Empty : "s")}.");
+        }
+    }
+
+    private static string GetDisplayTitle(PostSummary post)
+    {
+        var title = GetMarkdownText(post.Title);
+        return title.Length > 0 ? title : post.Id;
+    }
+
+    private static string FormatAddonLuaFiles(IReadOnlyList<string> addonLuaFiles)
+    {
+        var uniqueFiles = addonLuaFiles
+            .Select(path => path.Replace('\\', '/'))
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .OrderBy(path => path, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        var visibleFiles = uniqueFiles.Take(5).ToList();
+        return uniqueFiles.Count > visibleFiles.Count
+            ? $"{string.Join(", ", visibleFiles)}, +{uniqueFiles.Count - visibleFiles.Count} more"
+            : string.Join(", ", visibleFiles);
     }
 
     private static string GetMarkdownText(string value)

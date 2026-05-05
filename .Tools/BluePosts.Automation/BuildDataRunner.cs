@@ -15,9 +15,13 @@ internal sealed class BuildDataRunner
 {
     private static readonly Regex DeveloperNoteRegex = new("^(?i:Developers.? notes:)\\s*", RegexOptions.Compiled);
     private static readonly Regex GeneratedPostIdRegex = new(@"^\s*\[""(?<id>[^""]+)""\]\s*=\s*\{$", RegexOptions.Compiled);
+    private static readonly Regex GeneratedIdFieldRegex = new(@"^\s*id\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex GeneratedPostKeyRegex = new(@"^\s*post_key\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
+    private static readonly Regex GeneratedTitleRegex = new(@"^\s*title\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
+    private static readonly Regex GeneratedCategoryRegex = new(@"^\s*category\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex GeneratedUrlRegex = new(@"^\s*url\s*=\s*""(?<value>(?:\\.|[^""])*)""\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex PackageTimestampRegex = new(@"^\s*package_timestamp\s*=\s*(?<timestamp>\d+)\s*,\s*$", RegexOptions.Compiled);
+    private static readonly Regex GeneratedTimestampFieldRegex = new(@"^\s*timestamp\s*=\s*\d+\s*,\s*$", RegexOptions.Compiled);
     private static readonly Regex WhitespaceRegex = new("\\s+", RegexOptions.Compiled);
     private static readonly StringComparer PathComparer = OperatingSystem.IsWindows()
         ? StringComparer.OrdinalIgnoreCase
@@ -70,10 +74,8 @@ internal sealed class BuildDataRunner
             .ThenBy(post => post.Title, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
-        var newPosts = orderedPosts
-            .Where(post => !IsKnownPost(post, existingData))
-            .Select(post => new NewPostSummary(post.Id, post.Title))
-            .ToList();
+        var postChanges = BuildPostChangeSummary(orderedPosts, existingData);
+        var newPosts = postChanges.AddedPosts;
 
         PruneStaleMedia(options.MediaRoot, generatedMediaFiles);
 
@@ -95,9 +97,9 @@ internal sealed class BuildDataRunner
         }
 
         Console.WriteLine($"[build] Rebuilt {orderedPosts.Count} post(s) and synchronized media in {options.MediaRoot}");
-        Console.WriteLine($"[build] Detected {newPosts.Count} new post(s)");
+        Console.WriteLine($"[build] Change summary: {postChanges.AddedPosts.Count} added, {postChanges.ModifiedPosts.Count} modified, {postChanges.RemovedPosts.Count} removed");
 
-        return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot, newPosts);
+        return new BuildDataResult(orderedPosts.Count, options.OutputPath, options.MediaRoot, newPosts, postChanges);
     }
 
     private static async Task<List<SourcePostFolder>> DiscoverSourcePostFoldersAsync(string sourcePath, CancellationToken cancellationToken)
@@ -250,80 +252,262 @@ internal sealed class BuildDataRunner
     {
         if (!File.Exists(outputPath))
         {
-            return new ExistingGeneratedData(null, null, [], [], []);
+            return new ExistingGeneratedData(
+                null,
+                null,
+                [],
+                new Dictionary<string, ExistingPostSnapshot>(StringComparer.Ordinal),
+                new Dictionary<string, ExistingPostSnapshot>(StringComparer.Ordinal),
+                new Dictionary<string, ExistingPostSnapshot>(StringComparer.OrdinalIgnoreCase));
         }
 
         var content = await File.ReadAllTextAsync(outputPath, cancellationToken);
-        var postIds = new HashSet<string>(StringComparer.Ordinal);
-        var postKeys = new HashSet<string>(StringComparer.Ordinal);
-        var urls = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var posts = new List<ExistingPostSnapshot>();
+        var postsById = new Dictionary<string, ExistingPostSnapshot>(StringComparer.Ordinal);
+        var postsByPostKey = new Dictionary<string, ExistingPostSnapshot>(StringComparer.Ordinal);
+        var postsByUrl = new Dictionary<string, ExistingPostSnapshot>(StringComparer.OrdinalIgnoreCase);
         long? packageTimestamp = null;
+        var insidePost = false;
+        var postDepth = 0;
+        var currentId = string.Empty;
+        var currentPostKey = string.Empty;
+        var currentTitle = string.Empty;
+        var currentUrl = string.Empty;
+        var comparableLines = new List<string>();
 
         using var reader = new StringReader(content);
         while (reader.ReadLine() is { } line)
         {
-            var postIdMatch = GeneratedPostIdRegex.Match(line);
-            if (postIdMatch.Success)
+            if (packageTimestamp is null)
             {
-                postIds.Add(postIdMatch.Groups["id"].Value);
+                var timestampMatch = PackageTimestampRegex.Match(line);
+                if (timestampMatch.Success
+                    && long.TryParse(timestampMatch.Groups["timestamp"].Value, CultureInfo.InvariantCulture, out var parsedTimestamp))
+                {
+                    packageTimestamp = parsedTimestamp;
+                }
+            }
+
+            if (!insidePost)
+            {
+                var postIdMatch = GeneratedPostIdRegex.Match(line);
+                if (postIdMatch.Success)
+                {
+                    insidePost = true;
+                    postDepth = CountBraceDelta(line);
+                    currentId = UnescapeLuaString(postIdMatch.Groups["id"].Value);
+                    currentPostKey = string.Empty;
+                    currentTitle = string.Empty;
+                    currentUrl = string.Empty;
+                    comparableLines = [];
+                }
+
+                continue;
+            }
+
+            var trimmed = line.Trim();
+
+            var idFieldMatch = GeneratedIdFieldRegex.Match(line);
+            if (idFieldMatch.Success)
+            {
+                currentId = UnescapeLuaString(idFieldMatch.Groups["value"].Value);
+
+                postDepth += CountBraceDelta(line);
                 continue;
             }
 
             var postKeyMatch = GeneratedPostKeyRegex.Match(line);
             if (postKeyMatch.Success)
             {
-                var postKey = NormalizePostKey(UnescapeLuaString(postKeyMatch.Groups["value"].Value));
-                if (postKey.Length > 0)
-                {
-                    postKeys.Add(postKey);
-                }
+                currentPostKey = NormalizePostKey(UnescapeLuaString(postKeyMatch.Groups["value"].Value));
 
+                postDepth += CountBraceDelta(line);
+                continue;
+            }
+
+            var titleMatch = GeneratedTitleRegex.Match(line);
+            if (titleMatch.Success)
+            {
+                currentTitle = UnescapeLuaString(titleMatch.Groups["value"].Value);
+            }
+
+            var categoryMatch = GeneratedCategoryRegex.Match(line);
+            if (categoryMatch.Success)
+            {
+                comparableLines.Add(trimmed);
+
+                postDepth += CountBraceDelta(line);
                 continue;
             }
 
             var urlMatch = GeneratedUrlRegex.Match(line);
             if (urlMatch.Success)
             {
-                var url = NormalizeUrl(UnescapeLuaString(urlMatch.Groups["value"].Value));
-                if (url.Length > 0)
-                {
-                    urls.Add(url);
-                }
-
-                continue;
+                currentUrl = NormalizeUrl(UnescapeLuaString(urlMatch.Groups["value"].Value));
             }
 
-            if (packageTimestamp is not null)
+            if (ShouldIncludeComparableLine(trimmed, postDepth))
+            {
+                comparableLines.Add(trimmed);
+            }
+
+            postDepth += CountBraceDelta(line);
+
+            if (postDepth > 0)
             {
                 continue;
             }
 
-            var timestampMatch = PackageTimestampRegex.Match(line);
-            if (timestampMatch.Success
-                && long.TryParse(timestampMatch.Groups["timestamp"].Value, CultureInfo.InvariantCulture, out var parsedTimestamp))
+            var snapshot = new ExistingPostSnapshot(
+                Identity: GetPrimaryIdentity(currentPostKey, currentUrl, currentId),
+                Id: currentId,
+                PostKey: currentPostKey,
+                Url: currentUrl,
+                Title: currentTitle,
+                ComparablePayload: string.Join('\n', comparableLines));
+
+            posts.Add(snapshot);
+            postsById.TryAdd(snapshot.Id, snapshot);
+
+            if (snapshot.PostKey.Length > 0)
             {
-                packageTimestamp = parsedTimestamp;
+                postsByPostKey.TryAdd(snapshot.PostKey, snapshot);
+            }
+
+            if (snapshot.Url.Length > 0)
+            {
+                postsByUrl.TryAdd(snapshot.Url, snapshot);
+            }
+
+            insidePost = false;
+            comparableLines = [];
+            continue;
+        }
+
+        return new ExistingGeneratedData(content, packageTimestamp, posts, postsById, postsByPostKey, postsByUrl);
+    }
+
+    private static PostChangeSummary BuildPostChangeSummary(IReadOnlyList<PostRecord> orderedPosts, ExistingGeneratedData existingData)
+    {
+        var addedPosts = new List<PostSummary>();
+        var modifiedPosts = new List<PostSummary>();
+        var matchedExistingIdentities = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var post in orderedPosts)
+        {
+            var existingSnapshot = FindMatchingExistingPost(post, existingData);
+            if (existingSnapshot is null)
+            {
+                addedPosts.Add(new PostSummary(post.Id, post.Title));
+                continue;
+            }
+
+            matchedExistingIdentities.Add(existingSnapshot.Identity);
+
+            if (!string.Equals(existingSnapshot.ComparablePayload, BuildComparablePostPayload(post), StringComparison.Ordinal))
+            {
+                modifiedPosts.Add(new PostSummary(post.Id, post.Title));
             }
         }
 
-        return new ExistingGeneratedData(content, packageTimestamp, postIds, postKeys, urls);
+        var removedPosts = existingData.Posts
+            .Where(snapshot => !matchedExistingIdentities.Contains(snapshot.Identity))
+            .Select(snapshot => new PostSummary(snapshot.Id, snapshot.Title))
+            .ToList();
+
+        return new PostChangeSummary(addedPosts, modifiedPosts, removedPosts);
     }
 
-    private static bool IsKnownPost(PostRecord post, ExistingGeneratedData existingData)
+    private static ExistingPostSnapshot? FindMatchingExistingPost(PostRecord post, ExistingGeneratedData existingData)
     {
-        if (existingData.PostIds.Contains(post.Id))
+        if (existingData.PostsById.TryGetValue(post.Id, out var snapshot))
         {
-            return true;
+            return snapshot;
         }
 
         var postKey = NormalizePostKey(post.PostKey);
-        if (postKey.Length > 0 && existingData.PostKeys.Contains(postKey))
+        if (postKey.Length > 0 && existingData.PostsByPostKey.TryGetValue(postKey, out snapshot))
         {
-            return true;
+            return snapshot;
         }
 
         var url = NormalizeUrl(post.Url);
-        return url.Length > 0 && existingData.Urls.Contains(url);
+        return url.Length > 0 && existingData.PostsByUrl.TryGetValue(url, out snapshot)
+            ? snapshot
+            : null;
+    }
+
+    private static string BuildComparablePostPayload(PostRecord post)
+    {
+        var lines = new List<string>
+        {
+            $"title = {GetLuaString(post.Title)},",
+            $"category = {GetLuaString(post.Category)},",
+            $"url = {GetLuaString(post.Url)},",
+            "content = {"
+        };
+
+        foreach (var block in post.Content)
+        {
+            var builder = new StringBuilder();
+            WriteLuaBlock(builder, block);
+            lines.Add(builder.ToString().Trim());
+        }
+
+        lines.Add("},");
+        return string.Join('\n', lines);
+    }
+
+    private static bool ShouldIncludeComparableLine(string trimmedLine, int currentPostDepth)
+    {
+        if (trimmedLine.Length == 0)
+        {
+            return false;
+        }
+
+        if (GeneratedIdFieldRegex.IsMatch(trimmedLine)
+            || GeneratedPostKeyRegex.IsMatch(trimmedLine)
+            || GeneratedTimestampFieldRegex.IsMatch(trimmedLine))
+        {
+            return false;
+        }
+
+        return !(trimmedLine.Equals("},", StringComparison.Ordinal) && currentPostDepth == 1);
+    }
+
+    private static int CountBraceDelta(string line)
+    {
+        var delta = 0;
+        foreach (var character in line)
+        {
+            if (character == '{')
+            {
+                delta++;
+            }
+            else if (character == '}')
+            {
+                delta--;
+            }
+        }
+
+        return delta;
+    }
+
+    private static string GetPrimaryIdentity(string? postKey, string? url, string? id)
+    {
+        var normalizedPostKey = NormalizePostKey(postKey);
+        if (normalizedPostKey.Length > 0)
+        {
+            return $"post_key:{normalizedPostKey}";
+        }
+
+        var normalizedUrl = NormalizeUrl(url);
+        if (normalizedUrl.Length > 0)
+        {
+            return $"url:{normalizedUrl}";
+        }
+
+        return $"id:{id?.Trim() ?? string.Empty}";
     }
 
     private static string NormalizePostKey(string? postKey) =>
@@ -427,7 +611,7 @@ internal sealed class BuildDataRunner
         return builder.ToString();
     }
 
-    private static string BuildLuaData(IReadOnlyList<PostRecord> orderedPosts, IReadOnlyList<NewPostSummary> newPosts, long packageTimestamp)
+    private static string BuildLuaData(IReadOnlyList<PostRecord> orderedPosts, IReadOnlyList<PostSummary> newPosts, long packageTimestamp)
     {
         var builder = new StringBuilder();
         builder.AppendLine("-- Generated data. Do not edit manually.");
@@ -994,12 +1178,33 @@ internal sealed class BuildDataRunner
         long Timestamp,
         SourceMetadata Metadata);
 
-    private sealed record ExistingGeneratedData(string? Content, long? PackageTimestamp, HashSet<string> PostIds, HashSet<string> PostKeys, HashSet<string> Urls);
+    private sealed record ExistingGeneratedData(
+        string? Content,
+        long? PackageTimestamp,
+        IReadOnlyList<ExistingPostSnapshot> Posts,
+        IReadOnlyDictionary<string, ExistingPostSnapshot> PostsById,
+        IReadOnlyDictionary<string, ExistingPostSnapshot> PostsByPostKey,
+        IReadOnlyDictionary<string, ExistingPostSnapshot> PostsByUrl);
+
+    private sealed record ExistingPostSnapshot(string Identity, string Id, string PostKey, string Url, string Title, string ComparablePayload);
 }
 
-internal sealed record BuildDataResult(int PostCount, string OutputPath, string MediaRoot, IReadOnlyList<NewPostSummary> NewPosts);
+internal sealed record BuildDataResult(
+    int PostCount,
+    string OutputPath,
+    string MediaRoot,
+    IReadOnlyList<PostSummary> NewPosts,
+    PostChangeSummary PostChanges);
 
-internal sealed record NewPostSummary(string Id, string Title);
+internal sealed record PostSummary(string Id, string Title);
+
+internal sealed record PostChangeSummary(
+    IReadOnlyList<PostSummary> AddedPosts,
+    IReadOnlyList<PostSummary> ModifiedPosts,
+    IReadOnlyList<PostSummary> RemovedPosts)
+{
+    public bool HasVisibleChanges => AddedPosts.Count > 0 || ModifiedPosts.Count > 0 || RemovedPosts.Count > 0;
+}
 
 internal sealed record PostRecord(string Id, string PostKey, string Title, string Category, long Timestamp, string Url, IReadOnlyList<PostBlock> Content);
 

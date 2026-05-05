@@ -1,9 +1,12 @@
 ## 1.3.2
+- Updated: Raid Tuning Incoming - May 5
+- Updated: Raid Tuning Incoming - 6 May
 
 ## 1.3.1
+- Updated: Class Tuning Incoming - May 5
+- Updated: Class Tuning Incoming - 6 May
 
 ## 1.3.0
-- Added 1 new blue post to the in-game reader.
 - PTR Raid Testing: Mythic Sporefall (15-25)
 
 ## 1.2.9
@@ -14,7 +17,6 @@
 - fix: toast playsound
 
 ## 1.2.8
-- Added 5 new blue posts to the in-game reader.
 - Hotfixes: May 1, 2026
 - Class Tuning Incoming - May 5
 - Class Tuning Incoming - 6 May
@@ -22,7 +24,6 @@
 - Raid Tuning Incoming – 6 May
 
 ## 1.2.7
-- Added 2 new blue posts to the in-game reader.
 - WoW Weekly: Classic Anniversary Edition, May's Trading Post, Children's Week, and More!
 
 ## 1.2.6
@@ -35,39 +36,31 @@
 - Cleanup posts
 
 ## 1.2.4
-- Added 2 new blue posts to the in-game reader.
 - World of Warcraft: Midnight Hotfixes - 30 April
 - World of Warcraft: Midnight Hotfixes - April 30, 2026
 
 ## 1.2.3
-- Added 1 new blue post to the in-game reader.
 - Transform Your Home With the Cozy Treehouse Retreat Bundle and More!
 
 ## 1.2.2
-- Added 3 new blue posts to the in-game reader.
 - Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount
 
 ## 1.2.1
-- Added 2 new blue posts to the in-game reader.
 - Take a First Look at the Midnight: Revelations Content Update
 
 ## 1.2.0
-- Added 3 new blue posts to the in-game reader.
 - Hotfixes: April 29, 2026
 - World of Warcraft: Midnight Hotfixes - April 29, 2026
 - World of Warcraft: Midnight Hotfixes - 28 April
 
 ## 1.1.9
-- Added 2 new blue posts to the in-game reader.
 - Get Decked Out with Gilnean Flair at May’s Trading Post
 
 ## 1.1.8
-- Added 2 new blue posts to the in-game reader.
 - World of Warcraft: Midnight Hotfixes - 28 April
 - World of Warcraft: Midnight Hotfixes - April 28, 2026
 
 ## 1.1.7
-- Added 2 new blue posts to the in-game reader.
 - BCC Anniversary Edition: Overlords of Outland Arrives 14 May
 - BCC Anniversary Edition: Overlords of Outland Arrives May 14
 
@@ -83,25 +76,21 @@
 
 ## 1.1.3
 
-- Added 3 new blue posts to the in-game reader.
 - Hotfixes: April 27, 2026
 - World of Warcraft: Midnight Hotfixes - April 27, 2026
 - World of Warcraft: Midnight Hotfixes - 27 April
 
 ## 1.1.2
 
-- Added 2 new blue posts to the in-game reader.
 - M+ Dungeon Updates Incoming - April 28
 - M+ Dungeon Updates Incoming - 29 April
 
 ## 1.1.1
 
-- Added 1 new blue post to the in-game reader.
 - Adventure with Orphans of Azeroth During Children's Week
 
 ## 1.1.0
 
-- Added 1 new blue post to the in-game reader.
 - Adventure with Orphans of Azeroth During Children's Week
 
 ## 1.0.9
