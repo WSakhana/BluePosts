@@ -1,3 +1,8 @@
+## 1.3.6
+- Added: Siege of Orgrimmar Raid Test - May 8-11
+- Added: Midnight: Revelations 12.0.7 PTR Development Notes
+- Added: Save up to 50% on Burning Crusade Classic Anniversary Packs and Services
+
 ## 1.3.5
 - Added: Midnight: Revelations 12.0.7 PTR Development Notes
 
@@ -142,6 +147,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
