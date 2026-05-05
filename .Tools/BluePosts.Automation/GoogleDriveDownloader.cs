@@ -54,13 +54,8 @@ internal sealed class GoogleDriveDownloader
 
     private async Task DownloadFolderRecursiveAsync(string folderId, string destinationPath, CancellationToken cancellationToken, int depth)
     {
-        var folderIndent = GetIndent(depth);
-        var displayPath = GetDisplayPath(destinationPath);
-
-        Console.WriteLine($"{folderIndent}[drive] Listing folder: {displayPath}");
         var items = await ListFolderItemsAsync(folderId, cancellationToken);
         Interlocked.Increment(ref visitedFolderCount);
-        Console.WriteLine($"{folderIndent}[drive] Found {items.Count} item(s) in {displayPath}");
 
         var itemIndent = GetIndent(depth + 1);
         var uniqueItems = SelectUniqueItems(items, destinationPath, itemIndent);
@@ -68,10 +63,17 @@ internal sealed class GoogleDriveDownloader
             .Select(item => item.Name)
             .ToHashSet(EntryNameComparer);
 
-        var itemTasks = uniqueItems
-            .Select(item => ProcessItemAsync(item, destinationPath, depth, cancellationToken))
-            .ToList();
-        await Task.WhenAll(itemTasks);
+        await Parallel.ForEachAsync(
+            uniqueItems,
+            new ParallelOptions
+            {
+                CancellationToken = cancellationToken,
+                MaxDegreeOfParallelism = MaxConcurrentDownloads
+            },
+            async (item, itemCancellationToken) =>
+            {
+                await ProcessItemAsync(item, destinationPath, depth, itemCancellationToken);
+            });
 
         RemoveStaleEntries(destinationPath, remoteEntryNames, itemIndent);
     }
@@ -92,7 +94,6 @@ internal sealed class GoogleDriveDownloader
                 Console.WriteLine($"{itemIndent}[drive] Removed stale file before folder sync: {relativeTargetPath}");
             }
 
-            Console.WriteLine($"{itemIndent}[drive] Entering folder: {relativeTargetPath}");
             Directory.CreateDirectory(targetPath);
             await DownloadFolderRecursiveAsync(item.Id, targetPath, cancellationToken, depth + 1);
             return;
@@ -107,14 +108,11 @@ internal sealed class GoogleDriveDownloader
 
         if (ShouldDownloadFile(item, targetPath))
         {
-            var downloadIndex = Interlocked.Increment(ref downloadedFileCount);
-            Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadIndex}: {relativeTargetPath}");
-            await DownloadFileWithConcurrencyAsync(item, targetPath, cancellationToken);
+            await DownloadFileWithConcurrencyAsync(item, targetPath, relativeTargetPath, itemIndent, cancellationToken);
             return;
         }
 
-        var skippedIndex = Interlocked.Increment(ref skippedFileCount);
-        Console.WriteLine($"{itemIndent}[drive] Skipping unchanged file #{skippedIndex}: {relativeTargetPath}");
+        Interlocked.Increment(ref skippedFileCount);
     }
 
     private string GetDisplayPath(string path)
@@ -234,11 +232,13 @@ internal sealed class GoogleDriveDownloader
         }
     }
 
-    private async Task DownloadFileWithConcurrencyAsync(DriveItem item, string destinationPath, CancellationToken cancellationToken)
+    private async Task DownloadFileWithConcurrencyAsync(DriveItem item, string destinationPath, string relativeTargetPath, string itemIndent, CancellationToken cancellationToken)
     {
         await downloadSemaphore.WaitAsync(cancellationToken);
         try
         {
+            var downloadIndex = Interlocked.Increment(ref downloadedFileCount);
+            Console.WriteLine($"{itemIndent}[drive] Downloading file #{downloadIndex}: {relativeTargetPath}");
             await DownloadFileAsync(item, destinationPath, cancellationToken);
         }
         finally
