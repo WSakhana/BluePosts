@@ -1,3 +1,2 @@
-## 1.3.4
-- Added: Hotfixes: May 5, 2026
-- Updated: World of Warcraft: Midnight Hotfixes - May 5, 2026
+## 1.3.5
+- Added: Midnight: Revelations 12.0.7 PTR Development Notes
