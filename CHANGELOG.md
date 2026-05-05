@@ -1,3 +1,7 @@
+## 1.3.4
+- Added: Hotfixes: May 5, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - May 5, 2026
+
 ## 1.3.3
 - Added: The Mythic Dungeon International Returns!
 - Removed: Housing Temporarily Disabled in this Region - Enabled at 7:30 a.m. PDT April 22
@@ -135,6 +139,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
