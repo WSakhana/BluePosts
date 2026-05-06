@@ -1,2 +1,2 @@
-## 1.3.7
-- feat: enhance search functionality in reader with new search panel and highlights
+## 1.3.8
+- Added: Good news everyone! I found a new housing bug!

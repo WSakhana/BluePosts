@@ -1,13 +1,29 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778021200,
+    package_timestamp = 1778094631,
     new_post_ids = {
-        "2026-05-05-siege-of-orgrimmar-raid-test-may-8-11-b3ffd86c76",
-        "2026-05-05-midnight-revelations-1207-ptr-development-notes-9057c51071",
-        "2026-05-05-save-up-to-50-on-burning-crusade-classic-anniversary-packs-and-service-da583d0455",
-        "2026-05-05-save-up-to-50-on-burning-crusade-classic-anniversary-packs-and-service-c7f9cd287b",
+        "2026-05-06-good-news-everyone-i-found-a-new-housing-bug-f766cd5759",
     },
     posts = {
+        ["2026-05-06-good-news-everyone-i-found-a-new-housing-bug-f766cd5759"] = {
+            id = "2026-05-06-good-news-everyone-i-found-a-new-housing-bug-f766cd5759",
+            post_key = "f766cd5759",
+            title = "Good news everyone! I found a new housing bug!",
+            category = "Midnight: Revelations Public Test Realm (US)",
+            timestamp = 1778093964,
+            url = "https://us.forums.blizzard.com/en/wow/t/2299944/1",
+            content = {
+            { type = "p", text = "Well this is a fun bug, and it’s so weird I don’t know if I can explain it right. I haven’t seen this one posted anywhere. I somehow manage to find the weirdest stupid bugs!" },
+            { type = "p", text = "I decided to redo my library, which is made in an empty stairwell, and figured I’d attach a second empty stairwell (with a closet inbetween to avoid the known bug) on the 2nd floor of the existing library. That way if nothing I did was better than what I had, I could just keep the existing, and having it so close to the existing library made it easy to move elements I wanted to keep." },
+            { type = "p", text = "Since you know, we don’t have a save option yet." },
+            { type = "p", text = "So I got to the point where I knew I’d keep the new library, and set to moving all the attached rooms so I could delete the exiting library and put the new into place." },
+            { type = "p", text = "It all went exactly as I planned, I got almost everything put back into place, until I went to put one of the closets on the second floor (which is part of a window scene)." },
+            { type = "p", text = "There is no second floor, it’s a blank void, and it shows there’s a third floor, but there’s nothing there." },
+            { type = "p", text = "I cannot select the closet I want (stored on the first floor), select the 2nd (or 3rd) floor, and move it to the spot I want on the new library’s 2nd floor; it removes the closet from my cursor, which I’ve never had an issue with before." },
+            { type = "image", width = 72, height = 72, u = 0.5625, v = 0.5625, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-06-good-news-everyone-i-found-a-new-housing-bug-f766cd5759\\image-1.jpg" },
+            { type = "p", text = "There are screenshots in the reddit post I made about this in r/WoWHousing" },
+            },
+        },
         ["2026-05-05-siege-of-orgrimmar-raid-test-may-8-11-b3ffd86c76"] = {
             id = "2026-05-05-siege-of-orgrimmar-raid-test-may-8-11-b3ffd86c76",
             post_key = "b3ffd86c76",
