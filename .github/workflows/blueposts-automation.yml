@@ -14,7 +14,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      BLUEPOSTS_IMAGE: blueposts-automation:${{ github.sha }}
+      BLUEPOSTS_IMAGE: blueposts-automation:${{ github.run_id }}-${{ github.run_attempt }}
       BLUEPOSTS_REPO_URL: https://github.com/${{ github.repository }}.git
       BLUEPOSTS_GIT_BRANCH: ${{ github.ref_name }}
       BLUEPOSTS_DRIVE_FOLDER_ID: 153osz5cXU3C0Ju07AJ0YArt2LQbbsjny
@@ -26,6 +26,9 @@ jobs:
 
       - name: Checkout automation source
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Build automation image
         shell: bash
