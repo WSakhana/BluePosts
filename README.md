@@ -19,7 +19,7 @@ BluePosts does not fetch live forum data while you play. Posts are bundled with 
 ## Features
 
 - Browse bundled Blizzard blue posts in a dedicated in-game reader.
-- Search posts by title or category.
+- Search posts by title/category and search inside the selected post body.
 - Filter posts by category and region.
 - Track read and unread posts per character profile.
 - Toggle an unread-only view from the header.

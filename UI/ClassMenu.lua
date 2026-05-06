@@ -297,7 +297,8 @@ function UI:ToggleClassMenu()
     local buttonWidth = hasOverflow and (Constants.CLASS_MENU_WIDTH - 28) or (Constants.CLASS_MENU_WIDTH - 14)
 
     menu:ClearAllPoints()
-    menu:SetPoint("TOPRIGHT", self.classButton, "BOTTOMRIGHT", 0, -6)
+    local yOffset = self.readerSearchPanel and self.readerSearchPanel:IsShown() and -50 or -6
+    menu:SetPoint("TOPRIGHT", self.classButton, "BOTTOMRIGHT", 0, yOffset)
     menu:SetSize(Constants.CLASS_MENU_WIDTH, (visibleCount * Constants.CLASS_MENU_ROW_HEIGHT) + 12)
     menu.scroll:ClearAllPoints()
     menu.scroll:SetPoint("TOPLEFT", menu, "TOPLEFT", 7, -6)

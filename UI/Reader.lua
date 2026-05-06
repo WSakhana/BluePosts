@@ -3,6 +3,21 @@ local UI = ns.UI
 local Constants = UI.Constants
 local Helpers = UI.Helpers
 
+local READER_SEARCH_SCROLL_PADDING = 24
+
+local function Trim(value)
+    return tostring(value or ""):match("^%s*(.-)%s*$") or ""
+end
+
+local function SetButtonEnabled(button, enabled)
+    if not button then
+        return
+    end
+
+    button:SetEnabled(enabled and true or false)
+    button:SetAlpha(enabled and 1 or 0.45)
+end
+
 function UI:CreateReader()
     local content = self.content
 
@@ -60,12 +75,20 @@ function UI:CreateReader()
         end
     end)
 
+    self.readerSearchButton = Helpers.CreateButton(toolbar, "Search", "Interface\\Icons\\INV_Misc_Spyglass_02", 112)
+    self.readerSearchButton:SetPoint("RIGHT", toolbar, "RIGHT", 0, 0)
+    self.readerSearchButton:SetScript("OnClick", function()
+        self:SetReaderSearchOpen(not self.readerSearchOpen)
+    end)
+
     self.classButton = Helpers.CreateButton(toolbar, "Classes", "Interface\\Icons\\INV_Misc_Book_11", 136)
-    self.classButton:SetPoint("RIGHT", toolbar, "RIGHT", 0, 0)
+    self.classButton:SetPoint("RIGHT", self.readerSearchButton, "LEFT", -8, 0)
     self.classButton:SetScript("OnClick", function()
         self:ToggleClassMenu()
     end)
     self.classButton:Hide()
+
+    self:CreateReaderSearchPanel(content, toolbar)
 
     local divider = content:CreateTexture(nil, "ARTWORK")
     divider:SetPoint("TOPLEFT", toolbar, "BOTTOMLEFT", 0, -8)
@@ -85,6 +108,102 @@ function UI:CreateReader()
     self.readerChild = child
 
     self:CreateEmptyState()
+    self:RefreshReaderSearchLayout()
+end
+
+function UI:CreateReaderSearchPanel(content, toolbar)
+    local panel = CreateFrame("Frame", nil, content, "BackdropTemplate")
+    panel:SetPoint("TOPLEFT", toolbar, "BOTTOMLEFT", 0, -8)
+    panel:SetPoint("TOPRIGHT", toolbar, "BOTTOMRIGHT", 0, -8)
+    panel:SetHeight(36)
+    panel:SetBackdrop(Constants.BACKDROP)
+    panel:SetBackdropColor(0.055, 0.055, 0.065, 0.96)
+    panel:SetBackdropBorderColor(Constants.THEME.void[1], Constants.THEME.void[2], Constants.THEME.void[3], 0.82)
+    panel:Hide()
+    self.readerSearchPanel = panel
+
+    local label = Helpers.CreateFont(panel, 11, Constants.THEME.blue, "")
+    label:SetPoint("LEFT", panel, "LEFT", 10, 0)
+    label:SetWidth(42)
+    label:SetHeight(16)
+    label:SetText("Find:")
+    label:SetWordWrap(false)
+
+    local clearButton = Helpers.CreateButton(panel, "Clear", nil, 58)
+    clearButton:SetPoint("RIGHT", panel, "RIGHT", -8, 0)
+    clearButton:SetHeight(26)
+    clearButton:SetScript("OnClick", function()
+        self:ResetReaderSearchState()
+        if self.selectedPost then
+            self:RenderPost(self.selectedPost)
+        end
+        if self.readerSearchBox then
+            self.readerSearchBox:SetFocus()
+        end
+    end)
+    self.readerSearchClearButton = clearButton
+
+    local nextButton = Helpers.CreateButton(panel, "Next", nil, 58)
+    nextButton:SetPoint("RIGHT", clearButton, "LEFT", -6, 0)
+    nextButton:SetHeight(26)
+    nextButton:SetScript("OnClick", function()
+        self:GoToReaderSearchMatch(1)
+    end)
+    self.readerSearchNextButton = nextButton
+
+    local prevButton = Helpers.CreateButton(panel, "Prev", nil, 56)
+    prevButton:SetPoint("RIGHT", nextButton, "LEFT", -6, 0)
+    prevButton:SetHeight(26)
+    prevButton:SetScript("OnClick", function()
+        self:GoToReaderSearchMatch(-1)
+    end)
+    self.readerSearchPrevButton = prevButton
+
+    local status = Helpers.CreateFont(panel, 11, Constants.THEME.muted, "")
+    status:SetPoint("RIGHT", prevButton, "LEFT", -8, 0)
+    status:SetWidth(64)
+    status:SetHeight(16)
+    status:SetJustifyH("RIGHT")
+    status:SetWordWrap(false)
+    self.readerSearchStatus = status
+
+    local edit = CreateFrame("EditBox", nil, panel, "InputBoxTemplate")
+    edit:SetPoint("LEFT", label, "RIGHT", 4, 0)
+    edit:SetPoint("RIGHT", status, "LEFT", -8, 0)
+    edit:SetHeight(24)
+    edit:SetAutoFocus(false)
+    edit:SetFont(STANDARD_TEXT_FONT, 12, "")
+    edit:SetTextColor(0.92, 0.92, 0.92, 1)
+    self.readerSearchBox = edit
+
+    local placeholder = Helpers.CreateFont(edit, 12, Constants.THEME.muted, "")
+    placeholder:SetPoint("LEFT", edit, "LEFT", 4, 0)
+    placeholder:SetText("Search in this post")
+    placeholder:SetWordWrap(false)
+    self.readerSearchPlaceholder = placeholder
+
+    edit:SetScript("OnTextChanged", function()
+        Helpers.SetShown(self.readerSearchPlaceholder, edit:GetText() == "")
+        if self.suppressReaderSearchChanged then
+            return
+        end
+        self:RefreshReaderSearchFromBox(true)
+    end)
+    edit:SetScript("OnEnterPressed", function()
+        self:GoToReaderSearchMatch(1)
+    end)
+    edit:SetScript("OnEscapePressed", function()
+        if edit:GetText() ~= "" then
+            self:ResetReaderSearchState()
+            if self.selectedPost then
+                self:RenderPost(self.selectedPost)
+            end
+        else
+            self:SetReaderSearchOpen(false)
+        end
+    end)
+
+    self:UpdateReaderSearchStatus()
 end
 
 function UI:GetReaderFontSize()
@@ -100,13 +219,207 @@ function UI:SetReaderVisible(visible)
     Helpers.SetShown(self.readerTitleHitbox, visible)
     Helpers.SetShown(self.readerMeta, visible)
     Helpers.SetShown(self.toolbar, visible and hasPost)
+    Helpers.SetShown(self.readerSearchButton, visible and hasPost)
+    Helpers.SetShown(self.readerSearchPanel, visible and hasPost and self.readerSearchOpen)
     Helpers.SetShown(self.readerDivider, visible and hasPost)
     Helpers.SetShown(self.readerScroll, visible and hasPost)
     Helpers.SetShown(self.emptyState, visible and not hasPost)
+    self:RefreshReaderSearchLayout()
 
     if not visible and self.classMenu then
         self.classMenu:Hide()
     end
+end
+
+function UI:RefreshReaderSearchLayout()
+    if not self.readerDivider or not self.readerScroll or not self.content or not self.toolbar then
+        return
+    end
+
+    local searchVisible = self.readerSearchPanel and self.readerSearchPanel:IsShown()
+
+    self.readerDivider:ClearAllPoints()
+    if searchVisible then
+        self.readerDivider:SetPoint("TOPLEFT", self.readerSearchPanel, "BOTTOMLEFT", 0, -8)
+        self.readerDivider:SetPoint("TOPRIGHT", self.readerSearchPanel, "BOTTOMRIGHT", 0, -8)
+    else
+        self.readerDivider:SetPoint("TOPLEFT", self.toolbar, "BOTTOMLEFT", 0, -8)
+        self.readerDivider:SetPoint("TOPRIGHT", self.toolbar, "BOTTOMRIGHT", 0, -8)
+    end
+
+    self.readerScroll:ClearAllPoints()
+    self.readerScroll:SetPoint("TOPLEFT", self.content, "TOPLEFT", 18, searchVisible and -184 or -140)
+    self.readerScroll:SetPoint("BOTTOMRIGHT", self.content, "BOTTOMRIGHT", -34, 16)
+end
+
+function UI:SetReaderSearchOpen(open)
+    if not self.readerSearchPanel then
+        return
+    end
+
+    local wasVisible = self.readerSearchPanel:IsShown()
+    self.readerSearchOpen = open and true or false
+    Helpers.SetShown(self.readerSearchPanel, self.readerSearchOpen and self.selectedPost ~= nil)
+
+    if self.readerSearchOpen and self.classMenu and self.classMenu:IsShown() then
+        self.classMenu:Hide()
+    end
+
+    if not self.readerSearchOpen then
+        self:ResetReaderSearchState()
+        if self.readerSearchBox then
+            self.readerSearchBox:ClearFocus()
+        end
+    end
+
+    local isVisible = self.readerSearchPanel:IsShown()
+    self:RefreshReaderSearchLayout()
+
+    if self.selectedPost and wasVisible ~= isVisible then
+        local scrollOffset = self.readerScroll:GetVerticalScroll() or 0
+        self:RenderPost(self.selectedPost)
+        local maxScroll = math.max(0, self.readerChild:GetHeight() - self.readerScroll:GetHeight())
+        self.readerScroll:SetVerticalScroll(math.min(scrollOffset, maxScroll))
+    end
+
+    if self.readerSearchOpen and self.readerSearchBox then
+        self.readerSearchBox:SetFocus()
+        self.readerSearchBox:HighlightText()
+    end
+end
+
+function UI:ResetReaderSearchState()
+    self.readerSearchText = ""
+    self.readerSearchMatches = {}
+    self.readerSearchMatchLookup = {}
+    self.readerSearchMatchIndex = 0
+    self.readerSearchCurrentBlock = nil
+
+    if self.readerSearchBox then
+        self.suppressReaderSearchChanged = true
+        self.readerSearchBox:SetText("")
+        Helpers.SetShown(self.readerSearchPlaceholder, true)
+        self.suppressReaderSearchChanged = false
+    end
+
+    self:UpdateReaderSearchStatus()
+end
+
+function UI:BuildReaderSearchMatches(searchText)
+    local query = Trim(searchText):lower()
+    self.readerSearchText = query
+    self.readerSearchMatches = {}
+    self.readerSearchMatchLookup = {}
+
+    if query == "" or not self.selectedPost then
+        self.readerSearchMatchIndex = 0
+        self.readerSearchCurrentBlock = nil
+        return
+    end
+
+    for index, block in ipairs(self.selectedPost.content or {}) do
+        local text = block and block.text
+        if text and tostring(text):lower():find(query, 1, true) then
+            table.insert(self.readerSearchMatches, index)
+            self.readerSearchMatchLookup[index] = true
+        end
+    end
+
+    if #self.readerSearchMatches == 0 then
+        self.readerSearchMatchIndex = 0
+        self.readerSearchCurrentBlock = nil
+    else
+        self.readerSearchMatchIndex = math.min(math.max(1, self.readerSearchMatchIndex or 1), #self.readerSearchMatches)
+        self.readerSearchCurrentBlock = self.readerSearchMatches[self.readerSearchMatchIndex]
+    end
+end
+
+function UI:RefreshReaderSearchFromBox(scrollToFirst)
+    if not self.readerSearchBox then
+        return
+    end
+
+    self.readerSearchMatchIndex = 1
+    self:BuildReaderSearchMatches(self.readerSearchBox:GetText())
+    self:UpdateReaderSearchStatus()
+
+    if self.selectedPost then
+        self:RenderPost(self.selectedPost)
+        if scrollToFirst and self.readerSearchCurrentBlock then
+            self:ScrollToReaderSearchMatch(self.readerSearchMatchIndex)
+        end
+    end
+end
+
+function UI:UpdateReaderSearchStatus()
+    local query = self.readerSearchText or ""
+    local count = #(self.readerSearchMatches or {})
+    local hasQuery = query ~= ""
+    local hasMatches = count > 0
+
+    if hasMatches then
+        self.readerSearchCurrentBlock = self.readerSearchMatches[self.readerSearchMatchIndex]
+    else
+        self.readerSearchCurrentBlock = nil
+    end
+
+    if self.readerSearchStatus then
+        if not hasQuery then
+            self.readerSearchStatus:SetText("")
+        elseif hasMatches then
+            self.readerSearchStatus:SetText(("%d/%d"):format(self.readerSearchMatchIndex, count))
+        else
+            self.readerSearchStatus:SetText("0 found")
+        end
+    end
+
+    SetButtonEnabled(self.readerSearchPrevButton, hasMatches)
+    SetButtonEnabled(self.readerSearchNextButton, hasMatches)
+    SetButtonEnabled(self.readerSearchClearButton, hasQuery)
+end
+
+function UI:GoToReaderSearchMatch(delta)
+    if not self.readerSearchBox then
+        return
+    end
+
+    if (self.readerSearchText or "") == "" then
+        self.readerSearchBox:SetFocus()
+        return
+    end
+
+    local count = #(self.readerSearchMatches or {})
+    if count == 0 then
+        self.readerSearchBox:SetFocus()
+        return
+    end
+
+    self.readerSearchMatchIndex = ((self.readerSearchMatchIndex or 1) + (delta or 1) - 1) % count + 1
+    self:UpdateReaderSearchStatus()
+
+    if self.selectedPost then
+        self:RenderPost(self.selectedPost)
+        self:ScrollToReaderSearchMatch(self.readerSearchMatchIndex)
+    end
+end
+
+function UI:ScrollToReaderSearchMatch(matchIndex)
+    local blockIndex = self.readerSearchMatches and self.readerSearchMatches[matchIndex]
+    if not blockIndex or not self.blockOffsets or not self.readerScroll or not self.readerChild then
+        return
+    end
+
+    local offset = math.max(0, (self.blockOffsets[blockIndex] or 0) - READER_SEARCH_SCROLL_PADDING)
+    local maxScroll = math.max(0, self.readerChild:GetHeight() - self.readerScroll:GetHeight())
+    self.readerScroll:SetVerticalScroll(math.min(offset, maxScroll))
+end
+
+function UI:GetReaderSearchMatchKind(blockIndex)
+    if not self.readerSearchMatchLookup or not self.readerSearchMatchLookup[blockIndex] then
+        return nil
+    end
+
+    return blockIndex == self.readerSearchCurrentBlock and "current" or "match"
 end
 
 function UI:ShowReader()
@@ -189,6 +502,20 @@ function UI:AcquireLine()
     line:Show()
     table.insert(self.activeBlocks, line)
     return line
+end
+
+function UI:AcquireSearchHighlight()
+    local pool = self.blockPools.searchHighlight
+    local highlight = table.remove(pool)
+    if not highlight then
+        highlight = self.readerChild:CreateTexture(nil, "BACKGROUND")
+        highlight.poolKind = "searchHighlight"
+    end
+
+    highlight:ClearAllPoints()
+    highlight:Show()
+    table.insert(self.activeBlocks, highlight)
+    return highlight
 end
 
 function UI:AcquireImage()
@@ -582,6 +909,7 @@ function UI:ShowEmptyState()
     if self.classMenu then
         self.classMenu:Hide()
     end
+    self:SetReaderSearchOpen(false)
     self:ReleaseBlocks()
     self.readerScroll:SetVerticalScroll(0)
     self.readerChild:SetHeight(self.readerScroll:GetHeight())
@@ -601,6 +929,7 @@ function UI:SelectPost(postID)
     end
 
     self.selectedPost = post
+    self:ResetReaderSearchState()
     if self.core and self.core.db then
         self.core.db.lastSelectedPostID = post.id
     end
@@ -622,6 +951,9 @@ function UI:UpdateToolbar()
     self.copyButton:SetEnabled(hasPost)
     self.guildButton:SetEnabled(hasPost)
     self.readButton:SetEnabled(hasPost)
+    if self.readerSearchButton then
+        self.readerSearchButton:SetEnabled(hasPost)
+    end
 
     if not hasPost then
         self.readButton.text:SetText("Mark read")
@@ -731,6 +1063,15 @@ function UI:RenderPost(post)
 
             local height = math.max(font:GetStringHeight(), fontSize + 4)
             font:SetHeight(height + 2)
+            local searchMatchKind = self:GetReaderSearchMatchKind(index)
+            if searchMatchKind then
+                local highlight = self:AcquireSearchHighlight()
+                local highlightLeft = math.max(0, left - 4)
+                local color = searchMatchKind == "current" and Constants.THEME.gold or Constants.THEME.blue
+                highlight:SetPoint("TOPLEFT", self.readerChild, "TOPLEFT", highlightLeft, y + 1)
+                highlight:SetSize(math.max(24, width - highlightLeft), height + 4)
+                highlight:SetColorTexture(color[1], color[2], color[3], searchMatchKind == "current" and 0.09 or 0.035)
+            end
             y = y - height - (block.type == "p" and 12 or 8)
         end
     end

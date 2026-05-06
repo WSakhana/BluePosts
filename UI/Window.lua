@@ -21,6 +21,7 @@ function UI:Initialize(core)
         line = {},
         image = {},
         sourceLink = {},
+        searchHighlight = {},
     }
 
     self:CreateMainFrame()
