@@ -1,3 +1,6 @@
+## 1.3.9
+- Updated: World of Warcraft: Midnight Hotfixes - May 6, 2026
+
 ## 1.3.8
 - Added: Good news everyone! I found a new housing bug!
 
@@ -153,6 +156,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
