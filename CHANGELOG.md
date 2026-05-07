@@ -1,3 +1,6 @@
+## 1.4.0
+- Added: Time is Running Out! Adopt Roofus Today and Support Habitat for Humanity
+
 ## 1.3.9
 - Updated: World of Warcraft: Midnight Hotfixes - May 6, 2026
 
@@ -156,6 +159,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

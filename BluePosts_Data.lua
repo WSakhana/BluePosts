@@ -1,9 +1,36 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778118986,
+    package_timestamp = 1778175147,
     new_post_ids = {
+        "2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd",
     },
     posts = {
+        ["2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd"] = {
+            id = "2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd",
+            post_key = "a38f5092dd",
+            title = "Time is Running Out! Adopt Roofus Today and Support Habitat for Humanity",
+            category = "Blogs (EU)",
+            timestamp = 1778174482,
+            url = "https://news.blizzard.com/en-gb/article/24267940/time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanity",
+            content = {
+            { type = "p", text = "Introducing Roofus, an industrious builder and lovable new companion pet ready to accompany you on all your adventures in both Mists of Pandaria Classic* and modern World of Warcraft." },
+            { type = "p", text = "The pack also includes new Housing decor items** for your home in modern World of Warcraft, including a customizable dog house, bed, and bowl! Perfect for relaxing after a ruff day." },
+            { type = "p", text = "By purchasing The Roofus Pack, you’ll be supporting Habitat for Humanity, an organization that has helped provide housing and shelter for more than 65 million people across the globe." },
+            { type = "p", text = "During the promotional period, 100% of the purchase price of*** The Roofus Pack will support Habitat for Humanity." },
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd\\image-1.jpg" },
+            { type = "p", text = "The Roofus Pack Includes:" },
+            { type = "list_item", text = "Roofus Companion Pet (Modern and Classic Progression WoW)", level = 0 },
+            { type = "list_item", text = "Paw Pal Customizable Dog House Decor with 4 roof variants (Modern WoW)", level = 0 },
+            { type = "list_item", text = "Paw Pal Pet Bed Decor in 2 variants, with or without blanket (Modern WoW)", level = 0 },
+            { type = "list_item", text = "Paw Pal Water Bowl Decor (Modern WoW)", level = 0 },
+            { type = "p", text = "Adopt Today!" },
+            { type = "hr" },
+            { type = "h2", text = "ABOUT HABITAT FOR HUMANITY" },
+            { type = "p", text = "Habitat for Humanity is a movement of people in local communities and around the world, working together to build more prosperous and vibrant communities by ensuring everyone has a safe, affordable place to call home. Since its founding in 1976, Habitat for Humanity has helped more than 65 million people globally build their futures on their own terms through access to decent housing. This is achieved by working alongside people of all walks of life to build, repair, and finance homes, by innovating new ways of building and financing, and by advocating for policies that make constructing and accessing housing easier for everyone. Together, Habitat for Humanity builds homes, communities, and hope. To learn more, visit habitat.org." },
+            { type = "hr" },
+            { type = "p", text = "*Only available in WoW Classic progression realms and modern World of Warcraft. Requires World of Warcraft® Subscription or Game Time. **Use and placement of decor items are limited to the Housing feature, which requires access to World of Warcraft®: Midnight.***From 17 March, 18:00 BST, to 12 May, 2026, 18:00 BST, Blizzard Entertainment will donate 100% of the purchase price of “The Roofus Pack” digital bundle to Habitat for Humanity less any chargebacks, refunds, transaction fees, and Value Added Taxes (VAT), or other similar taxes paid.Available on the Battle.net® Shop until 12 May 2026, 18:00 BST." },
+            },
+        },
         ["2026-05-07-world-of-warcraft-midnight-hotfixes-may-6-2026-cd1b478a91"] = {
             id = "2026-05-07-world-of-warcraft-midnight-hotfixes-may-6-2026-cd1b478a91",
             post_key = "cd1b478a91",
