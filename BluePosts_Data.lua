@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778175147,
+    package_timestamp = 1778260362,
     new_post_ids = {
-        "2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd",
+        "2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-43dee78c68",
+        "2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-d65f59f7ee",
     },
     posts = {
+        ["2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-43dee78c68"] = {
+            id = "2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-43dee78c68",
+            post_key = "43dee78c68",
+            title = "Wow Weekly: Last Chance to Adopt Roofus, Tune in for MDI This Weekend, and More!",
+            category = "General Discussion (US)",
+            timestamp = 1778259692,
+            url = "https://us.forums.blizzard.com/en/wow/t/2303855/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-43dee78c68\\image-1.jpg" },
+            { type = "p", text = "This week, purchase The Roofus Pack to support Habitat for Humanity before it's too late, the Groups Stage begins this weekend as Mythic Dungeon International sets off on the road to BlizzCon, and save up to 50% on Burning Crusade Anniversary Packs and Services." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-d65f59f7ee"] = {
+            id = "2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-d65f59f7ee",
+            post_key = "d65f59f7ee",
+            title = "Wow Weekly: Last Chance to Adopt Roofus, Tune in for MDI This Weekend, and More!",
+            category = "General Discussion (EU)",
+            timestamp = 1778259686,
+            url = "https://eu.forums.blizzard.com/en/wow/t/618821/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-08-wow-weekly-last-chance-to-adopt-roofus-tune-in-for-mdi-this-weekend-an-d65f59f7ee\\image-1.jpg" },
+            { type = "p", text = "This week, purchase The Roofus Pack to support Habitat for Humanity before it's too late, the Groups Stage begins this weekend as Mythic Dungeon International sets off on the road to BlizzCon, and save up to 50% on Burning Crusade Anniversary Packs and Services." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd"] = {
             id = "2026-05-07-time-is-running-out-adopt-roofus-today-and-support-habitat-for-humanit-a38f5092dd",
             post_key = "a38f5092dd",

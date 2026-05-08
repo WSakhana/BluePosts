@@ -1,3 +1,6 @@
+## 1.4.1
+- Added: Wow Weekly: Last Chance to Adopt Roofus, Tune in for MDI This Weekend, and More!
+
 ## 1.4.0
 - Added: Time is Running Out! Adopt Roofus Today and Support Habitat for Humanity
 
@@ -159,6 +162,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

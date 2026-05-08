@@ -1,2 +1,2 @@
-## 1.4.0
-- Added: Time is Running Out! Adopt Roofus Today and Support Habitat for Humanity
+## 1.4.1
+- Added: Wow Weekly: Last Chance to Adopt Roofus, Tune in for MDI This Weekend, and More!
