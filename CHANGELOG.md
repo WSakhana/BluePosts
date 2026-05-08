@@ -1,3 +1,7 @@
+## 1.4.2
+- Added: Tank Adjustments Incoming – May 12
+- Added: Tank Adjustments Incoming – 13 May
+
 ## 1.4.1
 - Added: Wow Weekly: Last Chance to Adopt Roofus, Tune in for MDI This Weekend, and More!
 
@@ -162,6 +166,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

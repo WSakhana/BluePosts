@@ -1,2 +1,3 @@
-## 1.4.1
-- Added: Wow Weekly: Last Chance to Adopt Roofus, Tune in for MDI This Weekend, and More!
+## 1.4.2
+- Added: Tank Adjustments Incoming – May 12
+- Added: Tank Adjustments Incoming – 13 May
