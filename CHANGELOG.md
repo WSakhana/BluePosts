@@ -1,3 +1,6 @@
+## 1.4.3
+- Added: Now Available For Testing
+
 ## 1.4.2
 - Added: Tank Adjustments Incoming – May 12
 - Added: Tank Adjustments Incoming – 13 May
@@ -166,6 +169,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
