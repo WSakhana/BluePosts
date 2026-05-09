@@ -1,2 +1,2 @@
-## 1.4.3
-- Added: Now Available For Testing
+## 1.4.4
+- Updated: World of Warcraft: Midnight Hotfixes - May 8, 2026

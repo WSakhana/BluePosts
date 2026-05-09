@@ -1,3 +1,6 @@
+## 1.4.4
+- Updated: World of Warcraft: Midnight Hotfixes - May 8, 2026
+
 ## 1.4.3
 - Added: Now Available For Testing
 
@@ -169,6 +172,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
