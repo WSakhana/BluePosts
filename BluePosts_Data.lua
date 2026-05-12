@@ -1,11 +1,34 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778544154,
+    package_timestamp = 1778606429,
     new_post_ids = {
-        "2026-05-11-additional-guardian-tuning-13-may-3859805c86",
-        "2026-05-11-additional-guardian-tuning-may-12-99a2246534",
+        "2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b",
     },
     posts = {
+        ["2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b"] = {
+            id = "2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b",
+            post_key = "c43e9a3a1b",
+            title = "Time is Running Out! Play Midnight for a Classic Anniversary Edition Flying Mount",
+            category = "Blogs (US)",
+            timestamp = 1778605642,
+            url = "https://news.blizzard.com/en-us/article/24267942/play-midnight-for-a-classic-anniversary-edition-flying-mount",
+            content = {
+            { type = "p", text = "Earn the menacing Voidfeather Dragonhawk flying mount to carry you through the fel-scarred realm of Outland in Burning Crusade Classic Anniversary Edition* after completing the introduction scenario in World of Warcraft: Midnight**." },
+            { type = "p", text = "When: March 17 through May 17" },
+            { type = "hr" },
+            { type = "h3", text = "Defend the Sunwell" },
+            { type = "p", text = "Quel'Thalas is under siege! Complete the intro scenario of Midnight, pitting you against Void forces during their invasion of the home of the Blood Elves, and earn the \"Echoes of Midnight\" achievement before the promotion period ends to get the Voidfeather Dragonhawk flying mount for use in your Burning Crusade Classic Anniversary adventures." },
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b\\image-1.jpg" },
+            { type = "p", text = "The Voidfeather Dragonhawk mount is only available in World of Warcraft: The Burning Crusade Classic Anniversary realms, and characters must have Expert Riding or better to use it. This mount automatically scales to the fastest riding skill known by each character." },
+            { type = "hr" },
+            { type = "h3", text = "How to Start the Midnight Intro Scenario" },
+            { type = "p", text = "Adventure is calling you home in Midnight!" },
+            { type = "p", text = "Buy Now" },
+            { type = "hr" },
+            { type = "p", text = "*Requires a World of Warcraft® Subscription or Game Time. **Requires access to World of Warcraft®: Midnight (sold separately)." },
+            { type = "p", text = "Available until May 18, 2026, 10:00 am PDT (18:00 BST)." },
+            },
+        },
         ["2026-05-11-additional-guardian-tuning-13-may-3859805c86"] = {
             id = "2026-05-11-additional-guardian-tuning-13-may-3859805c86",
             post_key = "3859805c86",

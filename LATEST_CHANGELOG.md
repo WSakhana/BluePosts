@@ -1,3 +1,2 @@
-## 1.4.5
-- Added: Additional Guardian Tuning - 13 May
-- Added: Additional Guardian Tuning - May 12
+## 1.4.6
+- Added: Time is Running Out! Play Midnight for a Classic Anniversary Edition Flying Mount

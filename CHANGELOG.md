@@ -1,3 +1,6 @@
+## 1.4.6
+- Added: Time is Running Out! Play Midnight for a Classic Anniversary Edition Flying Mount
+
 ## 1.4.5
 - Added: Additional Guardian Tuning - 13 May
 - Added: Additional Guardian Tuning - May 12
@@ -176,6 +179,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
