@@ -1,3 +1,7 @@
+## 1.4.5
+- Added: Additional Guardian Tuning - 13 May
+- Added: Additional Guardian Tuning - May 12
+
 ## 1.4.4
 - Updated: World of Warcraft: Midnight Hotfixes - May 8, 2026
 
@@ -172,6 +176,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

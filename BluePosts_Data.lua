@@ -1,9 +1,47 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778288240,
+    package_timestamp = 1778544154,
     new_post_ids = {
+        "2026-05-11-additional-guardian-tuning-13-may-3859805c86",
+        "2026-05-11-additional-guardian-tuning-may-12-99a2246534",
     },
     posts = {
+        ["2026-05-11-additional-guardian-tuning-13-may-3859805c86"] = {
+            id = "2026-05-11-additional-guardian-tuning-13-may-3859805c86",
+            post_key = "3859805c86",
+            title = "Additional Guardian Tuning - 13 May",
+            category = "Druid (EU)",
+            timestamp = 1778543493,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619090/1",
+            content = {
+            { type = "p", text = "Our recent adjustments to Guardian have made the Elune’s Chosen build stronger than intended. We’re going to take steps to bring this back in line with realm restarts during scheduled weekly maintenance this week." },
+            { type = "h2", text = "CLASSES" },
+            { type = "h3", text = "Druid" },
+            { type = "list_item", text = "Guardian", level = 0 },
+            { type = "list_item", text = "Thrash direct damage reduced by 25%.", level = 1 },
+            { type = "list_item", text = "Elune’s Favored now heals for 15% of Arcane damage dealt (was 25%).", level = 1 },
+            { type = "dev_note", text = "These changes aim to bring this build closer to its expected output: high-damage relative to other tanks, but not abnormally so.", level = 0 },
+            { type = "p", text = "We recognize that the build in question avoids the Apex talent. With this tuning, we’re choosing to not break the Elune’s Chosen build or require the Apex talent. We have further plans to update the Guardian Apex Talent in a future patch to give us more flexibility with it and alleviate some of the current pain points for Druids." },
+            },
+        },
+        ["2026-05-11-additional-guardian-tuning-may-12-99a2246534"] = {
+            id = "2026-05-11-additional-guardian-tuning-may-12-99a2246534",
+            post_key = "99a2246534",
+            title = "Additional Guardian Tuning - May 12",
+            category = "Druid (US)",
+            timestamp = 1778543487,
+            url = "https://us.forums.blizzard.com/en/wow/t/2305161/1",
+            content = {
+            { type = "p", text = "Our recent adjustments to Guardian have made the Elune’s Chosen build stronger than intended. We’re going to take steps to bring this back in line with realm restarts during scheduled weekly maintenance this week." },
+            { type = "h2", text = "CLASSES" },
+            { type = "h3", text = "Druid" },
+            { type = "list_item", text = "Guardian", level = 0 },
+            { type = "list_item", text = "Thrash direct damage reduced by 25%.", level = 1 },
+            { type = "list_item", text = "Elune’s Favored now heals for 15% of Arcane damage dealt (was 25%).", level = 1 },
+            { type = "dev_note", text = "These changes aim to bring this build closer to its expected output: high-damage relative to other tanks, but not abnormally so.", level = 0 },
+            { type = "p", text = "We recognize that the build in question avoids the Apex talent. With this tuning, we’re choosing to not break the Elune’s Chosen build or require the Apex talent. We have further plans to update the Guardian Apex Talent in a future patch to give us more flexibility with it and alleviate some of the current pain points for Druids." },
+            },
+        },
         ["2026-05-09-world-of-warcraft-midnight-hotfixes-may-8-2026-cd1b478a91"] = {
             id = "2026-05-09-world-of-warcraft-midnight-hotfixes-may-8-2026-cd1b478a91",
             post_key = "cd1b478a91",
