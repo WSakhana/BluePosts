@@ -1,2 +1,2 @@
-## 1.4.6
-- Added: Time is Running Out! Play Midnight for a Classic Anniversary Edition Flying Mount
+## 1.4.7
+- Added: Ascendant Voidcore issue/crafted weapons

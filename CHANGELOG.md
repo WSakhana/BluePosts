@@ -1,3 +1,6 @@
+## 1.4.7
+- Added: Ascendant Voidcore issue/crafted weapons
+
 ## 1.4.6
 - Added: Time is Running Out! Play Midnight for a Classic Anniversary Edition Flying Mount
 
@@ -179,6 +182,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

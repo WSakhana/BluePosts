@@ -1,10 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778606429,
+    package_timestamp = 1778620118,
     new_post_ids = {
-        "2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b",
+        "2026-05-12-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
     },
     posts = {
+        ["2026-05-12-ascendant-voidcore-issuecrafted-weapons-cae7a7779f"] = {
+            id = "2026-05-12-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
+            post_key = "cae7a7779f",
+            title = "Ascendant Voidcore issue/crafted weapons",
+            category = "General Discussion (US)",
+            timestamp = 1778619445,
+            url = "https://us.forums.blizzard.com/en/wow/t/2305462/1",
+            content = {
+            { type = "p", text = "Hello all," },
+            { type = "p", text = "I got my 5 Ascendant Void shards and made my Ascendant Void core, but it will not work on my MAX level Radiant Weapon. When I go to add it and hit accept nothing happens. Perhaps its bugged? anyone have this issue?" },
+            },
+        },
         ["2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b"] = {
             id = "2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b",
             post_key = "c43e9a3a1b",
