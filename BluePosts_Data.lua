@@ -1,11 +1,21 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778692363,
+    package_timestamp = 1778698298,
     new_post_ids = {
-        "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0",
-        "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-june-2-c0a9a99f9a",
     },
     posts = {
+        ["2026-05-13-ascendant-voidcore-issuecrafted-weapons-cae7a7779f"] = {
+            id = "2026-05-13-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
+            post_key = "cae7a7779f",
+            title = "Ascendant Voidcore issue/crafted weapons",
+            category = "General Discussion (US)",
+            timestamp = 1778697621,
+            url = "https://us.forums.blizzard.com/en/wow/t/2305462/1",
+            content = {
+            { type = "p", text = "Hello all," },
+            { type = "p", text = "I got my 5 Ascendant Void shards and made my Ascendant Void core, but it will not work on my MAX level Radiant Weapon. When I go to add it and hit accept nothing happens. Perhaps its bugged? anyone have this issue?" },
+            },
+        },
         ["2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0"] = {
             id = "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0",
             post_key = "edf9f07bc0",
@@ -1909,18 +1919,6 @@ BluePosts_Data = {
             { type = "h3", text = "Quests" },
             { type = "list_item", text = "The Ancient Visionstone can once again be interacted with for the Harandar repeatable legends quests “The Story of the Echoless Flame” and “The Story of Russula’s Outreach”.", level = 0 },
             { type = "list_item", text = "Fixed a bug where the daily quest “Ephemeral Masquerade” appeared to be a low-level quest, rather than the intended blue exclamation point.", level = 0 },
-            },
-        },
-        ["2026-05-12-ascendant-voidcore-issuecrafted-weapons-cae7a7779f"] = {
-            id = "2026-05-12-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
-            post_key = "cae7a7779f",
-            title = "Ascendant Voidcore issue/crafted weapons",
-            category = "General Discussion (US)",
-            timestamp = 1778619445,
-            url = "https://us.forums.blizzard.com/en/wow/t/2305462/1",
-            content = {
-            { type = "p", text = "Hello all," },
-            { type = "p", text = "I got my 5 Ascendant Void shards and made my Ascendant Void core, but it will not work on my MAX level Radiant Weapon. When I go to add it and hit accept nothing happens. Perhaps its bugged? anyone have this issue?" },
             },
         },
         ["2026-05-12-time-is-running-out-play-midnight-for-a-classic-anniversary-edition-fl-c43e9a3a1b"] = {

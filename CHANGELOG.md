@@ -1,3 +1,6 @@
+## 1.5.1
+- Updated bundled blue post data.
+
 ## 1.5.0
 - Added: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives 2 June
 - Added: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives June 2
@@ -195,6 +198,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
