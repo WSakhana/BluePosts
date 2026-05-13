@@ -1,3 +1,6 @@
+## 1.5.4
+- Updated: Midnight: Revelations 12.0.7 PTR Development Notes
+
 ## 1.5.3
 - Updated bundled blue post data.
 
@@ -204,6 +207,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,2 +1,2 @@
-## 1.5.3
-- Updated bundled blue post data.
+## 1.5.4
+- Updated: Midnight: Revelations 12.0.7 PTR Development Notes
