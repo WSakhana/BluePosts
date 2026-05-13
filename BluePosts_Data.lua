@@ -1,13 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778635124,
+    package_timestamp = 1778635952,
     new_post_ids = {
-        "2026-05-13-ascendant-voidshard-adjustments-incoming-may-13-8e0aaaefc4",
-        "2026-05-13-ascendant-voidshard-adjustments-incoming-13-may-ada1d46a52",
-        "2026-05-13-hotfixes-may-12-2026-c27cd0fbf2",
-        "2026-05-13-hotfixes-may-12-2026-b6e3ce5abb",
+        "2026-05-13-roofus-pack-no-duplicates-6abafa1e9e",
     },
     posts = {
+        ["2026-05-13-roofus-pack-no-duplicates-6abafa1e9e"] = {
+            id = "2026-05-13-roofus-pack-no-duplicates-6abafa1e9e",
+            post_key = "6abafa1e9e",
+            title = "Roofus Pack: no duplicates?",
+            category = "Housing (EU)",
+            timestamp = 1778635280,
+            url = "https://eu.forums.blizzard.com/en/wow/t/612880/1",
+            content = {
+            { type = "p", text = "Hi!" },
+            { type = "p", text = "I bought the Roofus Pack and I was under the impression you’d be then able to buy extra’s with gold, since we can do this with most (promo) items. It seems that this is unfortunately not the case as I haven’t found a vendor for this yet. Hoping to bring this to attention so we’d be able to buy extra’s in the future!" },
+            },
+        },
         ["2026-05-13-ascendant-voidshard-adjustments-incoming-may-13-8e0aaaefc4"] = {
             id = "2026-05-13-ascendant-voidshard-adjustments-incoming-may-13-8e0aaaefc4",
             post_key = "8e0aaaefc4",
