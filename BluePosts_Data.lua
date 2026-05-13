@@ -1,9 +1,28 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778706931,
+    package_timestamp = 1778712632,
     new_post_ids = {
     },
     posts = {
+        ["2026-05-13-ascendant-voidshard-adjustments-incoming-13-may-ada1d46a52"] = {
+            id = "2026-05-13-ascendant-voidshard-adjustments-incoming-13-may-ada1d46a52",
+            post_key = "ada1d46a52",
+            title = "Ascendant Voidshard Adjustments Incoming - 13 May",
+            category = "General Discussion (EU)",
+            timestamp = 1778711961,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619147/1",
+            content = {
+            { type = "p", text = "Later in the day tomorrow, May 13, we intend to deploy hotfixes to adjust Ascendant Voidshard drop rates. Our goal with these changes is not to slow down acquisition rates overall, but to better align the value of Voidshards as a reward with the activities players are participating in." },
+            { type = "p", text = "After these changes go live, Ascendant Voidshards will drop at a 100% rate from:" },
+            { type = "list_item", text = "Heroic and Mythic raid kills.", level = 0 },
+            { type = "list_item", text = "Mythic+ 10 or higher completions, with no cap.", level = 0 },
+            { type = "list_item", text = "Delve Tier 11 bountiful chests.", level = 0 },
+            { type = "list_item", text = "Nightmare Prey Champion gear boxes.", level = 0 },
+            { type = "p", text = "They will also drop slightly more often from Ritual Sites at Tier 5 difficulty." },
+            { type = "p", text = "In all other content not listed above, (e.g. Ritual Sites Tiers 1-4) the drop rates of Ascendant Voidshards will be reduced." },
+            { type = "p", text = "We will confirm here when the hotfixes go live tomorrow. Thank you!" },
+            },
+        },
         ["2026-05-13-ascendant-voidshard-adjustments-incoming-may-13-8e0aaaefc4"] = {
             id = "2026-05-13-ascendant-voidshard-adjustments-incoming-may-13-8e0aaaefc4",
             post_key = "8e0aaaefc4",
@@ -71,25 +90,6 @@ BluePosts_Data = {
             content = {
             { type = "p", text = "Hi!" },
             { type = "p", text = "I bought the Roofus Pack and I was under the impression you’d be then able to buy extra’s with gold, since we can do this with most (promo) items. It seems that this is unfortunately not the case as I haven’t found a vendor for this yet. Hoping to bring this to attention so we’d be able to buy extra’s in the future!" },
-            },
-        },
-        ["2026-05-13-ascendant-voidshard-adjustments-incoming-13-may-ada1d46a52"] = {
-            id = "2026-05-13-ascendant-voidshard-adjustments-incoming-13-may-ada1d46a52",
-            post_key = "ada1d46a52",
-            title = "Ascendant Voidshard Adjustments Incoming - 13 May",
-            category = "General Discussion (EU)",
-            timestamp = 1778634986,
-            url = "https://eu.forums.blizzard.com/en/wow/t/619147/1",
-            content = {
-            { type = "p", text = "Later in the day tomorrow, May 13, we intend to deploy hotfixes to adjust Ascendant Voidshard drop rates. Our goal with these changes is not to slow down acquisition rates overall, but to better align the value of Voidshards as a reward with the activities players are participating in." },
-            { type = "p", text = "After these changes go live, Ascendant Voidshards will drop at a 100% rate from:" },
-            { type = "list_item", text = "Heroic and Mythic raid kills.", level = 0 },
-            { type = "list_item", text = "Mythic+ 10 or higher completions, with no cap.", level = 0 },
-            { type = "list_item", text = "Delve Tier 11 bountiful chests.", level = 0 },
-            { type = "list_item", text = "Nightmare Prey Champion gear boxes.", level = 0 },
-            { type = "p", text = "They will also drop slightly more often from Ritual Sites at Tier 5 difficulty." },
-            { type = "p", text = "In all other content not listed above, (e.g. Ritual Sites Tiers 1-4) the drop rates of Ascendant Voidshards will be reduced." },
-            { type = "p", text = "We will confirm here when the hotfixes go live tomorrow. Thank you!" },
             },
         },
         ["2026-05-13-hotfixes-may-12-2026-c27cd0fbf2"] = {
