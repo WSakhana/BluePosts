@@ -1,2 +1,3 @@
-## 1.4.9
-- Added: Roofus Pack: no duplicates?
+## 1.5.0
+- Added: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives 2 June
+- Added: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives June 2

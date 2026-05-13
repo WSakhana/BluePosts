@@ -1,3 +1,7 @@
+## 1.5.0
+- Added: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives 2 June
+- Added: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives June 2
+
 ## 1.4.9
 - Added: Roofus Pack: no duplicates?
 
@@ -191,6 +195,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

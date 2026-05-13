@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778635952,
+    package_timestamp = 1778692363,
     new_post_ids = {
-        "2026-05-13-roofus-pack-no-duplicates-6abafa1e9e",
+        "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0",
+        "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-june-2-c0a9a99f9a",
     },
     posts = {
+        ["2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0"] = {
+            id = "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0",
+            post_key = "edf9f07bc0",
+            title = "Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives 2 June",
+            category = "General Discussion (EU)",
+            timestamp = 1778691693,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619205/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0\\image-1.jpg" },
+            { type = "p", text = "Azeroth's heroes have stood against the Thunder King, yet a darker storm now gathers in Garrosh Hellscream. With the Vale of Eternal Blossoms corrupted and Orgrimmar in chaos, the Warchief must be stopped before all are dragged into darkness." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-june-2-c0a9a99f9a"] = {
+            id = "2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-june-2-c0a9a99f9a",
+            post_key = "c0a9a99f9a",
+            title = "Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives June 2",
+            category = "General Discussion (US)",
+            timestamp = 1778691686,
+            url = "https://us.forums.blizzard.com/en/wow/t/2305792/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-june-2-c0a9a99f9a\\image-1.jpg" },
+            { type = "p", text = "Azeroth's heroes have stood against the Thunder King, yet a darker storm now gathers in Garrosh Hellscream. With the Vale of Eternal Blossoms corrupted and Orgrimmar in chaos, the Warchief must be stopped before all are dragged into darkness." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-05-13-roofus-pack-no-duplicates-6abafa1e9e"] = {
             id = "2026-05-13-roofus-pack-no-duplicates-6abafa1e9e",
             post_key = "6abafa1e9e",
