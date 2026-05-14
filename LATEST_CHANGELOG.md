@@ -1,2 +1,2 @@
-## 1.5.7
-- Added: PTR Raid Testing: Heroic Sporefall (10-30)
+## 1.5.8
+- Added: BCC Anniversary Edition: Overlords of Outland Now Live

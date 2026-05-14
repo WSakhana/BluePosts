@@ -1,3 +1,6 @@
+## 1.5.8
+- Added: BCC Anniversary Edition: Overlords of Outland Now Live
+
 ## 1.5.7
 - Added: PTR Raid Testing: Heroic Sporefall (10-30)
 
@@ -216,6 +219,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
