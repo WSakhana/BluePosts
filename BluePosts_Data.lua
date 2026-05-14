@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778788108,
+    package_timestamp = 1778796332,
     new_post_ids = {
-        "2026-05-14-feedback-mythic-sporefall-15-25-75126f0de8",
+        "2026-05-14-ptr-raid-testing-heroic-sporefall-10-30-4dac69dd38",
     },
     posts = {
+        ["2026-05-14-ptr-raid-testing-heroic-sporefall-10-30-4dac69dd38"] = {
+            id = "2026-05-14-ptr-raid-testing-heroic-sporefall-10-30-4dac69dd38",
+            post_key = "4dac69dd38",
+            title = "PTR Raid Testing: Heroic Sporefall (10-30)",
+            category = "Midnight: Revelations Public Test Realm (US)",
+            timestamp = 1778795661,
+            url = "https://us.forums.blizzard.com/en/wow/t/2306300/1",
+            content = {
+            { type = "p", text = "Hello everyone," },
+            { type = "p", text = "We will be running a 1-hour test of Sporefall on the public test realm from 1-2pm Pacific Daylight Time (GMT-7) on Thursday, May 21st. During that time players will be able to enter the instance on Heroic difficulty and enjoy the entire raid experience." },
+            { type = "p", text = "We hope to see you there." },
+            },
+        },
         ["2026-05-14-feedback-mythic-sporefall-15-25-75126f0de8"] = {
             id = "2026-05-14-feedback-mythic-sporefall-15-25-75126f0de8",
             post_key = "75126f0de8",

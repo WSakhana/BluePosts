@@ -1,2 +1,2 @@
-## 1.5.6
-- Added: Feedback: Mythic Sporefall (15-25)
+## 1.5.7
+- Added: PTR Raid Testing: Heroic Sporefall (10-30)
