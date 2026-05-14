@@ -1,2 +1,2 @@
-## 1.5.5
-- Added: PvP Season 13 is Ending Soon
+## 1.5.6
+- Added: Feedback: Mythic Sporefall (15-25)

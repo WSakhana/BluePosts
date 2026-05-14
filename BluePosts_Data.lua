@@ -1,11 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778779071,
+    package_timestamp = 1778788108,
     new_post_ids = {
-        "2026-05-14-pvp-season-13-is-ending-soon-444f4debe4",
-        "2026-05-14-pvp-season-13-is-ending-soon-49b1650efd",
+        "2026-05-14-feedback-mythic-sporefall-15-25-75126f0de8",
     },
     posts = {
+        ["2026-05-14-feedback-mythic-sporefall-15-25-75126f0de8"] = {
+            id = "2026-05-14-feedback-mythic-sporefall-15-25-75126f0de8",
+            post_key = "75126f0de8",
+            title = "Feedback: Mythic Sporefall (15-25)",
+            category = "Midnight: Revelations Public Test Realm (US)",
+            timestamp = 1778787442,
+            url = "https://us.forums.blizzard.com/en/wow/t/2306264/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "Please share any feedback you have about your experience in Mythic Sporefall in this thread." },
+            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid (15-25), and the class/spec you played can also provide great context for your feedback." },
+            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
+            },
+        },
         ["2026-05-14-pvp-season-13-is-ending-soon-444f4debe4"] = {
             id = "2026-05-14-pvp-season-13-is-ending-soon-444f4debe4",
             post_key = "444f4debe4",

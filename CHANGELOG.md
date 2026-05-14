@@ -1,3 +1,6 @@
+## 1.5.6
+- Added: Feedback: Mythic Sporefall (15-25)
+
 ## 1.5.5
 - Added: PvP Season 13 is Ending Soon
 
@@ -210,6 +213,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
