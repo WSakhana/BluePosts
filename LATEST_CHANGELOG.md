@@ -1,2 +1,2 @@
-## 1.5.4
-- Updated: Midnight: Revelations 12.0.7 PTR Development Notes
+## 1.5.5
+- Added: PvP Season 13 is Ending Soon

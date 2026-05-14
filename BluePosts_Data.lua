@@ -1,9 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778714971,
+    package_timestamp = 1778779071,
     new_post_ids = {
+        "2026-05-14-pvp-season-13-is-ending-soon-444f4debe4",
+        "2026-05-14-pvp-season-13-is-ending-soon-49b1650efd",
     },
     posts = {
+        ["2026-05-14-pvp-season-13-is-ending-soon-444f4debe4"] = {
+            id = "2026-05-14-pvp-season-13-is-ending-soon-444f4debe4",
+            post_key = "444f4debe4",
+            title = "PvP Season 13 is Ending Soon",
+            category = "Wrath of the Lich King Classic Discussion (EU)",
+            timestamp = 1778778334,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619419/1",
+            content = {
+            { type = "p", text = "Mists of Pandaria Classic PvP Season 13 will end at 22:00 CEST on Tuesday, May 26" },
+            { type = "p", text = "Season 13 Rewards will be distributed with the weekly reset on June 10." },
+            },
+        },
+        ["2026-05-14-pvp-season-13-is-ending-soon-49b1650efd"] = {
+            id = "2026-05-14-pvp-season-13-is-ending-soon-49b1650efd",
+            post_key = "49b1650efd",
+            title = "PvP Season 13 is Ending Soon",
+            category = "Wrath of the Lich King Classic Discussion (US)",
+            timestamp = 1778778330,
+            url = "https://us.forums.blizzard.com/en/wow/t/2306198/1",
+            content = {
+            { type = "p", text = "Mists of Pandaria Classic PvP Season 13 will end at 10:00 p.m. PDT on Monday, May 25." },
+            { type = "p", text = "Season 13 Rewards will be distributed with the weekly reset on June 9." },
+            },
+        },
         ["2026-05-13-midnight-revelations-1207-ptr-development-notes-9057c51071"] = {
             id = "2026-05-13-midnight-revelations-1207-ptr-development-notes-9057c51071",
             post_key = "9057c51071",

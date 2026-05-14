@@ -1,3 +1,6 @@
+## 1.5.5
+- Added: PvP Season 13 is Ending Soon
+
 ## 1.5.4
 - Updated: Midnight: Revelations 12.0.7 PTR Development Notes
 
@@ -207,6 +210,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
