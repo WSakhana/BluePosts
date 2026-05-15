@@ -1,2 +1,2 @@
-## 1.6.0
-- Added: WoW Weekly: Classic Anniversary, WoW Ambassadors Discord, Mists of Pandaria Classic, and More!
+## 1.6.1
+- Added: Siege of Orgrimmar Raid Test - May 22

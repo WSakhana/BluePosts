@@ -1,3 +1,6 @@
+## 1.6.1
+- Added: Siege of Orgrimmar Raid Test - May 22
+
 ## 1.6.0
 - Added: WoW Weekly: Classic Anniversary, WoW Ambassadors Discord, Mists of Pandaria Classic, and More!
 
@@ -225,6 +228,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

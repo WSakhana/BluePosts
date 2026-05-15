@@ -1,11 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778865166,
+    package_timestamp = 1778879065,
     new_post_ids = {
-        "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee",
-        "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-326442307c",
+        "2026-05-15-siege-of-orgrimmar-raid-test-may-22-8e4e590fb1",
     },
     posts = {
+        ["2026-05-15-siege-of-orgrimmar-raid-test-may-22-8e4e590fb1"] = {
+            id = "2026-05-15-siege-of-orgrimmar-raid-test-may-22-8e4e590fb1",
+            post_key = "8e4e590fb1",
+            title = "Siege of Orgrimmar Raid Test - May 22",
+            category = "Mists of Pandaria Classic 5.5.4 PTR (US)",
+            timestamp = 1778878401,
+            url = "https://us.forums.blizzard.com/en/wow/t/2306613/1",
+            content = {
+            { type = "p", text = "We will resume testing The Siege of Orgrimmar raid on the MoP Classic PTR next weekend, starting on May 22." },
+            { type = "p", text = "We’re looking forward to seeing you there!" },
+            },
+        },
         ["2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee"] = {
             id = "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee",
             post_key = "17bc3f34ee",
