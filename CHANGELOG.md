@@ -1,3 +1,6 @@
+## 1.5.9
+- Updated bundled blue post data.
+
 ## 1.5.8
 - Added: BCC Anniversary Edition: Overlords of Outland Now Live
 
@@ -219,6 +222,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

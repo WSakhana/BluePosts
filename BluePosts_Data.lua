@@ -1,10 +1,21 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778797344,
+    package_timestamp = 1778804431,
     new_post_ids = {
-        "2026-05-14-bcc-anniversary-edition-overlords-of-outland-now-live-717be282c4",
     },
     posts = {
+        ["2026-05-15-ascendant-voidcore-issuecrafted-weapons-cae7a7779f"] = {
+            id = "2026-05-15-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
+            post_key = "cae7a7779f",
+            title = "Ascendant Voidcore issue/crafted weapons",
+            category = "General Discussion (US)",
+            timestamp = 1778803762,
+            url = "https://us.forums.blizzard.com/en/wow/t/2305462/1",
+            content = {
+            { type = "p", text = "Hello all," },
+            { type = "p", text = "I got my 5 Ascendant Void shards and made my Ascendant Void core, but it will not work on my MAX level Radiant Weapon. When I go to add it and hit accept nothing happens. Perhaps its bugged? anyone have this issue?" },
+            },
+        },
         ["2026-05-14-bcc-anniversary-edition-overlords-of-outland-now-live-717be282c4"] = {
             id = "2026-05-14-bcc-anniversary-edition-overlords-of-outland-now-live-717be282c4",
             post_key = "717be282c4",
@@ -303,18 +314,6 @@ BluePosts_Data = {
             { type = "p", text = "They will also drop slightly more often from Ritual Sites at Tier 5 difficulty." },
             { type = "p", text = "In all other content not listed above, (e.g. Ritual Sites Tiers 1-4) the drop rates of Ascendant Voidshards will be reduced." },
             { type = "p", text = "We will confirm here when the hotfixes go live tomorrow. Thank you!" },
-            },
-        },
-        ["2026-05-13-ascendant-voidcore-issuecrafted-weapons-cae7a7779f"] = {
-            id = "2026-05-13-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
-            post_key = "cae7a7779f",
-            title = "Ascendant Voidcore issue/crafted weapons",
-            category = "General Discussion (US)",
-            timestamp = 1778697621,
-            url = "https://us.forums.blizzard.com/en/wow/t/2305462/1",
-            content = {
-            { type = "p", text = "Hello all," },
-            { type = "p", text = "I got my 5 Ascendant Void shards and made my Ascendant Void core, but it will not work on my MAX level Radiant Weapon. When I go to add it and hit accept nothing happens. Perhaps its bugged? anyone have this issue?" },
             },
         },
         ["2026-05-13-mists-of-pandaria-classic-the-siege-of-orgrimmar-update-arrives-2-june-edf9f07bc0"] = {

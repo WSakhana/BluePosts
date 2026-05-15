@@ -1,2 +1,2 @@
-## 1.5.8
-- Added: BCC Anniversary Edition: Overlords of Outland Now Live
+## 1.5.9
+- Updated bundled blue post data.
