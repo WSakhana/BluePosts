@@ -1,9 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778804431,
+    package_timestamp = 1778865166,
     new_post_ids = {
+        "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee",
+        "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-326442307c",
     },
     posts = {
+        ["2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee"] = {
+            id = "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee",
+            post_key = "17bc3f34ee",
+            title = "WoW Weekly: Classic Anniversary, WoW Ambassadors Discord, Mists of Pandaria Classic, and More!",
+            category = "General Discussion (EU)",
+            timestamp = 1778864491,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619491/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-17bc3f34ee\\image-1.jpg" },
+            { type = "p", text = "Each week meets you with adventurous discovery and fresh rewards—be sure to check in to learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-326442307c"] = {
+            id = "2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-326442307c",
+            post_key = "326442307c",
+            title = "WoW Weekly: Classic Anniversary, WoW Ambassadors Discord, Mists of Pandaria Classic, and More!",
+            category = "General Discussion (US)",
+            timestamp = 1778864485,
+            url = "https://us.forums.blizzard.com/en/wow/t/2306547/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-15-wow-weekly-classic-anniversary-wow-ambassadors-discord-mists-of-pandar-326442307c\\image-1.jpg" },
+            { type = "p", text = "Each week meets you with adventurous discovery and fresh rewards—be sure to check in to learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-05-15-ascendant-voidcore-issuecrafted-weapons-cae7a7779f"] = {
             id = "2026-05-15-ascendant-voidcore-issuecrafted-weapons-cae7a7779f",
             post_key = "cae7a7779f",
