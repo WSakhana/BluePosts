@@ -1,2 +1,3 @@
-## 1.6.1
-- Added: Siege of Orgrimmar Raid Test - May 22
+## 1.6.2
+- Added: Hotfixes: May 15, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - May 15, 2026
