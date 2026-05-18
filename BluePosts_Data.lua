@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1778909560,
+    package_timestamp = 1779120995,
     new_post_ids = {
-        "2026-05-16-hotfixes-may-15-2026-8eca9d29e5",
+        "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-595d9c94c6",
+        "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-5bea05b3a3",
     },
     posts = {
+        ["2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-595d9c94c6"] = {
+            id = "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-595d9c94c6",
+            post_key = "595d9c94c6",
+            title = "March on Quel'Danas Hall of Fame is Now Full",
+            category = "General Discussion (EU)",
+            timestamp = 1779120260,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619670/1",
+            content = {
+            { type = "p", text = "The Hall of Fame for March on Quel’Danas is now full! Congratulations to all guilds who reached this place in the history of World of Warcraft." },
+            { type = "p", text = "As a reminder, the Hall of Fame will close with weekly resets early on Wednesday, so if your guild is close to finishing, you have a few more hours to complete the raid." },
+            { type = "p", text = "Good luck!" },
+            },
+        },
+        ["2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-5bea05b3a3"] = {
+            id = "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-5bea05b3a3",
+            post_key = "5bea05b3a3",
+            title = "March on Quel'Danas Hall of Fame is Now Full",
+            category = "General Discussion (US)",
+            timestamp = 1779120203,
+            url = "https://us.forums.blizzard.com/en/wow/t/2307437/1",
+            content = {
+            { type = "p", text = "The Hall of Fame for March on Quel’Danas is now full! Congratulations to all guilds who reached this place in the history of World of Warcraft." },
+            { type = "p", text = "As a reminder, the Hall of Fame will close with weekly resets tomorrow, so if your guild is close to finishing, you have a few more hours to complete the raid." },
+            { type = "p", text = "Good luck!" },
+            },
+        },
         ["2026-05-16-hotfixes-may-15-2026-8eca9d29e5"] = {
             id = "2026-05-16-hotfixes-may-15-2026-8eca9d29e5",
             post_key = "8eca9d29e5",
