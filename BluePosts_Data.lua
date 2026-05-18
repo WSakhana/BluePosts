@@ -1,11 +1,47 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1779120995,
+    package_timestamp = 1779139366,
     new_post_ids = {
-        "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-595d9c94c6",
-        "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-5bea05b3a3",
+        "2026-05-18-raid-tuning-incoming-20-may-c6f2f67372",
+        "2026-05-18-raid-tuning-incoming-may-19-5ddf10eea5",
     },
     posts = {
+        ["2026-05-18-raid-tuning-incoming-20-may-c6f2f67372"] = {
+            id = "2026-05-18-raid-tuning-incoming-20-may-c6f2f67372",
+            post_key = "c6f2f67372",
+            title = "Raid Tuning Incoming - 20 May",
+            category = "General Discussion (EU)",
+            timestamp = 1779138683,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619690/1",
+            content = {
+            { type = "p", text = "With scheduled realm maintenance, we’ll make the following changes." },
+            { type = "h2", text = "RAIDS" },
+            { type = "h3", text = "March on Quel’Danas" },
+            { type = "list_item", text = "Midnight Falls", level = 0 },
+            { type = "list_item", text = "Heaven’s Glaives maximum duration reduced to 1 minute (was 2 minutes).", level = 1 },
+            { type = "list_item", text = "Reduced the spread of Midnight Crystals on Mythic difficulty.", level = 1 },
+            { type = "list_item", text = "Starsplinter initial damage reduced by 20% on Mythic difficulty.", level = 1 },
+            { type = "list_item", text = "Criticality damage reduced by 20%.", level = 1 },
+            },
+        },
+        ["2026-05-18-raid-tuning-incoming-may-19-5ddf10eea5"] = {
+            id = "2026-05-18-raid-tuning-incoming-may-19-5ddf10eea5",
+            post_key = "5ddf10eea5",
+            title = "Raid Tuning Incoming - May 19",
+            category = "General Discussion (US)",
+            timestamp = 1779138560,
+            url = "https://us.forums.blizzard.com/en/wow/t/2307508/1",
+            content = {
+            { type = "p", text = "With scheduled realm maintenance tomorrow, we’ll make the following changes." },
+            { type = "h2", text = "RAIDS" },
+            { type = "h3", text = "March on Quel’Danas" },
+            { type = "list_item", text = "Midnight Falls", level = 0 },
+            { type = "list_item", text = "Heaven’s Glaives maximum duration reduced to 1 minute (was 2 minutes).", level = 1 },
+            { type = "list_item", text = "Reduced the spread of Midnight Crystals on Mythic difficulty.", level = 1 },
+            { type = "list_item", text = "Starsplinter initial damage reduced by 20% on Mythic difficulty.", level = 1 },
+            { type = "list_item", text = "Criticality damage reduced by 20%.", level = 1 },
+            },
+        },
         ["2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-595d9c94c6"] = {
             id = "2026-05-18-march-on-quelx27danas-hall-of-fame-is-now-full-595d9c94c6",
             post_key = "595d9c94c6",

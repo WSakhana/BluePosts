@@ -1,2 +1,3 @@
-## 1.6.3
-- Added: March on Quel'Danas Hall of Fame is Now Full
+## 1.6.4
+- Added: Raid Tuning Incoming - 20 May
+- Added: Raid Tuning Incoming - May 19
