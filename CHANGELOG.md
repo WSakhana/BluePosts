@@ -1,3 +1,9 @@
+## 1.6.6
+- Added: Hotfixes: May 15, 2026
+- Updated: Hotfixes: May 19, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - May 19, 2026
+- Updated: Midnight: Revelations 12.0.7 PTR Development Notes
+
 ## 1.6.5
 - Added: Upgrade Crest Caps Removed - May 19
 
@@ -242,6 +248,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
