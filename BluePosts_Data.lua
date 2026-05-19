@@ -1,11 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1779139366,
+    package_timestamp = 1779210274,
     new_post_ids = {
-        "2026-05-18-raid-tuning-incoming-20-may-c6f2f67372",
-        "2026-05-18-raid-tuning-incoming-may-19-5ddf10eea5",
+        "2026-05-19-upgrade-crest-caps-removed-may-19-64e0d244c9",
     },
     posts = {
+        ["2026-05-19-upgrade-crest-caps-removed-may-19-64e0d244c9"] = {
+            id = "2026-05-19-upgrade-crest-caps-removed-may-19-64e0d244c9",
+            post_key = "64e0d244c9",
+            title = "Upgrade Crest Caps Removed - May 19",
+            category = "General Discussion (US)",
+            timestamp = 1779209600,
+            url = "https://us.forums.blizzard.com/en/wow/t/2307759/1",
+            content = {
+            { type = "p", text = "With weekly maintenance today, the caps on upgrade crests have been removed." },
+            { type = "p", text = "This and other changes will appear in the Hotfixes Update later today." },
+            },
+        },
         ["2026-05-18-raid-tuning-incoming-20-may-c6f2f67372"] = {
             id = "2026-05-18-raid-tuning-incoming-20-may-c6f2f67372",
             post_key = "c6f2f67372",

@@ -1,3 +1,6 @@
+## 1.6.5
+- Added: Upgrade Crest Caps Removed - May 19
+
 ## 1.6.4
 - Added: Raid Tuning Incoming - 20 May
 - Added: Raid Tuning Incoming - May 19
@@ -239,6 +242,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
