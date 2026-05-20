@@ -1,3 +1,6 @@
+## 1.6.7
+- Added: Prepare to Face Rotmire in the Sporefall Raid
+
 ## 1.6.6
 - Added: Hotfixes: May 15, 2026
 - Updated: Hotfixes: May 19, 2026
@@ -248,6 +251,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
