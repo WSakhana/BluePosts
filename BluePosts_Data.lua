@@ -1,11 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1779297204,
+    package_timestamp = 1779392100,
     new_post_ids = {
-        "2026-05-20-prepare-to-face-rotmire-in-the-sporefall-raid-39d0adbbd7",
-        "2026-05-20-prepare-to-face-rotmire-in-the-sporefall-raid-9f4bc1a050",
+        "2026-05-21-feedback-heroic-sporefall-10-30-48bf6a9553",
     },
     posts = {
+        ["2026-05-21-feedback-heroic-sporefall-10-30-48bf6a9553"] = {
+            id = "2026-05-21-feedback-heroic-sporefall-10-30-48bf6a9553",
+            post_key = "48bf6a9553",
+            title = "Feedback: Heroic Sporefall (10-30)",
+            category = "Midnight: Revelations Public Test Realm (US)",
+            timestamp = 1779391416,
+            url = "https://us.forums.blizzard.com/en/wow/t/2308498/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "Please share any feedback you have about your experience in Heroic Sporefall in this thread." },
+            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid, and the class/spec you played can also provide great context for your feedback." },
+            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
+            },
+        },
         ["2026-05-20-prepare-to-face-rotmire-in-the-sporefall-raid-39d0adbbd7"] = {
             id = "2026-05-20-prepare-to-face-rotmire-in-the-sporefall-raid-39d0adbbd7",
             post_key = "39d0adbbd7",

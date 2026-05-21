@@ -1,2 +1,2 @@
-## 1.6.7
-- Added: Prepare to Face Rotmire in the Sporefall Raid
+## 1.6.8
+- Added: Feedback: Heroic Sporefall (10-30)
