@@ -1,3 +1,6 @@
+## 1.7.0
+- Updated bundled blue post data.
+
 ## 1.6.9
 - Added: WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!
 
@@ -257,6 +260,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

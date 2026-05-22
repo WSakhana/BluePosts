@@ -1,2 +1,2 @@
-## 1.6.9
-- Added: WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!
+## 1.7.0
+- Updated bundled blue post data.
