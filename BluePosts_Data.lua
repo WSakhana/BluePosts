@@ -1,10 +1,51 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1779392100,
+    package_timestamp = 1779470020,
     new_post_ids = {
-        "2026-05-21-feedback-heroic-sporefall-10-30-48bf6a9553",
+        "2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-a992a92e4a",
+        "2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-28e6e935be",
+        "2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-bf368df259",
     },
     posts = {
+        ["2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-a992a92e4a"] = {
+            id = "2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-a992a92e4a",
+            post_key = "a992a92e4a",
+            title = "WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!",
+            category = "General Discussion (EU)",
+            timestamp = 1779469339,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619917/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-a992a92e4a\\image-1.jpg" },
+            { type = "p", text = "Each week greets you with adventurous discovery and fresh rewards—be sure to check in to learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-28e6e935be"] = {
+            id = "2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-28e6e935be",
+            post_key = "28e6e935be",
+            title = "WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!",
+            category = "General Discussion (EU)",
+            timestamp = 1779469334,
+            url = "https://eu.forums.blizzard.com/en/wow/t/619916/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-28e6e935be\\image-1.jpg" },
+            { type = "p", text = "Each week greets you with adventurous discovery and fresh rewards—be sure to check in to learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-bf368df259"] = {
+            id = "2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-bf368df259",
+            post_key = "bf368df259",
+            title = "WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!",
+            category = "General Discussion (US)",
+            timestamp = 1779469328,
+            url = "https://us.forums.blizzard.com/en/wow/t/2308791/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-05-22-wow-weekly-fungarian-mischief-looms-in-midnight-and-more-matches-in-md-bf368df259\\image-1.jpg" },
+            { type = "p", text = "Each week greets you with adventurous discovery and fresh rewards—be sure to check in to learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-05-21-feedback-heroic-sporefall-10-30-48bf6a9553"] = {
             id = "2026-05-21-feedback-heroic-sporefall-10-30-48bf6a9553",
             post_key = "48bf6a9553",
