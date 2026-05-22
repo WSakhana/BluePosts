@@ -1,3 +1,7 @@
+## 1.7.2
+- Added: Hotfixes: May 22, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - May 22, 2026
+
 ## 1.7.1
 - Added: Class Tuning Incoming – May 26
 - Added: Class Tuning Incoming – 27 May
@@ -271,6 +275,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
