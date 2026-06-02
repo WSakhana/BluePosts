@@ -1,3 +1,6 @@
+## 1.7.5
+- Added: Mists of Pandaria Classic: Siege of Orgrimmar Raid Unlocks June 4
+
 ## 1.7.4
 - Added: Arena Matchmaking Rating Added - June 2
 - Added: The AWC and MDI Season 1 Finals are here!
@@ -301,6 +304,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

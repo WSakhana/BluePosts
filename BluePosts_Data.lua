@@ -1,12 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1780420094,
+    package_timestamp = 1780439142,
     new_post_ids = {
-        "2026-06-02-arena-matchmaking-rating-added-june-2-1559178c11",
-        "2026-06-02-the-awc-and-mdi-season-1-finals-are-here-28b629c953",
-        "2026-06-02-the-awc-and-mdi-season-1-finals-are-here-84babb5a44",
+        "2026-06-02-mists-of-pandaria-classic-siege-of-orgrimmar-raid-unlocks-june-4-7e5af07b4b",
     },
     posts = {
+        ["2026-06-02-mists-of-pandaria-classic-siege-of-orgrimmar-raid-unlocks-june-4-7e5af07b4b"] = {
+            id = "2026-06-02-mists-of-pandaria-classic-siege-of-orgrimmar-raid-unlocks-june-4-7e5af07b4b",
+            post_key = "7e5af07b4b",
+            title = "Mists of Pandaria Classic: Siege of Orgrimmar Raid Unlocks June 4",
+            category = "General Discussion (US)",
+            timestamp = 1780438492,
+            url = "https://us.forums.blizzard.com/en/wow/t/2312315/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-02-mists-of-pandaria-classic-siege-of-orgrimmar-raid-unlocks-june-4-7e5af07b4b\\image-1.jpg" },
+            { type = "p", text = "Garrosh Hellscream’s arrogance has brought ruin to the Vale of Eternal Blossoms. Champions of the Alliance and the Horde must march on his capital and bring the ruthless Warchief’s reign to an end." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-06-02-arena-matchmaking-rating-added-june-2-1559178c11"] = {
             id = "2026-06-02-arena-matchmaking-rating-added-june-2-1559178c11",
             post_key = "1559178c11",
