@@ -1,14 +1,10 @@
-## 1.7.3
-- Added: WoW Weekly: Omnium Folio in Midnight, June Trading Post, WoW Ambassadors, and More!
-- Added: Take a Midsummer Stroll Over to the June Trading Post
-- Added: [Updated May 27] Add the Omnium Folio to Your Library of Tools Against the Void
-- Added: Add the Omnium Folio to Your Library of Tools Against the Void
-- Added: Hotfixes: May 26, 2026
-- Updated: World of Warcraft: Midnight Hotfixes - May 26, 2026
-- Removed: Get Decked Out with Gilnean Flair at May’s Trading Post
-- Removed: BCC Anniversary Edition: Overlords of Outland Arrives 14 May
-- Removed: BCC Anniversary Edition: Overlords of Outland Arrives May 14
-- Removed: Hotfixes: April 27, 2026
-- Removed: M+ Dungeon Updates Incoming - April 28
-- Removed: M+ Dungeon Updates Incoming - 29 April
-- Removed: 12 more posts.
+## 1.7.4
+- Added: Arena Matchmaking Rating Added - June 2
+- Added: The AWC and MDI Season 1 Finals are here!
+- Removed: Hotfixes: May 1, 2026
+- Removed: WoW Weekly: Classic Anniversary Edition, May's Trading Post, Children's Week, and More!
+- Removed: World of Warcraft: Midnight Hotfixes - 30 April
+- Removed: Transform Your Home With the Cozy Treehouse Retreat Bundle and More!
+- Removed: Azeroth Blossoms Anew: Choose Your Blooming Arboon Mount
+- Removed: Take a First Look at the Midnight: Revelations Content Update
+- Removed: 1 more post.
