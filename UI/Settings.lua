@@ -517,7 +517,7 @@ function UI:CreateSettingsPanel()
     y = y - 50
 
     AddSection("Launcher and sharing")
-    AddCheckbox("Minimap launcher", "Show the minimap or LibDataBroker launcher button.", function()
+    AddCheckbox("Minimap button", "Show the standalone minimap button. BluePosts remains available from the Addon Compartment.", function()
         return not self.core.db.minimap.hide
     end, function(enabled)
         self.core.db.minimap.hide = not enabled

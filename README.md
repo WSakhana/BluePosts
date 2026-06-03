@@ -2,7 +2,7 @@
 
 **BluePosts** is a lightweight World of Warcraft Retail addon for Midnight that lets you read bundled Blizzard blue posts directly in game.
 
-Stay informed about **class changes, hotfixes, announcements and community updates** without alt-tabbing. BluePosts includes a clean in-game reader with search, category filters, unread tracking, login notifications, minimap support and quick links to the original Blizzard forum posts.
+Stay informed about **class changes, hotfixes, announcements and community updates** without alt-tabbing. BluePosts includes a clean in-game reader with search, category filters, unread tracking, login notifications, Addon Compartment and minimap support, and quick links to the original Blizzard forum posts.
 
 [![CurseForge](https://img.shields.io/badge/CurseForge-BluePosts-orange?logo=curseforge)](https://www.curseforge.com/wow/addons/blueposts)
 [![WoW Retail](https://img.shields.io/badge/WoW-Retail-blue)](https://worldofwarcraft.blizzard.com/)
@@ -23,10 +23,10 @@ BluePosts does not fetch live forum data while you play. Posts are bundled with 
 - Filter posts by category and region.
 - Track read and unread posts per character profile.
 - Toggle an unread-only view from the header.
-- Open posts from a minimap or LibDataBroker launcher.
+- Open posts from the Addon Compartment, a minimap button, or a LibDataBroker launcher.
 - Open an in-window settings panel from the title bar.
 - Show a login toast when the current addon snapshot bundles new unread blue posts.
-- Configure notifications, toast duration and position, reader text size, minimap visibility, auto-read behavior, and guild share confirmation.
+- Configure notifications, toast duration and position, reader text size, minimap button visibility, auto-read behavior, and guild share confirmation.
 - Copy the original forum link for the selected post.
 - Share the selected post to guild chat.
 - Jump directly to class sections inside class hotfix posts.
@@ -48,7 +48,7 @@ No external dependencies are required for the release package. The required libr
 - `/blueposts` opens or toggles the main window.
 - `/bp` is the short command alias.
 - `/bp reset` resets the window position and size.
-- `/bp minimap` toggles the minimap icon.
+- `/bp minimap` toggles the standalone minimap button.
 - `/bp toasts` toggles login notifications for newly packaged unread posts.
 - `/bp toasttest` previews the current toast without consuming the saved login notification state.
 - `/bp settings` or `/bp options` opens the settings panel.
@@ -68,4 +68,4 @@ Build scripts and local tooling are not part of the packaged addon.
 ## Notes
 
 - Post content is packaged with the addon release. New Blizzard posts require a newer addon package.
-- Read state, minimap visibility, window placement, reader preferences, and toast preferences are saved in `BluePostsDB` account-wide.
+- Read state, minimap button visibility, window placement, reader preferences, and toast preferences are saved in `BluePostsDB` account-wide.

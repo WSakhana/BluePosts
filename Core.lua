@@ -16,6 +16,7 @@ local DEFAULT_DB = {
     read = {},
     minimap = {
         hide = false,
+        showInCompartment = true,
     },
     window = {
         point = "CENTER",
@@ -695,7 +696,14 @@ function Core:InitializeBroker()
 
     if self.ldb and dbIcon then
         self.dbIcon = dbIcon
+        self.db.minimap.showInCompartment = true
         dbIcon:Register("BluePosts", self.ldb, self.db.minimap)
+        if dbIcon.AddButtonToCompartment then
+            dbIcon:AddButtonToCompartment("BluePosts")
+        end
+        if self.db.minimap.hide then
+            dbIcon:Hide("BluePosts")
+        end
         return
     end
 
@@ -735,16 +743,58 @@ function Core:CreateFallbackMinimapButton()
     self.fallbackMinimapButton = button
 end
 
+function Core:ApplyMBBMinimapVisibility(button, hidden)
+    if not button or not button.oshow or not button.ohide then
+        return false
+    end
+
+    -- MBB wraps Show/Hide and keeps the originals on oshow/ohide.
+    local name = button:GetName()
+    local excluded = MBB_IsInArray and MBB_Exclude and MBB_IsInArray(MBB_Exclude, name)
+    button.isvisible = not hidden
+
+    if hidden then
+        button.ohide(button)
+    elseif excluded or MBB_IsShown == 1 then
+        button.oshow(button)
+    else
+        button.ohide(button)
+    end
+
+    if MBB_SetPositions then
+        MBB_SetPositions()
+    end
+
+    return true
+end
+
 function Core:UpdateMinimapVisibility()
+    local hidden = self.db and self.db.minimap and self.db.minimap.hide == true
+
     if self.dbIcon then
-        if self.db.minimap.hide then
+        local minimapButton = self.dbIcon.GetMinimapButton and self.dbIcon:GetMinimapButton("BluePosts")
+        local handledByMBB = self:ApplyMBBMinimapVisibility(minimapButton, hidden)
+
+        if hidden then
             self.dbIcon:Hide("BluePosts")
         else
             self.dbIcon:Show("BluePosts")
         end
+
+        if self.dbIcon.Refresh then
+            self.dbIcon:Refresh("BluePosts", self.db.minimap)
+        end
+
+        if minimapButton and not handledByMBB then
+            if hidden then
+                minimapButton:Hide()
+            else
+                minimapButton:Show()
+            end
+        end
     elseif self.fallbackMinimapButton then
-        self.fallbackMinimapButton:SetShown(not self.db.minimap.hide)
-    elseif not self.db.minimap.hide then
+        self.fallbackMinimapButton:SetShown(not hidden)
+    elseif not hidden then
         self:CreateFallbackMinimapButton()
     end
 
@@ -766,7 +816,7 @@ function Core:HandleSlash(message)
     if command == "minimap" then
         self.db.minimap.hide = not self.db.minimap.hide
         self:UpdateMinimapVisibility()
-        self:Print(self.db.minimap.hide and "Minimap icon hidden." or "Minimap icon visible.")
+        self:Print(self.db.minimap.hide and "Minimap button hidden." or "Minimap button visible.")
         return
     end
 
