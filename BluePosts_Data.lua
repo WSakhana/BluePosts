@@ -1,12 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1780455600,
+    package_timestamp = 1780464531,
     new_post_ids = {
-        "2026-06-03-the-burning-crusade-hotfixes-updated-june-2-a1b072c8fc",
-        "2026-06-03-the-burning-crusade-hotfixes-updated-2-june-c8fc07c7bd",
-        "2026-06-03-hotfixes-june-2-2026-309280ef2c",
+        "2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b",
+        "2026-06-03-retail-transmog-system-with-no-warning-96fc8f680e",
     },
     posts = {
+        ["2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b"] = {
+            id = "2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b",
+            post_key = "78d215231b",
+            title = "Transmog Costs to be Adjusted Soon",
+            category = "Wrath of the Lich King Classic Discussion (EU)",
+            timestamp = 1780464292,
+            url = "https://eu.forums.blizzard.com/en/wow/t/620625/1",
+            content = {
+            { type = "p", text = "With the patch now live, Transmog gold costs are much higher than we intended." },
+            { type = "p", text = "We expect to reduce costs via hotfix in the next 24 hours." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
+        ["2026-06-03-retail-transmog-system-with-no-warning-96fc8f680e"] = {
+            id = "2026-06-03-retail-transmog-system-with-no-warning-96fc8f680e",
+            post_key = "96fc8f680e",
+            title = "Retail transmog system with no warning?",
+            category = "Wrath of the Lich King Classic Discussion (US)",
+            timestamp = 1780463872,
+            url = "https://us.forums.blizzard.com/en/wow/t/2312317/1",
+            content = {
+            { type = "p", text = "Why was this not even on the PTR? Saving transmog sets in this new system costs over 3x as much in most cases. Just checked and it was 1480g to save 1 set. I’m looking at 10s of thousands of gold to interact with this system on my characters (which all have multiple sets). I get that the system allows you to save them all and change to them at will, but that amount of gold in MoP compared to retail is actually unacceptable" },
+            },
+        },
         ["2026-06-03-world-of-warcraft-midnight-hotfixes-june-2-2026-cd1b478a91"] = {
             id = "2026-06-03-world-of-warcraft-midnight-hotfixes-june-2-2026-cd1b478a91",
             post_key = "cd1b478a91",

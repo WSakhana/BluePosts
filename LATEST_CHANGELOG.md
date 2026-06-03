@@ -1,5 +1,3 @@
-## 1.7.6
-- Added: The Burning Crusade Hotfixes - Updated June 2
-- Added: The Burning Crusade Hotfixes - Updated 2 June
-- Added: Hotfixes: June 2, 2026
-- Updated: World of Warcraft: Midnight Hotfixes - June 2, 2026
+## 1.7.7
+- Added: Transmog Costs to be Adjusted Soon
+- Added: Retail transmog system with no warning?

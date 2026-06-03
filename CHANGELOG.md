@@ -1,3 +1,7 @@
+## 1.7.7
+- Added: Transmog Costs to be Adjusted Soon
+- Added: Retail transmog system with no warning?
+
 ## 1.7.6
 - Added: The Burning Crusade Hotfixes - Updated June 2
 - Added: The Burning Crusade Hotfixes - Updated 2 June
@@ -310,6 +314,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
