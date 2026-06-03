@@ -1,3 +1,9 @@
+## 1.7.6
+- Added: The Burning Crusade Hotfixes - Updated June 2
+- Added: The Burning Crusade Hotfixes - Updated 2 June
+- Added: Hotfixes: June 2, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - June 2, 2026
+
 ## 1.7.5
 - Added: Mists of Pandaria Classic: Siege of Orgrimmar Raid Unlocks June 4
 
@@ -304,6 +310,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
