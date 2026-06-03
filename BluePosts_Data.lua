@@ -1,12 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1780517594,
+    package_timestamp = 1780525808,
     new_post_ids = {
-        "2026-06-03-blacktalon-quartermaster-not-selling-legendary-cloak-bases-please-fix-8458889192",
-        "2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-d1a598221d",
-        "2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-c33656a589",
+        "2026-06-03-transmog-outfit-and-slot-costs-lowered-95adb41fd4",
     },
     posts = {
+        ["2026-06-03-transmog-outfit-and-slot-costs-lowered-95adb41fd4"] = {
+            id = "2026-06-03-transmog-outfit-and-slot-costs-lowered-95adb41fd4",
+            post_key = "95adb41fd4",
+            title = "Transmog Outfit and Slot Costs Lowered",
+            category = "Wrath of the Lich King Classic Discussion (US)",
+            timestamp = 1780525145,
+            url = "https://us.forums.blizzard.com/en/wow/t/2312681/1",
+            content = {
+            { type = "p", text = "With a hotfix that went live about ten minutes ago, we’ve reduced Transmog outfix and slot gold costs by 90%." },
+            { type = "p", text = "Thank you for your patience and understanding." },
+            },
+        },
+        ["2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b"] = {
+            id = "2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b",
+            post_key = "78d215231b",
+            title = "Transmog Costs to be Adjusted Soon",
+            category = "Wrath of the Lich King Classic Discussion (EU)",
+            timestamp = 1780525142,
+            url = "https://eu.forums.blizzard.com/en/wow/t/620625/1",
+            content = {
+            { type = "p", text = "With the patch now live, Transmog gold costs are much higher than we intended." },
+            { type = "p", text = "We expect to reduce costs via hotfix in the next 24 hours." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
         ["2026-06-03-blacktalon-quartermaster-not-selling-legendary-cloak-bases-please-fix-8458889192"] = {
             id = "2026-06-03-blacktalon-quartermaster-not-selling-legendary-cloak-bases-please-fix-8458889192",
             post_key = "8458889192",
@@ -204,19 +227,6 @@ BluePosts_Data = {
             { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-03-mists-of-pandaria-classic-siege-of-orgrimmar-raid-unlocks-4-june-e4378431a3\\image-1.jpg" },
             { type = "p", text = "Garrosh Hellscream’s arrogance has brought ruin to the Vale of Eternal Blossoms. Champions of the Alliance and the Horde must march on his capital and bring the ruthless Warchief’s reign to an end." },
             { type = "p", text = "View Full Article" },
-            },
-        },
-        ["2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b"] = {
-            id = "2026-06-03-transmog-costs-to-be-adjusted-soon-78d215231b",
-            post_key = "78d215231b",
-            title = "Transmog Costs to be Adjusted Soon",
-            category = "Wrath of the Lich King Classic Discussion (EU)",
-            timestamp = 1780464292,
-            url = "https://eu.forums.blizzard.com/en/wow/t/620625/1",
-            content = {
-            { type = "p", text = "With the patch now live, Transmog gold costs are much higher than we intended." },
-            { type = "p", text = "We expect to reduce costs via hotfix in the next 24 hours." },
-            { type = "p", text = "Thank you!" },
             },
         },
         ["2026-06-03-retail-transmog-system-with-no-warning-96fc8f680e"] = {
@@ -9655,19 +9665,6 @@ BluePosts_Data = {
             { type = "list_item", text = "Warlock", level = 0 },
             { type = "list_item", text = "Destruction", level = 1 },
             { type = "list_item", text = "All damage increased by 5% in PvP combat.", level = 2 },
-            },
-        },
-        ["2026-05-04-ptr-raid-testing-mythic-sporefall-15-25-904cd4c270"] = {
-            id = "2026-05-04-ptr-raid-testing-mythic-sporefall-15-25-904cd4c270",
-            post_key = "904cd4c270",
-            title = "PTR Raid Testing: Mythic Sporefall (15-25)",
-            category = "Midnight: Revelations Public Test Realm (US)",
-            timestamp = 1777925459,
-            url = "https://us.forums.blizzard.com/en/wow/t/2302398/1",
-            content = {
-            { type = "p", text = "Hello everyone," },
-            { type = "p", text = "We will be running a 1-hour test of Sporefall on the public test realm from 1-2pm Pacific Daylight Time (GMT-7) on Thursday, May 14th. During that time players will be able to enter the instance on Mythic difficulty and enjoy the entire raid experience." },
-            { type = "p", text = "This will be our first test using the Flexible Raiding feature in Mythic difficulty, so we would benefit greatly from your participation and feedback." },
             },
         },
     },

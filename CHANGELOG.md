@@ -1,3 +1,7 @@
+## 1.8.2
+- Added: Transmog Outfit and Slot Costs Lowered
+- Removed: PTR Raid Testing: Mythic Sporefall (15-25)
+
 ## 1.8.1
 - Added: Blacktalon Quartermaster not selling legendary cloak bases. Please fix
 - Added: Travel to Val and Naigtal to Quell Leaders of the Void
@@ -331,6 +335,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
