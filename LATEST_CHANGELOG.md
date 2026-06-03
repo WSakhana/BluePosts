@@ -1,4 +1,3 @@
-## 1.8.0
-- Added: Addon Compartment launcher support.
-- Updated: Minimap button visibility with Minimap Button Bag.
-- Updated: Minimap button setting text.
+## 1.8.1
+- Added: Blacktalon Quartermaster not selling legendary cloak bases. Please fix
+- Added: Travel to Val and Naigtal to Quell Leaders of the Void

@@ -1,11 +1,49 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1780506787,
+    package_timestamp = 1780517594,
     new_post_ids = {
-        "2026-06-03-soar-through-turbulent-timeways-june-30-to-august-11-330a1faa55",
-        "2026-06-03-soar-through-turbulent-timeways-1-july-to-12-august-d5be827526",
+        "2026-06-03-blacktalon-quartermaster-not-selling-legendary-cloak-bases-please-fix-8458889192",
+        "2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-d1a598221d",
+        "2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-c33656a589",
     },
     posts = {
+        ["2026-06-03-blacktalon-quartermaster-not-selling-legendary-cloak-bases-please-fix-8458889192"] = {
+            id = "2026-06-03-blacktalon-quartermaster-not-selling-legendary-cloak-bases-please-fix-8458889192",
+            post_key = "8458889192",
+            title = "Blacktalon Quartermaster not selling legendary cloak bases. Please fix",
+            category = "Wrath of the Lich King Classic Discussion (US)",
+            timestamp = 1780517334,
+            url = "https://us.forums.blizzard.com/en/wow/t/2312530/1",
+            content = {
+            { type = "p", text = "The Blacktalon Quartermaster is bugged and isn’t selling the legendary cloak bases. One of my guild’s tanks, who had been using the dps cloak all last phase, cannot acquire the improved tanking cloak now. Please fix." },
+            },
+        },
+        ["2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-d1a598221d"] = {
+            id = "2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-d1a598221d",
+            post_key = "d1a598221d",
+            title = "Travel to Val and Naigtal to Quell Leaders of the Void",
+            category = "General Discussion (EU)",
+            timestamp = 1780516922,
+            url = "https://eu.forums.blizzard.com/en/wow/t/620712/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-d1a598221d\\image-1.jpg" },
+            { type = "p", text = "Join the Illidari demon hunters and the Army of the Light to venture into two new locations—Val and Naigtal—to cut off the threat of the Void and their leaders at the source. You’ll undertake new World Quests, defeat rare enemies, take part in events, and put a stop to the brutal attacks on Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-c33656a589"] = {
+            id = "2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-c33656a589",
+            post_key = "c33656a589",
+            title = "Travel to Val and Naigtal to Quell Leaders of the Void",
+            category = "General Discussion (US)",
+            timestamp = 1780516918,
+            url = "https://us.forums.blizzard.com/en/wow/t/2312627/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-03-travel-to-val-and-naigtal-to-quell-leaders-of-the-void-c33656a589\\image-1.jpg" },
+            { type = "p", text = "Join the Illidari demon hunters and the Army of the Light to venture into two new locations—Val and Naigtal—to cut off the threat of the Void and their leaders at the source. You’ll undertake new World Quests, defeat rare enemies, take part in events, and put a stop to the brutal attacks on Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-06-03-soar-through-turbulent-timeways-june-30-to-august-11-330a1faa55"] = {
             id = "2026-06-03-soar-through-turbulent-timeways-june-30-to-august-11-330a1faa55",
             post_key = "330a1faa55",
