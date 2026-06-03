@@ -1,3 +1,7 @@
+## 1.7.9
+- Added: Soar Through Turbulent Timeways June 30 to August 11
+- Added: Soar Through Turbulent Timeways 1 July to 12 August
+
 ## 1.7.8
 - Added: Mists of Pandaria Classic: The Siege of Orgrimmar Now Live
 - Added: Mists of Pandaria Classic: Siege of Orgrimmar Raid Unlocks 4 June
@@ -318,6 +322,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
