@@ -1,3 +1,7 @@
+## 1.7.8
+- Added: Mists of Pandaria Classic: The Siege of Orgrimmar Now Live
+- Added: Mists of Pandaria Classic: Siege of Orgrimmar Raid Unlocks 4 June
+
 ## 1.7.7
 - Added: Transmog Costs to be Adjusted Soon
 - Added: Retail transmog system with no warning?
@@ -314,6 +318,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
