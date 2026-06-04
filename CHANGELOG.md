@@ -1,3 +1,6 @@
+## 1.8.4
+- Updated: Midnight: Revelations 12.0.7 PTR Development Notes
+
 ## 1.8.3
 - Added: Mists of Pandaria Classic Hotfixes - Updated 3 June
 - Added: Hotfixes: June 3, 2026
@@ -340,6 +343,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
