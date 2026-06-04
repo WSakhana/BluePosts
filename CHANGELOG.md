@@ -1,3 +1,8 @@
+## 1.8.3
+- Added: Mists of Pandaria Classic Hotfixes - Updated 3 June
+- Added: Hotfixes: June 3, 2026
+- Added: Mists of Pandaria Classic Hotfixes - Updated June 3
+
 ## 1.8.2
 - Added: Transmog Outfit and Slot Costs Lowered
 - Removed: PTR Raid Testing: Mythic Sporefall (15-25)
@@ -335,6 +340,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
