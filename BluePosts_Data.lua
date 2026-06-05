@@ -1,10 +1,51 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1780611286,
+    package_timestamp = 1780679594,
     new_post_ids = {
-        "2026-06-04-mists-of-pandaria-classic-siege-of-orgrimmar-raid-now-live-4c6e929322",
+        "2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-a9c864a2c2",
+        "2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-4c1efcc999",
+        "2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-1ee2e63e9c",
     },
     posts = {
+        ["2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-a9c864a2c2"] = {
+            id = "2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-a9c864a2c2",
+            post_key = "a9c864a2c2",
+            title = "WoW Weekly: Midnight, Mists of Pandaria Classic, Turbulent Timeways, and More!",
+            category = "General Discussion (EU)",
+            timestamp = 1780678928,
+            url = "https://eu.forums.blizzard.com/en/wow/t/620867/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-a9c864a2c2\\image-1.jpg" },
+            { type = "p", text = "Each week brings you adventures, discovery, and fresh rewards—learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-4c1efcc999"] = {
+            id = "2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-4c1efcc999",
+            post_key = "4c1efcc999",
+            title = "WoW Weekly: Midnight, Mists of Pandaria Classic, Turbulent Timeways, and More!",
+            category = "General Discussion (US)",
+            timestamp = 1780678923,
+            url = "https://us.forums.blizzard.com/en/wow/t/2313268/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-4c1efcc999\\image-1.jpg" },
+            { type = "p", text = "Each week brings you adventures, discovery, and fresh rewards—learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-1ee2e63e9c"] = {
+            id = "2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-1ee2e63e9c",
+            post_key = "1ee2e63e9c",
+            title = "WoW Weekly: Midnight, Mists of Pandaria Classic, Turbulent Timeways, and More!",
+            category = "General Discussion (EU)",
+            timestamp = 1780678919,
+            url = "https://eu.forums.blizzard.com/en/wow/t/620868/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-05-wow-weekly-midnight-mists-of-pandaria-classic-turbulent-timeways-and-m-1ee2e63e9c\\image-1.jpg" },
+            { type = "p", text = "Each week brings you adventures, discovery, and fresh rewards—learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-06-04-mists-of-pandaria-classic-siege-of-orgrimmar-raid-now-live-4c6e929322"] = {
             id = "2026-06-04-mists-of-pandaria-classic-siege-of-orgrimmar-raid-now-live-4c6e929322",
             post_key = "4c6e929322",

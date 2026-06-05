@@ -1,3 +1,6 @@
+## 1.8.6
+- Added: WoW Weekly: Midnight, Mists of Pandaria Classic, Turbulent Timeways, and More!
+
 ## 1.8.5
 - Added: Mists of Pandaria Classic: Siege of Orgrimmar Raid Now Live
 - Removed: Hotfixes: May 5, 2026
@@ -352,6 +355,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
