@@ -1,3 +1,8 @@
+## 1.8.8
+- Updated: The Burning Crusade Hotfixes - Updated June 5
+- Updated: The Burning Crusade Hotfixes - Updated 5 June
+- Updated: Mists of Pandaria Classic Hotfixes - Updated June 5
+
 ## 1.8.7
 - Updated: Midnight: Revelations 12.0.7 PTR Development Notes
 - Removed: WoW Weekly: Midnight, Mists of Pandaria Classic, Turbulent Timeways, and More!
@@ -362,6 +367,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
