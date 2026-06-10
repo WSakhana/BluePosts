@@ -1,3 +1,8 @@
+## 1.9.0
+- Updated: Mists of Pandaria Classic Hotfixes - Updated June 9
+- Updated: Mists of Pandaria Classic Hotfixes - Updated 9 June
+- Updated: World of Warcraft: Midnight Hotfixes - June 9, 2026
+
 ## 1.8.9
 - Added: New Celestial Dungeons and Challenge Mode: Diamond Coming Soon
 - Removed: Tank Adjustments Incoming – May 12
@@ -374,6 +379,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
