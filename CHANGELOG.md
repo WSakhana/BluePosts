@@ -1,3 +1,7 @@
+## 1.9.1
+- Added: Add Exp Eliminator Npc to SoD
+- Added: New XP Freeze is NOT permanent
+
 ## 1.9.0
 - Updated: Mists of Pandaria Classic Hotfixes - Updated June 9
 - Updated: Mists of Pandaria Classic Hotfixes - Updated 9 June
@@ -379,6 +383,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

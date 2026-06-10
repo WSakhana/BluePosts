@@ -1,9 +1,42 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1781054209,
+    package_timestamp = 1781117862,
     new_post_ids = {
+        "2026-06-10-add-exp-eliminator-npc-to-sod-d361d3f916",
+        "2026-06-10-new-xp-freeze-is-not-permanent-eaf7e60011",
     },
     posts = {
+        ["2026-06-10-add-exp-eliminator-npc-to-sod-d361d3f916"] = {
+            id = "2026-06-10-add-exp-eliminator-npc-to-sod-d361d3f916",
+            post_key = "d361d3f916",
+            title = "Add Exp Eliminator Npc to SoD",
+            category = "Season of Discovery (EU)",
+            timestamp = 1781117189,
+            url = "https://eu.forums.blizzard.com/en/wow/t/620365/1",
+            content = {
+            { type = "p", text = "Blizz you are missing out here." },
+            { type = "p", text = "There are several content creators planning to do a community SoD Fresh event at the moment. But they want a slower pace as it was on launch." },
+            { type = "p", text = "You should really add the NPC that stops XP gains to the game. So they can freeze their leveling to do each level up raid a few times without making the content trivial by drastically out leveling it." },
+            { type = "p", text = "It’s minimal effort on your part but will add something awesome to the community experience on the re-run." },
+            },
+        },
+        ["2026-06-10-new-xp-freeze-is-not-permanent-eaf7e60011"] = {
+            id = "2026-06-10-new-xp-freeze-is-not-permanent-eaf7e60011",
+            post_key = "eaf7e60011",
+            title = "New XP Freeze is NOT permanent",
+            category = "Season of Discovery (US)",
+            timestamp = 1781117007,
+            url = "https://us.forums.blizzard.com/en/wow/t/2314616/1",
+            content = {
+            { type = "p", text = "Was pretty close to leveling when I froze my XP last night at lvl 50, did a bunch of incursions without gaining xp." },
+            { type = "p", text = "Logged in this morning, turned in an incursion quest I forgot to the night before and leveled." },
+            { type = "p", text = "None of this is Blizzard’s fault…I should’ve realized the XP bar when I logged in this morning." },
+            { type = "p", text = "But why oh why is the XP freeze not frozen until you manually turn it back on like every other implementation of XP freezing that Blizzard has ever put out?" },
+            { type = "p", text = "Edit: went back to the NPC and nowhere does it say you’ll have to do this every daily reset. would be a good disclaimer for others that might overlook it" },
+            { type = "p", text = "EDIT 2:" },
+            { type = "p", text = "Turning off XP and logging out will turn it back on when logging back in." },
+            },
+        },
         ["2026-06-10-mists-of-pandaria-classic-hotfixes-updated-june-9-d8eb02b53f"] = {
             id = "2026-06-10-mists-of-pandaria-classic-hotfixes-updated-june-9-d8eb02b53f",
             post_key = "d8eb02b53f",
