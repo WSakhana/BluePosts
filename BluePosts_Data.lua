@@ -1,12 +1,65 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1781137478,
+    package_timestamp = 1781197984,
     new_post_ids = {
-        "2026-06-11-season-of-discovery-hotfixes-10-june-263f398a63",
-        "2026-06-11-season-of-discovery-hotfixes-june-10-1dcc19b813",
-        "2026-06-11-hotfixes-june-10-2026-8a714e2d5d",
+        "2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-june-d69c66d53f",
+        "2026-06-11-revelations-content-update-notes-73fed7d754",
+        "2026-06-11-revelations-content-update-notes-517d25da5a",
+        "2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-16-j-6059277818",
     },
     posts = {
+        ["2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-june-d69c66d53f"] = {
+            id = "2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-june-d69c66d53f",
+            post_key = "d69c66d53f",
+            title = "Twitch Drop: Get the Cuddly Cotton Candy Grrgle Housing Decor Item June 16!",
+            category = "General Discussion (US)",
+            timestamp = 1781197320,
+            url = "https://us.forums.blizzard.com/en/wow/t/2314882/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-june-d69c66d53f\\image-1.jpg" },
+            { type = "p", text = "Watch any eligible World of Warcraft stream on Twitch.tv from June 16 at 10:00 am PDT until July 14 at 10:00 am PDT to claim the Cuddly Cotton Candy Grrgle Housing decor item." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-11-revelations-content-update-notes-73fed7d754"] = {
+            id = "2026-06-11-revelations-content-update-notes-73fed7d754",
+            post_key = "73fed7d754",
+            title = "Revelations Content Update Notes",
+            category = "General Discussion (EU)",
+            timestamp = 1781197316,
+            url = "https://eu.forums.blizzard.com/en/wow/t/621310/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-11-revelations-content-update-notes-73fed7d754\\image-1.jpg" },
+            { type = "p", text = "Read all the changes that are coming in the Revelations content update." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-11-revelations-content-update-notes-517d25da5a"] = {
+            id = "2026-06-11-revelations-content-update-notes-517d25da5a",
+            post_key = "517d25da5a",
+            title = "Revelations Content Update Notes",
+            category = "General Discussion (US)",
+            timestamp = 1781197312,
+            url = "https://us.forums.blizzard.com/en/wow/t/2314883/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-11-revelations-content-update-notes-517d25da5a\\image-1.jpg" },
+            { type = "p", text = "Read all the changes that are coming in the Revelations content update." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-16-j-6059277818"] = {
+            id = "2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-16-j-6059277818",
+            post_key = "6059277818",
+            title = "Twitch Drop: Get the Cuddly Cotton Candy Grrgle Housing Decor Item 16 June!",
+            category = "General Discussion (EU)",
+            timestamp = 1781197308,
+            url = "https://eu.forums.blizzard.com/en/wow/t/621309/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-11-twitch-drop-get-the-cuddly-cotton-candy-grrgle-housing-decor-item-16-j-6059277818\\image-1.jpg" },
+            { type = "p", text = "Watch any eligible World of Warcraft stream on Twitch.tv from June 16 at 10:00 am PDT until July 14 at 10:00 am PDT to claim the Cuddly Cotton Candy Grrgle Housing decor item." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-06-11-season-of-discovery-hotfixes-10-june-263f398a63"] = {
             id = "2026-06-11-season-of-discovery-hotfixes-10-june-263f398a63",
             post_key = "263f398a63",
