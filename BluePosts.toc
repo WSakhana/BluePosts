@@ -1,4 +1,4 @@
-## Interface: 120005
+## Interface: 120005, 120007
 ## Title: |cffffc757Blue|r|cff00b4ffPosts|r
 ## Notes: Read Blizzard blue posts directly in game.
 ## Author: Anahkas
