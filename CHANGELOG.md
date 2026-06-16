@@ -1,3 +1,6 @@
+## 1.9.6
+- Added: Twitch Drop Now Live! Get the Cuddly Cotton Candy Grrgle Housing Decor Item
+
 ## 1.9.5
 - Added: March on Quel’Danas Raid Tuning – 16 June
 - Added: March on Quel’Danas Raid Tuning – June 16
@@ -417,6 +420,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
