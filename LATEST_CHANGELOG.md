@@ -1,2 +1,2 @@
-## 1.9.7
-- Updated bundled blue post data.
+## 1.9.8
+- Added: The Midnight: Revelations Content Update is Now Live!
