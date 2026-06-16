@@ -1,3 +1,6 @@
+## 1.9.7
+- Updated bundled blue post data.
+
 ## 1.9.6
 - Added: Twitch Drop Now Live! Get the Cuddly Cotton Candy Grrgle Housing Decor Item
 
@@ -420,6 +423,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
