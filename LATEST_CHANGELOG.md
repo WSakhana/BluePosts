@@ -1,10 +1,10 @@
-## 1.9.4
-- Updated: The Burning Crusade Hotfixes - Updated June 12
-- Updated: The Burning Crusade Hotfixes - Updated 12 June
-- Removed: Ascendant Voidshard Adjustments Incoming - May 13
-- Removed: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives 2 June
-- Removed: Mists of Pandaria Classic: The Siege of Orgrimmar Update Arrives June 2
-- Removed: Roofus Pack: no duplicates?
-- Removed: Hotfixes: May 12, 2026
-- Removed: Time is Running Out! Play Midnight for a Classic Anniversary Edition Flying Mount
-- Removed: 2 more posts.
+## 1.9.5
+- Added: March on Quel’Danas Raid Tuning – 16 June
+- Added: March on Quel’Danas Raid Tuning – June 16
+- Removed: WoW Weekly: Classic Anniversary, WoW Ambassadors Discord, Mists of Pandaria Classic, and More!
+- Removed: Ascendant Voidcore issue/crafted weapons
+- Removed: BCC Anniversary Edition: Overlords of Outland Now Live
+- Removed: PTR Raid Testing: Heroic Sporefall (10-30)
+- Removed: Feedback: Mythic Sporefall (15-25)
+- Removed: PvP Season 13 is Ending Soon
+- Removed: 1 more post.
