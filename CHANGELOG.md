@@ -1,3 +1,7 @@
+## 1.9.9
+- Added: The Midnight: Revelations Content Update Goes Live 17 June!
+- Added: The Midnight: Revelations Content Update is Now Live!
+
 ## 1.9.8
 - Added: The Midnight: Revelations Content Update is Now Live!
 
@@ -426,6 +430,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
