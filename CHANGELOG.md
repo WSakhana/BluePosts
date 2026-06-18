@@ -1,3 +1,6 @@
+## 2.0.2
+- Added: Hot Deals on Cool Finds—Shop the WoW Summer Sale!
+
 ## 2.0.1
 - Added: Watch and Learn About The Curse of Ula’tek in the Latest WoWCast
 - Added: Link Your Battle.net Account to Discord in the Curse of Ula’tek Content Update
@@ -443,6 +446,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
