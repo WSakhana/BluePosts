@@ -1,3 +1,7 @@
+## 2.0.1
+- Added: Watch and Learn About The Curse of Ula’tek in the Latest WoWCast
+- Added: Link Your Battle.net Account to Discord in the Curse of Ula’tek Content Update
+
 ## 2.0.0
 - Added: Hotfixes: June 17, 2026
 - Updated: Mists of Pandaria Classic Hotfixes - Updated June 17
@@ -439,6 +443,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
