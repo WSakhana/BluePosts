@@ -1,3 +1,9 @@
+## 2.0.3
+- Added: Hotfixes: June 18, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - June 18
+- Removed: Watch and Learn About The Curse of Ula’tek in the Latest WoWCast
+- Removed: Upgrade Crest Caps Removed - May 19
+
 ## 2.0.2
 - Added: Hot Deals on Cool Finds—Shop the WoW Summer Sale!
 
@@ -446,6 +452,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
