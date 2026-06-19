@@ -1,3 +1,6 @@
+## 2.0.4
+- Added: WoW Weekly: Revelations Comes to Midnight, Twitch Drops, and More!
+
 ## 2.0.3
 - Added: Hotfixes: June 18, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - June 18
@@ -452,6 +455,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

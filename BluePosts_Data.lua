@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1781831450,
+    package_timestamp = 1781889160,
     new_post_ids = {
-        "2026-06-19-hotfixes-june-18-2026-9bd9810dc5",
+        "2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-39057dc737",
+        "2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-a755316ced",
     },
     posts = {
+        ["2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-39057dc737"] = {
+            id = "2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-39057dc737",
+            post_key = "39057dc737",
+            title = "WoW Weekly: Revelations Comes to Midnight, Twitch Drops, and More!",
+            category = "General Discussion (US)",
+            timestamp = 1781888492,
+            url = "https://us.forums.blizzard.com/en/wow/t/2318309/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-39057dc737\\image-1.jpg" },
+            { type = "p", text = "Each week brings you adventures, discovery, and fresh rewards—learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-a755316ced"] = {
+            id = "2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-a755316ced",
+            post_key = "a755316ced",
+            title = "WoW Weekly: Revelations Comes to Midnight, Twitch Drops, and More!",
+            category = "General Discussion (EU)",
+            timestamp = 1781888488,
+            url = "https://eu.forums.blizzard.com/en/wow/t/621977/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-19-wow-weekly-revelations-comes-to-midnight-twitch-drops-and-more-a755316ced\\image-1.jpg" },
+            { type = "p", text = "Each week brings you adventures, discovery, and fresh rewards—learn more about what awaits you in Azeroth." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-06-19-world-of-warcraft-midnight-hotfixes-june-18-cd1b478a91"] = {
             id = "2026-06-19-world-of-warcraft-midnight-hotfixes-june-18-cd1b478a91",
             post_key = "cd1b478a91",
