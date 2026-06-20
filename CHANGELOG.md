@@ -1,3 +1,10 @@
+## 2.0.5
+- Added: Tend Azeroth’s Fires—the Midsummer Fire Festival Burns Until 5 July
+- Removed: Feedback: Heroic Sporefall (10-30)
+- Removed: Prepare to Face Rotmire in the Sporefall Raid
+- Removed: Hotfixes: May 19, 2026
+- Removed: Hotfixes: May 15, 2026
+
 ## 2.0.4
 - Added: WoW Weekly: Revelations Comes to Midnight, Twitch Drops, and More!
 
@@ -455,6 +462,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
