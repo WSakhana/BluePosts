@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1781993542,
+    package_timestamp = 1782061947,
     new_post_ids = {
-        "2026-06-20-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-5-july-9b1565ff5a",
+        "2026-06-21-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-july-5-af3f5d137b",
     },
     posts = {
+        ["2026-06-21-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-july-5-af3f5d137b"] = {
+            id = "2026-06-21-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-july-5-af3f5d137b",
+            post_key = "af3f5d137b",
+            title = "Tend Azeroth’s Fires—the Midsummer Fire Festival Burns Until July 5",
+            category = "General Discussion (US)",
+            timestamp = 1782061284,
+            url = "https://us.forums.blizzard.com/en/wow/t/2318931/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-06-21-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-july-5-af3f5d137b\\image-1.jpg" },
+            { type = "p", text = "Take part in firelit revelry and celebration dedicated to the hottest season of the year. The Midsummer Fire Festival sparks a variety of activities and ignites rewards to light up Azeroth’s summer." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-06-20-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-5-july-9b1565ff5a"] = {
             id = "2026-06-20-tend-azeroths-firesthe-midsummer-fire-festival-burns-until-5-july-9b1565ff5a",
             post_key = "9b1565ff5a",

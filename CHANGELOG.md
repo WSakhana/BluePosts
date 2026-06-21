@@ -1,3 +1,6 @@
+## 2.0.6
+- Added: Tend Azeroth’s Fires—the Midsummer Fire Festival Burns Until July 5
+
 ## 2.0.5
 - Added: Tend Azeroth’s Fires—the Midsummer Fire Festival Burns Until 5 July
 - Removed: Feedback: Heroic Sporefall (10-30)
@@ -462,6 +465,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
