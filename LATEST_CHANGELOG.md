@@ -1,2 +1,11 @@
-## 2.0.6
-- Added: Tend Azeroth’s Fires—the Midsummer Fire Festival Burns Until July 5
+## 2.0.7
+- Added: Hotfixes: June 22, 2026
+- Updated: The Burning Crusade Hotfixes - Updated 22 June
+- Updated: Mists of Pandaria Classic Hotfixes - Updated June 22
+- Updated: Mists of Pandaria Classic Hotfixes - Updated 22 June
+- Updated: The Burning Crusade Hotfixes - Updated June 22
+- Removed: Hotfixes: May 22, 2026
+- Removed: Class Tuning Incoming – May 26
+- Removed: Class Tuning Incoming – 27 May
+- Removed: Now Available For Testing
+- Removed: WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!
