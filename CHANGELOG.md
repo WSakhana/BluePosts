@@ -1,3 +1,6 @@
+## 2.1.0
+- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
+
 ## 2.0.9
 - Added: Hotfixes: June 22, 2026
 - Added: Hotfixes: June 23, 2026
@@ -488,6 +491,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
