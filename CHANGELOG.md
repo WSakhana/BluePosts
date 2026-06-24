@@ -1,3 +1,7 @@
+## 2.0.8
+- Added: Atal'Utek Play with the Blues – June 26
+- Added: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
+
 ## 2.0.7
 - Added: Hotfixes: June 22, 2026
 - Updated: The Burning Crusade Hotfixes - Updated 22 June
@@ -477,6 +481,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

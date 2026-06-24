@@ -1,11 +1,3 @@
-## 2.0.7
-- Added: Hotfixes: June 22, 2026
-- Updated: The Burning Crusade Hotfixes - Updated 22 June
-- Updated: Mists of Pandaria Classic Hotfixes - Updated June 22
-- Updated: Mists of Pandaria Classic Hotfixes - Updated 22 June
-- Updated: The Burning Crusade Hotfixes - Updated June 22
-- Removed: Hotfixes: May 22, 2026
-- Removed: Class Tuning Incoming – May 26
-- Removed: Class Tuning Incoming – 27 May
-- Removed: Now Available For Testing
-- Removed: WoW Weekly: Fungarian Mischief Looms in Midnight, and More Matches in MDI!
+## 2.0.8
+- Added: Atal'Utek Play with the Blues – June 26
+- Added: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
