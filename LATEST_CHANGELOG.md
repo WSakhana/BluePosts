@@ -1,2 +1,2 @@
-## 2.1.0
-- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
+## 2.1.1
+- Added: Feedback: Midnight Season 2 Dungeon Testing June 25th - July 1st

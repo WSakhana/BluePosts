@@ -1,9 +1,36 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782323679,
+    package_timestamp = 1782326072,
     new_post_ids = {
+        "2026-06-24-feedback-midnight-season-2-dungeon-testing-june-25th-july-1st-555a6d9153",
     },
     posts = {
+        ["2026-06-24-feedback-midnight-season-2-dungeon-testing-june-25th-july-1st-555a6d9153"] = {
+            id = "2026-06-24-feedback-midnight-season-2-dungeon-testing-june-25th-july-1st-555a6d9153",
+            post_key = "555a6d9153",
+            title = "Feedback: Midnight Season 2 Dungeon Testing June 25th - July 1st",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1782325402,
+            url = "https://us.forums.blizzard.com/en/wow/t/2320021/1",
+            content = {
+            { type = "p", text = "Greetings!" },
+            { type = "p", text = "Midnight Season 2 dungeon testing begins on Thursday, June 25th. Please note that this schedule may be adjusted." },
+            { type = "list_item", text = "6/25 - 7/1: Altar of Fangs", level = 0 },
+            { type = "list_item", text = "7/2 - 7/8: Midnight Dungeons", level = 0 },
+            { type = "list_item", text = "The Blinding Vale", level = 1 },
+            { type = "list_item", text = "Den of Nalorakk", level = 1 },
+            { type = "list_item", text = "Murder Row", level = 1 },
+            { type = "list_item", text = "Voidscar Arena", level = 1 },
+            { type = "list_item", text = "7/9 - 7/15: Legacy Dungeons", level = 0 },
+            { type = "list_item", text = "Temple of Sethraliss", level = 1 },
+            { type = "list_item", text = "Kings’ Rest", level = 1 },
+            { type = "list_item", text = "Ruby Life Pools", level = 1 },
+            { type = "list_item", text = "7/16 - 7/22: All Season 2 Mythic+ Dungeons", level = 0 },
+            { type = "p", text = "During the test period you’ll be able to acquire and customize Mythic Keystones by talking to the Keystone Vendor in Stormwind, Orgrimmar and Silvermoon. The nearby Dungeon Teleports NPC will assist you with transportation. This NPC will now also appear at the beginning of each dungeon on Mythic difficulty who can teleport players back to a capital city." },
+            { type = "p", text = "Provided that the items equipped on your character are at least item level 226, they will scale automatically to a higher level as needed to support Dungeon testing." },
+            { type = "p", text = "Thanks for testing and sharing your thoughts with us! We’ll be reviewing your feedback closely and will continue to post updates throughout the beta as changes roll out." },
+            },
+        },
         ["2026-06-24-midnight-curse-of-ulatek-121-ptr-development-notes-32b9da7c85"] = {
             id = "2026-06-24-midnight-curse-of-ulatek-121-ptr-development-notes-32b9da7c85",
             post_key = "32b9da7c85",
