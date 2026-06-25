@@ -1,2 +1,3 @@
-## 2.1.2
-- Added: Midnight Season 2 Mythic+ Dungeon Philosophy and Design Goals
+## 2.1.3
+- Updated: Feedback: Midnight Season 2 Dungeon Testing June 25th - July 1st
+- Removed: Hotfixes: June 22, 2026
