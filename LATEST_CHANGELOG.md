@@ -1,4 +1,2 @@
-## 2.1.5
-- Updated: Season of Discovery Hotfixes - 25 June
-- Updated: Season of Discovery Hotfixes - June 25
-- Updated: World of Warcraft: Midnight Hotfixes - June 25
+## 2.1.6
+- Added: WoW Weekly: Tend Azeroth's Midsummer Fires, Run Wild in the Darkspear Dash, and More!
