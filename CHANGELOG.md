@@ -1,3 +1,9 @@
+## 2.2.0
+- Added: Class Tuning Incoming – June 30
+- Added: Class Tuning Incoming – 1 July
+- Removed: Add the Omnium Folio to Your Library of Tools Against the Void
+- Removed: Hotfixes: May 26, 2026
+
 ## 2.1.9
 - Updated bundled blue post data.
 
@@ -523,6 +529,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
