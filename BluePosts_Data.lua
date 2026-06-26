@@ -1,11 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782500548,
+    package_timestamp = 1782506110,
     new_post_ids = {
-        "2026-06-26-showdown-reward-changes-26-june-and-1-july-1643f62057",
-        "2026-06-26-showdown-reward-changes-june-26-and-june-30-b9a785c6b9",
     },
     posts = {
+        ["2026-06-26-feedback-the-venomous-abyss-heroic-62884a841e"] = {
+            id = "2026-06-26-feedback-the-venomous-abyss-heroic-62884a841e",
+            post_key = "62884a841e",
+            title = "Feedback: The Venomous Abyss (Heroic)",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1782505437,
+            url = "https://us.forums.blizzard.com/en/wow/t/2320371/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "Please share any feedback you have about your experience in The Venomous Abyss (Heroic) in this thread." },
+            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid, and the class/spec you played can also provide great context for your feedback." },
+            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
+            },
+        },
         ["2026-06-26-showdown-reward-changes-26-june-and-1-july-1643f62057"] = {
             id = "2026-06-26-showdown-reward-changes-26-june-and-1-july-1643f62057",
             post_key = "1643f62057",
@@ -3162,20 +3174,6 @@ BluePosts_Data = {
             { type = "p", text = "A: The primary purpose of testing is to give us the information we need to balance the encounters, evaluate how mechanics are playing out in practice, and identify bugs. Once we’re satisfied that we’ve received that information for a given encounter, we’ll be shutting down testing. Usually this takes around 1 hour per encounter, but there are no guarantees." },
             { type = "h3", text = "Q: How do I report feedback or bugs?" },
             { type = "p", text = "A: We’ll be posting encounter feedback threads each week prior to the start of the raid tests. Additionally, you can also submit your feedback through the in-game Issue Reporter tool." },
-            },
-        },
-        ["2026-06-25-feedback-the-venomous-abyss-heroic-62884a841e"] = {
-            id = "2026-06-25-feedback-the-venomous-abyss-heroic-62884a841e",
-            post_key = "62884a841e",
-            title = "Feedback: The Venomous Abyss (Heroic)",
-            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
-            timestamp = 1782414418,
-            url = "https://us.forums.blizzard.com/en/wow/t/2320371/1",
-            content = {
-            { type = "p", text = "Hello," },
-            { type = "p", text = "Please share any feedback you have about your experience in The Venomous Abyss (Heroic) in this thread." },
-            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid, and the class/spec you played can also provide great context for your feedback." },
-            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
             },
         },
         ["2026-06-24-midnight-season-2-mythic-dungeon-philosophy-and-design-goals-3addf6c730"] = {

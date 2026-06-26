@@ -1,3 +1,6 @@
+## 2.1.9
+- Updated bundled blue post data.
+
 ## 2.1.8
 - Added: Showdown Reward Changes -- 26 June and 1 July
 - Added: Showdown Reward Changes -- June 26 and June 30
@@ -520,6 +523,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
