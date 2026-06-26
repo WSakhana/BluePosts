@@ -1,3 +1,6 @@
+## 2.1.7
+- Updated bundled blue post data.
+
 ## 2.1.6
 - Added: WoW Weekly: Tend Azeroth's Midsummer Fires, Run Wild in the Darkspear Dash, and More!
 
@@ -513,6 +516,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

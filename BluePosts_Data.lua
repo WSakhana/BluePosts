@@ -1,10 +1,30 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782494407,
+    package_timestamp = 1782499686,
     new_post_ids = {
-        "2026-06-26-wow-weekly-tend-azerothx27s-midsummer-fires-run-wild-in-the-darkspear--9abc8ce4cf",
     },
     posts = {
+        ["2026-06-26-atalx27utek-play-with-the-blues-june-26-89e06d5bf6"] = {
+            id = "2026-06-26-atalx27utek-play-with-the-blues-june-26-89e06d5bf6",
+            post_key = "89e06d5bf6",
+            title = "Atal'Utek Play with the Blues – June 26",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1782499020,
+            url = "https://us.forums.blizzard.com/en/wow/t/2319715/1",
+            content = {
+            { type = "p", text = "On Friday, June 26 at 3:00pm PDT (6:00pm EDT, 00:00 CEST), come join members of the World of Warcraft development team on the Nobundo PTR realm as we playtest the new Vaults of Atal’Utek feature being added in the Curse of Ula’tek update." },
+            { type = "p", text = "The Vaults of Atal’Utek provide a challenging play space that requires players to work together to defeat the forces of Ula’tek. Aid ancient Amani spirits in fighting back evil undead and Children of Ula’tek monsters, gathering the Corrosive Coins required to power up the Altar of Corrosion and gain permanent benefits to help you survive the Coiled Isle." },
+            { type = "p", text = "The playtest starts at 3:00pm PDT (6:00pm EDT, 00:00 CEST), but activities will be available nonstop within the Vaults of Atal’Utek so feel free to show up at any point!" },
+            { type = "p", text = "To prepare for this test session, make sure you’ve followed the following steps:" },
+            { type = "p", text = "Open the Battle.net App and select the WoW playscreen." },
+            { type = "p", text = "In the game version drop-down menu, select Public Test Realm (Midnight 12.1.0) and Install." },
+            { type = "p", text = "The Play button should take you right into the PTR, and select the Nobundo realm." },
+            { type = "p", text = "On the character selection screen, select ‘Copy Character’ to test with a copy of one of your characters from live realms." },
+            { type = "p", text = "Travel into the Vaults of Atal’Utek using one of the three entrances available on the Coiled Isle." },
+            { type = "p", text = "The events within are immediately accessible to players once inside the Vaults of Atal’Utek." },
+            { type = "p", text = "We look forward to seeing you in the Vaults of Atal’Utek on the PTR Friday, and we appreciate all of your testing and feedback!" },
+            },
+        },
         ["2026-06-26-wow-weekly-tend-azerothx27s-midsummer-fires-run-wild-in-the-darkspear--9abc8ce4cf"] = {
             id = "2026-06-26-wow-weekly-tend-azerothx27s-midsummer-fires-run-wild-in-the-darkspear--9abc8ce4cf",
             post_key = "9abc8ce4cf",
@@ -6915,27 +6935,6 @@ BluePosts_Data = {
             { type = "list_item", text = "Jade Temple", level = 1 },
             { type = "list_item", text = "Fixed an issue that would occasionally cause Wise Mari’s bubble to fail to burst after Corrupted Living Water was killed.", level = 2 },
             { type = "list_item", text = "Temple of the Jade Serpent will now correctly grant the achievement for completing it on Heroic.", level = 2 },
-            },
-        },
-        ["2026-06-23-atalx27utek-play-with-the-blues-june-26-89e06d5bf6"] = {
-            id = "2026-06-23-atalx27utek-play-with-the-blues-june-26-89e06d5bf6",
-            post_key = "89e06d5bf6",
-            title = "Atal'Utek Play with the Blues – June 26",
-            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
-            timestamp = 1782258815,
-            url = "https://us.forums.blizzard.com/en/wow/t/2319715/1",
-            content = {
-            { type = "p", text = "On Friday, June 26 at 3:00pm PDT (6:00pm EDT, 00:00 CEST), come join members of the World of Warcraft development team on the Nobundo PTR realm as we playtest the new Vaults of Atal’Utek feature being added in the Curse of Ula’tek update." },
-            { type = "p", text = "The Vaults of Atal’Utek provide a challenging play space that requires players to work together to defeat the forces of Ula’tek. Aid ancient Amani spirits in fighting back evil undead and Children of Ula’tek monsters, gathering the Corrosive Coins required to power up the Altar of Corrosion and gain permanent benefits to help you survive the Coiled Isle." },
-            { type = "p", text = "The playtest starts at 3:00pm PDT (6:00pm EDT, 00:00 CEST), but activities will be available nonstop within the Vaults of Atal’Utek so feel free to show up at any point!" },
-            { type = "p", text = "To prepare for this test session, make sure you’ve followed the following steps:" },
-            { type = "p", text = "Open the Battle.net App and select the WoW playscreen." },
-            { type = "p", text = "In the game version drop-down menu, select Public Test Realm (Midnight 12.1.0) and Install." },
-            { type = "p", text = "The Play button should take you right into the PTR, and select the Nobundo realm." },
-            { type = "p", text = "On the character selection screen, select ‘Copy Character’ to test with a copy of one of your characters from live realms." },
-            { type = "p", text = "Travel into the Vaults of Atal’Utek using one of the three entrances available on the Coiled Isle." },
-            { type = "p", text = "The events within are immediately accessible to players once inside the Vaults of Atal’Utek." },
-            { type = "p", text = "We look forward to seeing you in the Vaults of Atal’Utek on the PTR Friday, and we appreciate all of your testing and feedback!" },
             },
         },
         ["2026-06-23-the-burning-crusade-hotfixes-updated-22-june-c8fc07c7bd"] = {
