@@ -1,3 +1,8 @@
+## 2.1.5
+- Updated: Season of Discovery Hotfixes - 25 June
+- Updated: Season of Discovery Hotfixes - June 25
+- Updated: World of Warcraft: Midnight Hotfixes - June 25
+
 ## 2.1.4
 - Added: The Venomous Abyss Raid Testing Scheduler
 - Added: Feedback: The Venomous Abyss (Heroic)
@@ -505,6 +510,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
