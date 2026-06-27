@@ -1,11 +1,31 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782512061,
+    package_timestamp = 1782522972,
     new_post_ids = {
-        "2026-06-26-class-tuning-incoming-june-30-d225dd98da",
-        "2026-06-26-class-tuning-incoming-1-july-d16915d577",
+        "2026-06-27-the-tidebound-grotto-249320bb58",
     },
     posts = {
+        ["2026-06-27-the-tidebound-grotto-249320bb58"] = {
+            id = "2026-06-27-the-tidebound-grotto-249320bb58",
+            post_key = "249320bb58",
+            title = "The Tidebound Grotto",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1782522298,
+            url = "https://us.forums.blizzard.com/en/wow/t/2320885/1",
+            content = {
+            { type = "h1", text = "THE TIDEBOUND GROTTO" },
+            { type = "p", text = "We will be opening up The Tidebound Grotto for testing on World difficulty at 8pm Pacific Time for one hour. This is an instance with a single raid boss." },
+            { type = "h2", text = "INSTRUCTIONS FOR ENTERING THE INSTANCE" },
+            { type = "p", text = "You can enter the instance by swimming down to the instance’s entrance near the Wreck of Gral’s Belly on The Coiled Isle, the new zone in the Curse of Ula’tek. Once outside the instance, approach the instance portal and select “World” difficulty from the UI." },
+            { type = "h2", text = "FEEDBACK" },
+            { type = "p", text = "During this testing window, we’d like to get some feedback on the new “World” difficulty experience. Some questions that might help guide your feedback are below:" },
+            { type = "list_item", text = "Was it clear how to enter the instance?", level = 0 },
+            { type = "list_item", text = "Did you feel that you waited an appropriate amount of time before being able to encounter enemies within the instance?", level = 0 },
+            { type = "list_item", text = "How difficult was the experience for your group?", level = 0 },
+            { type = "p", text = "As always, noting your level of experience and the nature of your group is helpful for us." },
+            { type = "p", text = "Thank you for playing!" },
+            },
+        },
         ["2026-06-26-class-tuning-incoming-june-30-d225dd98da"] = {
             id = "2026-06-26-class-tuning-incoming-june-30-d225dd98da",
             post_key = "d225dd98da",

@@ -1,3 +1,6 @@
+## 2.2.1
+- Added: The Tidebound Grotto
+
 ## 2.2.0
 - Added: Class Tuning Incoming – June 30
 - Added: Class Tuning Incoming – 1 July
@@ -529,6 +532,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
