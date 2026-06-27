@@ -1,3 +1,6 @@
+## 2.2.2
+- Added: Run, Leap, and Spread Cheer—the Darkspear Dash is Here!
+
 ## 2.2.1
 - Added: The Tidebound Grotto
 
@@ -532,6 +535,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
