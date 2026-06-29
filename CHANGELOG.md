@@ -1,3 +1,7 @@
+## 2.2.4
+- Updated: Class Tuning Incoming – June 30
+- Updated: Class Tuning Incoming – 1 July
+
 ## 2.2.3
 - Added: July’s Trading Post Ignites a True-Blue Celebration
 - Removed: WoW Weekly: Omnium Folio in Midnight, June Trading Post, WoW Ambassadors, and More!
@@ -541,6 +545,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
