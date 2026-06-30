@@ -1,3 +1,3 @@
-## 2.2.4
-- Updated: Class Tuning Incoming – June 30
-- Updated: Class Tuning Incoming – 1 July
+## 2.2.5
+- Added: Soar Through Turbulent Timeways—Now Live!
+- Removed: Siege of Orgrimmar Raid Test - May 22
