@@ -1,3 +1,2 @@
-## 2.2.5
-- Added: Soar Through Turbulent Timeways—Now Live!
-- Removed: Siege of Orgrimmar Raid Test - May 22
+## 2.2.6
+- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
