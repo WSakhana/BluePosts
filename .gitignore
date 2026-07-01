@@ -1,5 +1,7 @@
 # Local editor state
 .vscode/*
+.scripts
+.scripts/*
 !.vscode/extensions.json
 !.vscode/tasks.json
 
