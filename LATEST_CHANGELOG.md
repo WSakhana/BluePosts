@@ -1,2 +1,2 @@
-## 2.3.1
-- Added: Quality-of-Life Improvements Coming in Curse of Ula'tek
+## 2.3.2
+- Added: Shape Your Destiny, and Your Mount, with the Stoneforged Sentinel

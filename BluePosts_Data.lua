@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782926073,
+    package_timestamp = 1782932069,
     new_post_ids = {
-        "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590",
-        "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-e66fdcbfaa",
+        "2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-3d62053ff5",
+        "2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-60701098c9",
     },
     posts = {
+        ["2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-3d62053ff5"] = {
+            id = "2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-3d62053ff5",
+            post_key = "3d62053ff5",
+            title = "Shape Your Destiny, and Your Mount, with the Stoneforged Sentinel",
+            category = "General Discussion (US)",
+            timestamp = 1782931389,
+            url = "https://us.forums.blizzard.com/en/wow/t/2322680/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-3d62053ff5\\image-1.jpg" },
+            { type = "p", text = "Forge a mount that’s uniquely yours. The Stoneforged Sentinel is ready to take shape with over 300,000 possible customization combinations, letting every champion tailor a distinct flying companion reflecting their own style." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-60701098c9"] = {
+            id = "2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-60701098c9",
+            post_key = "60701098c9",
+            title = "Shape Your Destiny, and Your Mount, with the Stoneforged Sentinel",
+            category = "General Discussion (EU)",
+            timestamp = 1782931382,
+            url = "https://eu.forums.blizzard.com/en/wow/t/622980/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-01-shape-your-destiny-and-your-mount-with-the-stoneforged-sentinel-60701098c9\\image-1.jpg" },
+            { type = "p", text = "Forge a mount that’s uniquely yours. The Stoneforged Sentinel is ready to take shape with over 300,000 possible customization combinations, letting every champion tailor a distinct flying companion reflecting their own style." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590"] = {
             id = "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590",
             post_key = "ed3aad2590",
