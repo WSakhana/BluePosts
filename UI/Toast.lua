@@ -208,21 +208,9 @@ function UI:HideToast()
     self.toast:SetAlpha(1)
 end
 
-function UI:ShowToast(post)
-    if not post then
-        return false
-    end
-
-    if not self.toast then
-        self:CreateToast()
-    end
-
-    self:ApplyToastPosition()
-
-    self.toastToken = (self.toastToken or 0) + 1
-    local toastToken = self.toastToken
-    if UIFrameFadeRemoveFrame then
-        UIFrameFadeRemoveFrame(self.toast)
+function UI:RefreshToastContent(post)
+    if not post or not self.toast then
+        return
     end
 
     self.toast.post = post
@@ -241,6 +229,26 @@ function UI:ShowToast(post)
 
     self.toast.meta:SetText(Helpers.Truncate(metaText, 56))
     self.toast.title:SetText(Helpers.Truncate(post.title, 88))
+end
+
+function UI:ShowToast(post)
+    if not post or (self.core and self.core.IsPostVisible and not self.core:IsPostVisible(post)) then
+        return false
+    end
+
+    if not self.toast then
+        self:CreateToast()
+    end
+
+    self:ApplyToastPosition()
+
+    self.toastToken = (self.toastToken or 0) + 1
+    local toastToken = self.toastToken
+    if UIFrameFadeRemoveFrame then
+        UIFrameFadeRemoveFrame(self.toast)
+    end
+
+    self:RefreshToastContent(post)
     self.toast:Show()
     self.toast:SetAlpha(1)
 

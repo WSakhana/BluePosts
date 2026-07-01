@@ -203,7 +203,8 @@ function UI:GetUnreadCountForCurrentRegion()
     for _, post in ipairs(self.core.posts or {}) do
         local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
         local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
-        if regionMatches and not self.core:IsRead(post) then
+        local visible = not self.core.IsPostVisible or self.core:IsPostVisible(post)
+        if visible and regionMatches and not self.core:IsRead(post) then
             count = count + 1
         end
     end
@@ -217,7 +218,8 @@ function UI:GetNewCountForCurrentRegion()
     for _, post in ipairs(self.core.posts or {}) do
         local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
         local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
-        if regionMatches and self.core:IsPackagedNewPost(post) then
+        local visible = not self.core.IsPostVisible or self.core:IsPostVisible(post)
+        if visible and regionMatches and self.core:IsPackagedNewPost(post) then
             count = count + 1
         end
     end
@@ -230,7 +232,8 @@ function UI:RefreshSubtitle(postsHovered, unreadHovered, newHovered)
         return
     end
 
-    self.subtitlePosts:SetText(("%d posts"):format(#(self.core.posts or {})))
+    local totalPosts = self.core.GetVisiblePostCount and self.core:GetVisiblePostCount() or #(self.core.posts or {})
+    self.subtitlePosts:SetText(("%d posts"):format(totalPosts))
     self.subtitlePostsButton:SetWidth((self.subtitlePosts:GetStringWidth() or 0) + 2)
     self.subtitleUnread:SetText(("%d unread"):format(self:GetUnreadCountForCurrentRegion()))
     self.subtitleUnreadButton:SetWidth((self.subtitleUnread:GetStringWidth() or 0) + 2)
@@ -361,12 +364,13 @@ function UI:RefreshPostList()
     local visible = {}
 
     for _, post in ipairs(self.core.posts or {}) do
+        local visibleByPreference = not self.core.IsPostVisible or self.core:IsPostVisible(post)
         local categoryMatches = self.currentCategory == "ALL" or post.categoryKey == self.currentCategory
         local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
         local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
         local unreadMatches = not self.currentUnreadOnly or not self.core:IsRead(post)
         local newMatches = not self.currentNewOnly or self.core:IsPackagedNewPost(post)
-        if categoryMatches and regionMatches and unreadMatches and newMatches and Helpers.MatchesSearch(post, searchText) then
+        if visibleByPreference and categoryMatches and regionMatches and unreadMatches and newMatches and Helpers.MatchesSearch(post, searchText) then
             table.insert(visible, post)
         end
     end

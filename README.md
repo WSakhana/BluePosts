@@ -20,13 +20,13 @@ BluePosts does not fetch live forum data while you play. Posts are bundled with 
 
 - Browse bundled Blizzard blue posts in a dedicated in-game reader.
 - Search posts by title/category and search inside the selected post body.
-- Filter posts by category and region.
+- Filter posts by category and region, with an option to exclude Classic-related articles.
 - Track read and unread posts per character profile.
 - Toggle an unread-only view from the header.
 - Open posts from the Addon Compartment, a minimap button, or a LibDataBroker launcher.
 - Open an in-window settings panel from the title bar.
 - Show a login toast when the current addon snapshot bundles new unread blue posts.
-- Configure notifications, toast duration and position, reader text size, minimap button visibility, auto-read behavior, and guild share confirmation.
+- Configure notifications, toast duration and position, date format, reader text size, minimap button visibility, auto-read behavior, and guild share confirmation.
 - Copy the original forum link for the selected post.
 - Share the selected post to guild chat.
 - Jump directly to class sections inside class hotfix posts.
@@ -68,4 +68,4 @@ Build scripts and local tooling are not part of the packaged addon.
 ## Notes
 
 - Post content is packaged with the addon release. New Blizzard posts require a newer addon package.
-- Read state, minimap button visibility, window placement, reader preferences, and toast preferences are saved in `BluePostsDB` account-wide.
+- Read state, content filters, date format, minimap button visibility, window placement, reader preferences, and toast preferences are saved in `BluePostsDB` account-wide.

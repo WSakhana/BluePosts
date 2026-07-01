@@ -449,6 +449,53 @@ function UI:ShowHome()
     self:RefreshPostList()
 end
 
+function UI:RefreshDateDisplays()
+    self:RefreshPostList()
+
+    if self.selectedPost and self.readerMeta then
+        self.readerMeta:SetText(("%s  |  %s"):format(Helpers.StripRegion(self.selectedPost.category), self.selectedPost.dateText or ""))
+    elseif self.UpdateEmptyState then
+        self:UpdateEmptyState()
+    end
+
+    if self.RefreshToastContent and self.toast and self.toast.post then
+        self:RefreshToastContent(self.toast.post)
+    end
+end
+
+function UI:ApplyPostVisibilityPreferences()
+    local core = self.core
+    local selectedHidden = self.selectedPost and core and core.IsPostVisible and not core:IsPostVisible(self.selectedPost)
+    if selectedHidden then
+        self.selectedPost = nil
+        if core.db then
+            core.db.lastSelectedPostID = nil
+        end
+        if self.viewMode ~= "settings" then
+            self:ShowEmptyState()
+        end
+    end
+
+    local lastPostID = core and core.db and core.db.lastSelectedPostID
+    local lastPost = lastPostID and core:GetPost(lastPostID)
+    if lastPost and core.IsPostVisible and not core:IsPostVisible(lastPost) then
+        core.db.lastSelectedPostID = nil
+    end
+
+    if self.toast and self.toast.post and core and core.IsPostVisible and not core:IsPostVisible(self.toast.post) then
+        self:HideToast()
+        self.toast.post = nil
+    end
+
+    self:RefreshPostList()
+    self:RefreshSubtitle(false, false, false)
+    if not self.selectedPost and self.UpdateEmptyState then
+        self:UpdateEmptyState()
+    end
+    self:UpdateToolbar()
+    self:RefreshSettingsPanel()
+end
+
 function UI:IsResumeLastPostEnabled()
     return not self.core or not self.core.db or self.core.db.resumeLastPost ~= false
 end
@@ -460,7 +507,8 @@ function UI:RestoreLastSelectedPost()
         return false
     end
 
-    if not self.core:GetPost(postID) then
+    local post = self.core:GetPost(postID)
+    if not post or (self.core.IsPostVisible and not self.core:IsPostVisible(post)) then
         db.lastSelectedPostID = nil
         return false
     end
@@ -789,6 +837,10 @@ function UI:PostMatchesCurrentView(post)
         return false
     end
 
+    if self.core.IsPostVisible and not self.core:IsPostVisible(post) then
+        return false
+    end
+
     local categoryMatches = self.currentCategory == "ALL" or post.categoryKey == self.currentCategory
     local region = post.region or (Constants.GetPostRegion and Constants.GetPostRegion(post)) or "OTHER"
     local regionMatches = self.currentRegion == "ALL" or region == self.currentRegion
@@ -857,7 +909,7 @@ function UI:UpdateEmptyState()
     end
 
     local stats = self:GetEmptyStateStats()
-    local totalPosts = #(self.core.posts or {})
+    local totalPosts = self.core.GetVisiblePostCount and self.core:GetVisiblePostCount() or #(self.core.posts or {})
     local unreadPosts = self.core:GetUnreadCount()
     local recommendedPost = stats.firstUnread or stats.firstPost
     self.emptyRecommendedPost = recommendedPost
@@ -920,7 +972,7 @@ end
 
 function UI:SelectPost(postID)
     local post = self.core:GetPost(postID)
-    if not post then
+    if not post or (self.core.IsPostVisible and not self.core:IsPostVisible(post)) then
         return
     end
 

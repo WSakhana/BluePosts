@@ -41,6 +41,8 @@ local DEFAULT_DB = {
     confirmGuildShare = true,
     readerFontSize = 13,
     resumeLastPost = true,
+    dateFormat = "MDY_SLASH",
+    showClassicPosts = false,
 }
 
 local RESETTABLE_SETTING_KEYS = {
@@ -55,6 +57,16 @@ local RESETTABLE_SETTING_KEYS = {
     "confirmGuildShare",
     "readerFontSize",
     "resumeLastPost",
+    "dateFormat",
+    "showClassicPosts",
+}
+
+local DATE_FORMATS = {
+    MDY_SLASH = "%m/%d/%Y %H:%M",
+    DMY_SLASH = "%d/%m/%Y %H:%M",
+    YMD_DASH = "%Y-%m-%d %H:%M",
+    YMD_SLASH = "%Y/%m/%d %H:%M",
+    DMY_DOT = "%d.%m.%Y %H:%M",
 }
 
 ns.THEME = {
@@ -238,6 +250,22 @@ local function NormalizeText(value)
     return Trim(value):upper()
 end
 
+local function NormalizeDateFormat(formatKey)
+    formatKey = tostring(formatKey or ""):upper()
+    return DATE_FORMATS[formatKey] and formatKey or "MDY_SLASH"
+end
+
+local function IsClassicPost(post)
+    if type(post) ~= "table" then
+        return false
+    end
+
+    local haystack = NormalizeText((post.title or "") .. " " .. (post.category or ""))
+    return Contains(haystack, "CLASSIC")
+        or Contains(haystack, "SEASON OF DISCOVERY")
+        or Contains(haystack, "HARDCORE")
+end
+
 local function GetCategoryKey(post)
     local title = (post.title or ""):lower()
     local category = (post.category or ""):lower()
@@ -288,15 +316,16 @@ local function PostMatchesRegionFilter(post, regionFilter)
     return postRegion == regionFilter
 end
 
-local function FormatDate(timestamp)
+local function FormatDate(timestamp, formatKey)
     timestamp = tonumber(timestamp) or 0
     if timestamp <= 0 then
         return ""
     end
-    return date("%d/%m/%Y %H:%M", timestamp)
+    return date(DATE_FORMATS[NormalizeDateFormat(formatKey)], timestamp)
 end
 
 ns.FormatDate = FormatDate
+ns.IsClassicPost = IsClassicPost
 ns.NormalizeText = NormalizeText
 ns.GetCategoryKey = GetCategoryKey
 ns.GetPostRegion = GetPostRegion
@@ -309,6 +338,65 @@ end
 
 function Core:GetDefaultRegionFilter()
     return self.detectedRegion or "ALL"
+end
+
+function Core:GetDateFormat()
+    return NormalizeDateFormat(self.db and self.db.dateFormat)
+end
+
+function Core:FormatDate(timestamp)
+    return FormatDate(timestamp, self:GetDateFormat())
+end
+
+function Core:IsClassicPost(post)
+    return IsClassicPost(post)
+end
+
+function Core:IsPostVisible(post)
+    if not post then
+        return false
+    end
+
+    return not self.db or self.db.showClassicPosts == true or not IsClassicPost(post)
+end
+
+function Core:GetVisiblePostCount()
+    local count = 0
+    for _, post in ipairs(self.posts or {}) do
+        if self:IsPostVisible(post) then
+            count = count + 1
+        end
+    end
+    return count
+end
+
+function Core:RefreshFormattedDates()
+    for _, post in ipairs(self.posts or {}) do
+        post.dateText = self:FormatDate(post.timestamp)
+    end
+end
+
+function Core:SetDateFormat(formatKey)
+    if not self.db then
+        return
+    end
+
+    self.db.dateFormat = NormalizeDateFormat(formatKey)
+    self:RefreshFormattedDates()
+    if ns.UI and ns.UI.RefreshDateDisplays then
+        ns.UI:RefreshDateDisplays()
+    end
+end
+
+function Core:SetShowClassicPosts(enabled)
+    if not self.db then
+        return
+    end
+
+    self.db.showClassicPosts = enabled ~= false
+    if ns.UI and ns.UI.ApplyPostVisibilityPreferences then
+        ns.UI:ApplyPostVisibilityPreferences()
+    end
 end
 
 function Core:GetRegionFilter()
@@ -346,6 +434,8 @@ function Core:InitializeDB()
 
     BluePostsDB.filters = BluePostsDB.filters or {}
     BluePostsDB.filters.category = NormalizeCategoryFilter(BluePostsDB.filters.category) or "ALL"
+    BluePostsDB.dateFormat = NormalizeDateFormat(BluePostsDB.dateFormat)
+    BluePostsDB.showClassicPosts = BluePostsDB.showClassicPosts == true
     local defaultRegion = self:GetDefaultRegionFilter()
     local savedRegion = NormalizeRegionFilter(BluePostsDB.filters.region)
     local autoRegion = NormalizeRegionFilter(BluePostsDB.regionFilterAutoRegion)
@@ -401,7 +491,7 @@ function Core:NormalizeData()
             normalized.category = Trim(normalized.category)
             normalized.url = Trim(normalized.url or normalized.source_url)
             normalized.timestamp = tonumber(normalized.timestamp) or 0
-            normalized.dateText = FormatDate(normalized.timestamp)
+            normalized.dateText = self:FormatDate(normalized.timestamp)
             normalized.categoryKey = NormalizeCategoryKey(normalized.categoryKey) or GetCategoryKey(normalized)
             normalized.region = normalized.region or GetPostRegion(normalized)
             normalized.content = type(normalized.content) == "table" and normalized.content or {}
@@ -452,10 +542,16 @@ function Core:SetAllRead(read)
 
     if read then
         for _, post in ipairs(self.posts or {}) do
-            self.db.read[post.id] = true
+            if self:IsPostVisible(post) then
+                self.db.read[post.id] = true
+            end
         end
     else
-        wipe(self.db.read)
+        for _, post in ipairs(self.posts or {}) do
+            if self:IsPostVisible(post) then
+                self.db.read[post.id] = nil
+            end
+        end
     end
 
     if ns.UI then
@@ -474,9 +570,17 @@ function Core:ResetSettingsToDefaults()
         self.db[key] = ResetValue(DEFAULT_DB[key], self.db[key])
     end
 
+    self.db.dateFormat = NormalizeDateFormat(self.db.dateFormat)
+    self:RefreshFormattedDates()
     self:UpdateMinimapVisibility()
 
     if ns.UI then
+        if ns.UI.ApplyPostVisibilityPreferences then
+            ns.UI:ApplyPostVisibilityPreferences()
+        end
+        if ns.UI.RefreshDateDisplays then
+            ns.UI:RefreshDateDisplays()
+        end
         if ns.UI.ApplyToastPosition then
             ns.UI:ApplyToastPosition()
         end
@@ -491,7 +595,7 @@ end
 function Core:GetUnreadCount()
     local count = 0
     for _, post in ipairs(self.posts or {}) do
-        if not self:IsRead(post) then
+        if self:IsPostVisible(post) and not self:IsRead(post) then
             count = count + 1
         end
     end
@@ -513,7 +617,7 @@ end
 
 function Core:GetNewestUnreadPost(regionFilter)
     for _, post in ipairs(self.posts or {}) do
-        if PostMatchesRegionFilter(post, regionFilter) and not self:IsRead(post) then
+        if self:IsPostVisible(post) and PostMatchesRegionFilter(post, regionFilter) and not self:IsRead(post) then
             return post
         end
     end
@@ -525,7 +629,8 @@ function Core:GetNewestRecentPost(regionFilter)
     local now = time()
 
     for _, post in ipairs(self.posts or {}) do
-        if PostMatchesRegionFilter(post, regionFilter)
+        if self:IsPostVisible(post)
+            and PostMatchesRegionFilter(post, regionFilter)
             and post.timestamp
             and post.timestamp > 0
             and (now - post.timestamp) <= 86400 then
@@ -542,7 +647,8 @@ function Core:GetNewestPackagedUnreadPost(regionFilter)
     end
 
     for _, post in ipairs(self.posts or {}) do
-        if self:IsPackagedNewPost(post)
+        if self:IsPostVisible(post)
+            and self:IsPackagedNewPost(post)
             and PostMatchesRegionFilter(post, regionFilter)
             and not self:IsRead(post) then
             return post
@@ -553,7 +659,7 @@ function Core:GetNewestPackagedUnreadPost(regionFilter)
 end
 
 function Core:GetToastPreviewPost()
-    if ns.UI and ns.UI.selectedPost then
+    if ns.UI and ns.UI.selectedPost and self:IsPostVisible(ns.UI.selectedPost) then
         return ns.UI.selectedPost
     end
 
@@ -561,11 +667,17 @@ function Core:GetToastPreviewPost()
     return self:GetNewestPackagedUnreadPost(regionFilter)
         or self:GetNewestUnreadPost(regionFilter)
         or self:GetNewestRecentPost(regionFilter)
-        or self.posts[1]
+        or (function()
+            for _, post in ipairs(self.posts or {}) do
+                if self:IsPostVisible(post) then
+                    return post
+                end
+            end
+        end)()
 end
 
 function Core:ShowToast(post, rememberToastID)
-    if not post or not ns.UI or not ns.UI.ShowToast then
+    if not post or not self:IsPostVisible(post) or not ns.UI or not ns.UI.ShowToast then
         return false
     end
 
@@ -873,7 +985,7 @@ function Core:MaybeShowLoginToast()
     end
 
     C_Timer.After(2.0, function()
-        if not self:IsRead(post) and PostMatchesRegionFilter(post, self:GetRegionFilter()) then
+        if self:IsPostVisible(post) and not self:IsRead(post) and PostMatchesRegionFilter(post, self:GetRegionFilter()) then
             self:ShowToast(post)
         end
     end)

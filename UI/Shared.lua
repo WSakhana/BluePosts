@@ -43,6 +43,14 @@ local READER_FONT_OPTIONS = {
     { label = "XL", value = 17 },
 }
 
+local DATE_FORMAT_OPTIONS = {
+    { label = "MM/DD/YYYY HH:MM", value = "MDY_SLASH", width = 154 },
+    { label = "DD/MM/YYYY HH:MM", value = "DMY_SLASH", width = 154 },
+    { label = "YYYY-MM-DD HH:MM", value = "YMD_DASH", width = 154 },
+    { label = "YYYY/MM/DD HH:MM", value = "YMD_SLASH", width = 154, newLine = true },
+    { label = "DD.MM.YYYY HH:MM", value = "DMY_DOT", width = 154 },
+}
+
 local TOAST_DURATION_OPTIONS = {
     { label = "2s", value = 2, width = 48 },
     { label = "4s", value = 4, width = 52 },
@@ -248,6 +256,7 @@ UI.Constants = {
     READ_BUTTON_TEXTURES = READ_BUTTON_TEXTURES,
     SETTINGS_BUTTON_ICON = SETTINGS_BUTTON_ICON,
     READER_FONT_OPTIONS = READER_FONT_OPTIONS,
+    DATE_FORMAT_OPTIONS = DATE_FORMAT_OPTIONS,
     TOAST_DURATION_OPTIONS = TOAST_DURATION_OPTIONS,
     TOAST_POSITION_OPTIONS = TOAST_POSITION_OPTIONS,
     TOAST_POSITION_META = TOAST_POSITION_META,

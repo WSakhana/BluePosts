@@ -267,7 +267,7 @@ function UI:CreateSettingsPanel()
     subtitle:SetPoint("TOPLEFT", panel, "TOPLEFT", 18, -45)
     subtitle:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -18, -45)
     subtitle:SetHeight(16)
-    subtitle:SetText("Tune notifications, reading behavior, launcher visibility, and saved state.")
+    subtitle:SetText("Tune notifications, content, reading behavior, launcher visibility, and saved state.")
     subtitle:SetWordWrap(false)
 
     self.settingsStats = Helpers.CreateFont(panel, 12, Constants.THEME.blue, "")
@@ -466,7 +466,23 @@ function UI:CreateSettingsPanel()
         end
     end)
 
+    AddSection("Content")
+    AddCheckbox("Show Classic posts", "Include articles about Classic, Season of Discovery, and Hardcore throughout the addon.", function()
+        return self.core.db.showClassicPosts == true
+    end, function(enabled)
+        if self.core.SetShowClassicPosts then
+            self.core:SetShowClassicPosts(enabled)
+        else
+            self.core.db.showClassicPosts = enabled
+        end
+    end)
+
     AddSection("Reading")
+    AddChoiceRow("Date format", "Choose how article dates and their 24-hour time are displayed.", Constants.DATE_FORMAT_OPTIONS, function()
+        return self.core:GetDateFormat()
+    end, function(value)
+        self.core:SetDateFormat(value)
+    end)
     AddCheckbox("Auto mark read", "Mark posts as read as soon as you open them.", function()
         return self.core.db.autoMarkRead ~= false
     end, function(enabled)
@@ -638,7 +654,7 @@ function UI:RefreshSettingsPanel()
     end
 
     if self.settingsStats and self.core then
-        local total = #(self.core.posts or {})
+        local total = self.core.GetVisiblePostCount and self.core:GetVisiblePostCount() or #(self.core.posts or {})
         local unread = self.core:GetUnreadCount()
         self.settingsStats:SetText(("%d posts  |  %d unread  |  %d read"):format(total, unread, total - unread))
     end
