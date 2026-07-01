@@ -1,2 +1,3 @@
-## 2.2.6
-- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
+## 2.2.7
+- Added: Hotfixes: June 30, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - June 30
