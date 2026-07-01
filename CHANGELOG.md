@@ -1,3 +1,6 @@
+## 2.3.4
+- Added: Warcraft Short Story: “The Bitter Truth”
+
 ## 2.3.3
 - Added: 12.1.0 housing PTR notes
 
@@ -577,6 +580,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

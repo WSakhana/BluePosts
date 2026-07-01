@@ -1,2 +1,2 @@
-## 2.3.3
-- Added: 12.1.0 housing PTR notes
+## 2.3.4
+- Added: Warcraft Short Story: “The Bitter Truth”

@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782935535,
+    package_timestamp = 1782940388,
     new_post_ids = {
-        "2026-07-01-1210-housing-ptr-notes-c1551ebf83",
+        "2026-07-01-warcraft-short-story-the-bitter-truth-e519a2a271",
     },
     posts = {
+        ["2026-07-01-warcraft-short-story-the-bitter-truth-e519a2a271"] = {
+            id = "2026-07-01-warcraft-short-story-the-bitter-truth-e519a2a271",
+            post_key = "e519a2a271",
+            title = "Warcraft Short Story: “The Bitter Truth”",
+            category = "General Discussion (US)",
+            timestamp = 1782939718,
+            url = "https://us.forums.blizzard.com/en/wow/t/2322704/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-01-warcraft-short-story-the-bitter-truth-e519a2a271\\image-1.jpg" },
+            { type = "p", text = "An unexpected meeting, meant to be diplomatic, places two longtime foes in a tense, drink-fueled standoff, where polite exchanges mask a long history of bloodshed and blame. As the conversation turns personal, both men are forced to confront the painful truth of their shared history." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-07-01-1210-housing-ptr-notes-c1551ebf83"] = {
             id = "2026-07-01-1210-housing-ptr-notes-c1551ebf83",
             post_key = "c1551ebf83",
