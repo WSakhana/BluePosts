@@ -1,3 +1,6 @@
+## 2.3.1
+- Added: Quality-of-Life Improvements Coming in Curse of Ula'tek
+
 ## 2.3.0
 - Added five date and time format options.
 - Changed the default date format to MM/DD/YYYY HH:MM.
@@ -568,6 +571,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

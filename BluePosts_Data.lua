@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1782882974,
+    package_timestamp = 1782926073,
     new_post_ids = {
-        "2026-07-01-soar-through-turbulent-timewaysnow-live-8661e08190",
+        "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590",
+        "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-e66fdcbfaa",
     },
     posts = {
+        ["2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590"] = {
+            id = "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590",
+            post_key = "ed3aad2590",
+            title = "Quality-of-Life Improvements Coming in Curse of Ula'tek",
+            category = "General Discussion (EU)",
+            timestamp = 1782925380,
+            url = "https://eu.forums.blizzard.com/en/wow/t/622971/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-ed3aad2590\\image-1.jpg" },
+            { type = "p", text = "Since the 12.0.5 content update, we’ve been building on your feedback with targeted improvements aimed at enhancing the play experience. Recent hotfixes along with Midnight: Revelations changes have already addressed some issues with rewards, looting, quest experience, and durability loss. More updates are planned in the Curse of Ula’tek content update, including account-wide user interface settings, Auction House improvements, a one-time Profession Knowledge reset, and fixes for common combat and travel issues." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-e66fdcbfaa"] = {
+            id = "2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-e66fdcbfaa",
+            post_key = "e66fdcbfaa",
+            title = "Quality-of-Life Improvements Coming in Curse of Ula'tek",
+            category = "General Discussion (US)",
+            timestamp = 1782925333,
+            url = "https://us.forums.blizzard.com/en/wow/t/2322656/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-01-quality-of-life-improvements-coming-in-curse-of-ulax27tek-e66fdcbfaa\\image-1.jpg" },
+            { type = "p", text = "Since the 12.0.5 content update, we’ve been building on your feedback with targeted improvements aimed at enhancing the play experience. Recent hotfixes along with Midnight: Revelations changes have already addressed some issues with rewards, looting, quest experience, and durability loss. More updates are planned in the Curse of Ula’tek content update, including account-wide user interface settings, Auction House improvements, a one-time Profession Knowledge reset, and fixes for common combat and travel issues." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-07-01-soar-through-turbulent-timewaysnow-live-8661e08190"] = {
             id = "2026-07-01-soar-through-turbulent-timewaysnow-live-8661e08190",
             post_key = "8661e08190",
