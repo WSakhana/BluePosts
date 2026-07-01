@@ -1,2 +1,2 @@
-## 2.2.8
-- Updated bundled blue post data.
+## 2.2.9
+- Added: Soar Through Turbulent Timeways—Now Live!
