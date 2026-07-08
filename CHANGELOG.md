@@ -1,3 +1,6 @@
+## 2.3.9
+- Updated: Feedback: Midnight Season 2 Dungeon Testing July 7th - July 13th
+
 ## 2.3.8
 - Updated: World of Warcraft: Midnight Hotfixes - July 7
 
@@ -599,6 +602,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

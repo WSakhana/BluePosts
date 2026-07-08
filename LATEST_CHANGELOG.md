@@ -1,2 +1,2 @@
-## 2.3.8
-- Updated: World of Warcraft: Midnight Hotfixes - July 7
+## 2.3.9
+- Updated: Feedback: Midnight Season 2 Dungeon Testing July 7th - July 13th
