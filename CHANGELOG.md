@@ -1,3 +1,6 @@
+## 2.4.1
+- Added: Item Levels Increasing in Midnight Season 2
+
 ## 2.4.0
 - Added: Atal’Utek Play with the Blues – July 10
 - Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
@@ -606,6 +609,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

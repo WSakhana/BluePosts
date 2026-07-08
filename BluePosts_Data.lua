@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1783532293,
+    package_timestamp = 1783540893,
     new_post_ids = {
-        "2026-07-08-atalutek-play-with-the-blues-july-10-48ec6c07f3",
+        "2026-07-08-item-levels-increasing-in-midnight-season-2-e68e74d60f",
     },
     posts = {
+        ["2026-07-08-item-levels-increasing-in-midnight-season-2-e68e74d60f"] = {
+            id = "2026-07-08-item-levels-increasing-in-midnight-season-2-e68e74d60f",
+            post_key = "e68e74d60f",
+            title = "Item Levels Increasing in Midnight Season 2",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1783540197,
+            url = "https://us.forums.blizzard.com/en/wow/t/2325009/1",
+            content = {
+            { type = "p", text = "Looking at players’ gear in Midnight Season 1, improved by upgrades, Voidcores, and powerful loot that became available in 12.0.7, we need to make sure that Season 2 is offering meaningful upgrades to players as they embark upon their journey through their preferred content." },
+            { type = "p", text = "Based on early PTR feedback, it’s clear that a 39-iLvl increase wasn’t quite enough to hit the mark there, so we’re shifting everything up 7 additional iLvls, making Season 2 rewards a 46-iLvl increase." },
+            { type = "p", text = "This update has been applied to the Curse of Ula’tek PTR today, and is now available for testing." },
+            },
+        },
         ["2026-07-08-atalutek-play-with-the-blues-july-10-48ec6c07f3"] = {
             id = "2026-07-08-atalutek-play-with-the-blues-july-10-48ec6c07f3",
             post_key = "48ec6c07f3",
