@@ -1,2 +1,2 @@
-## 2.4.1
-- Added: Item Levels Increasing in Midnight Season 2
+## 2.4.2
+- Updated bundled blue post data.
