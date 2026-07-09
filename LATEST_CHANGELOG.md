@@ -1,2 +1,2 @@
-## 2.4.2
-- Updated bundled blue post data.
+## 2.4.3
+- Updated: The Venomous Abyss Raid Testing Schedule
