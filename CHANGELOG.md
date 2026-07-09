@@ -1,3 +1,6 @@
+## 2.4.9
+- Removed: New Celestial Dungeons and Challenge Mode: Diamond Coming Soon
+
 ## 2.4.8
 - Updated bundled blue post data.
 
@@ -630,6 +633,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

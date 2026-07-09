@@ -1,2 +1,2 @@
-## 2.4.8
-- Updated bundled blue post data.
+## 2.4.9
+- Removed: New Celestial Dungeons and Challenge Mode: Diamond Coming Soon
