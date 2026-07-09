@@ -1,2 +1,2 @@
-## 2.4.3
-- Updated: The Venomous Abyss Raid Testing Schedule
+## 2.4.4
+- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
