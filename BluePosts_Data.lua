@@ -1,9 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1783624976,
+    package_timestamp = 1783626668,
     new_post_ids = {
+        "2026-07-09-feedback-the-venomous-abyss-mythic-877ec1dfaa",
     },
     posts = {
+        ["2026-07-09-feedback-the-venomous-abyss-mythic-877ec1dfaa"] = {
+            id = "2026-07-09-feedback-the-venomous-abyss-mythic-877ec1dfaa",
+            post_key = "877ec1dfaa",
+            title = "Feedback: The Venomous Abyss (Mythic)",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1783625997,
+            url = "https://us.forums.blizzard.com/en/wow/t/2325325/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "Please share any feedback you have about your experience in The Venomous Abyss (Mythic) in this thread." },
+            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid, and the class/spec you played can also provide great context for your feedback." },
+            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
+            },
+        },
         ["2026-07-09-feedback-midnight-season-2-dungeon-testing-july-7th-july-13th-ac6cf94a40"] = {
             id = "2026-07-09-feedback-midnight-season-2-dungeon-testing-july-7th-july-13th-ac6cf94a40",
             post_key = "ac6cf94a40",
