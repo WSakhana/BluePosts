@@ -1,2 +1,2 @@
-## 2.4.6
-- Added: Feedback: The Venomous Abyss (Mythic)
+## 2.4.7
+- Updated bundled blue post data.
