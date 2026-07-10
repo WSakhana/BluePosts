@@ -1,3 +1,6 @@
+## 2.5.1
+- Updated bundled blue post data.
+
 ## 2.5.0
 - Added: User Interface Updates in Classic
 
@@ -636,6 +639,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

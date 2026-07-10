@@ -1,2 +1,2 @@
-## 2.5.0
-- Added: User Interface Updates in Classic
+## 2.5.1
+- Updated bundled blue post data.
