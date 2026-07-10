@@ -1,2 +1,2 @@
-## 2.4.9
-- Removed: New Celestial Dungeons and Challenge Mode: Diamond Coming Soon
+## 2.5.0
+- Added: User Interface Updates in Classic
