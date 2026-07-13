@@ -1,3 +1,6 @@
+## 2.5.4
+- Updated: The Venomous Abyss Raid Testing Schedule
+
 ## 2.5.3
 - Added: King's Rest Mythic plus
 - Removed: Twitch Drop: Get the Cuddly Cotton Candy Grrgle Housing Decor Item June 16!
@@ -651,6 +654,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
