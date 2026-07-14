@@ -1,2 +1,2 @@
-## 2.5.5
-- Added: Catch the Drift with a 6-Month Subscription
+## 2.5.6
+- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
