@@ -1,3 +1,9 @@
+## 2.5.9
+- Added: Hotfixes: July 14, 2026
+- Updated: Mists of Pandaria Classic Hotfixes - Updated 14 July
+- Updated: Mists of Pandaria Classic Hotfixes - Updated July 14
+- Updated: World of Warcraft: Midnight Hotfixes - July 14
+
 ## 2.5.8
 - Updated bundled blue post data.
 
@@ -666,6 +672,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
