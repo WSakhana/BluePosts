@@ -1,2 +1,2 @@
-## 2.5.4
-- Updated: The Venomous Abyss Raid Testing Schedule
+## 2.5.5
+- Added: Catch the Drift with a 6-Month Subscription

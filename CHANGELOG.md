@@ -1,3 +1,6 @@
+## 2.5.5
+- Added: Catch the Drift with a 6-Month Subscription
+
 ## 2.5.4
 - Updated: The Venomous Abyss Raid Testing Schedule
 
@@ -654,6 +657,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

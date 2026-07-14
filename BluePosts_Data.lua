@@ -1,9 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1783964636,
+    package_timestamp = 1784057071,
     new_post_ids = {
+        "2026-07-14-catch-the-drift-with-a-6-month-subscription-10f18feb46",
+        "2026-07-14-catch-the-drift-with-a-6-month-subscription-9f2b671668",
     },
     posts = {
+        ["2026-07-14-catch-the-drift-with-a-6-month-subscription-10f18feb46"] = {
+            id = "2026-07-14-catch-the-drift-with-a-6-month-subscription-10f18feb46",
+            post_key = "10f18feb46",
+            title = "Catch the Drift with a 6-Month Subscription",
+            category = "General Discussion (US)",
+            timestamp = 1784056389,
+            url = "https://us.forums.blizzard.com/en/wow/t/2326827/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-14-catch-the-drift-with-a-6-month-subscription-10f18feb46\\image-1.jpg" },
+            { type = "p", text = "Take wing through your World of Warcraft® adventures astride the woolly Sunflare Driftmoth Skyriding mount, with the Sunflutter Driftmoth pet playfully fluttering by your side." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-07-14-catch-the-drift-with-a-6-month-subscription-9f2b671668"] = {
+            id = "2026-07-14-catch-the-drift-with-a-6-month-subscription-9f2b671668",
+            post_key = "9f2b671668",
+            title = "Catch the Drift with a 6-Month Subscription",
+            category = "General Discussion (EU)",
+            timestamp = 1784056385,
+            url = "https://eu.forums.blizzard.com/en/wow/t/623914/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-07-14-catch-the-drift-with-a-6-month-subscription-9f2b671668\\image-1.jpg" },
+            { type = "p", text = "Take wing through your World of Warcraft® adventures astride the woolly Sunflare Driftmoth Skyriding mount, with the Sunflutter Driftmoth pet playfully fluttering by your side." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-07-13-the-venomous-abyss-raid-testing-schedule-1cc158c320"] = {
             id = "2026-07-13-the-venomous-abyss-raid-testing-schedule-1cc158c320",
             post_key = "1cc158c320",
