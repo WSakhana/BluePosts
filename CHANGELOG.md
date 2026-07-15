@@ -1,3 +1,6 @@
+## 2.6.1
+- Updated bundled blue post data.
+
 ## 2.6.0
 - Updated: Feedback: Midnight Season 2 Dungeon Test July 14th - July 20th
 
@@ -675,6 +678,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

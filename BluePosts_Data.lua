@@ -1,6 +1,6 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1784077078,
+    package_timestamp = 1784157240,
     new_post_ids = {
     },
     posts = {
@@ -9,7 +9,7 @@ BluePosts_Data = {
             post_key = "661e2294bc",
             title = "Feedback: Midnight Season 2 Dungeon Test July 14th - July 20th",
             category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
-            timestamp = 1784076419,
+            timestamp = 1784156578,
             url = "https://us.forums.blizzard.com/en/wow/t/2326860/1",
             content = {
             { type = "p", text = "Greetings!" },
