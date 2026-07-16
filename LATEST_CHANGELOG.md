@@ -1,2 +1,2 @@
-## 2.6.1
-- Updated bundled blue post data.
+## 2.6.2
+- Added: Healer Tuning - July 16
