@@ -1,3 +1,7 @@
+## 2.6.7
+- Added: Class Tuning Incoming - 22 July
+- Added: Class Tuning Incoming - July 21
+
 ## 2.6.6
 - Updated: User Interface Updates in Classic
 - Removed: The Midnight: Revelations Content Update Goes Live 17 June!
@@ -701,6 +705,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
