@@ -1,3 +1,8 @@
+## 2.6.4
+- Added: Feedback: The Tidebound Grotto (Heroic)
+- Added: Feedback: The Tidebound Grotto (Mythic)
+- Updated: The Tidebound Grotto Raid Testing
+
 ## 2.6.3
 - Added: The Tidebound Grotto Raid Testing
 - Removed: The Midnight: Revelations Content Update is Now Live!
@@ -688,6 +693,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

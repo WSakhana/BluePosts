@@ -1,20 +1,49 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1784260802,
+    package_timestamp = 1784318065,
     new_post_ids = {
-        "2026-07-17-the-tidebound-grotto-raid-testing-5916c61e0b",
+        "2026-07-17-feedback-the-tidebound-grotto-heroic-b7843d04c8",
+        "2026-07-17-feedback-the-tidebound-grotto-mythic-334bb59b64",
     },
     posts = {
+        ["2026-07-17-feedback-the-tidebound-grotto-heroic-b7843d04c8"] = {
+            id = "2026-07-17-feedback-the-tidebound-grotto-heroic-b7843d04c8",
+            post_key = "b7843d04c8",
+            title = "Feedback: The Tidebound Grotto (Heroic)",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1784317390,
+            url = "https://us.forums.blizzard.com/en/wow/t/2327676/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "Please share any feedback you have about your experience in The Tidebound Grotto (Heroic) in this thread." },
+            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid, and the class/spec you played can also provide great context for your feedback." },
+            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
+            },
+        },
+        ["2026-07-17-feedback-the-tidebound-grotto-mythic-334bb59b64"] = {
+            id = "2026-07-17-feedback-the-tidebound-grotto-mythic-334bb59b64",
+            post_key = "334bb59b64",
+            title = "Feedback: The Tidebound Grotto (Mythic)",
+            category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
+            timestamp = 1784317384,
+            url = "https://us.forums.blizzard.com/en/wow/t/2327677/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "Please share any feedback you have about your experience in The Tidebound Grotto (Mythic) in this thread." },
+            { type = "p", text = "Noting the nature of your group (pre-made vs. guild), the size of your raid, and the class/spec you played can also provide great context for your feedback." },
+            { type = "p", text = "Thank you for spending your time to test on the PTR - we really appreciate it!" },
+            },
+        },
         ["2026-07-17-the-tidebound-grotto-raid-testing-5916c61e0b"] = {
             id = "2026-07-17-the-tidebound-grotto-raid-testing-5916c61e0b",
             post_key = "5916c61e0b",
             title = "The Tidebound Grotto Raid Testing",
             category = "Midnight: Curse of Ula'tek Public Test Realm (US)",
-            timestamp = 1784260139,
+            timestamp = 1784317259,
             url = "https://us.forums.blizzard.com/en/wow/t/2327554/1",
             content = {
             { type = "p", text = "Hello," },
-            { type = "p", text = "We will be testing the following raid encounters on Thursday, July 17th." },
+            { type = "p", text = "We will be testing the following raid encounters on Friday, July 17th." },
             { type = "p", text = "Unlike our normal raid testing, players will be required to make their way to the entrance of the instance. The entrance to the instance is south of Tokka’s Landing on The Coiled Isle, the new zone introduced in The Curse of Ula’tek update." },
             { type = "list_item", text = "Nymrissa Wavecaller (Heroic) – 13:00 PDT (16:00 EDT, 22:00 CEST)", level = 0 },
             { type = "list_item", text = "Nymrissa Wavecaller (Mythic) – 14:00 PDT (17:00 EDT, 23:00 CEST)", level = 0 },
