@@ -1,3 +1,8 @@
+## 2.6.6
+- Updated: User Interface Updates in Classic
+- Removed: The Midnight: Revelations Content Update Goes Live 17 June!
+- Removed: The Midnight: Revelations Content Update is Now Live!
+
 ## 2.6.5
 - Updated bundled blue post data.
 
@@ -696,6 +701,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
