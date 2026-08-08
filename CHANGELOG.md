@@ -1,3 +1,6 @@
+## 2.7.2
+- Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated 8 August
+
 ## 2.7.1
 - Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated 9 August
 - Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated August 8
@@ -745,6 +748,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
