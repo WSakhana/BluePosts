@@ -1,3 +1,21 @@
+## 2.6.9
+- Added: Curse of Ula’tek Goes Live August 11! Journey to the Coiled Isle.
+- Added: Hotfixes: July 28, 2026
+- Added: Step Into Lairs and Face the Foes Inside
+- Added: Get Ready for a Showdown in August’s Trading Post
+- Added: Craft New Adventures with D&D: World of Warcraft
+- Added: Stream and Listen to the World of Warcraft: Azeroth Housing Soundtrack
+- Added: 18 more posts.
+- Updated: World of Warcraft: Midnight Hotfixes - July 28
+- Updated: Midnight: Curse of Ula’tek 12.1 PTR Development Notes
+- Removed: Item Levels Increasing in Midnight Season 2
+- Removed: Atal’Utek Play with the Blues – July 10
+- Removed: Feedback: Midnight Season 2 Dungeon Testing July 2nd - July 6th
+- Removed: WoW Weekly: Turbulent Timeways, Curse of Ula'tek, July Trading Post, and More!
+- Removed: Warcraft Short Story: “The Bitter Truth”
+- Removed: 12.1.0 housing PTR notes
+- Removed: 23 more posts.
+
 ## 2.6.8
 - Added: Join the Final Surge for Decor Duels
 - Removed: Tend Azeroth’s Fires—the Midsummer Fire Festival Burns Until 5 July
@@ -715,6 +733,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
