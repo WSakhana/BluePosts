@@ -1,3 +1,6 @@
+## 2.7.0 - WoW 12.1 Compatibility Update
+- Updated: Interface version for WoW 12.1 (Curse of Ula'tek).
+
 ## 2.6.9
 - Added: Curse of Ula’tek Goes Live August 11! Journey to the Coiled Isle.
 - Added: Hotfixes: July 28, 2026
