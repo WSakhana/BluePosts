@@ -1,3 +1,6 @@
+## 2.7.7
+- Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated August 10
+
 ## 2.7.6
 - Added: Midnight: Curse of Ula'tek Pre-Season Details
 
@@ -760,6 +763,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

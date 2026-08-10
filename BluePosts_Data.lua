@@ -1,11 +1,25 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786397200,
+    package_timestamp = 1786398987,
     new_post_ids = {
-        "2026-08-10-midnight-curse-of-ulax27tek-pre-season-details-921b275b82",
-        "2026-08-10-midnight-curse-of-ulax27tek-pre-season-details-3f1982496e",
     },
     posts = {
+        ["2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-10-1c90fff24c"] = {
+            id = "2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-10-1c90fff24c",
+            post_key = "1c90fff24c",
+            title = "M+ Umbral Champion and Umbral Hero Scores -- Updated August 10",
+            category = "General Discussion (US)",
+            timestamp = 1786398306,
+            url = "https://us.forums.blizzard.com/en/wow/t/2333001/1",
+            content = {
+            { type = "p", text = "In this post, we’ll update the score required to earn the Umbral Champion and Umbral Hero titles for Midnight Season 1. As a reminder, the Umbral Champion title will go to all players who end Midnight Mythic+ Season 1 with a Mythic+ Rating in the top 1% in each region, and the Umbral Hero title will go to players who make the top 0.1%." },
+            { type = "p", text = "In this region, if Season 1 ended today, the top 1% would score at least:" },
+            { type = "h2", text = "3949" },
+            { type = "p", text = "In this region, if Season 1 ended today, the top 0.1% would score at least:" },
+            { type = "h2", text = "4207" },
+            { type = "p", text = "Good luck!" },
+            },
+        },
         ["2026-08-10-midnight-curse-of-ulax27tek-pre-season-details-921b275b82"] = {
             id = "2026-08-10-midnight-curse-of-ulax27tek-pre-season-details-921b275b82",
             post_key = "921b275b82",
@@ -738,22 +752,6 @@ BluePosts_Data = {
             { type = "p", text = "30 Community Coupons" },
             { type = "hr" },
             { type = "p", text = "Players may also notice new additions around their Neighborhood based on the Endeavors they have completed, both old and new, so keep an eye out during your visits. We look forward to seeing you in the neighborhood!" },
-            },
-        },
-        ["2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-9-1c90fff24c"] = {
-            id = "2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-9-1c90fff24c",
-            post_key = "1c90fff24c",
-            title = "M+ Umbral Champion and Umbral Hero Scores -- Updated August 9",
-            category = "General Discussion (US)",
-            timestamp = 1786374907,
-            url = "https://us.forums.blizzard.com/en/wow/t/2333001/1",
-            content = {
-            { type = "p", text = "In this post, we’ll update the score required to earn the Umbral Champion and Umbral Hero titles for Midnight Season 1. As a reminder, the Umbral Champion title will go to all players who end Midnight Mythic+ Season 1 with a Mythic+ Rating in the top 1% in each region, and the Umbral Hero title will go to players who make the top 0.1%." },
-            { type = "p", text = "In this region, if Season 1 ended today, the top 1% would score at least:" },
-            { type = "h2", text = "3939" },
-            { type = "p", text = "In this region, if Season 1 ended today, the top 0.1% would score at least:" },
-            { type = "h2", text = "4203" },
-            { type = "p", text = "Good luck!" },
             },
         },
         ["2026-08-08-m-umbral-champion-and-umbral-hero-scores-updated-8-august-9c22935ba4"] = {
