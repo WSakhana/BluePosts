@@ -1,9 +1,25 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786217212,
+    package_timestamp = 1786375591,
     new_post_ids = {
     },
     posts = {
+        ["2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-9-1c90fff24c"] = {
+            id = "2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-9-1c90fff24c",
+            post_key = "1c90fff24c",
+            title = "M+ Umbral Champion and Umbral Hero Scores -- Updated August 9",
+            category = "General Discussion (US)",
+            timestamp = 1786374907,
+            url = "https://us.forums.blizzard.com/en/wow/t/2333001/1",
+            content = {
+            { type = "p", text = "In this post, we’ll update the score required to earn the Umbral Champion and Umbral Hero titles for Midnight Season 1. As a reminder, the Umbral Champion title will go to all players who end Midnight Mythic+ Season 1 with a Mythic+ Rating in the top 1% in each region, and the Umbral Hero title will go to players who make the top 0.1%." },
+            { type = "p", text = "In this region, if Season 1 ended today, the top 1% would score at least:" },
+            { type = "h2", text = "3939" },
+            { type = "p", text = "In this region, if Season 1 ended today, the top 0.1% would score at least:" },
+            { type = "h2", text = "4203" },
+            { type = "p", text = "Good luck!" },
+            },
+        },
         ["2026-08-08-m-umbral-champion-and-umbral-hero-scores-updated-8-august-9c22935ba4"] = {
             id = "2026-08-08-m-umbral-champion-and-umbral-hero-scores-updated-8-august-9c22935ba4",
             post_key = "9c22935ba4",
@@ -17,22 +33,6 @@ BluePosts_Data = {
             { type = "h2", text = "3980" },
             { type = "p", text = "In this region, if Season 1 ended today, the top 0.1% would score at least:" },
             { type = "h2", text = "4221" },
-            { type = "p", text = "Good luck!" },
-            },
-        },
-        ["2026-08-08-m-umbral-champion-and-umbral-hero-scores-updated-august-8-1c90fff24c"] = {
-            id = "2026-08-08-m-umbral-champion-and-umbral-hero-scores-updated-august-8-1c90fff24c",
-            post_key = "1c90fff24c",
-            title = "M+ Umbral Champion and Umbral Hero Scores -- Updated August 8",
-            category = "General Discussion (US)",
-            timestamp = 1786208447,
-            url = "https://us.forums.blizzard.com/en/wow/t/2333001/1",
-            content = {
-            { type = "p", text = "In this post, we’ll update the score required to earn the Umbral Champion and Umbral Hero titles for Midnight Season 1. As a reminder, the Umbral Champion title will go to all players who end Midnight Mythic+ Season 1 with a Mythic+ Rating in the top 1% in each region, and the Umbral Hero title will go to players who make the top 0.1%." },
-            { type = "p", text = "In this region, if Season 1 ended today, the top 1% would score at least:" },
-            { type = "h2", text = "3934" },
-            { type = "p", text = "In this region, if Season 1 ended today, the top 0.1% would score at least:" },
-            { type = "h2", text = "4197" },
             { type = "p", text = "Good luck!" },
             },
         },

@@ -1,2 +1,2 @@
-## 2.7.2
-- Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated 8 August
+## 2.7.3
+- Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated August 9
