@@ -1,3 +1,6 @@
+## 2.7.6
+- Added: Midnight: Curse of Ula'tek Pre-Season Details
+
 ## 2.7.5
 - Added: Curse of Ula'tek Housing Updates: New Blueprints, Pets, and More Arrive for Your Home
 
@@ -757,6 +760,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
