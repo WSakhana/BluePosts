@@ -1,3 +1,6 @@
+## 2.7.4
+- Added: Undertake Four New Endeavors in Your Neighborhood!
+
 ## 2.7.3
 - Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated August 9
 
@@ -751,6 +754,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
