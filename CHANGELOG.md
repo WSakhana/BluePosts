@@ -1,3 +1,6 @@
+## 2.8.1
+- Added: Curse of Ula’tek Now live! Journey to the Coiled Isle.
+
 ## 2.8.0
 - Updated: M+ Umbral Champion and Umbral Hero Scores -- Final Update August 11
 
@@ -774,6 +777,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
