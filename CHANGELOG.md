@@ -1,3 +1,6 @@
+## 2.8.0
+- Updated: M+ Umbral Champion and Umbral Hero Scores -- Final Update August 11
+
 ## 2.7.9
 - Added: Epic Savings Await: Get 40% off on Midnight™ and More Through 13 September
 - Added: Epic Savings Await: Get 40% off on Midnight™ and More Through September 13
@@ -771,6 +774,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

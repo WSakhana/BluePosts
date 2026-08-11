@@ -1,11 +1,25 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786470102,
+    package_timestamp = 1786483596,
     new_post_ids = {
-        "2026-08-11-epic-savings-await-get-40-off-on-midnight-and-more-through-13-septembe-dfa43a7bda",
-        "2026-08-11-epic-savings-await-get-40-off-on-midnight-and-more-through-september-1-4f0cefb694",
     },
     posts = {
+        ["2026-08-11-m-umbral-champion-and-umbral-hero-scores-final-update-august-11-1c90fff24c"] = {
+            id = "2026-08-11-m-umbral-champion-and-umbral-hero-scores-final-update-august-11-1c90fff24c",
+            post_key = "1c90fff24c",
+            title = "M+ Umbral Champion and Umbral Hero Scores -- Final Update August 11",
+            category = "General Discussion (US)",
+            timestamp = 1786482908,
+            url = "https://us.forums.blizzard.com/en/wow/t/2333001/1",
+            content = {
+            { type = "p", text = "In this post, we updated the score required to earn the Umbral Champion and Umbral Hero titles for Midnight Season 1. As a reminder, the Umbral Champion title will go to all players who end Midnight Mythic+ Season 1 with a Mythic+ Rating in the top 1% in each region, and the Umbral Hero title will go to players who make the top 0.1%." },
+            { type = "p", text = "In this region, the top 1% scored at least:" },
+            { type = "h2", text = "3960" },
+            { type = "p", text = "In this region, the top 0.1% scored at least:" },
+            { type = "h2", text = "4211" },
+            { type = "p", text = "Good luck!" },
+            },
+        },
         ["2026-08-11-epic-savings-await-get-40-off-on-midnight-and-more-through-13-septembe-dfa43a7bda"] = {
             id = "2026-08-11-epic-savings-await-get-40-off-on-midnight-and-more-through-13-septembe-dfa43a7bda",
             post_key = "dfa43a7bda",
@@ -124,22 +138,6 @@ BluePosts_Data = {
             { type = "hr" },
             { type = "p", text = "Blizzard has the right to change, pause, or cancel this Twitch Drop and its terms if it cannot run as planned for any reason, including but not limited to technical issues or unexpected factors beyond Blizzard’s control." },
             { type = "p", text = "*Not available in World of Warcraft Classic® games. Requires World of Warcraft® Subscription or Game Time. Use and placement of decor items is limited to the Housing feature, which requires access to World of Warcraft®: Midnight." },
-            },
-        },
-        ["2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-10-1c90fff24c"] = {
-            id = "2026-08-10-m-umbral-champion-and-umbral-hero-scores-updated-august-10-1c90fff24c",
-            post_key = "1c90fff24c",
-            title = "M+ Umbral Champion and Umbral Hero Scores -- Updated August 10",
-            category = "General Discussion (US)",
-            timestamp = 1786398306,
-            url = "https://us.forums.blizzard.com/en/wow/t/2333001/1",
-            content = {
-            { type = "p", text = "In this post, we’ll update the score required to earn the Umbral Champion and Umbral Hero titles for Midnight Season 1. As a reminder, the Umbral Champion title will go to all players who end Midnight Mythic+ Season 1 with a Mythic+ Rating in the top 1% in each region, and the Umbral Hero title will go to players who make the top 0.1%." },
-            { type = "p", text = "In this region, if Season 1 ended today, the top 1% would score at least:" },
-            { type = "h2", text = "3949" },
-            { type = "p", text = "In this region, if Season 1 ended today, the top 0.1% would score at least:" },
-            { type = "h2", text = "4207" },
-            { type = "p", text = "Good luck!" },
             },
         },
         ["2026-08-10-midnight-curse-of-ulax27tek-pre-season-details-921b275b82"] = {
