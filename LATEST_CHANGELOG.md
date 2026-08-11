@@ -1,3 +1,3 @@
-## 2.7.8
-- Added: Twitch Drop Now Live! Get the Ensemble: Sorcerer's Grassy Garb Transmog
-- Updated: Twitch Drop Now Live! Get the Ensemble: Sorcerer's Grassy Garb Transmog
+## 2.7.9
+- Added: Epic Savings Await: Get 40% off on Midnight™ and More Through 13 September
+- Added: Epic Savings Await: Get 40% off on Midnight™ and More Through September 13

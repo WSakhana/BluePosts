@@ -1,3 +1,7 @@
+## 2.7.9
+- Added: Epic Savings Await: Get 40% off on Midnight™ and More Through 13 September
+- Added: Epic Savings Await: Get 40% off on Midnight™ and More Through September 13
+
 ## 2.7.8
 - Added: Twitch Drop Now Live! Get the Ensemble: Sorcerer's Grassy Garb Transmog
 - Updated: Twitch Drop Now Live! Get the Ensemble: Sorcerer's Grassy Garb Transmog
@@ -767,6 +771,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
