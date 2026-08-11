@@ -1,10 +1,21 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786488098,
+    package_timestamp = 1786490804,
     new_post_ids = {
-        "2026-08-11-curse-of-ulatek-now-live-journey-to-the-coiled-isle-15c82f8a8b",
+        "2026-08-11-malx27ganis-server-offline-7e0d1e9059",
     },
     posts = {
+        ["2026-08-11-malx27ganis-server-offline-7e0d1e9059"] = {
+            id = "2026-08-11-malx27ganis-server-offline-7e0d1e9059",
+            post_key = "7e0d1e9059",
+            title = "Mal'ganis server offline",
+            category = "General Discussion (US)",
+            timestamp = 1786490108,
+            url = "https://us.forums.blizzard.com/en/wow/t/2335068/1",
+            content = {
+            { type = "p", text = "See title, from the looks of it, it’s the only server offline" },
+            },
+        },
         ["2026-08-11-curse-of-ulatek-now-live-journey-to-the-coiled-isle-15c82f8a8b"] = {
             id = "2026-08-11-curse-of-ulatek-now-live-journey-to-the-coiled-isle-15c82f8a8b",
             post_key = "15c82f8a8b",
