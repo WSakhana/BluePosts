@@ -1,3 +1,7 @@
+## 2.7.8
+- Added: Twitch Drop Now Live! Get the Ensemble: Sorcerer's Grassy Garb Transmog
+- Updated: Twitch Drop Now Live! Get the Ensemble: Sorcerer's Grassy Garb Transmog
+
 ## 2.7.7
 - Updated: M+ Umbral Champion and Umbral Hero Scores -- Updated August 10
 
@@ -763,6 +767,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
