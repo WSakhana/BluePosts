@@ -1,2 +1,2 @@
-## 2.8.3
-- Added: Curse of Ula’tek Now live! Journey to the Coiled Isle.
+## 2.8.4
+- Added: How do you copy/import other people's blueprints?

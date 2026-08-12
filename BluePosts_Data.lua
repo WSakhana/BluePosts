@@ -1,10 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786514200,
+    package_timestamp = 1786570003,
     new_post_ids = {
-        "2026-08-12-curse-of-ulatek-now-live-journey-to-the-coiled-isle-1f2caa2e32",
+        "2026-08-12-how-do-you-copyimport-other-peoplex27s-blueprints-ec16e2872a",
     },
     posts = {
+        ["2026-08-12-how-do-you-copyimport-other-peoplex27s-blueprints-ec16e2872a"] = {
+            id = "2026-08-12-how-do-you-copyimport-other-peoplex27s-blueprints-ec16e2872a",
+            post_key = "ec16e2872a",
+            title = "How do you copy/import other people's blueprints?",
+            category = "Housing (US)",
+            timestamp = 1786569307,
+            url = "https://us.forums.blizzard.com/en/wow/t/2335763/1",
+            content = {
+            { type = "p", text = "Wife can’t figure it out?" },
+            { type = "p", text = "Where do you find other people’s blueprints is what she’s asking, to copy or import them." },
+            },
+        },
         ["2026-08-12-curse-of-ulatek-now-live-journey-to-the-coiled-isle-1f2caa2e32"] = {
             id = "2026-08-12-curse-of-ulatek-now-live-journey-to-the-coiled-isle-1f2caa2e32",
             post_key = "1f2caa2e32",

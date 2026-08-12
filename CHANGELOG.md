@@ -1,3 +1,6 @@
+## 2.8.4
+- Added: How do you copy/import other people's blueprints?
+
 ## 2.8.3
 - Added: Curse of Ula’tek Now live! Journey to the Coiled Isle.
 
@@ -783,6 +786,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
