@@ -1,3 +1,6 @@
+## 2.8.5
+- Added: Check out the Housing Blueprints Forum Right Here
+
 ## 2.8.4
 - Added: How do you copy/import other people's blueprints?
 
@@ -786,6 +789,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

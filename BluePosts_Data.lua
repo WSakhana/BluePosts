@@ -1,8 +1,9 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786570003,
+    package_timestamp = 1786570937,
     new_post_ids = {
-        "2026-08-12-how-do-you-copyimport-other-peoplex27s-blueprints-ec16e2872a",
+        "2026-08-12-check-out-the-housing-blueprints-forum-right-here-7837a5cbeb",
+        "2026-08-12-check-out-the-housing-blueprints-forum-right-here-de74462879",
     },
     posts = {
         ["2026-08-12-how-do-you-copyimport-other-peoplex27s-blueprints-ec16e2872a"] = {
@@ -10,11 +11,35 @@ BluePosts_Data = {
             post_key = "ec16e2872a",
             title = "How do you copy/import other people's blueprints?",
             category = "Housing (US)",
-            timestamp = 1786569307,
+            timestamp = 1786570230,
             url = "https://us.forums.blizzard.com/en/wow/t/2335763/1",
             content = {
             { type = "p", text = "Wife can’t figure it out?" },
             { type = "p", text = "Where do you find other people’s blueprints is what she’s asking, to copy or import them." },
+            },
+        },
+        ["2026-08-12-check-out-the-housing-blueprints-forum-right-here-7837a5cbeb"] = {
+            id = "2026-08-12-check-out-the-housing-blueprints-forum-right-here-7837a5cbeb",
+            post_key = "7837a5cbeb",
+            title = "Check out the Housing Blueprints Forum Right Here",
+            category = "Housing (US)",
+            timestamp = 1786570225,
+            url = "https://us.forums.blizzard.com/en/wow/t/2335794/1",
+            content = {
+            { type = "p", text = "In case you didn’t notice, there’s a whole forum for sharing and discussing Blueprints:" },
+            { type = "h3", text = "Housing Blueprints" },
+            },
+        },
+        ["2026-08-12-check-out-the-housing-blueprints-forum-right-here-de74462879"] = {
+            id = "2026-08-12-check-out-the-housing-blueprints-forum-right-here-de74462879",
+            post_key = "de74462879",
+            title = "Check out the Housing Blueprints Forum Right Here",
+            category = "Housing (EU)",
+            timestamp = 1786570218,
+            url = "https://eu.forums.blizzard.com/en/wow/t/625671/1",
+            content = {
+            { type = "p", text = "In case you didn’t notice, there’s a whole forum for sharing and discussing Blueprints:" },
+            { type = "h3", text = "Housing Blueprints" },
             },
         },
         ["2026-08-12-curse-of-ulatek-now-live-journey-to-the-coiled-isle-1f2caa2e32"] = {

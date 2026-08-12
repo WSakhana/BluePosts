@@ -1,2 +1,2 @@
-## 2.8.4
-- Added: How do you copy/import other people's blueprints?
+## 2.8.5
+- Added: Check out the Housing Blueprints Forum Right Here
