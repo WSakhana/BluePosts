@@ -1,3 +1,6 @@
+## 2.8.3
+- Added: Curse of Ula’tek Now live! Journey to the Coiled Isle.
+
 ## 2.8.2
 - Added: Mal'ganis server offline
 
@@ -780,6 +783,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
