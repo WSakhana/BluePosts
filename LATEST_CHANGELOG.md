@@ -1,2 +1,2 @@
-## 2.8.5
-- Added: Check out the Housing Blueprints Forum Right Here
+## 2.8.6
+- Added: Season 2 Class Tuning Plans
