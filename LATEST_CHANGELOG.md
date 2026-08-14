@@ -1,2 +1,3 @@
-## 2.8.6
-- Added: Season 2 Class Tuning Plans
+## 2.8.7
+- Added: Hotfixes: August 13, 2026
+- Added: World of Warcraft: Midnight Hotfixes - August 13, 2026
