@@ -1,3 +1,6 @@
+## 2.8.8
+- Added: WoW Weekly: Curse of Ula'tek, Blueprints, Endeavors, and More!
+
 ## 2.8.7
 - Added: Hotfixes: August 13, 2026
 - Added: World of Warcraft: Midnight Hotfixes - August 13, 2026
@@ -796,6 +799,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
