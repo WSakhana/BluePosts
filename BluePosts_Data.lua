@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1786728422,
+    package_timestamp = 1786732921,
     new_post_ids = {
-        "2026-08-14-wow-weekly-curse-of-ulax27tek-blueprints-endeavors-and-more-17589c62ca",
-        "2026-08-14-wow-weekly-curse-of-ulax27tek-blueprints-endeavors-and-more-7b43bac3ea",
+        "2026-08-14-some-player-have-3-spark-8f4f4b8034",
+        "2026-08-14-some-people-can-get-3-sparks-this-week-and-others-only-2-ae13b368fb",
     },
     posts = {
+        ["2026-08-14-some-player-have-3-spark-8f4f4b8034"] = {
+            id = "2026-08-14-some-player-have-3-spark-8f4f4b8034",
+            post_key = "8f4f4b8034",
+            title = "Some player have 3 spark",
+            category = "General Discussion (EU)",
+            timestamp = 1786732220,
+            url = "https://eu.forums.blizzard.com/en/wow/t/625790/1",
+            content = {
+            { type = "p", text = "hello , blizzard" },
+            { type = "p", text = "why i dont have 3x spark my bag i saw many player have 3 spark" },
+            { type = "p", text = "in my bag i have 1 spark" },
+            },
+        },
+        ["2026-08-14-some-people-can-get-3-sparks-this-week-and-others-only-2-ae13b368fb"] = {
+            id = "2026-08-14-some-people-can-get-3-sparks-this-week-and-others-only-2-ae13b368fb",
+            post_key = "ae13b368fb",
+            title = "Some people can get 3 sparks this week and others only 2",
+            category = "General Discussion (US)",
+            timestamp = 1786732217,
+            url = "https://us.forums.blizzard.com/en/wow/t/2335523/1",
+            content = {
+            { type = "p", text = "The curse surge quest or collect 100 void whispers gives a spark for pve" },
+            { type = "p", text = "Sparks of war in voidstorm or naigtal gives the second spark for the week via pvp." },
+            { type = "p", text = "However, if you never did the midnight tour quest, to do all the faction community events, you can get a 3rd spark from that and be ahead of everyone else immediately on crafting items next week." },
+            },
+        },
         ["2026-08-14-wow-weekly-curse-of-ulax27tek-blueprints-endeavors-and-more-17589c62ca"] = {
             id = "2026-08-14-wow-weekly-curse-of-ulax27tek-blueprints-endeavors-and-more-17589c62ca",
             post_key = "17589c62ca",

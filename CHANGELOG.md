@@ -1,3 +1,7 @@
+## 2.8.9
+- Added: Some player have 3 spark
+- Added: Some people can get 3 sparks this week and others only 2
+
 ## 2.8.8
 - Added: WoW Weekly: Curse of Ula'tek, Blueprints, Endeavors, and More!
 
@@ -799,6 +803,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

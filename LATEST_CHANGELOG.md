@@ -1,2 +1,3 @@
-## 2.8.8
-- Added: WoW Weekly: Curse of Ula'tek, Blueprints, Endeavors, and More!
+## 2.8.9
+- Added: Some player have 3 spark
+- Added: Some people can get 3 sparks this week and others only 2
