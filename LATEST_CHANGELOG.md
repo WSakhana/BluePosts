@@ -1,3 +1,3 @@
-## 2.9.4
-- Added: Hotfixes: August 17, 2026
-- Updated: World of Warcraft: Midnight Hotfixes - August 17, 2026
+## 2.9.5
+- Added: Season 2 Dungeon Adjustments Incoming - August 18
+- Added: Season 2 Dungeon Adjustments Incoming - 19 August
