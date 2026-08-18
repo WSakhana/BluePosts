@@ -1,31 +1,31 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787088425,
+    package_timestamp = 1787090225,
     new_post_ids = {
     },
     posts = {
-        ["2026-08-18-item-adjustment-incoming-august-18-77063a3f31"] = {
-            id = "2026-08-18-item-adjustment-incoming-august-18-77063a3f31",
+        ["2026-08-18-item-adjustment-incoming-august-25-77063a3f31"] = {
+            id = "2026-08-18-item-adjustment-incoming-august-25-77063a3f31",
             post_key = "77063a3f31",
-            title = "Item Adjustment Incoming - August 18",
+            title = "Item Adjustment Incoming - August 25",
             category = "General Discussion (US)",
-            timestamp = 1787087721,
+            timestamp = 1787089522,
             url = "https://us.forums.blizzard.com/en/wow/t/2338382/1",
             content = {
-            { type = "p", text = "With a hotfix that will go live soon today, we’re adjusting one item:" },
+            { type = "p", text = "With a hotfix that will go live with scheduled weekly maintenance on August 25, we’re adjusting one item:" },
             { type = "h2", text = "ITEMS" },
             { type = "list_item", text = "Aqirbane Reliquary now grants a smaller quantity of all secondary stats (was a large quantity of only Critical Strike). Its first on-equip effect is unchanged, and its second on-equip effect has been updated to increase a random secondary stat (was only Critical Strike) while decreasing the other three.", level = 0 },
             },
         },
-        ["2026-08-18-item-adjustment-incoming-august-18-85ebfaaaf9"] = {
-            id = "2026-08-18-item-adjustment-incoming-august-18-85ebfaaaf9",
+        ["2026-08-18-item-adjustment-incoming-26-august-85ebfaaaf9"] = {
+            id = "2026-08-18-item-adjustment-incoming-26-august-85ebfaaaf9",
             post_key = "85ebfaaaf9",
-            title = "Item Adjustment Incoming - August 18",
+            title = "Item Adjustment Incoming - 26 August",
             category = "General Discussion (EU)",
-            timestamp = 1787087716,
+            timestamp = 1787089514,
             url = "https://eu.forums.blizzard.com/en/wow/t/626209/1",
             content = {
-            { type = "p", text = "With a hotfix that will go live soon today, we’re adjusting one item:" },
+            { type = "p", text = "With a hotfix that will go live with scheduled weekly maintenance on August 26, we’re adjusting one item:" },
             { type = "h2", text = "ITEMS" },
             { type = "list_item", text = "Aqirbane Reliquary now grants a smaller quantity of all secondary stats (was a large quantity of only Critical Strike). Its first on-equip effect is unchanged, and its second on-equip effect has been updated to increase a random secondary stat (was only Critical Strike) while decreasing the other three.", level = 0 },
             },
