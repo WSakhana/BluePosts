@@ -1,3 +1,8 @@
+## 2.9.6
+- Added: Curse of Ula’tek: The Venomous Abyss Raid Now Live!
+- Added: Now Live: The Venomous Abyss Raid, Mythic+ and PvP Season 2, and More!
+- Added: Into the Venomous Abyss: Midnight's Race to World First Begins
+
 ## 2.9.5
 - Added: Season 2 Dungeon Adjustments Incoming - August 18
 - Added: Season 2 Dungeon Adjustments Incoming - 19 August
@@ -824,6 +829,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
