@@ -1,2 +1,2 @@
-## 2.9.7
-- Added: Trinket Adjustment Incoming - August 18
+## 2.9.8
+- Updated: Item Adjustment Incoming - August 18

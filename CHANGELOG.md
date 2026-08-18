@@ -1,3 +1,6 @@
+## 2.9.8
+- Updated: Item Adjustment Incoming - August 18
+
 ## 2.9.7
 - Added: Trinket Adjustment Incoming - August 18
 
@@ -832,6 +835,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
