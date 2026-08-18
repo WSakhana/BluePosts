@@ -1,13 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787076729,
+    package_timestamp = 1787087610,
     new_post_ids = {
-        "2026-08-18-curse-of-ulatek-the-venomous-abyss-raid-now-live-7a43ed4dc7",
-        "2026-08-18-now-live-the-venomous-abyss-raid-mythic-and-pvp-season-2-and-more-fa68d3f668",
-        "2026-08-18-into-the-venomous-abyss-midnightx27s-race-to-world-first-begins-d70c2f5830",
-        "2026-08-18-into-the-venomous-abyss-midnightx27s-race-to-world-first-begins-6979f914ca",
+        "2026-08-18-trinket-adjustment-incoming-august-18-77063a3f31",
+        "2026-08-18-trinket-adjustment-incoming-august-18-85ebfaaaf9",
     },
     posts = {
+        ["2026-08-18-trinket-adjustment-incoming-august-18-77063a3f31"] = {
+            id = "2026-08-18-trinket-adjustment-incoming-august-18-77063a3f31",
+            post_key = "77063a3f31",
+            title = "Trinket Adjustment Incoming - August 18",
+            category = "General Discussion (US)",
+            timestamp = 1787086818,
+            url = "https://us.forums.blizzard.com/en/wow/t/2338382/1",
+            content = {
+            { type = "p", text = "With a hotfix that will go live soon today, we’re adjusting a trinket:" },
+            { type = "h2", text = "ITEMS" },
+            { type = "list_item", text = "Aqirbane Reliquary now grants a smaller quantity of all secondary stats (was a large quantity of only Critical Strike). Its first on-equip effect is unchanged, and its second on-equip effect has been updated to increase a random secondary stat (was only Critical Strike) while decreasing the other three.", level = 0 },
+            },
+        },
+        ["2026-08-18-trinket-adjustment-incoming-august-18-85ebfaaaf9"] = {
+            id = "2026-08-18-trinket-adjustment-incoming-august-18-85ebfaaaf9",
+            post_key = "85ebfaaaf9",
+            title = "Trinket Adjustment Incoming - August 18",
+            category = "General Discussion (EU)",
+            timestamp = 1787086813,
+            url = "https://eu.forums.blizzard.com/en/wow/t/626209/1",
+            content = {
+            { type = "p", text = "With a hotfix that will go live soon today, we’re adjusting a trinket:" },
+            { type = "h2", text = "ITEMS" },
+            { type = "list_item", text = "Aqirbane Reliquary now grants a smaller quantity of all secondary stats (was a large quantity of only Critical Strike). Its first on-equip effect is unchanged, and its second on-equip effect has been updated to increase a random secondary stat (was only Critical Strike) while decreasing the other three.", level = 0 },
+            },
+        },
         ["2026-08-18-curse-of-ulatek-the-venomous-abyss-raid-now-live-7a43ed4dc7"] = {
             id = "2026-08-18-curse-of-ulatek-the-venomous-abyss-raid-now-live-7a43ed4dc7",
             post_key = "7a43ed4dc7",
