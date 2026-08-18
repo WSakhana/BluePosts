@@ -1,3 +1,6 @@
+## 2.9.3
+- Updated: CLASS CHANGES
+
 ## 2.9.2
 - Updated: CLASS CHANGES
 
@@ -813,6 +816,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

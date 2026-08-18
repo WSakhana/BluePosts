@@ -1,15 +1,15 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787002023,
+    package_timestamp = 1787014623,
     new_post_ids = {
     },
     posts = {
-        ["2026-08-17-class-changes-f07c3e5f6d"] = {
-            id = "2026-08-17-class-changes-f07c3e5f6d",
+        ["2026-08-18-class-changes-f07c3e5f6d"] = {
+            id = "2026-08-18-class-changes-f07c3e5f6d",
             post_key = "f07c3e5f6d",
             title = "CLASS CHANGES",
             category = "General Discussion (US)",
-            timestamp = 1787001316,
+            timestamp = 1787013919,
             url = "https://us.forums.blizzard.com/en/wow/t/2336820/1",
             content = {
             { type = "p", text = "With the first week of the Curse of Ula’tek content update, we’re making some adjustments to low and high performers to start Season 2 next week. We’ve identified several tier sets that would greatly overperform our expected targets if we didn’t make targeted adjustments to bring their throughput to more expected power levels. At the same time, we’re increasing affected specs baseline abilities to limit the impact of the changes to their tier set bonuses." },
@@ -50,6 +50,9 @@ BluePosts_Data = {
             { type = "dev_note", text = "Mistweaver has been underperforming so we are targeting increases to its casted healing and the Venomous Abyss 4-set bonus to improve its performance and maintain build diversity.", level = 2 },
             { type = "list_item", text = "All healing increased by 8%. Does not affect PvP combat.", level = 2 },
             { type = "list_item", text = "Venomous Abyss 4-set bonus has been updated – Activation rate increased by 33%.", level = 2 },
+            { type = "list_item", text = "PALADIN", level = 0 },
+            { type = "list_item", text = "Retribution", level = 1 },
+            { type = "list_item", text = "All ability damage increased by 6%.", level = 2 },
             { type = "list_item", text = "PRIEST", level = 0 },
             { type = "list_item", text = "Discipline", level = 1 },
             { type = "dev_note", text = "We are reducing Discipline Priest’s damage done and offsetting this in Atonement to not affect their overall healing as their damage has been overperforming compared to other healers. At the same time, we are increasing the damage of Entropic Rift to minimize the impact this will have on Voidweaver’s dungeon viability and help maintain high damage as one of its strengths.", level = 2 },
@@ -128,12 +131,12 @@ BluePosts_Data = {
             { type = "list_item", text = "Soul Fire damage reduced by 30% in PvP combat.", level = 2 },
             },
         },
-        ["2026-08-17-class-changes-6a546a32b3"] = {
-            id = "2026-08-17-class-changes-6a546a32b3",
+        ["2026-08-18-class-changes-6a546a32b3"] = {
+            id = "2026-08-18-class-changes-6a546a32b3",
             post_key = "6a546a32b3",
             title = "CLASS CHANGES",
             category = "General Discussion (EU)",
-            timestamp = 1787001312,
+            timestamp = 1787013913,
             url = "https://eu.forums.blizzard.com/en/wow/t/625879/1",
             content = {
             { type = "p", text = "With the first week of the Curse of Ula’tek content update, we’re making some adjustments to low and high performers to start Season 2 next week. We’ve identified several tier sets that would greatly overperform our expected targets if we didn’t make targeted adjustments to bring their throughput to more expected power levels. At the same time, we’re increasing affected specs baseline abilities to limit the impact of the changes to their tier set bonuses." },
@@ -174,6 +177,9 @@ BluePosts_Data = {
             { type = "dev_note", text = "Mistweaver has been underperforming so we are targeting increases to its casted healing and the Venomous Abyss 4-set bonus to improve its performance and maintain build diversity.", level = 2 },
             { type = "list_item", text = "All healing increased by 8%. Does not affect PvP combat.", level = 2 },
             { type = "list_item", text = "Venomous Abyss 4-set bonus has been updated – Activation rate increased by 33%.", level = 2 },
+            { type = "list_item", text = "PALADIN", level = 0 },
+            { type = "list_item", text = "Retribution", level = 1 },
+            { type = "list_item", text = "All ability damage increased by 6%.", level = 2 },
             { type = "list_item", text = "PRIEST", level = 0 },
             { type = "list_item", text = "Discipline", level = 1 },
             { type = "dev_note", text = "We are reducing Discipline Priest’s damage done and offsetting this in Atonement to not affect their overall healing as their damage has been overperforming compared to other healers. At the same time, we are increasing the damage of Entropic Rift to minimize the impact this will have on Voidweaver’s dungeon viability and help maintain high damage as one of its strengths.", level = 2 },
