@@ -1,3 +1,6 @@
+## 3.0.1
+- Added: Curse of Ula’tek: The Venomous Abyss Raid Now Live!
+
 ## 3.0.0
 - Added: Hotfixes: August 18, 2026
 - Updated: Hotfixes: August 18, 2026
@@ -845,6 +848,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
