@@ -1,2 +1,2 @@
-## 3.0.1
-- Added: Curse of Ula’tek: The Venomous Abyss Raid Now Live!
+## 3.0.2
+- Updated: World of Warcraft: Midnight Hotfixes - August 19

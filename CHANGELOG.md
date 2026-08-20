@@ -1,3 +1,6 @@
+## 3.0.2
+- Updated: World of Warcraft: Midnight Hotfixes - August 19
+
 ## 3.0.1
 - Added: Curse of Ula’tek: The Venomous Abyss Raid Now Live!
 
@@ -848,6 +851,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
