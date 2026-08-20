@@ -1,3 +1,8 @@
+## 3.0.3
+- Added: Hotfixes: August 19, 2026
+- Updated: Hotfixes: August 19, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - 19 August
+
 ## 3.0.2
 - Updated: World of Warcraft: Midnight Hotfixes - August 19
 
@@ -851,6 +856,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
