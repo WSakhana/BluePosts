@@ -1,4 +1,2 @@
-## 3.0.4
-- Added: Hotfixes: August 20, 2026
-- Updated: World of Warcraft: Midnight Hotfixes - 20 August
-- Updated: World of Warcraft: Midnight Hotfixes - August 20
+## 3.0.5
+- Added: The Venomous Abyss, Season 2, and More Await in This Week’s WoW Weekly!
