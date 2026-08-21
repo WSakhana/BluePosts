@@ -1,3 +1,7 @@
+## 3.0.6
+- Added: Altar of Fangs Adjustments - August 21
+- Added: Altar of Fangs Adjustments - 21 August
+
 ## 3.0.5
 - Added: The Venomous Abyss, Season 2, and More Await in This Week’s WoW Weekly!
 
@@ -864,6 +868,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

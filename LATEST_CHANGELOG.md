@@ -1,2 +1,3 @@
-## 3.0.5
-- Added: The Venomous Abyss, Season 2, and More Await in This Week’s WoW Weekly!
+## 3.0.6
+- Added: Altar of Fangs Adjustments - August 21
+- Added: Altar of Fangs Adjustments - 21 August
