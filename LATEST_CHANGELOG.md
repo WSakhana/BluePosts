@@ -1,3 +1,3 @@
-## 3.0.6
-- Added: Altar of Fangs Adjustments - August 21
-- Added: Altar of Fangs Adjustments - 21 August
+## 3.0.7
+- Added: Class Tuning Incoming – August 25
+- Added: Class Tuning Incoming – 26 August
