@@ -1,3 +1,8 @@
+## 3.0.8
+- Added: Hotfixes: August 21, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - August 21
+- Updated: World of Warcraft: Midnight Hotfixes - 21 August
+
 ## 3.0.7
 - Added: Class Tuning Incoming – August 25
 - Added: Class Tuning Incoming – 26 August
@@ -872,6 +877,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
