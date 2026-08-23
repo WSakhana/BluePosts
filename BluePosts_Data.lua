@@ -1,11 +1,26 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787364741,
+    package_timestamp = 1787449340,
     new_post_ids = {
-        "2026-08-22-hotfixes-august-21-2026-e0dc8eb65c",
-        "2026-08-22-hotfixes-august-21-2026-61be699062",
+        "2026-08-23-nymrissa-wavecaller-tuning-changes-a26a926645",
     },
     posts = {
+        ["2026-08-23-nymrissa-wavecaller-tuning-changes-a26a926645"] = {
+            id = "2026-08-23-nymrissa-wavecaller-tuning-changes-a26a926645",
+            post_key = "a26a926645",
+            title = "Nymrissa Wavecaller Tuning Changes",
+            category = "Dungeons, Raids and Scenarios (US)",
+            timestamp = 1787448611,
+            url = "https://us.forums.blizzard.com/en/wow/t/2340109/1",
+            content = {
+            { type = "p", text = "Hello," },
+            { type = "p", text = "We just sent a hotfix with the following changes to Nymrissa Wavecaller on Mythic difficulty:" },
+            { type = "list_item", text = "Abyssal Rain’s initial damage reduced by 12.5% on Mythic difficulty", level = 0 },
+            { type = "list_item", text = "Abyssal Rain’s periodic damage reduced by 20% on Mythic difficulty", level = 0 },
+            { type = "list_item", text = "Reduced Abyssal Rain’s damage scaling based on group size for larger groups", level = 0 },
+            { type = "list_item", text = "Frost Burst damage reduced by 40%", level = 0 },
+            },
+        },
         ["2026-08-22-hotfixes-august-21-2026-e0dc8eb65c"] = {
             id = "2026-08-22-hotfixes-august-21-2026-e0dc8eb65c",
             post_key = "e0dc8eb65c",

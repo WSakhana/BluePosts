@@ -1,3 +1,6 @@
+## 3.0.9
+- Added: Nymrissa Wavecaller Tuning Changes
+
 ## 3.0.8
 - Added: Hotfixes: August 21, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - August 21
@@ -877,6 +880,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
