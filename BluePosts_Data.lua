@@ -1,11 +1,41 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787592449,
+    package_timestamp = 1787596041,
     new_post_ids = {
-        "2026-08-24-september-is-a-great-month-to-celebrate-friendship-at-the-trading-post-b230ed3bb8",
-        "2026-08-24-september-is-a-great-month-to-celebrate-friendship-at-the-trading-post-ae182020cb",
+        "2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5",
+        "2026-08-24-new-raids-open-at-2359-cest-on-august-27-8769974689",
     },
     posts = {
+        ["2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5"] = {
+            id = "2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5",
+            post_key = "e699b5b7d5",
+            title = "New Raids Open at 3:00 p.m. PDT on August 27",
+            category = "The Burning Crusade Classic (US)",
+            timestamp = 1787595317,
+            url = "https://us.forums.blizzard.com/en/wow/t/2340643/1",
+            content = {
+            { type = "p", text = "First and foremost, we’d like to thank everyone who participated in raid testing on the PTR. Thanks to your testing, we were able to identify and fix several issues, including the first wave of attackers for the Horde base sometimes de-spawning, the wave counter UI at the top of the screen disappearing, and some boss abilities incorrectly targeting the tank." },
+            { type = "p", text = "We’re also adding extra tier token drops to bosses, just like we did previously. That increase was not on the PTR, but will be in place when the new raids open on Thursday, August 27 at 3:00 p.m. PDT (6:00 p.m. EDT)." },
+            { type = "p", text = "One question we saw a bit was asking for clarity on our previously-posted statement “We will plan to make other Phase 3 loot changes to heroic dungeon bosses in Phase 3.” As some players correctly concluded, that was intended to call out the Phase 3 changes that players are already familiar with, such as the Epic Gems. We do not have any surprise additional loot changes in the works." },
+            { type = "p", text = "As a reminder, Arena Season 3 starts with the weekly reset next week – that’s the morning of September 1 in this region." },
+            { type = "p", text = "We’ll see you there!" },
+            },
+        },
+        ["2026-08-24-new-raids-open-at-2359-cest-on-august-27-8769974689"] = {
+            id = "2026-08-24-new-raids-open-at-2359-cest-on-august-27-8769974689",
+            post_key = "8769974689",
+            title = "New Raids Open at 23:59 CEST on August 27",
+            category = "The Burning Crusade Classic (EU)",
+            timestamp = 1787595313,
+            url = "https://eu.forums.blizzard.com/en/wow/t/626698/1",
+            content = {
+            { type = "p", text = "First and foremost, we’d like to thank everyone who participated in raid testing on the PTR. Thanks to your testing, we were able to identify and fix several issues, including the first wave of attackers for the Horde base sometimes de-spawning, the wave counter UI at the top of the screen disappearing, and some boss abilities incorrectly targeting the tank." },
+            { type = "p", text = "We’re also adding extra tier token drops to bosses, just like we did previously. That increase was not on the PTR, but will be in place when the new raids open on Thursday, August 27 at 23:59 CEST." },
+            { type = "p", text = "One question we saw a bit was asking for clarity on our previously-posted statement “We will plan to make other Phase 3 loot changes to heroic dungeon bosses in Phase 3.” As some players correctly concluded, that was intended to call out the Phase 3 changes that players are already familiar with, such as the Epic Gems. We do not have any surprise additional loot changes in the works." },
+            { type = "p", text = "As a reminder, Arena Season 3 starts with the weekly reset next week – that’s the morning of September 2 in this region." },
+            { type = "p", text = "We’ll see you there!" },
+            },
+        },
         ["2026-08-24-september-is-a-great-month-to-celebrate-friendship-at-the-trading-post-b230ed3bb8"] = {
             id = "2026-08-24-september-is-a-great-month-to-celebrate-friendship-at-the-trading-post-b230ed3bb8",
             post_key = "b230ed3bb8",

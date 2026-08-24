@@ -1,3 +1,7 @@
+## 3.1.1
+- Added: New Raids Open at 3:00 p.m. PDT on August 27
+- Added: New Raids Open at 23:59 CEST on August 27
+
 ## 3.1.0
 - Added: September is a Great Month to Celebrate Friendship at the Trading Post
 
@@ -883,6 +887,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
