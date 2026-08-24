@@ -1,3 +1,6 @@
+## 3.1.0
+- Added: September is a Great Month to Celebrate Friendship at the Trading Post
+
 ## 3.0.9
 - Added: Nymrissa Wavecaller Tuning Changes
 
@@ -880,6 +883,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

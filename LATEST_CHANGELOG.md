@@ -1,2 +1,2 @@
-## 3.0.9
-- Added: Nymrissa Wavecaller Tuning Changes
+## 3.1.0
+- Added: September is a Great Month to Celebrate Friendship at the Trading Post
