@@ -1,9 +1,7 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787596041,
+    package_timestamp = 1787607742,
     new_post_ids = {
-        "2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5",
-        "2026-08-24-new-raids-open-at-2359-cest-on-august-27-8769974689",
     },
     posts = {
         ["2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5"] = {
@@ -11,7 +9,7 @@ BluePosts_Data = {
             post_key = "e699b5b7d5",
             title = "New Raids Open at 3:00 p.m. PDT on August 27",
             category = "The Burning Crusade Classic (US)",
-            timestamp = 1787595317,
+            timestamp = 1787607009,
             url = "https://us.forums.blizzard.com/en/wow/t/2340643/1",
             content = {
             { type = "p", text = "First and foremost, we’d like to thank everyone who participated in raid testing on the PTR. Thanks to your testing, we were able to identify and fix several issues, including the first wave of attackers for the Horde base sometimes de-spawning, the wave counter UI at the top of the screen disappearing, and some boss abilities incorrectly targeting the tank." },
