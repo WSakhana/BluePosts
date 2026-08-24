@@ -1,2 +1,2 @@
-## 3.1.4
-- Updated: Class Tuning Incoming – 26 August
+## 3.1.5
+- Updated bundled blue post data.

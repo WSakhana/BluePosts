@@ -1,3 +1,6 @@
+## 3.1.5
+- Updated bundled blue post data.
+
 ## 3.1.4
 - Updated: Class Tuning Incoming – 26 August
 
@@ -896,6 +899,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
