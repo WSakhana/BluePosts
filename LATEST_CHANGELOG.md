@@ -1,2 +1,2 @@
-## 3.1.7
-- Added: Carve, Climb, and Cruise Through the Skies of Northrend
+## 3.1.8
+- Added: Curse of Ula’tek: The Venomous Abyss Story Mode and Raid Finder Wing 2 Now Live!
