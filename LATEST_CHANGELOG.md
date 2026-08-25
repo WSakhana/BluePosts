@@ -1,3 +1,2 @@
-## 3.2.0
-- Added: Bloom Bright with the Vibrant Petalweave Collection
-- Added: Set Out with the Hearthkeeper’s Wandering Caravan Mount
+## 3.2.1
+- Added: Fixing Misplaced Sparks of Tides - August 25

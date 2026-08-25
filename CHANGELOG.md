@@ -1,3 +1,6 @@
+## 3.2.1
+- Added: Fixing Misplaced Sparks of Tides - August 25
+
 ## 3.2.0
 - Added: Bloom Bright with the Vibrant Petalweave Collection
 - Added: Set Out with the Hearthkeeper’s Wandering Caravan Mount
@@ -916,6 +919,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

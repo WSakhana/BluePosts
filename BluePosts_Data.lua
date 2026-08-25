@@ -1,13 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787683372,
+    package_timestamp = 1787686940,
     new_post_ids = {
-        "2026-08-25-bloom-bright-with-the-vibrant-petalweave-collection-a9915f258e",
-        "2026-08-25-bloom-bright-with-the-vibrant-petalweave-collection-e43bfa2979",
-        "2026-08-25-set-out-with-the-hearthkeepers-wandering-caravan-mount-1a68897895",
-        "2026-08-25-set-out-with-the-hearthkeepers-wandering-caravan-mount-6f6389b585",
+        "2026-08-25-fixing-misplaced-sparks-of-tides-august-25-74a5dff0aa",
     },
     posts = {
+        ["2026-08-25-fixing-misplaced-sparks-of-tides-august-25-74a5dff0aa"] = {
+            id = "2026-08-25-fixing-misplaced-sparks-of-tides-august-25-74a5dff0aa",
+            post_key = "74a5dff0aa",
+            title = "Fixing Misplaced Sparks of Tides - August 25",
+            category = "General Discussion (US)",
+            timestamp = 1787686209,
+            url = "https://us.forums.blizzard.com/en/wow/t/2341043/1",
+            content = {
+            { type = "p", text = "During scheduled weekly maintenance this morning, we addressed issues affecting players who were missing Spark of Tides items." },
+            { type = "p", text = "Additional cleanup waves will happen throughout the week, which will resolve some rare cases in which players who were accidentally granted Sparks over the cap. Those players may have some removed." },
+            { type = "p", text = "Thank you for your patience!" },
+            },
+        },
         ["2026-08-25-bloom-bright-with-the-vibrant-petalweave-collection-a9915f258e"] = {
             id = "2026-08-25-bloom-bright-with-the-vibrant-petalweave-collection-a9915f258e",
             post_key = "a9915f258e",
