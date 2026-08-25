@@ -1,31 +1,16 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787611312,
+    package_timestamp = 1787617628,
     new_post_ids = {
     },
     posts = {
-        ["2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5"] = {
-            id = "2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5",
-            post_key = "e699b5b7d5",
-            title = "New Raids Open at 3:00 p.m. PDT on August 27",
-            category = "The Burning Crusade Classic (US)",
-            timestamp = 1787610609,
-            url = "https://us.forums.blizzard.com/en/wow/t/2340643/1",
-            content = {
-            { type = "p", text = "First and foremost, we’d like to thank everyone who participated in raid testing on the PTR. Thanks to your testing, we were able to identify and fix several issues, including the first wave of attackers for the Horde base sometimes de-spawning, the wave counter UI at the top of the screen disappearing, and some boss abilities incorrectly targeting the tank." },
-            { type = "p", text = "We’re also adding extra tier token drops to bosses, just like we did previously. That increase was not on the PTR, but will be in place when the new raids open on Thursday, August 27 at 3:00 p.m. PDT (6:00 p.m. EDT)." },
-            { type = "p", text = "One question we saw a bit was asking for clarity on our previously-posted statement “We will plan to make other Phase 3 loot changes to heroic dungeon bosses in Phase 3.” As some players correctly concluded, that was intended to call out the Phase 3 changes that players are already familiar with, such as the Epic Gems. We do not have any surprise additional loot changes in the works." },
-            { type = "p", text = "As a reminder, Arena Season 3 starts with the weekly reset next week – that’s the morning of September 1 in this region." },
-            { type = "p", text = "We’ll see you there!" },
-            },
-        },
-        ["2026-08-24-class-tuning-incoming-26-august-fc37ef1749"] = {
-            id = "2026-08-24-class-tuning-incoming-26-august-fc37ef1749",
-            post_key = "fc37ef1749",
-            title = "Class Tuning Incoming – 26 August",
-            category = "General Discussion (EU)",
-            timestamp = 1787608808,
-            url = "https://eu.forums.blizzard.com/en/wow/t/626484/1",
+        ["2026-08-25-class-tuning-incoming-august-25-8a01cf4496"] = {
+            id = "2026-08-25-class-tuning-incoming-august-25-8a01cf4496",
+            post_key = "8a01cf4496",
+            title = "Class Tuning Incoming – August 25",
+            category = "General Discussion (US)",
+            timestamp = 1787616909,
+            url = "https://us.forums.blizzard.com/en/wow/t/2339812/1",
             content = {
             { type = "p", text = "As we previously indicated, we’re doing broad class tuning each week for the first three weeks of the Curse of Ula’tek content update. With scheduled weekly maintenance in each region, we’ll make the following tuning adjustments." },
             { type = "h2", text = "CLASSES" },
@@ -226,13 +211,28 @@ BluePosts_Data = {
             { type = "list_item", text = "Fueled by Violence healing reduced by 15% in PvP combat.", level = 2 },
             },
         },
-        ["2026-08-24-class-tuning-incoming-august-25-8a01cf4496"] = {
-            id = "2026-08-24-class-tuning-incoming-august-25-8a01cf4496",
-            post_key = "8a01cf4496",
-            title = "Class Tuning Incoming – August 25",
-            category = "General Discussion (US)",
-            timestamp = 1787607907,
-            url = "https://us.forums.blizzard.com/en/wow/t/2339812/1",
+        ["2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5"] = {
+            id = "2026-08-24-new-raids-open-at-300-pm-pdt-on-august-27-e699b5b7d5",
+            post_key = "e699b5b7d5",
+            title = "New Raids Open at 3:00 p.m. PDT on August 27",
+            category = "The Burning Crusade Classic (US)",
+            timestamp = 1787610609,
+            url = "https://us.forums.blizzard.com/en/wow/t/2340643/1",
+            content = {
+            { type = "p", text = "First and foremost, we’d like to thank everyone who participated in raid testing on the PTR. Thanks to your testing, we were able to identify and fix several issues, including the first wave of attackers for the Horde base sometimes de-spawning, the wave counter UI at the top of the screen disappearing, and some boss abilities incorrectly targeting the tank." },
+            { type = "p", text = "We’re also adding extra tier token drops to bosses, just like we did previously. That increase was not on the PTR, but will be in place when the new raids open on Thursday, August 27 at 3:00 p.m. PDT (6:00 p.m. EDT)." },
+            { type = "p", text = "One question we saw a bit was asking for clarity on our previously-posted statement “We will plan to make other Phase 3 loot changes to heroic dungeon bosses in Phase 3.” As some players correctly concluded, that was intended to call out the Phase 3 changes that players are already familiar with, such as the Epic Gems. We do not have any surprise additional loot changes in the works." },
+            { type = "p", text = "As a reminder, Arena Season 3 starts with the weekly reset next week – that’s the morning of September 1 in this region." },
+            { type = "p", text = "We’ll see you there!" },
+            },
+        },
+        ["2026-08-24-class-tuning-incoming-26-august-fc37ef1749"] = {
+            id = "2026-08-24-class-tuning-incoming-26-august-fc37ef1749",
+            post_key = "fc37ef1749",
+            title = "Class Tuning Incoming – 26 August",
+            category = "General Discussion (EU)",
+            timestamp = 1787608808,
+            url = "https://eu.forums.blizzard.com/en/wow/t/626484/1",
             content = {
             { type = "p", text = "As we previously indicated, we’re doing broad class tuning each week for the first three weeks of the Curse of Ula’tek content update. With scheduled weekly maintenance in each region, we’ll make the following tuning adjustments." },
             { type = "h2", text = "CLASSES" },
