@@ -1,3 +1,6 @@
+## 3.1.7
+- Added: Carve, Climb, and Cruise Through the Skies of Northrend
+
 ## 3.1.6
 - Updated bundled blue post data.
 
@@ -902,6 +905,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
