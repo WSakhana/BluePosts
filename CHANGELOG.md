@@ -1,3 +1,7 @@
+## 3.2.0
+- Added: Bloom Bright with the Vibrant Petalweave Collection
+- Added: Set Out with the Hearthkeeper’s Wandering Caravan Mount
+
 ## 3.1.9
 - Added: Hotfixes: August 25, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - August 25
@@ -912,6 +916,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
