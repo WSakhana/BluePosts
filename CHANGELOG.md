@@ -1,3 +1,6 @@
+## 3.2.2
+- Updated: World of Warcraft: Midnight Hotfixes - 25 August
+
 ## 3.2.1
 - Added: Fixing Misplaced Sparks of Tides - August 25
 
@@ -919,6 +922,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

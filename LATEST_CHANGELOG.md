@@ -1,2 +1,2 @@
-## 3.2.1
-- Added: Fixing Misplaced Sparks of Tides - August 25
+## 3.2.2
+- Updated: World of Warcraft: Midnight Hotfixes - 25 August
