@@ -1,3 +1,6 @@
+## 3.2.3
+- Updated: Curse of Ula’tek: The Venomous Abyss Story Mode and Raid Finder Wing 2 Now Live!
+
 ## 3.2.2
 - Updated: World of Warcraft: Midnight Hotfixes - 25 August
 
@@ -922,6 +925,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
