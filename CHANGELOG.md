@@ -1,3 +1,6 @@
+## 3.2.5
+- Added: BCC Anniversary Edition: Black Temple Now Live
+
 ## 3.2.4
 - Updated: Hotfixes: August 26, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - August 26
@@ -930,6 +933,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
