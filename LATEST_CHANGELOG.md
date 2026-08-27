@@ -1,2 +1,4 @@
-## 3.2.3
-- Updated: Curse of Ula’tek: The Venomous Abyss Story Mode and Raid Finder Wing 2 Now Live!
+## 3.2.4
+- Updated: Hotfixes: August 26, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - August 26
+- Updated: World of Warcraft: Midnight Hotfixes - 26 August
