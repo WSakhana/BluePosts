@@ -1,2 +1,2 @@
-## 3.2.6
-- Added: Hotfixes: August 27, 2026
+## 3.2.7
+- Added: Raid Bonus Roll Update

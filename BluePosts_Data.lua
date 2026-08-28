@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1787879563,
+    package_timestamp = 1787880449,
     new_post_ids = {
-        "2026-08-28-hotfixes-august-27-2026-6afb57e22b",
-        "2026-08-28-hotfixes-august-27-2026-4f5b5a42ef",
+        "2026-08-28-raid-bonus-roll-update-378c38ee27",
+        "2026-08-28-raid-bonus-roll-update-1ed4143f3c",
     },
     posts = {
+        ["2026-08-28-raid-bonus-roll-update-378c38ee27"] = {
+            id = "2026-08-28-raid-bonus-roll-update-378c38ee27",
+            post_key = "378c38ee27",
+            title = "Raid Bonus Roll Update",
+            category = "General Discussion (US)",
+            timestamp = 1787879721,
+            url = "https://us.forums.blizzard.com/en/wow/t/2341990/1",
+            content = {
+            { type = "p", text = "With scheduled weekly maintenance next week (September 1 in this region), we’re implementing a change to raid loot." },
+            { type = "list_item", text = "Bonus Rolls can only be used on encounters where the player is eligible to receive loot.", level = 0 },
+            { type = "p", text = "This means that on each difficulty, once a player has been locked out of receiving loot for the week, defeating a boss a second or subsequent time before the end of the week will not provide an opportunity for the use of a Bonus Roll. While this is a change in loot behavior from Season 1, we feel that it more closely aligns with how loot works in general, and will be healthier for the acquisition of loot overall." },
+            },
+        },
+        ["2026-08-28-raid-bonus-roll-update-1ed4143f3c"] = {
+            id = "2026-08-28-raid-bonus-roll-update-1ed4143f3c",
+            post_key = "1ed4143f3c",
+            title = "Raid Bonus Roll Update",
+            category = "General Discussion (EU)",
+            timestamp = 1787879715,
+            url = "https://eu.forums.blizzard.com/en/wow/t/626957/1",
+            content = {
+            { type = "p", text = "With scheduled weekly maintenance next week (2 September in this region), we’re implementing a change to raid loot." },
+            { type = "list_item", text = "Bonus Rolls can only be used on encounters where the player is eligible to receive loot.", level = 0 },
+            { type = "p", text = "This means that on each difficulty, once a player has been locked out of receiving loot for the week, defeating a boss a second or subsequent time before the end of the week will not provide an opportunity for the use of a Bonus Roll. While this is a change in loot behavior from Season 1, we feel that it more closely aligns with how loot works in general, and will be healthier for the acquisition of loot overall." },
+            },
+        },
         ["2026-08-28-hotfixes-august-27-2026-6afb57e22b"] = {
             id = "2026-08-28-hotfixes-august-27-2026-6afb57e22b",
             post_key = "6afb57e22b",
