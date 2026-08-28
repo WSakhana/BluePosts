@@ -1,2 +1,2 @@
-## 3.2.5
-- Added: BCC Anniversary Edition: Black Temple Now Live
+## 3.2.6
+- Added: Hotfixes: August 27, 2026
