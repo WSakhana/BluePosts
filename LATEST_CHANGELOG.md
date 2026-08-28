@@ -1,2 +1,3 @@
-## 3.2.8
-- Added: Black Temple, The Venomous Abyss, and More in This Week’s WoW Weekly
+## 3.2.9
+- Added: Class Tuning Incoming – September 1
+- Added: Class Tuning Incoming – 1 September
