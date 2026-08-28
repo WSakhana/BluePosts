@@ -1,3 +1,6 @@
+## 3.2.8
+- Added: Black Temple, The Venomous Abyss, and More in This Week’s WoW Weekly
+
 ## 3.2.7
 - Added: Raid Bonus Roll Update
 
@@ -939,6 +942,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

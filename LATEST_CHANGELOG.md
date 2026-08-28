@@ -1,2 +1,2 @@
-## 3.2.7
-- Added: Raid Bonus Roll Update
+## 3.2.8
+- Added: Black Temple, The Venomous Abyss, and More in This Week’s WoW Weekly
