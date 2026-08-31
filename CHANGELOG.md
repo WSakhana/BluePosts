@@ -1,3 +1,7 @@
+## 3.3.0
+- Updated: Class Tuning Incoming – September 1
+- Updated: Class Tuning Incoming – 1 September
+
 ## 3.2.9
 - Added: Class Tuning Incoming – September 1
 - Added: Class Tuning Incoming – 1 September
@@ -946,6 +950,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
