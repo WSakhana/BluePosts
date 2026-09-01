@@ -1,2 +1,2 @@
-## 3.3.3
-- Updated: Curse of Ula’tek: The Venomous Abyss Raid Finder Wing 3 Now Live!
+## 3.3.4
+- Added: Black Temple Attunement Bugfix

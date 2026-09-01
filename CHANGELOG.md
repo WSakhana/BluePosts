@@ -1,3 +1,6 @@
+## 3.3.4
+- Added: Black Temple Attunement Bugfix
+
 ## 3.3.3
 - Updated: Curse of Ula’tek: The Venomous Abyss Raid Finder Wing 3 Now Live!
 
@@ -962,6 +965,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,9 +1,39 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1788285444,
+    package_timestamp = 1788289068,
     new_post_ids = {
+        "2026-09-01-black-temple-attunement-bugfix-a987e80db1",
+        "2026-09-01-black-temple-attunement-bugfix-3ee0b7988c",
     },
     posts = {
+        ["2026-09-01-black-temple-attunement-bugfix-a987e80db1"] = {
+            id = "2026-09-01-black-temple-attunement-bugfix-a987e80db1",
+            post_key = "a987e80db1",
+            title = "Black Temple Attunement Bugfix",
+            category = "The Burning Crusade Classic (US)",
+            timestamp = 1788288321,
+            url = "https://us.forums.blizzard.com/en/wow/t/2343643/1",
+            content = {
+            { type = "p", text = "Some players have noticed that we have a bug associated with the Black Temple attunement questline. With scheduled weekly maintenance next week (September 8 in this region), we’re going to implement a fix for it. The result of that fix will be that the full quest chain to unlock Black Temple will be required for entry, as intended." },
+            { type = "p", text = "At the same time, players who have not completed the attunement quest chain will lose access to Black Temple if they currently have access." },
+            { type = "p", text = "Additionally, if you’re raiding on alts, you’ll need to log-in to a character who has completed the full quest chain in order to unlock the attunement for the rest of your account." },
+            { type = "p", text = "Thank you for your feedback and reports on this!" },
+            },
+        },
+        ["2026-09-01-black-temple-attunement-bugfix-3ee0b7988c"] = {
+            id = "2026-09-01-black-temple-attunement-bugfix-3ee0b7988c",
+            post_key = "3ee0b7988c",
+            title = "Black Temple Attunement Bugfix",
+            category = "The Burning Crusade Classic (EU)",
+            timestamp = 1788288316,
+            url = "https://eu.forums.blizzard.com/en/wow/t/627315/1",
+            content = {
+            { type = "p", text = "Some players have noticed that we have a bug associated with the Black Temple attunement questline. With scheduled weekly maintenance next week, 9 September in this region, we’re going to implement a fix for it. The result of that fix will be that the full quest chain to unlock Black Temple will be required for entry, as intended." },
+            { type = "p", text = "At the same time, players who have not completed the attunement quest chain will lose access to Black Temple if they currently have access." },
+            { type = "p", text = "Additionally, if you’re raiding on alts, you’ll need to log-in to a character who has completed the full quest chain in order to unlock the attunement for the rest of your account." },
+            { type = "p", text = "Thank you for your feedback and reports on this!" },
+            },
+        },
         ["2026-09-01-curse-of-ulatek-the-venomous-abyss-raid-finder-wing-3-now-live-c474080b14"] = {
             id = "2026-09-01-curse-of-ulatek-the-venomous-abyss-raid-finder-wing-3-now-live-c474080b14",
             post_key = "c474080b14",
