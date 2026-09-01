@@ -1,3 +1,6 @@
+## 3.3.3
+- Updated: Curse of Ula’tek: The Venomous Abyss Raid Finder Wing 3 Now Live!
+
 ## 3.3.2
 - Added: The AWC and MDI Grand Finals Arrive Soon at BlizzCon 2026!
 - Added: BlizzCon 2026 Is Nearly Here: Watch Live, Earn Rewards, and More
@@ -959,6 +962,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
