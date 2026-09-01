@@ -1,3 +1,3 @@
-## 3.3.0
-- Updated: Class Tuning Incoming – September 1
-- Updated: Class Tuning Incoming – 1 September
+## 3.3.1
+- Added: Hotfixes: August 31, 2026
+- Updated: Hotfixes: August 31, 2026
