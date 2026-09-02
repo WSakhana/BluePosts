@@ -1,3 +1,6 @@
+## 3.3.7
+- Updated: Missing Sparks of Tides - Updated September 2
+
 ## 3.3.6
 - Added: WoW Roofus Pack Raises More Than $1.3M for Habitat for Humanity
 
@@ -971,6 +974,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

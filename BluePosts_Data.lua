@@ -1,12 +1,27 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1788369255,
+    package_timestamp = 1788372807,
     new_post_ids = {
-        "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640",
-        "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-45ad2f8352",
-        "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-deee8cadc8",
     },
     posts = {
+        ["2026-09-02-missing-sparks-of-tides-updated-september-2-74a5dff0aa"] = {
+            id = "2026-09-02-missing-sparks-of-tides-updated-september-2-74a5dff0aa",
+            post_key = "74a5dff0aa",
+            title = "Missing Sparks of Tides - Updated September 2",
+            category = "General Discussion (US)",
+            timestamp = 1788372060,
+            url = "https://us.forums.blizzard.com/en/wow/t/2341043/1",
+            content = {
+            { type = "h2", text = "UPDATED SEPTEMBER 2" },
+            { type = "p", text = "As we previously indicated, we had an issue where some players did not receive Sparks of Tides that were due to them. Our previous remedy for this left a number of players still missing Sparks. We’re continuing to work on this, and we’re getting closer to a solution." },
+            { type = "p", text = "We expect to restore Sparks to most players who are still missing them over the next few days, and we’ll update this thread again when that effort is complete." },
+            { type = "hr" },
+            { type = "h2", text = "PREVIOUSLY POSTED" },
+            { type = "p", text = "During scheduled weekly maintenance this morning, we addressed issues affecting players who were missing Spark of Tides items." },
+            { type = "p", text = "Additional cleanup waves will happen throughout the week, which will resolve some rare cases in which players who were accidentally granted Sparks over the cap. Those players may have some removed." },
+            { type = "p", text = "Thank you for your patience!" },
+            },
+        },
         ["2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640"] = {
             id = "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640",
             post_key = "8c3f9cc640",
@@ -8952,19 +8967,6 @@ BluePosts_Data = {
             { type = "list_item", text = "Warrior: Jade Warlord’s Dominion", level = 0 },
             { type = "hr" },
             { type = "p", text = "We look forward to joining you in the Venomous Abyss!" },
-            },
-        },
-        ["2026-08-25-fixing-misplaced-sparks-of-tides-august-25-74a5dff0aa"] = {
-            id = "2026-08-25-fixing-misplaced-sparks-of-tides-august-25-74a5dff0aa",
-            post_key = "74a5dff0aa",
-            title = "Fixing Misplaced Sparks of Tides - August 25",
-            category = "General Discussion (US)",
-            timestamp = 1787686209,
-            url = "https://us.forums.blizzard.com/en/wow/t/2341043/1",
-            content = {
-            { type = "p", text = "During scheduled weekly maintenance this morning, we addressed issues affecting players who were missing Spark of Tides items." },
-            { type = "p", text = "Additional cleanup waves will happen throughout the week, which will resolve some rare cases in which players who were accidentally granted Sparks over the cap. Those players may have some removed." },
-            { type = "p", text = "Thank you for your patience!" },
             },
         },
         ["2026-08-25-bloom-bright-with-the-vibrant-petalweave-collection-a9915f258e"] = {

@@ -1,2 +1,2 @@
-## 3.3.6
-- Added: WoW Roofus Pack Raises More Than $1.3M for Habitat for Humanity
+## 3.3.7
+- Updated: Missing Sparks of Tides - Updated September 2
