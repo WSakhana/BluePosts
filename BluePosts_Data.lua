@@ -1,11 +1,51 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1788309810,
+    package_timestamp = 1788369255,
     new_post_ids = {
-        "2026-09-02-hotfixes-september-1-2026-10a08754bf",
-        "2026-09-02-hotfixes-september-1-2026-c6015fbdaa",
+        "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640",
+        "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-45ad2f8352",
+        "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-deee8cadc8",
     },
     posts = {
+        ["2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640"] = {
+            id = "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640",
+            post_key = "8c3f9cc640",
+            title = "WoW Roofus Pack Raises More Than $1.3M for Habitat for Humanity",
+            category = "General Discussion (EU)",
+            timestamp = 1788368483,
+            url = "https://eu.forums.blizzard.com/en/wow/t/627390/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-8c3f9cc640\\image-1.jpg" },
+            { type = "p", text = "Thanks to the World of Warcraft community, the Roofus Pack raised more than $1.3 million USD for Habitat for Humanity, turning an in-game companion and cozy Housing Decor into real-world support for families and communities." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-45ad2f8352"] = {
+            id = "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-45ad2f8352",
+            post_key = "45ad2f8352",
+            title = "WoW Roofus Pack Raises More Than $1.3M for Habitat for Humanity",
+            category = "General Discussion (EU)",
+            timestamp = 1788368478,
+            url = "https://eu.forums.blizzard.com/en/wow/t/627391/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-45ad2f8352\\image-1.jpg" },
+            { type = "p", text = "Thanks to the World of Warcraft community, the Roofus Pack raised more than $1.3 million USD for Habitat for Humanity, turning an in-game companion and cozy Housing Decor into real-world support for families and communities." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-deee8cadc8"] = {
+            id = "2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-deee8cadc8",
+            post_key = "deee8cadc8",
+            title = "WoW Roofus Pack Raises More Than $1.3M for Habitat for Humanity",
+            category = "General Discussion (US)",
+            timestamp = 1788368472,
+            url = "https://us.forums.blizzard.com/en/wow/t/2343947/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-02-wow-roofus-pack-raises-more-than-13m-for-habitat-for-humanity-deee8cadc8\\image-1.jpg" },
+            { type = "p", text = "Thanks to the World of Warcraft community, the Roofus Pack raised more than $1.3 million USD for Habitat for Humanity, turning an in-game companion and cozy Housing Decor into real-world support for families and communities." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-09-02-hotfixes-september-1-2026-10a08754bf"] = {
             id = "2026-09-02-hotfixes-september-1-2026-10a08754bf",
             post_key = "10a08754bf",
