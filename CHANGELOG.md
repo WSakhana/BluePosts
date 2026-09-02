@@ -1,3 +1,6 @@
+## 3.3.5
+- Added: Hotfixes: September 1, 2026
+
 ## 3.3.4
 - Added: Black Temple Attunement Bugfix
 
@@ -965,6 +968,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

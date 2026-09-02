@@ -1,2 +1,2 @@
-## 3.3.4
-- Added: Black Temple Attunement Bugfix
+## 3.3.5
+- Added: Hotfixes: September 1, 2026
