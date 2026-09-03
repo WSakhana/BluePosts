@@ -1,3 +1,6 @@
+## 3.3.9
+- Added: Midnight 12.1.5 Overview: New Adventures Await
+
 ## 3.3.8
 - Added: Hotfixes: September 2, 2026
 
@@ -977,6 +980,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
