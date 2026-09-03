@@ -1,2 +1,2 @@
-## 3.3.7
-- Updated: Missing Sparks of Tides - Updated September 2
+## 3.3.8
+- Added: Hotfixes: September 2, 2026
