@@ -1,2 +1,2 @@
-## 3.3.9
-- Added: Midnight 12.1.5 Overview: New Adventures Await
+## 3.4.0
+- Added: Hotfixes: September 3, 2026
