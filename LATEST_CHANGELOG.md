@@ -1,2 +1,2 @@
-## 3.4.0
-- Added: Hotfixes: September 3, 2026
+## 3.4.1
+- Added: BlizzCon 2026, Midnight 12.1.5, and More in This Week’s WoW Weekly
