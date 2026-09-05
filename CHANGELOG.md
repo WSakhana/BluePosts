@@ -1,3 +1,6 @@
+## 3.4.2
+- Added: Hotfixes: September 4, 2026
+
 ## 3.4.1
 - Added: BlizzCon 2026, Midnight 12.1.5, and More in This Week’s WoW Weekly
 
@@ -986,6 +989,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
