@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1788573252,
+    package_timestamp = 1788887625,
     new_post_ids = {
-        "2026-09-05-hotfixes-september-4-2026-ecea0da56e",
-        "2026-09-05-hotfixes-september-4-2026-2c7f262663",
+        "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3",
+        "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-bb191e3846",
     },
     posts = {
+        ["2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3"] = {
+            id = "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3",
+            post_key = "fcec34e3f3",
+            title = "Collect Trader’s Tender in Midnight’s Winds of Mysterious Fortune",
+            category = "General Discussion (EU)",
+            timestamp = 1788886873,
+            url = "https://eu.forums.blizzard.com/en/wow/t/627784/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3\\image-1.jpg" },
+            { type = "p", text = "The forecast calls for fortune! Log in during the Winds of Mysterious Fortune event to earn Trader’s Tender, collect Mysterious Satchels, and breeze through your adventures with bonus experience and reputation gains." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-bb191e3846"] = {
+            id = "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-bb191e3846",
+            post_key = "bb191e3846",
+            title = "Collect Trader’s Tender in Midnight’s Winds of Mysterious Fortune",
+            category = "General Discussion (US)",
+            timestamp = 1788886868,
+            url = "https://us.forums.blizzard.com/en/wow/t/2345978/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-bb191e3846\\image-1.jpg" },
+            { type = "p", text = "The forecast calls for fortune! Log in during the Winds of Mysterious Fortune event to earn Trader’s Tender, collect Mysterious Satchels, and breeze through your adventures with bonus experience and reputation gains." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-09-05-hotfixes-september-4-2026-ecea0da56e"] = {
             id = "2026-09-05-hotfixes-september-4-2026-ecea0da56e",
             post_key = "ecea0da56e",
