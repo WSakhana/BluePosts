@@ -1,11 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1788887625,
+    package_timestamp = 1788895734,
     new_post_ids = {
-        "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3",
-        "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-bb191e3846",
+        "2026-09-08-fix-for-error-on-entering-instances-8-september-2a1a879feb",
     },
     posts = {
+        ["2026-09-08-fix-for-error-on-entering-instances-8-september-2a1a879feb"] = {
+            id = "2026-09-08-fix-for-error-on-entering-instances-8-september-2a1a879feb",
+            post_key = "2a1a879feb",
+            title = "Fix for error on entering instances - 8 September",
+            category = "The Burning Crusade Classic (EU)",
+            timestamp = 1788894960,
+            url = "https://eu.forums.blizzard.com/en/wow/t/627797/1",
+            content = {
+            { type = "p", text = "Players in this region have been frequently seeing a Transfer aborted: Instance not found error when trying to enter instances." },
+            { type = "h3", text = "We’ve identified the issue and we’ve now deployed a fix for it." },
+            { type = "p", text = "Thank you for your in-game bug reports. They were very helpful to us in tracking this down. Please continue to report any similar issues if you encounter them." },
+            },
+        },
         ["2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3"] = {
             id = "2026-09-08-collect-traders-tender-in-midnights-winds-of-mysterious-fortune-fcec34e3f3",
             post_key = "fcec34e3f3",

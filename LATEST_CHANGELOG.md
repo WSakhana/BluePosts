@@ -1,2 +1,2 @@
-## 3.4.3
-- Added: Collect Trader’s Tender in Midnight’s Winds of Mysterious Fortune
+## 3.4.4
+- Added: Fix for error on entering instances - 8 September
