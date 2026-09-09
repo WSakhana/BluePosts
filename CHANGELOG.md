@@ -1,3 +1,8 @@
+## 3.4.7
+- Added: Hotfixes: September 9, 2026
+- Added: The Burning Crusade Hotfixes - Updated September 9
+- Added: The Burning Crusade Hotfixes - Updated 9 September
+
 ## 3.4.6
 - Added: Tune in to World of Warcraft at BlizzCon 2026
 
@@ -1001,6 +1006,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
