@@ -1,2 +1,2 @@
-## 3.4.4
-- Added: Fix for error on entering instances - 8 September
+## 3.4.5
+- Added: The Unbinding of Kith'ix Raid Testing Schedule
