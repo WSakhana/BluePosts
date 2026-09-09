@@ -1,3 +1,6 @@
+## 3.4.6
+- Added: Tune in to World of Warcraft at BlizzCon 2026
+
 ## 3.4.5
 - Added: The Unbinding of Kith'ix Raid Testing Schedule
 
@@ -998,6 +1001,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
