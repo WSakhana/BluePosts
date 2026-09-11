@@ -1,3 +1,8 @@
+## 3.4.8
+- Added: Hotfixes: September 10, 2026
+- Updated: The Burning Crusade Hotfixes - Updated 10 September
+- Updated: The Burning Crusade Hotfixes - Updated September 10
+
 ## 3.4.7
 - Added: Hotfixes: September 9, 2026
 - Added: The Burning Crusade Hotfixes - Updated September 9
@@ -1006,6 +1011,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
