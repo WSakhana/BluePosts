@@ -1,3 +1,7 @@
+## 3.5.0
+- Added: Submit Your Question for the Live WoW Q&A on September 17
+- Added: World of Warcraft Live Q&A -- September 17
+
 ## 3.4.9
 - Added: Now Live! Watch and Earn New BlizzCon 226 Rewards
 
@@ -1014,6 +1018,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

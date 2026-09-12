@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789240439,
+    package_timestamp = 1789244934,
     new_post_ids = {
-        "2026-09-12-now-live-watch-and-earn-new-blizzcon-226-rewards-c0f17df116",
-        "2026-09-12-now-live-watch-and-earn-new-blizzcon-226-rewards-5f2361d7cc",
+        "2026-09-12-submit-your-question-for-the-live-wow-qa-on-september-17-aba6714793",
+        "2026-09-12-world-of-warcraft-live-qa-september-17-390dd2feca",
     },
     posts = {
+        ["2026-09-12-submit-your-question-for-the-live-wow-qa-on-september-17-aba6714793"] = {
+            id = "2026-09-12-submit-your-question-for-the-live-wow-qa-on-september-17-aba6714793",
+            post_key = "aba6714793",
+            title = "Submit Your Question for the Live WoW Q&A on September 17",
+            category = "General Discussion (US)",
+            timestamp = 1789244169,
+            url = "https://us.forums.blizzard.com/en/wow/t/2347251/1",
+            content = {
+            { type = "p", text = "Post here to submit your question for the WoW Q&A, and then watch the Q&A live at 10:00 a.m. PDT on September 17." },
+            },
+        },
+        ["2026-09-12-world-of-warcraft-live-qa-september-17-390dd2feca"] = {
+            id = "2026-09-12-world-of-warcraft-live-qa-september-17-390dd2feca",
+            post_key = "390dd2feca",
+            title = "World of Warcraft Live Q&A -- September 17",
+            category = "General Discussion (EU)",
+            timestamp = 1789244165,
+            url = "https://eu.forums.blizzard.com/en/wow/t/628062/1",
+            content = {
+            { type = "p", text = "Post here to submit your question for the WoW Q&A, and then watch the Q&A live at 19:00 CEST on September 17." },
+            },
+        },
         ["2026-09-12-now-live-watch-and-earn-new-blizzcon-226-rewards-c0f17df116"] = {
             id = "2026-09-12-now-live-watch-and-earn-new-blizzcon-226-rewards-c0f17df116",
             post_key = "c0f17df116",

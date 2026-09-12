@@ -1,2 +1,3 @@
-## 3.4.9
-- Added: Now Live! Watch and Earn New BlizzCon 226 Rewards
+## 3.5.0
+- Added: Submit Your Question for the Live WoW Q&A on September 17
+- Added: World of Warcraft Live Q&A -- September 17
