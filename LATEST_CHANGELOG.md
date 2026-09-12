@@ -1,2 +1,2 @@
-## 3.5.3
-- Added: World of Warcraft: Forever What’s Next Panel Recap
+## 3.5.4
+- Added: World of Warcraft: Midnight What’s Next Panel Recap

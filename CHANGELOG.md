@@ -1,3 +1,6 @@
+## 3.5.4
+- Added: World of Warcraft: Midnight What’s Next Panel Recap
+
 ## 3.5.3
 - Added: World of Warcraft: Forever What’s Next Panel Recap
 
@@ -1030,6 +1033,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
