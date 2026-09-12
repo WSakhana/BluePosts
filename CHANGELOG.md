@@ -1,3 +1,6 @@
+## 3.4.9
+- Added: Now Live! Watch and Earn New BlizzCon 226 Rewards
+
 ## 3.4.8
 - Added: Hotfixes: September 10, 2026
 - Updated: The Burning Crusade Hotfixes - Updated 10 September
@@ -1011,6 +1014,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
