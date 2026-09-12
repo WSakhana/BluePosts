@@ -1,3 +1,8 @@
+## 3.5.2
+- Added: Pre-Purchase the World of Warcraft®: Forever Collector’s Edition
+- Added: Submit Your Questions for the World of Warcraft Live Q&A 17 September
+- Added: Submit Your Questions for the World of Warcraft Live Q&A September 17
+
 ## 3.5.1
 - Added: Wage War Once More with Warcraft III Reforged: Forsaken Kingdom
 - Added: Pre-Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth
@@ -1022,6 +1027,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
