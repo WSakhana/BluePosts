@@ -1,2 +1,2 @@
-## 3.5.4
-- Added: World of Warcraft: Midnight What’s Next Panel Recap
+## 3.5.5
+- Added: Tales Take a Dark Turn in Midnight’s Talebound
