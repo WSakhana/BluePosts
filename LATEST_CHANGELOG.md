@@ -1,3 +1,3 @@
-## 3.5.0
-- Added: Submit Your Question for the Live WoW Q&A on September 17
-- Added: World of Warcraft Live Q&A -- September 17
+## 3.5.1
+- Added: Wage War Once More with Warcraft III Reforged: Forsaken Kingdom
+- Added: Pre-Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth
