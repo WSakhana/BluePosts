@@ -1,3 +1,6 @@
+## 3.5.3
+- Added: World of Warcraft: Forever What’s Next Panel Recap
+
 ## 3.5.2
 - Added: Pre-Purchase the World of Warcraft®: Forever Collector’s Edition
 - Added: Submit Your Questions for the World of Warcraft Live Q&A 17 September
@@ -1027,6 +1030,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
