@@ -1,3 +1,6 @@
+## 3.5.7
+- Added: World of Warcraft: Forever Deep Dive Panel Recap
+
 ## 3.5.6
 - Added: Shipping for the next collectors edition to my country is 191 euro its more expensive than the collectors edition itself
 
@@ -1039,6 +1042,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
