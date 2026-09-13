@@ -1,2 +1,2 @@
-## 3.5.7
-- Added: World of Warcraft: Forever Deep Dive Panel Recap
+## 3.5.8
+- Added: World of Warcraft: Forever Found Photos Panel Recap
