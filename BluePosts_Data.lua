@@ -1,11 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789253923,
+    package_timestamp = 1789261143,
     new_post_ids = {
-        "2026-09-12-tales-take-a-dark-turn-in-midnights-talebound-a14f374eff",
-        "2026-09-12-tales-take-a-dark-turn-in-midnights-talebound-a02bd30594",
+        "2026-09-13-shipping-for-the-next-collectors-edition-to-my-country-is-191-euro-its-df05bee8ee",
     },
     posts = {
+        ["2026-09-13-shipping-for-the-next-collectors-edition-to-my-country-is-191-euro-its-df05bee8ee"] = {
+            id = "2026-09-13-shipping-for-the-next-collectors-edition-to-my-country-is-191-euro-its-df05bee8ee",
+            post_key = "df05bee8ee",
+            title = "Shipping for the next collectors edition to my country is 191 euro its more expensive than the collectors edition itself",
+            category = "General Discussion (EU)",
+            timestamp = 1789260360,
+            url = "https://eu.forums.blizzard.com/en/wow/t/628058/1",
+            content = {
+            { type = "image", width = 72, height = 72, u = 0.5625, v = 0.5625, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-13-shipping-for-the-next-collectors-edition-to-my-country-is-191-euro-its-df05bee8ee\\image-1.jpg" },
+            { type = "p", text = "Sorry blizzard u didnt have change it to 296 euro instead" },
+            },
+        },
         ["2026-09-12-tales-take-a-dark-turn-in-midnights-talebound-a14f374eff"] = {
             id = "2026-09-12-tales-take-a-dark-turn-in-midnights-talebound-a14f374eff",
             post_key = "a14f374eff",
