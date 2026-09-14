@@ -1,2 +1,3 @@
-## 3.5.8
-- Added: World of Warcraft: Forever Found Photos Panel Recap
+## 3.5.9
+- Added: The Venomous Abyss Raid Tuning - September 15
+- Added: The Venomous Abyss Raid Tuning - 15 September

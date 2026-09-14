@@ -1,3 +1,7 @@
+## 3.5.9
+- Added: The Venomous Abyss Raid Tuning - September 15
+- Added: The Venomous Abyss Raid Tuning - 15 September
+
 ## 3.5.8
 - Added: World of Warcraft: Forever Found Photos Panel Recap
 
@@ -1045,6 +1049,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
