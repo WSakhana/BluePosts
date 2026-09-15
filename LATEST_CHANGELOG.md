@@ -1,2 +1,2 @@
-## 3.6.2
-- Added: Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week
+## 3.6.3
+- Added: Corruption Calls with the Abyssal Crown Collection

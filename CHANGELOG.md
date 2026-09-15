@@ -1,3 +1,6 @@
+## 3.6.3
+- Added: Corruption Calls with the Abyssal Crown Collection
+
 ## 3.6.2
 - Added: Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week
 
@@ -1060,6 +1063,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
