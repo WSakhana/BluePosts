@@ -1,3 +1,3 @@
-## 3.5.9
-- Added: The Venomous Abyss Raid Tuning - September 15
-- Added: The Venomous Abyss Raid Tuning - 15 September
+## 3.6.0
+- Added: Midnight Season 2 Trinket Tuning – September 22
+- Added: Midnight Season 2 Trinket Tuning – 22 September

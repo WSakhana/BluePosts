@@ -1,3 +1,7 @@
+## 3.6.0
+- Added: Midnight Season 2 Trinket Tuning – September 22
+- Added: Midnight Season 2 Trinket Tuning – 22 September
+
 ## 3.5.9
 - Added: The Venomous Abyss Raid Tuning - September 15
 - Added: The Venomous Abyss Raid Tuning - 15 September
@@ -1049,6 +1053,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
