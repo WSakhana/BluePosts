@@ -1,11 +1,41 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789433966,
+    package_timestamp = 1789493475,
     new_post_ids = {
-        "2026-09-15-midnight-season-2-trinket-tuning-september-22-30c656e642",
-        "2026-09-15-midnight-season-2-trinket-tuning-22-september-9f9dc90376",
+        "2026-09-15-watch-the-world-of-warcraft-live-qa-17-september-7e0fef2d6c",
+        "2026-09-15-watch-the-world-of-warcraft-live-qa-september-17-81b76473b2",
     },
     posts = {
+        ["2026-09-15-watch-the-world-of-warcraft-live-qa-17-september-7e0fef2d6c"] = {
+            id = "2026-09-15-watch-the-world-of-warcraft-live-qa-17-september-7e0fef2d6c",
+            post_key = "7e0fef2d6c",
+            title = "Watch the World of Warcraft Live Q&A 17 September",
+            category = "Blogs (EU)",
+            timestamp = 1789492575,
+            url = "https://news.blizzard.com/en-gb/article/24302544/watch-the-world-of-warcraft-live-q-a-17-september",
+            content = {
+            { type = "p", text = "We’ve gathered your questions for members from across the World of Warcraft development team to answer. Watch for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern and Classic WoW." },
+            { type = "p", text = "When: Thursday, 17 September at 18:00 a.BSTWhere: Official Warcraft Twitch and YouTube channels" },
+            { type = "p", text = "Tune in live on Thursday or watch the VOD after the stream." },
+            { type = "hr" },
+            { type = "p", text = "We look forward to answering your questions and exploring your next adventures in Azeroth together." },
+            },
+        },
+        ["2026-09-15-watch-the-world-of-warcraft-live-qa-september-17-81b76473b2"] = {
+            id = "2026-09-15-watch-the-world-of-warcraft-live-qa-september-17-81b76473b2",
+            post_key = "81b76473b2",
+            title = "Watch the World of Warcraft Live Q&A September 17",
+            category = "Blogs (US)",
+            timestamp = 1789492572,
+            url = "https://news.blizzard.com/en-us/article/24302544/watch-the-world-of-warcraft-live-q-a-september-17",
+            content = {
+            { type = "p", text = "We’ve gathered your questions for members from across the World of Warcraft development team to answer. Watch for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern and Classic WoW." },
+            { type = "p", text = "When: Thursday, September 17 at 10:00 a.m. PDTWhere: Official Warcraft Twitch and YouTube channels" },
+            { type = "p", text = "Tune in live on Thursday or watch the VOD after the stream." },
+            { type = "hr" },
+            { type = "p", text = "We look forward to answering your questions and exploring your next adventures in Azeroth together." },
+            },
+        },
         ["2026-09-15-midnight-season-2-trinket-tuning-september-22-30c656e642"] = {
             id = "2026-09-15-midnight-season-2-trinket-tuning-september-22-30c656e642",
             post_key = "30c656e642",

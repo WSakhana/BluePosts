@@ -1,3 +1,7 @@
+## 3.6.1
+- Added: Watch the World of Warcraft Live Q&A 17 September
+- Added: Watch the World of Warcraft Live Q&A September 17
+
 ## 3.6.0
 - Added: Midnight Season 2 Trinket Tuning – September 22
 - Added: Midnight Season 2 Trinket Tuning – 22 September
@@ -1053,6 +1057,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

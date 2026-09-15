@@ -1,3 +1,3 @@
-## 3.6.0
-- Added: Midnight Season 2 Trinket Tuning – September 22
-- Added: Midnight Season 2 Trinket Tuning – 22 September
+## 3.6.1
+- Added: Watch the World of Warcraft Live Q&A 17 September
+- Added: Watch the World of Warcraft Live Q&A September 17
