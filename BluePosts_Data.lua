@@ -1,11 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789498783,
+    package_timestamp = 1789509572,
     new_post_ids = {
-        "2026-09-15-corruption-calls-with-the-abyssal-crown-collection-d55dff31a9",
-        "2026-09-15-corruption-calls-with-the-abyssal-crown-collection-7f50da0171",
     },
     posts = {
+        ["2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82"] = {
+            id = "2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82",
+            post_key = "d82e292e82",
+            title = "Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week",
+            category = "General Discussion (US)",
+            timestamp = 1789508760,
+            url = "https://us.forums.blizzard.com/en/wow/t/2350346/1",
+            content = {
+            { type = "p", text = "Season 1 Mythic+ 0.1% and 1% rewards will be distributed during this week’s maintenance in each region." },
+            { type = "h2", text = "0.1% RATING FINAL CUTOFF" },
+            { type = "h2", text = "1% RATING FINAL CUTOFF" },
+            { type = "p", text = "Congrats to those who earned the new title and mount!" },
+            },
+        },
         ["2026-09-15-corruption-calls-with-the-abyssal-crown-collection-d55dff31a9"] = {
             id = "2026-09-15-corruption-calls-with-the-abyssal-crown-collection-d55dff31a9",
             post_key = "d55dff31a9",
@@ -60,18 +72,6 @@ BluePosts_Data = {
             { type = "p", text = "Share the Zothwing mounts across all present and future modern World of Warcraft® characters. Mounts automatically scale to the fastest riding skill known by each character, but if a character’s level isn’t high enough to use a flying mount, the Zothwing mounts are also ground mounts." },
             { type = "hr" },
             { type = "p", text = "*Requires World of Warcraft® Subscription or Game Time" },
-            },
-        },
-        ["2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82"] = {
-            id = "2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82",
-            post_key = "d82e292e82",
-            title = "Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week",
-            category = "General Discussion (US)",
-            timestamp = 1789494371,
-            url = "https://us.forums.blizzard.com/en/wow/t/2350346/1",
-            content = {
-            { type = "p", text = "Season 1 Mythic+ 0.1% and 1% rewards will be distributed during this week’s maintenance in each region." },
-            { type = "p", text = "Congrats to those who earned the new title and mount!" },
             },
         },
         ["2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-afd0e923c1"] = {
