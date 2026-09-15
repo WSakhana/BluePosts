@@ -1,11 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789493475,
+    package_timestamp = 1789495162,
     new_post_ids = {
-        "2026-09-15-watch-the-world-of-warcraft-live-qa-17-september-7e0fef2d6c",
-        "2026-09-15-watch-the-world-of-warcraft-live-qa-september-17-81b76473b2",
+        "2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82",
+        "2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-afd0e923c1",
     },
     posts = {
+        ["2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82"] = {
+            id = "2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-d82e292e82",
+            post_key = "d82e292e82",
+            title = "Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week",
+            category = "General Discussion (US)",
+            timestamp = 1789494371,
+            url = "https://us.forums.blizzard.com/en/wow/t/2350346/1",
+            content = {
+            { type = "p", text = "Season 1 Mythic+ 0.1% and 1% rewards will be distributed during this week’s maintenance in each region." },
+            { type = "p", text = "Congrats to those who earned the new title and mount!" },
+            },
+        },
+        ["2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-afd0e923c1"] = {
+            id = "2026-09-15-season-1-mythic-01-and-1-rewards-arriving-this-week-afd0e923c1",
+            post_key = "afd0e923c1",
+            title = "Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week",
+            category = "General Discussion (EU)",
+            timestamp = 1789494368,
+            url = "https://eu.forums.blizzard.com/en/wow/t/628783/1",
+            content = {
+            { type = "p", text = "Season 1 Mythic+ 0.1% and 1% rewards will be distributed during this week’s maintenance in each region." },
+            { type = "p", text = "Congrats to those who earned the new title and mount!" },
+            },
+        },
         ["2026-09-15-watch-the-world-of-warcraft-live-qa-17-september-7e0fef2d6c"] = {
             id = "2026-09-15-watch-the-world-of-warcraft-live-qa-17-september-7e0fef2d6c",
             post_key = "7e0fef2d6c",

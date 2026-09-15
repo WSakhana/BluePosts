@@ -1,3 +1,6 @@
+## 3.6.2
+- Added: Season 1 Mythic+ 0.1% and 1% Rewards Arriving This Week
+
 ## 3.6.1
 - Added: Watch the World of Warcraft Live Q&A 17 September
 - Added: Watch the World of Warcraft Live Q&A September 17
@@ -1057,6 +1060,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
