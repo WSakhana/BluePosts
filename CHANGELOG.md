@@ -1,3 +1,6 @@
+## 3.7.0
+- Updated: PTR Raid Testing: Mythic Kith’ix (15-25)
+
 ## 3.6.9
 - Updated bundled blue post data.
 
@@ -1084,6 +1087,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
