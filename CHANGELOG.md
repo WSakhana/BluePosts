@@ -1,3 +1,6 @@
+## 3.6.6
+- Added: Take a Dip into the Midnight Season 3 Dungeon Pool Preview
+
 ## 3.6.5
 - Added: Hotfixes: September 15, 2026
 - Added: Midnight: 12.1.5 PTR Development Notes
@@ -1071,6 +1074,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
