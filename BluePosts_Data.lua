@@ -1,12 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789588777,
+    package_timestamp = 1789593277,
     new_post_ids = {
-        "2026-09-16-ptr-raid-testing-mythic-kithix-10-30-325b3f4bef",
-        "2026-09-16-ptr-raid-testing-mythic-kithix-10-30-4cd06b8fb6",
-        "2026-09-16-ptr-raid-testing-heroic-kithix-10-30-f6506924c6",
     },
     posts = {
+        ["2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758"] = {
+            id = "2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758",
+            post_key = "dda1795758",
+            title = "PTR Raid Testing: Heroic Kith'ix (10-30)",
+            category = "Midnight: 12.1.5 Public Test Realm (US)",
+            timestamp = 1789592470,
+            url = "https://us.forums.blizzard.com/en/wow/t/2351272/1",
+            content = {
+            { type = "p", text = "Hello everyone," },
+            { type = "p", text = "We will be running a 1-hour test of the Unbinding of Kith’ix on the public test realm from 13:30 to 14:30 PDT (16:30-17:30 EDT, 22:30-23:30 CEST) on Wednesday, September 16. During that time players will be able to enter the instance on Heroic difficulty and enjoy the entire raid experience." },
+            { type = "p", text = "We hope to see you there." },
+            },
+        },
+        ["2026-09-16-ptr-raid-testing-heroic-kithix-10-30-f6506924c6"] = {
+            id = "2026-09-16-ptr-raid-testing-heroic-kithix-10-30-f6506924c6",
+            post_key = "f6506924c6",
+            title = "PTR Raid Testing: Heroic Kith’ix (10-30)",
+            category = "Midnight: 12.1.5 Public Test Realm (EU)",
+            timestamp = 1789592466,
+            url = "https://eu.forums.blizzard.com/en/wow/t/629004/1",
+            content = {
+            { type = "p", text = "Hello everyone," },
+            { type = "p", text = "We will be running a 1-hour test of the Unbinding of Kith’ix on the public test realm from 22:30 to 23:30 CEST (13:30-14:30 PDT, 16:30-17:30 EDT) on Wednesday, 16 September. During that time players will be able to enter the instance on Heroic difficulty and enjoy the entire raid experience." },
+            { type = "p", text = "We hope to see you there." },
+            },
+        },
         ["2026-09-16-ptr-raid-testing-mythic-kithix-10-30-325b3f4bef"] = {
             id = "2026-09-16-ptr-raid-testing-mythic-kithix-10-30-325b3f4bef",
             post_key = "325b3f4bef",
@@ -30,32 +53,6 @@ BluePosts_Data = {
             content = {
             { type = "p", text = "Hello everyone," },
             { type = "p", text = "We will be running a 1-hour test of the Unbinding of Kith’ix on the public test realm from 23:30 to 00:30 CEST (14:30-15:30 PDT, 17:30-18:30 EDT) on Wednesday, 16 September. During that time players will be able to enter the instance on Mythic difficulty and enjoy the entire raid experience." },
-            { type = "p", text = "We hope to see you there." },
-            },
-        },
-        ["2026-09-16-ptr-raid-testing-heroic-kithix-10-30-f6506924c6"] = {
-            id = "2026-09-16-ptr-raid-testing-heroic-kithix-10-30-f6506924c6",
-            post_key = "f6506924c6",
-            title = "PTR Raid Testing: Heroic Kith’ix (10-30)",
-            category = "Midnight: 12.1.5 Public Test Realm (EU)",
-            timestamp = 1789587975,
-            url = "https://eu.forums.blizzard.com/en/wow/t/629004/1",
-            content = {
-            { type = "p", text = "Hello everyone," },
-            { type = "p", text = "We will be running a 1-hour test of the Unbinding of Kith’ix on the public test realm from 22:30 to 23:30 CEST (13:30-14:30 PDT, 16:30-17:30 EDT) on Wednesday, 16 September. During that time players will be able to enter the instance on Heroic difficulty and enjoy the entire raid experience." },
-            { type = "p", text = "We hope to see you there." },
-            },
-        },
-        ["2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758"] = {
-            id = "2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758",
-            post_key = "dda1795758",
-            title = "PTR Raid Testing: Heroic Kith'ix (10-30)",
-            category = "Midnight: 12.1.5 Public Test Realm (US)",
-            timestamp = 1789587063,
-            url = "https://us.forums.blizzard.com/en/wow/t/2351272/1",
-            content = {
-            { type = "p", text = "Hello everyone," },
-            { type = "p", text = "We will be running a 1-hour test of the Unbinding of Kith’ix on the public test realm from 13:30 to 14:30 PDT (16:30-17:30 EDT, 22:30-23:30 CEST) on Wednesday, September 16. During that time players will be able to enter the instance on Heroic difficulty and enjoy the entire raid experience." },
             { type = "p", text = "We hope to see you there." },
             },
         },
