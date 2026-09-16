@@ -1,12 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789578890,
+    package_timestamp = 1789587868,
     new_post_ids = {
-        "2026-09-16-take-a-dip-into-the-midnight-season-3-dungeon-pool-preview-159eca5d63",
-        "2026-09-16-take-a-dip-into-the-midnight-season-3-dungeon-pool-preview-3eb8f450a5",
-        "2026-09-16-take-a-dip-into-the-midnight-season-3-dungeon-pool-preview-7af51b63ba",
+        "2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758",
     },
     posts = {
+        ["2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758"] = {
+            id = "2026-09-16-ptr-raid-testing-heroic-kithx27ix-10-30-dda1795758",
+            post_key = "dda1795758",
+            title = "PTR Raid Testing: Heroic Kith'ix (10-30)",
+            category = "Midnight: 12.1.5 Public Test Realm (US)",
+            timestamp = 1789587063,
+            url = "https://us.forums.blizzard.com/en/wow/t/2351272/1",
+            content = {
+            { type = "p", text = "Hello everyone," },
+            { type = "p", text = "We will be running a 1-hour test of the Unbinding of Kith’ix on the public test realm from 13:30 to 14:30 PDT (16:30-17:30 EDT, 22:30-23:30 CEST) on Wednesday, September 16. During that time players will be able to enter the instance on Heroic difficulty and enjoy the entire raid experience." },
+            { type = "p", text = "We hope to see you there." },
+            },
+        },
         ["2026-09-16-take-a-dip-into-the-midnight-season-3-dungeon-pool-preview-159eca5d63"] = {
             id = "2026-09-16-take-a-dip-into-the-midnight-season-3-dungeon-pool-preview-159eca5d63",
             post_key = "159eca5d63",

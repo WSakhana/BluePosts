@@ -1,2 +1,2 @@
-## 3.6.6
-- Added: Take a Dip into the Midnight Season 3 Dungeon Pool Preview
+## 3.6.7
+- Added: PTR Raid Testing: Heroic Kith'ix (10-30)

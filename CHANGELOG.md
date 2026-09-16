@@ -1,3 +1,6 @@
+## 3.6.7
+- Added: PTR Raid Testing: Heroic Kith'ix (10-30)
+
 ## 3.6.6
 - Added: Take a Dip into the Midnight Season 3 Dungeon Pool Preview
 
@@ -1074,6 +1077,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
