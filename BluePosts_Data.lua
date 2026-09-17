@@ -1,9 +1,41 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789594149,
+    package_timestamp = 1789666174,
     new_post_ids = {
+        "2026-09-17-watch-the-world-of-warcraft-live-qa-now-f940bee03b",
+        "2026-09-17-watch-the-world-of-warcraft-live-qa-now-d49e292c10",
     },
     posts = {
+        ["2026-09-17-watch-the-world-of-warcraft-live-qa-now-f940bee03b"] = {
+            id = "2026-09-17-watch-the-world-of-warcraft-live-qa-now-f940bee03b",
+            post_key = "f940bee03b",
+            title = "Watch the World of Warcraft Live Q&A Now",
+            category = "Blogs (EU)",
+            timestamp = 1789665370,
+            url = "https://news.blizzard.com/en-gb/article/24302544/watch-the-world-of-warcraft-live-q-a-now",
+            content = {
+            { type = "p", text = "We’ve gathered your questions for members from across the World of Warcraft development team to answer. Watch now for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern WoW and WoW Forever." },
+            { type = "p", text = "Where: Official Warcraft Twitch and YouTube channels" },
+            { type = "p", text = "Tune in live on Thursday or watch the VOD after the stream." },
+            { type = "hr" },
+            { type = "p", text = "We look forward to answering your questions and exploring your next adventures in Azeroth together." },
+            },
+        },
+        ["2026-09-17-watch-the-world-of-warcraft-live-qa-now-d49e292c10"] = {
+            id = "2026-09-17-watch-the-world-of-warcraft-live-qa-now-d49e292c10",
+            post_key = "d49e292c10",
+            title = "Watch the World of Warcraft Live Q&A Now",
+            category = "Blogs (US)",
+            timestamp = 1789665366,
+            url = "https://news.blizzard.com/en-us/article/24302544/watch-the-world-of-warcraft-live-q-a-now",
+            content = {
+            { type = "p", text = "We’ve gathered your questions for members from across the World of Warcraft development team to answer. Watch now for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern WoW and WoW Forever." },
+            { type = "p", text = "Where: Official Warcraft Twitch and YouTube channels" },
+            { type = "p", text = "Tune in live on Thursday or watch the VOD after the stream." },
+            { type = "hr" },
+            { type = "p", text = "We look forward to answering your questions and exploring your next adventures in Azeroth together." },
+            },
+        },
         ["2026-09-16-ptr-raid-testing-mythic-kithix-15-25-325b3f4bef"] = {
             id = "2026-09-16-ptr-raid-testing-mythic-kithix-15-25-325b3f4bef",
             post_key = "325b3f4bef",

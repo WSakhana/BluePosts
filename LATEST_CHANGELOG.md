@@ -1,2 +1,2 @@
-## 3.7.0
-- Updated: PTR Raid Testing: Mythic Kith’ix (15-25)
+## 3.7.1
+- Added: Watch the World of Warcraft Live Q&A Now

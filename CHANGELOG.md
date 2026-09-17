@@ -1,3 +1,6 @@
+## 3.7.1
+- Added: Watch the World of Warcraft Live Q&A Now
+
 ## 3.7.0
 - Updated: PTR Raid Testing: Mythic Kith’ix (15-25)
 
@@ -1087,6 +1090,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
