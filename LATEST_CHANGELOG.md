@@ -1,2 +1,3 @@
-## 3.7.2
-- Added: Midnight Season 2 PvP Rating Inflation Increased
+## 3.7.3
+- Added: World of Warcraft: Forever GPU Requirements
+- Added: The World of Warcraft: Forever Beta Now Live
