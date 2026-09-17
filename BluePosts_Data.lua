@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1789666174,
+    package_timestamp = 1789678771,
     new_post_ids = {
-        "2026-09-17-watch-the-world-of-warcraft-live-qa-now-f940bee03b",
-        "2026-09-17-watch-the-world-of-warcraft-live-qa-now-d49e292c10",
+        "2026-09-17-midnight-season-2-pvp-rating-inflation-increased-81b614e09a",
+        "2026-09-17-midnight-season-2-pvp-rating-inflation-increased-5ecca6b866",
     },
     posts = {
+        ["2026-09-17-midnight-season-2-pvp-rating-inflation-increased-81b614e09a"] = {
+            id = "2026-09-17-midnight-season-2-pvp-rating-inflation-increased-81b614e09a",
+            post_key = "81b614e09a",
+            title = "Midnight Season 2 PvP Rating Inflation Increased",
+            category = "Arenas (US)",
+            timestamp = 1789677970,
+            url = "https://us.forums.blizzard.com/en/wow/t/2352531/1",
+            content = {
+            { type = "p", text = "We’ve seen your feedback that achievable PvP ratings are not meeting expectations, so we’re applying a significant increase to PvP rating inflation starting now for all rated PvP modes with emphasis on Battleground Blitz, Rated Battlegrounds, and Rated 3v3 Arena." },
+            { type = "p", text = "As with past changes to inflation, this adjustment is intended to improve progression as the season continues and support healthier ladder movement. We’ll continue monitoring rating distribution and make further adjustments as necessary." },
+            { type = "p", text = "Thank you for your continued feedback and we’ll see you on the battlefield!" },
+            },
+        },
+        ["2026-09-17-midnight-season-2-pvp-rating-inflation-increased-5ecca6b866"] = {
+            id = "2026-09-17-midnight-season-2-pvp-rating-inflation-increased-5ecca6b866",
+            post_key = "5ecca6b866",
+            title = "Midnight Season 2 PvP Rating Inflation Increased",
+            category = "Arenas (EU)",
+            timestamp = 1789677966,
+            url = "https://eu.forums.blizzard.com/en/wow/t/629277/1",
+            content = {
+            { type = "p", text = "We’ve seen your feedback that achievable PvP ratings are not meeting expectations, so we’re applying a significant increase to PvP rating inflation starting now for all rated PvP modes with emphasis on Battleground Blitz, Rated Battlegrounds, and Rated 3v3 Arena." },
+            { type = "p", text = "As with past changes to inflation, this adjustment is intended to improve progression as the season continues and support healthier ladder movement. We’ll continue monitoring rating distribution and make further adjustments as necessary." },
+            { type = "p", text = "Thank you for your continued feedback and we’ll see you on the battlefield!" },
+            },
+        },
         ["2026-09-17-watch-the-world-of-warcraft-live-qa-now-f940bee03b"] = {
             id = "2026-09-17-watch-the-world-of-warcraft-live-qa-now-f940bee03b",
             post_key = "f940bee03b",

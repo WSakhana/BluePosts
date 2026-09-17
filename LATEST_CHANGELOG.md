@@ -1,2 +1,2 @@
-## 3.7.1
-- Added: Watch the World of Warcraft Live Q&A Now
+## 3.7.2
+- Added: Midnight Season 2 PvP Rating Inflation Increased

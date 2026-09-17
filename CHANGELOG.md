@@ -1,3 +1,6 @@
+## 3.7.2
+- Added: Midnight Season 2 PvP Rating Inflation Increased
+
 ## 3.7.1
 - Added: Watch the World of Warcraft Live Q&A Now
 
@@ -1090,6 +1093,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
