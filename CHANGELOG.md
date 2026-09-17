@@ -1,3 +1,7 @@
+## 3.7.4
+- Added: Hotfixes: September 17, 2026
+- Updated: Hotfixes: September 17, 2026
+
 ## 3.7.3
 - Added: World of Warcraft: Forever GPU Requirements
 - Added: The World of Warcraft: Forever Beta Now Live
@@ -1097,6 +1101,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
