@@ -1,3 +1,7 @@
+## 3.7.6
+- Added: Class Tuning Incoming -- September 22
+- Added: Class Tuning Incoming -- 22 September
+
 ## 3.7.5
 - Added: Blizzcon 2026, WoW Forever Beta, Midnight S3, and More in This Week’s Wow Weekly
 
@@ -1104,6 +1108,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
