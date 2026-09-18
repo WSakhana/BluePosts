@@ -1,3 +1,2 @@
-## 3.7.4
-- Added: Hotfixes: September 17, 2026
-- Updated: Hotfixes: September 17, 2026
+## 3.7.5
+- Added: Blizzcon 2026, WoW Forever Beta, Midnight S3, and More in This Week’s Wow Weekly

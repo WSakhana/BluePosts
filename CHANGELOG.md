@@ -1,3 +1,6 @@
+## 3.7.5
+- Added: Blizzcon 2026, WoW Forever Beta, Midnight S3, and More in This Week’s Wow Weekly
+
 ## 3.7.4
 - Added: Hotfixes: September 17, 2026
 - Updated: Hotfixes: September 17, 2026
@@ -1101,6 +1104,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
