@@ -1,3 +1,6 @@
+## 3.7.7
+- Added: Leap Aboard the Pirate’s Day Celebration–19 September!
+
 ## 3.7.6
 - Added: Class Tuning Incoming -- September 22
 - Added: Class Tuning Incoming -- 22 September
@@ -1108,6 +1111,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

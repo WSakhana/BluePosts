@@ -1,3 +1,2 @@
-## 3.7.6
-- Added: Class Tuning Incoming -- September 22
-- Added: Class Tuning Incoming -- 22 September
+## 3.7.7
+- Added: Leap Aboard the Pirate’s Day Celebration–19 September!
