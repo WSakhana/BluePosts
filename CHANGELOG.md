@@ -1,3 +1,6 @@
+## 3.7.9
+- Added: Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards
+
 ## 3.7.8
 - Added: Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards
 
@@ -1114,6 +1117,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
