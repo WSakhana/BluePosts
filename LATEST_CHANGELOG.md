@@ -1,2 +1,2 @@
-## 3.7.7
-- Added: Leap Aboard the Pirate’s Day Celebration–19 September!
+## 3.7.8
+- Added: Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards

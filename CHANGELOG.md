@@ -1,3 +1,6 @@
+## 3.7.8
+- Added: Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards
+
 ## 3.7.7
 - Added: Leap Aboard the Pirate’s Day Celebration–19 September!
 
@@ -1111,6 +1114,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
