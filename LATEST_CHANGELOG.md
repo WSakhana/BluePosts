@@ -1,2 +1,2 @@
-## 3.8.0
-- Added: Choose Your Ruleset in World of Warcraft: Forever
+## 3.8.1
+- Added: Create a Name of Your Own in WoW: Forever

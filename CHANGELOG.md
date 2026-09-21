@@ -1,3 +1,6 @@
+## 3.8.1
+- Added: Create a Name of Your Own in WoW: Forever
+
 ## 3.8.0
 - Added: Choose Your Ruleset in World of Warcraft: Forever
 
@@ -1120,6 +1123,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
