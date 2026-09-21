@@ -1,2 +1,2 @@
-## 3.7.9
-- Added: Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards
+## 3.8.0
+- Added: Choose Your Ruleset in World of Warcraft: Forever

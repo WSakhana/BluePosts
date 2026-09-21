@@ -1,3 +1,6 @@
+## 3.8.0
+- Added: Choose Your Ruleset in World of Warcraft: Forever
+
 ## 3.7.9
 - Added: Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards
 
@@ -1117,6 +1120,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
