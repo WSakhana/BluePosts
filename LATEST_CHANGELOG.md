@@ -1,2 +1,3 @@
-## 3.8.1
-- Added: Create a Name of Your Own in WoW: Forever
+## 3.8.2
+- Updated: Class Tuning Incoming -- 22 September
+- Updated: Class Tuning Incoming -- September 22
