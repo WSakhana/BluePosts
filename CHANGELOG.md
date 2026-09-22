@@ -1,3 +1,6 @@
+## 3.8.6
+- Updated: Midnight: 12.1.5 PTR Development Notes
+
 ## 3.8.5
 - Added: WoW: Forever Meet the New Skyborne
 
@@ -1137,6 +1140,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

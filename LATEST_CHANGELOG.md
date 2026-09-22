@@ -1,2 +1,2 @@
-## 3.8.5
-- Added: WoW: Forever Meet the New Skyborne
+## 3.8.6
+- Updated: Midnight: 12.1.5 PTR Development Notes
