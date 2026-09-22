@@ -1,3 +1,6 @@
+## 3.8.4
+- Added: Create the Hero You Want to Be in World of Warcraft: Forever
+
 ## 3.8.3
 - Added: Hotfixes: September 21, 2026
 - Added: Hotfixes: September 17, 2026
@@ -1131,6 +1134,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
