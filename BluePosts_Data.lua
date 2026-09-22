@@ -1,11 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790098195,
+    package_timestamp = 1790104457,
     new_post_ids = {
-        "2026-09-22-create-the-hero-you-want-to-be-in-world-of-warcraft-forever-945d51d9a0",
-        "2026-09-22-create-the-hero-you-want-to-be-in-world-of-warcraft-forever-5373eb86cf",
+        "2026-09-22-wow-forever-meet-the-new-skyborne-8c769eff34",
     },
     posts = {
+        ["2026-09-22-wow-forever-meet-the-new-skyborne-8c769eff34"] = {
+            id = "2026-09-22-wow-forever-meet-the-new-skyborne-8c769eff34",
+            post_key = "8c769eff34",
+            title = "WoW: Forever Meet the New Skyborne",
+            category = "General Discussion (EU)",
+            timestamp = 1790103650,
+            url = "https://eu.forums.blizzard.com/en/wow/t/630770/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-22-wow-forever-meet-the-new-skyborne-8c769eff34\\image-1.jpg" },
+            { type = "p", text = "The Skyborne—also known as the shen’dorei, or hidden people—are a new playable race in World of Warcraft: Forever. Their journey begins on Zephras Isle, a level 1–12 starting experience that blends classic Warcraft aesthetics with elemental architecture and a story shaped by wind and ancestry. At character creation, you’ll choose whether your Skyborne joins the proud Horde or the noble Alliance." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-09-22-create-the-hero-you-want-to-be-in-world-of-warcraft-forever-945d51d9a0"] = {
             id = "2026-09-22-create-the-hero-you-want-to-be-in-world-of-warcraft-forever-945d51d9a0",
             post_key = "945d51d9a0",

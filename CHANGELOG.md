@@ -1,3 +1,6 @@
+## 3.8.5
+- Added: WoW: Forever Meet the New Skyborne
+
 ## 3.8.4
 - Added: Create the Hero You Want to Be in World of Warcraft: Forever
 
@@ -1134,6 +1137,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
