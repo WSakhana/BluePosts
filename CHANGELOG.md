@@ -1,3 +1,6 @@
+## 3.8.7
+- Added: Hotfixes: September 22, 2026
+
 ## 3.8.6
 - Updated: Midnight: 12.1.5 PTR Development Notes
 
@@ -1140,6 +1143,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,2 +1,2 @@
-## 3.8.6
-- Updated: Midnight: 12.1.5 PTR Development Notes
+## 3.8.7
+- Added: Hotfixes: September 22, 2026
