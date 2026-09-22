@@ -1,3 +1,7 @@
+## 3.8.3
+- Added: Hotfixes: September 21, 2026
+- Added: Hotfixes: September 17, 2026
+
 ## 3.8.2
 - Updated: Class Tuning Incoming -- 22 September
 - Updated: Class Tuning Incoming -- September 22
@@ -1127,6 +1131,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
