@@ -1,2 +1,3 @@
-## 3.9.0
-- Added: Watch the World of Warcraft: Forever Podcast, Ep. 1
+## 3.9.1
+- Added: [Updated 24/9] Pre-Purchase the World of Warcraft®: Forever Collector’s Edition
+- Added: [Updated 9/24] Pre-Purchase the World of Warcraft®: Forever Collector’s Edition
