@@ -1,2 +1,2 @@
-## 3.8.8
-- Added: Get to Know the World of Warcraft: Forever Legacy System
+## 3.8.9
+- Added: Hotfixes: September 23, 2026

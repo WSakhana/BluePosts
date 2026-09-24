@@ -1,3 +1,6 @@
+## 3.8.9
+- Added: Hotfixes: September 23, 2026
+
 ## 3.8.8
 - Added: Get to Know the World of Warcraft: Forever Legacy System
 
@@ -1146,6 +1149,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
