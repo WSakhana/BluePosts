@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790209777,
+    package_timestamp = 1790268292,
     new_post_ids = {
-        "2026-09-24-hotfixes-september-23-2026-442ab4f328",
-        "2026-09-24-hotfixes-september-23-2026-a0633ac83e",
+        "2026-09-24-watch-the-world-of-warcraft-forever-podcast-ep-1-60be6018e3",
+        "2026-09-24-watch-the-world-of-warcraft-forever-podcast-ep-1-a9e74515b1",
     },
     posts = {
+        ["2026-09-24-watch-the-world-of-warcraft-forever-podcast-ep-1-60be6018e3"] = {
+            id = "2026-09-24-watch-the-world-of-warcraft-forever-podcast-ep-1-60be6018e3",
+            post_key = "60be6018e3",
+            title = "Watch the World of Warcraft: Forever Podcast, Ep. 1",
+            category = "Blogs (EU)",
+            timestamp = 1790267460,
+            url = "https://news.blizzard.com/en-gb/article/24304076/watch-the-world-of-warcraft-forever-podcast-ep-1",
+            content = {
+            { type = "p", text = "Join Senior Game Designer Josh “Aggrend” Greenfield, Lead Classic Designer Tim Jones, and content creators Countdown To Classic and Xaryu in the first episode of the World of Warcraft: Forever Podcast." },
+            },
+        },
+        ["2026-09-24-watch-the-world-of-warcraft-forever-podcast-ep-1-a9e74515b1"] = {
+            id = "2026-09-24-watch-the-world-of-warcraft-forever-podcast-ep-1-a9e74515b1",
+            post_key = "a9e74515b1",
+            title = "Watch the World of Warcraft: Forever Podcast, Ep. 1",
+            category = "Blogs (US)",
+            timestamp = 1790267456,
+            url = "https://news.blizzard.com/en-us/article/24304076/watch-the-world-of-warcraft-forever-podcast-ep-1",
+            content = {
+            { type = "p", text = "Join Senior Game Designer Josh “Aggrend” Greenfield, Lead Classic Designer Tim Jones, and content creators Countdown To Classic and Xaryu in the first episode of the World of Warcraft: Forever Podcast." },
+            },
+        },
         ["2026-09-24-hotfixes-september-23-2026-442ab4f328"] = {
             id = "2026-09-24-hotfixes-september-23-2026-442ab4f328",
             post_key = "442ab4f328",

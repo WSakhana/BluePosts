@@ -1,2 +1,2 @@
-## 3.8.9
-- Added: Hotfixes: September 23, 2026
+## 3.9.0
+- Added: Watch the World of Warcraft: Forever Podcast, Ep. 1
