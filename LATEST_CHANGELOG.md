@@ -1,2 +1,2 @@
-## 3.9.2
-- Added: Hotfixes: September 24, 2026
+## 3.9.3
+- Added: World of Warcraft: Forever Headlines a Packed WoW Weekly
