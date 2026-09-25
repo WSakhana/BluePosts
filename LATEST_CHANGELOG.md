@@ -1,2 +1,2 @@
-## 3.9.3
-- Added: World of Warcraft: Forever Headlines a Packed WoW Weekly
+## 3.9.4
+- Added: [Last Call] September is a Great Month to Celebrate Friendship at the Trading Post
