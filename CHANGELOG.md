@@ -1,3 +1,6 @@
+## 3.9.2
+- Added: Hotfixes: September 24, 2026
+
 ## 3.9.1
 - Added: [Updated 24/9] Pre-Purchase the World of Warcraft®: Forever Collector’s Edition
 - Added: [Updated 9/24] Pre-Purchase the World of Warcraft®: Forever Collector’s Edition
@@ -1156,6 +1159,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
