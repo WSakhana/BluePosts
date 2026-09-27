@@ -1,2 +1,2 @@
-## 3.9.4
-- Added: [Last Call] September is a Great Month to Celebrate Friendship at the Trading Post
+## 3.9.5
+- Added: Realm is full

@@ -1,11 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790364569,
+    package_timestamp = 1790532848,
     new_post_ids = {
-        "2026-09-25-last-call-september-is-a-great-month-to-celebrate-friendship-at-the-tr-4e9ef3c43e",
-        "2026-09-25-last-call-september-is-a-great-month-to-celebrate-friendship-at-the-tr-d0d7ec2b74",
+        "2026-09-27-realm-is-full-f7e74b49dc",
     },
     posts = {
+        ["2026-09-27-realm-is-full-f7e74b49dc"] = {
+            id = "2026-09-27-realm-is-full-f7e74b49dc",
+            post_key = "f7e74b49dc",
+            title = "Realm is full",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1790532051,
+            url = "https://us.forums.blizzard.com/en/wow/t/2363282/1",
+            content = {
+            { type = "p", text = "So, I seem to be misunderstanding the new technology surrounding these new mega servers. I was under the impression that the new way of doing this meant there isn’t a server, there is an essentially endless layers of servers. As the player base grows and shrinks, the layers automatically repopulate to accommodate the number." },
+            { type = "p", text = "Why are we getting “realm full” if there is an endless number of layers? Or is it not what has been explained to me, or I’ve misunderstood (more likely the case) what this new way is." },
+            },
+        },
         ["2026-09-25-last-call-september-is-a-great-month-to-celebrate-friendship-at-the-tr-4e9ef3c43e"] = {
             id = "2026-09-25-last-call-september-is-a-great-month-to-celebrate-friendship-at-the-tr-4e9ef3c43e",
             post_key = "4e9ef3c43e",
