@@ -1,10 +1,36 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790634581,
+    package_timestamp = 1790639075,
     new_post_ids = {
-        "2026-09-28-watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-p-2a4d8b07d0",
+        "2026-09-28-can-we-put-the-kyle-questline-back-into-mulgore-41af4267fc",
+        "2026-09-28-bring-back-ahab-wheathoof-44b9edfe20",
     },
     posts = {
+        ["2026-09-28-can-we-put-the-kyle-questline-back-into-mulgore-41af4267fc"] = {
+            id = "2026-09-28-can-we-put-the-kyle-questline-back-into-mulgore-41af4267fc",
+            post_key = "41af4267fc",
+            title = "Can we put the Kyle Questline back into Mulgore?",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1790638261,
+            url = "https://us.forums.blizzard.com/en/wow/t/2356115/1",
+            content = {
+            { type = "p", text = "My Husband was very sad that the Make a Wish Quest involving Kyle wasn’t in Mulgore." },
+            { type = "p", text = "He got Beta Access, but not actual gametime so he can’t post this feedback himself, but he asked me to request that the Kyle quest got ported in, because he really liked that quest." },
+            { type = "p", text = "Yes it wasn’t added until TBC, but this is WoW: Forever, we already have new quests added in, and it was a cute little quest, and a Make a Wish addition for a poor kid." },
+            { type = "p", text = "I would think that adding it back in wouldn’t be too much work." },
+            },
+        },
+        ["2026-09-28-bring-back-ahab-wheathoof-44b9edfe20"] = {
+            id = "2026-09-28-bring-back-ahab-wheathoof-44b9edfe20",
+            post_key = "44b9edfe20",
+            title = "Bring back Ahab Wheathoof!",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1790638258,
+            url = "https://eu.forums.blizzard.com/en/wow/t/630814/1",
+            content = {
+            { type = "p", text = "Currently playing as a Tauren Druid on the beta, and noticed that Ahab and his quest to find and feed his dog, Kyle, don’t currently exist. I guess this is because Forever has a base in WoW Classic, whilst this quest wasn’t added till later. For anyone that came later to the game, the quest and character were the fulfillment of a Make a Wish request by a kid called Ezra Chatterton, who sadly died of terminal brain cancer in 2008. With both the name and theme of this new version of the game being forever, I hereby request that the quest and character be added, as it’d be a perfect lasting tribute. Who’s with me?" },
+            },
+        },
         ["2026-09-28-watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-p-2a4d8b07d0"] = {
             id = "2026-09-28-watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-p-2a4d8b07d0",
             post_key = "2a4d8b07d0",

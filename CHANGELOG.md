@@ -1,3 +1,7 @@
+## 3.9.8
+- Added: Can we put the Kyle Questline back into Mulgore?
+- Added: Bring back Ahab Wheathoof!
+
 ## 3.9.7
 - Added: Watch Holly Longdale and Clay Stone’s Keynote Presentations Live from PAX Aus 9-11 October
 
@@ -1175,6 +1179,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

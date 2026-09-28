@@ -1,2 +1,3 @@
-## 3.9.7
-- Added: Watch Holly Longdale and Clay Stone’s Keynote Presentations Live from PAX Aus 9-11 October
+## 3.9.8
+- Added: Can we put the Kyle Questline back into Mulgore?
+- Added: Bring back Ahab Wheathoof!
