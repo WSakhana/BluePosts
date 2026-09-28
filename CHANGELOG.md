@@ -1,3 +1,7 @@
+## 3.9.6
+- Added: Gold buying rules
+- Added: The $50k Duel Tournament
+
 ## 3.9.5
 - Added: Realm is full
 
@@ -1168,6 +1172,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,10 +1,49 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790532848,
+    package_timestamp = 1790627403,
     new_post_ids = {
-        "2026-09-27-realm-is-full-f7e74b49dc",
+        "2026-09-28-gold-buying-rules-d54e793b22",
+        "2026-09-28-the-50k-duel-tournament-d0e3766742",
     },
     posts = {
+        ["2026-09-28-gold-buying-rules-d54e793b22"] = {
+            id = "2026-09-28-gold-buying-rules-d54e793b22",
+            post_key = "d54e793b22",
+            title = "Gold buying rules",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1790626560,
+            url = "https://us.forums.blizzard.com/en/wow/t/2364933/1",
+            content = {
+            { type = "p", text = "OTK announced they’re doing another classic dueling tournament, with a prize pool of $50,000 for the beta at level 30, and immediately after that announcement was confirmed a number of streamers mysteriously found themselves loaded with amounts of gold they should not have." },
+            { type = "p", text = "You then have a streamer being traded over 500 gold total split between two separate level 1 characters and laughing about it knowing full well it’s not legit gold and there is 0 punishment." },
+            { type = "p", text = "As it turns out, the gold buying enforcement and the whole “we’re not playing nice guys anymore” “no more lenience” “we’re taking it seriously this time for sure” was once again all a facade." },
+            },
+        },
+        ["2026-09-28-the-50k-duel-tournament-d0e3766742"] = {
+            id = "2026-09-28-the-50k-duel-tournament-d0e3766742",
+            post_key = "d0e3766742",
+            title = "The $50k Duel Tournament",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1790626556,
+            url = "https://eu.forums.blizzard.com/en/wow/t/632274/1",
+            content = {
+            { type = "p", text = "So, a PvP tournament with a $50k prize pool was announced, and there was absolutely no mention of the Legacy System being disabled or restricted." },
+            { type = "p", text = "That is a pretty big deal because the Legacy System gives you a massive advantage in terms of progression. You can level multiple characters to 25, level professions all the way up to what is currently possible around level 30, farm profession points, gather materials, build up gold and generally prepare your account way beyond what a normal player participating in the tournament would realistically have time to do." },
+            { type = "p", text = "And let’s be real here. If you have a normal life and you’re not a streamer who literally gets paid to play the game all day, nobody in their right mind is going to level every class to 25 and max out every profession just to prepare for this tournament." },
+            { type = "p", text = "Then shortly after the tournament was announced, streamers were already getting huge amounts of gold traded to them. Ziqo, for example, literally received 500g on stream." },
+            { type = "p", text = "And before someone comes in with the usual “maybe his viewers just gave it to him” argument, come on. We’re talking about a beta with a level 20 cap. You can say whatever you want, but the idea that someone is voluntarily sitting there playing economy simulator on a beta, farming gold for hours just to trade 500g to a streamer is pretty hard to take seriously." },
+            { type = "p", text = "The “his guild probably pooled 2g each and gave him 500g” argument doesn’t really make much sense either. There aren’t exactly massive guilds on this beta that could realistically do that. Olympus is probably the only guild large enough for something like that, and let’s be honest, they’re not randomly giving 500g to every streamer. They’d obviously be doing that for someone like Asmongold. But that’s a different discussion." },
+            { type = "p", text = "The actual problem is what that 500g means for the tournament." },
+            { type = "p", text = "Ziqo can now basically use that gold to level every profession, buy all the materials directly from the AH, buy flasks and whatever other consumables or items he needs, and skip a huge amount of the preparation that a normal player would have to do themselves." },
+            { type = "p", text = "So if the idea was that this tournament was supposed to be something normal players could realistically participate in as well, that’s simply not how it looks right now." },
+            { type = "p", text = "The tournament may technically be open to everyone, but the preparation and resources available to certain players are clearly not equal." },
+            { type = "p", text = "If the Legacy System is allowed, then people who have been preparing their accounts for weeks have a massive advantage over someone who just wants to participate in the tournament after the announcement." },
+            { type = "p", text = "And if streamers are already receiving hundreds of gold and can immediately turn that into professions, materials and consumables, then the whole “50k tournament for everyone” idea starts looking very different." },
+            { type = "p", text = "I’m not saying streamers shouldn’t be allowed to participate. I’m saying that if this is supposed to be a competitive PvP tournament, the rules need to address this stuff clearly." },
+            { type = "p", text = "Either disable the Legacy System for the tournament, set clear restrictions on what can be transferred or used, or at the very least acknowledge that players with established accounts and outside gold support are going into the tournament with a completely different level of preparation." },
+            { type = "p", text = "Because right now, someone with a normal job and a normal amount of playtime is competing against people who have effectively been given the resources to prepare for the tournament before most players even had a chance to figure out what was going on." },
+            },
+        },
         ["2026-09-27-realm-is-full-f7e74b49dc"] = {
             id = "2026-09-27-realm-is-full-f7e74b49dc",
             post_key = "f7e74b49dc",

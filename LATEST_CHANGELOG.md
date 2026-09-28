@@ -1,2 +1,3 @@
-## 3.9.5
-- Added: Realm is full
+## 3.9.6
+- Added: Gold buying rules
+- Added: The $50k Duel Tournament
