@@ -1,11 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790627403,
+    package_timestamp = 1790634581,
     new_post_ids = {
-        "2026-09-28-gold-buying-rules-d54e793b22",
-        "2026-09-28-the-50k-duel-tournament-d0e3766742",
+        "2026-09-28-watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-p-2a4d8b07d0",
     },
     posts = {
+        ["2026-09-28-watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-p-2a4d8b07d0"] = {
+            id = "2026-09-28-watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-p-2a4d8b07d0",
+            post_key = "2a4d8b07d0",
+            title = "Watch Holly Longdale and Clay Stone’s Keynote Presentations Live from PAX Aus 9-11 October",
+            category = "Blogs (US)",
+            timestamp = 1790633750,
+            url = "https://news.blizzard.com/en-us/article/24302503/watch-holly-longdale-and-clay-stones-keynote-presentations-live-from-pax-aus-9-11-october",
+            content = {
+            { type = "p", text = "PAX Aus is right around the corner and World of Warcraft: Forever will be there Friday 9 October to Sunday 11 October AEDT!" },
+            { type = "h2", text = "STORYTIME KEYNOTE & WORLD OF WARCRAFT: FOREVER DUNGEON DEEP DIVE" },
+            { type = "p", text = "World of Warcraft executive producer Holly Longdale will open PAX Aus 2026 as the Storytime keynote speaker. Drawing on her two decades of experience across the video game industry, Holly will share adventures and lessons learned throughout her career; discuss the continued evolution of the Warcraft universe; and the important role that online player communities hold for MMOs." },
+            { type = "p", text = "Holly will be joined on stage by World of Warcraft associate production director Clay Stone, who will share an in-depth look at one of the new dungeons being added in World of Warcraft: Forever. Clay will provide the audience with a behind-the-scenes look into the development team's design philosophy, creative process, and approach to building new gameplay experiences along with an exclusive dungeon deep dive.." },
+            { type = "p", text = "Can’t be there in person? No problem! Watch the Storytime opening keynote live via the Warcraft Twitch or PAX Twitch channel on:" },
+            { type = "list_item", text = "8 October at 6:00 – 7:30 p.m. PDT / 9:00 – 10:30 p.m. EDT", level = 0 },
+            { type = "list_item", text = "9 October at 2:00 – 3:30 a.m. BST", level = 0 },
+            { type = "list_item", text = "9 October at 12:00 – 1:30 p.m. AEDT", level = 0 },
+            { type = "h3", text = "Developer Meet-and-Greet & Signing Session (Fri)" },
+            { type = "p", text = "Following the Storytime keynote, Holly and Clay will host an informal signing session in the Meet & Greet room, located between the Owl Bear Theatre and Drop Bear Theatre, from 2:00 – 3:00 p.m. AEDT." },
+            { type = "h3", text = "World of Warcraft: Forever Experience & PAX Aus Pinny Arcade pin (Fri-Sun)" },
+            { type = "p", text = "PAX Aus showgoers can visit the World of Warcraft: Forever booth throughout the weekend for hands-on opportunities with the beta. While there, attendees will also have the chance to snap a selfie at the themed photo experience and collect a special ‘Raid for Riches’ quest card." },
+            { type = "p", text = "Successfully completing quests will unlock a World of Warcraft: Forever Pinny Arcade pin* and earn participants entry into a prize draw with a range of epic rewards." },
+            { type = "p", text = "For all the latest details, and to follow the event virtually, keep an eye on @Blizzard_ANZ on Instagram." },
+            { type = "p", text = "*Limit one per person. While stocks last." },
+            },
+        },
         ["2026-09-28-gold-buying-rules-d54e793b22"] = {
             id = "2026-09-28-gold-buying-rules-d54e793b22",
             post_key = "d54e793b22",
