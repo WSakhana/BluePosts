@@ -1,3 +1,6 @@
+## 4.0.0
+- Updated: Midnight: 12.1.5 PTR Development Notes
+
 ## 3.9.9
 - Added: Midnight’s 12.1.5 Content Update Arrives 14 October
 - Added: Midnight’s 12.1.5 Content Update Arrives October 13
@@ -1183,6 +1186,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
