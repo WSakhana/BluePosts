@@ -1,3 +1,6 @@
+## 4.0.2
+- Added: Perma Bans For Gold Buyers! 🥰
+
 ## 4.0.1
 - Added: Hotfixes: September 29, 2026
 - Updated: Hotfixes: September 29, 2026
@@ -1192,6 +1195,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

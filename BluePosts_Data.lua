@@ -1,10 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790728212,
+    package_timestamp = 1790772300,
     new_post_ids = {
-        "2026-09-30-hotfixes-september-29-2026-71419a504b",
+        "2026-09-30-perma-bans-for-gold-buyers-d885625a8f",
     },
     posts = {
+        ["2026-09-30-perma-bans-for-gold-buyers-d885625a8f"] = {
+            id = "2026-09-30-perma-bans-for-gold-buyers-d885625a8f",
+            post_key = "d885625a8f",
+            title = "Perma Bans For Gold Buyers! 🥰",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1790771451,
+            url = "https://eu.forums.blizzard.com/en/wow/t/629209/1",
+            content = {
+            { type = "p", text = "Just saw the Blizzard Q&A and it was mentioned that they are monitoring the economy very closely and that its not worth getting a perminant ban for buying gold! Let hope this makes a difference and the first few people get made an example of in a manner that deters the rest." },
+            { type = "image", width = 72, height = 72, u = 0.5625, v = 0.5625, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-09-30-perma-bans-for-gold-buyers-d885625a8f\\image-1.jpg" },
+            },
+        },
         ["2026-09-30-hotfixes-september-29-2026-c7227a9ae4"] = {
             id = "2026-09-30-hotfixes-september-29-2026-c7227a9ae4",
             post_key = "c7227a9ae4",
