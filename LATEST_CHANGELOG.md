@@ -1,2 +1,3 @@
-## 4.1.2
-- Added: After WoW:F Podcast, I'm feeling a ton of confidence in this dev team
+## 4.1.3
+- Added: WoW Forever Beta Development Notes – Updated September 24
+- Added: WoW Forever Beta Known Issues - September 24
