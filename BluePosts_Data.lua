@@ -1,11 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790892880,
+    package_timestamp = 1790894662,
     new_post_ids = {
-        "2026-10-01-legacy-points-for-beta-testing-980c71ded2",
-        "2026-10-01-legacy-points-for-beta-testing-ed8f1767d0",
+        "2026-10-01-after-wowf-podcast-ix27m-feeling-a-ton-of-confidence-in-this-dev-team-5197c07b22",
     },
     posts = {
+        ["2026-10-01-after-wowf-podcast-ix27m-feeling-a-ton-of-confidence-in-this-dev-team-5197c07b22"] = {
+            id = "2026-10-01-after-wowf-podcast-ix27m-feeling-a-ton-of-confidence-in-this-dev-team-5197c07b22",
+            post_key = "5197c07b22",
+            title = "After WoW:F Podcast, I'm feeling a ton of confidence in this dev team",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1790893853,
+            url = "https://us.forums.blizzard.com/en/wow/t/2368816/1",
+            content = {
+            { type = "p", text = "They might not have the answer to every question but their guiding approach is rock solid. This is a team that gets everything that was great about Classic and is passionate about preserving and building on it. It sounds like they’re open minded enough to experiment with stuff but will always bring it back to core principles that are rock solid." },
+            { type = "p", text = "I’ve never been as pumped for WoW as I am now and I was there in 2004. Round of applause for all of them." },
+            },
+        },
         ["2026-10-01-legacy-points-for-beta-testing-980c71ded2"] = {
             id = "2026-10-01-legacy-points-for-beta-testing-980c71ded2",
             post_key = "980c71ded2",
