@@ -1,3 +1,2 @@
-## 4.0.5
-- Added: Beta Update Maintenance - October 1
-- Added: Beta Update Maintenance - Evening of 1 October
+## 4.0.6
+- Added: Watch Now! WoW: Forever Podcast Ep.2, Speedrunning Classes

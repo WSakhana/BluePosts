@@ -1,3 +1,6 @@
+## 4.0.6
+- Added: Watch Now! WoW: Forever Podcast Ep.2, Speedrunning Classes
+
 ## 4.0.5
 - Added: Beta Update Maintenance - October 1
 - Added: Beta Update Maintenance - Evening of 1 October
@@ -1205,6 +1208,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790815484,
+    package_timestamp = 1790873108,
     new_post_ids = {
-        "2026-10-01-beta-update-maintenance-october-1-5923d4e1d1",
-        "2026-10-01-beta-update-maintenance-evening-of-1-october-50a8479232",
+        "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-5ce599032c",
+        "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-9101855ffd",
     },
     posts = {
+        ["2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-5ce599032c"] = {
+            id = "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-5ce599032c",
+            post_key = "5ce599032c",
+            title = "Watch Now! WoW: Forever Podcast Ep.2, Speedrunning Classes",
+            category = "Blogs (EU)",
+            timestamp = 1790872260,
+            url = "https://news.blizzard.com/en-gb/article/24298592/watch-now-wow-forever-podcast-ep-2-speedrunning-classes",
+            content = {
+            { type = "p", text = "Curious about Classes in WoW Forever? Host Countdown To Classic sits down with Senior Game Designers Josh “Aggrend” Greenfield and Aidan Moon, Principal Game Designer Kris Zierhut, and special guest and content creator Sodapoppin to explore the strategies, challenges, and choices around Class design philosophy in WoW: Forever." },
+            },
+        },
+        ["2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-9101855ffd"] = {
+            id = "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-9101855ffd",
+            post_key = "9101855ffd",
+            title = "Watch Now! WoW: Forever Podcast Ep.2, Speedrunning Classes",
+            category = "Blogs (US)",
+            timestamp = 1790872256,
+            url = "https://news.blizzard.com/en-us/article/24298592/watch-now-wow-forever-podcast-ep-2-speedrunning-classes",
+            content = {
+            { type = "p", text = "Curious about Classes in WoW Forever? Host Countdown To Classic sits down with Senior Game Designers Josh “Aggrend” Greenfield and Aidan Moon, Principal Game Designer Kris Zierhut, and special guest and content creator Sodapoppin to explore the strategies, challenges, and choices around Class design philosophy in WoW: Forever." },
+            },
+        },
         ["2026-10-01-beta-update-maintenance-october-1-5923d4e1d1"] = {
             id = "2026-10-01-beta-update-maintenance-october-1-5923d4e1d1",
             post_key = "5923d4e1d1",
