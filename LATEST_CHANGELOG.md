@@ -1,3 +1,4 @@
-## 4.1.3
-- Added: WoW Forever Beta Development Notes – Updated September 24
-- Added: WoW Forever Beta Known Issues - September 24
+## 4.1.4
+- Added: Temporary Dialog Bug for Australian Testers
+- Added: WoW Forever Beta Development Notes – Updated 1 October
+- Added: WoW Forever Beta Known Issues - 1 October
