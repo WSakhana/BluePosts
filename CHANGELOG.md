@@ -1,3 +1,6 @@
+## 4.0.8
+- Added: The WoW: Forever Podcast: Episode 2 - Speed Running Classes ft. ‪@sodapoppin‬
+
 ## 4.0.7
 - Added: The WoW: Forever Podcast: Episode 2 - Speed Running Classes ft. ‪@sodapoppin‬
 
@@ -1211,6 +1214,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
