@@ -1,3 +1,6 @@
+## 4.1.1
+- Added: Legacy Points for Beta Testing
+
 ## 4.1.0
 - Added: Actions Taken Against Botting and RMT
 
@@ -1220,6 +1223,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

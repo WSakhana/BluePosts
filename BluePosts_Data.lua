@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790890180,
+    package_timestamp = 1790892880,
     new_post_ids = {
-        "2026-10-01-actions-taken-against-botting-and-rmt-bb34fa973b",
-        "2026-10-01-actions-taken-against-botting-and-rmt-f5641f6e3f",
+        "2026-10-01-legacy-points-for-beta-testing-980c71ded2",
+        "2026-10-01-legacy-points-for-beta-testing-ed8f1767d0",
     },
     posts = {
+        ["2026-10-01-legacy-points-for-beta-testing-980c71ded2"] = {
+            id = "2026-10-01-legacy-points-for-beta-testing-980c71ded2",
+            post_key = "980c71ded2",
+            title = "Legacy Points for Beta Testing",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1790892065,
+            url = "https://us.forums.blizzard.com/en/wow/t/2368776/1",
+            content = {
+            { type = "p", text = "Over the first two weeks of the WoW Forever Beta, we’ve seen an increasing number of testers pushing to earn points in the Legacy system." },
+            { type = "p", text = "In a future week of the Beta, we’re planning to grant all testers 16 Legacy points so that the system can be tested without first requiring a great deal of leveling different classes, clearing dungeons, etc." },
+            { type = "p", text = "Once applied, we expect to keep that grant in place until the end of the Beta." },
+            },
+        },
+        ["2026-10-01-legacy-points-for-beta-testing-ed8f1767d0"] = {
+            id = "2026-10-01-legacy-points-for-beta-testing-ed8f1767d0",
+            post_key = "ed8f1767d0",
+            title = "Legacy Points for Beta Testing",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1790892060,
+            url = "https://eu.forums.blizzard.com/en/wow/t/633003/1",
+            content = {
+            { type = "p", text = "Over the first two weeks of the WoW Forever Beta, we’ve seen an increasing number of testers pushing to earn points in the Legacy system." },
+            { type = "p", text = "In a future week of the Beta, we’re planning to grant all testers 16 Legacy points so that the system can be tested without first requiring a great deal of leveling different classes, clearing dungeons, etc." },
+            { type = "p", text = "Once applied, we expect to keep that grant in place until the end of the Beta." },
+            },
+        },
         ["2026-10-01-actions-taken-against-botting-and-rmt-bb34fa973b"] = {
             id = "2026-10-01-actions-taken-against-botting-and-rmt-bb34fa973b",
             post_key = "bb34fa973b",

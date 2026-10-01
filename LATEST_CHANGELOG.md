@@ -1,2 +1,2 @@
-## 4.1.0
-- Added: Actions Taken Against Botting and RMT
+## 4.1.1
+- Added: Legacy Points for Beta Testing
