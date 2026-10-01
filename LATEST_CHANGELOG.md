@@ -1,2 +1,2 @@
-## 4.0.8
-- Added: The WoW: Forever Podcast: Episode 2 - Speed Running Classes ft. ‪@sodapoppin‬
+## 4.0.9
+- Added: 12.1.5 Content Update Notes

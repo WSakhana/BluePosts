@@ -1,3 +1,6 @@
+## 4.0.9
+- Added: 12.1.5 Content Update Notes
+
 ## 4.0.8
 - Added: The WoW: Forever Podcast: Episode 2 - Speed Running Classes ft. ‪@sodapoppin‬
 
@@ -1214,6 +1217,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
