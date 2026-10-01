@@ -1,11 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790803765,
+    package_timestamp = 1790815484,
     new_post_ids = {
-        "2026-09-30-world-of-warcraft-forever-class-deep-dives-priest-and-warrior-d38c411ebe",
-        "2026-09-30-world-of-warcraft-forever-class-deep-dives-priest-and-warrior-9457f599e1",
+        "2026-10-01-beta-update-maintenance-october-1-5923d4e1d1",
+        "2026-10-01-beta-update-maintenance-evening-of-1-october-50a8479232",
     },
     posts = {
+        ["2026-10-01-beta-update-maintenance-october-1-5923d4e1d1"] = {
+            id = "2026-10-01-beta-update-maintenance-october-1-5923d4e1d1",
+            post_key = "5923d4e1d1",
+            title = "Beta Update Maintenance - October 1",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1790814664,
+            url = "https://us.forums.blizzard.com/en/wow/t/2367661/1",
+            content = {
+            { type = "p", text = "Tomorrow morning PDT, we will take the WoW Forever Beta offline for maintenance. Several hours later, the Beta will resume with an updated build that includes changes and fixes, with the level cap raised to 30." },
+            { type = "p", text = "We’ll have all the details here tomorrow." },
+            },
+        },
+        ["2026-10-01-beta-update-maintenance-evening-of-1-october-50a8479232"] = {
+            id = "2026-10-01-beta-update-maintenance-evening-of-1-october-50a8479232",
+            post_key = "50a8479232",
+            title = "Beta Update Maintenance - Evening of 1 October",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1790814660,
+            url = "https://eu.forums.blizzard.com/en/wow/t/632751/1",
+            content = {
+            { type = "p", text = "This evening CEST, we will take the WoW Forever Beta offline for maintenance. A few hours later, (early in the morning of October 2), the Beta will resume with an updated build that includes changes and fixes, with the level cap raised to 30." },
+            { type = "p", text = "We’ll have all the details here tomorrow." },
+            },
+        },
         ["2026-09-30-world-of-warcraft-forever-class-deep-dives-priest-and-warrior-d38c411ebe"] = {
             id = "2026-09-30-world-of-warcraft-forever-class-deep-dives-priest-and-warrior-d38c411ebe",
             post_key = "d38c411ebe",

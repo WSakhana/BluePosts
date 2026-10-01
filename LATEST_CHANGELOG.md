@@ -1,2 +1,3 @@
-## 4.0.4
-- Added: World of Warcraft: Forever Class Deep Dives — Priest and Warrior
+## 4.0.5
+- Added: Beta Update Maintenance - October 1
+- Added: Beta Update Maintenance - Evening of 1 October
