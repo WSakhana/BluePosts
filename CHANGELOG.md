@@ -1,3 +1,6 @@
+## 4.1.0
+- Added: Actions Taken Against Botting and RMT
+
 ## 4.0.9
 - Added: 12.1.5 Content Update Notes
 
@@ -1217,6 +1220,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

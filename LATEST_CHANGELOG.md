@@ -1,2 +1,2 @@
-## 4.0.9
-- Added: 12.1.5 Content Update Notes
+## 4.1.0
+- Added: Actions Taken Against Botting and RMT

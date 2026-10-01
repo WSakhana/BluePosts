@@ -1,11 +1,41 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790875798,
+    package_timestamp = 1790890180,
     new_post_ids = {
-        "2026-10-01-1215-content-update-notes-40462c9040",
-        "2026-10-01-1215-content-update-notes-24fc444533",
+        "2026-10-01-actions-taken-against-botting-and-rmt-bb34fa973b",
+        "2026-10-01-actions-taken-against-botting-and-rmt-f5641f6e3f",
     },
     posts = {
+        ["2026-10-01-actions-taken-against-botting-and-rmt-bb34fa973b"] = {
+            id = "2026-10-01-actions-taken-against-botting-and-rmt-bb34fa973b",
+            post_key = "bb34fa973b",
+            title = "Actions Taken Against Botting and RMT",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1790889367,
+            url = "https://us.forums.blizzard.com/en/wow/t/2368705/1",
+            content = {
+            { type = "p", text = "Since our previous note on the subject of addressing Real Money Transactions (RMT) in WoW: Forever, we have been continuously actioning accounts that were found to be botting to amass gold in the WoW: Forever Beta, as well as the accounts of those who were found to have purchased or knowingly received illicit gold. We will continue to take action against RMT in both the Beta and the live game after the launch of WoW: Forever." },
+            { type = "p", text = "We will soon add a warning to the game that will appear whenever you trade with strangers. The warning reads:" },
+            { type = "p", text = "Be wary of accepting gold from unknown or suspicious sources. If the provider is engaged in Real Money Transactions, you could put your account at risk of closure. Please see the following support article for more information: https://support.blizzard.com/help/article/379634" },
+            { type = "p", text = "Our stance on RMT in World of Warcraft is crystal clear: any account belonging to any player that is found to have participated in generating, selling, buying, or receiving illicit gold is subject to the gold being removed, account suspensions, or permanent account closures." },
+            { type = "p", text = "Thank you to every player who has provided feedback on this subject. You’ve participated in making this Beta invaluable to us as we refine our processes around this and many other issues." },
+            },
+        },
+        ["2026-10-01-actions-taken-against-botting-and-rmt-f5641f6e3f"] = {
+            id = "2026-10-01-actions-taken-against-botting-and-rmt-f5641f6e3f",
+            post_key = "f5641f6e3f",
+            title = "Actions Taken Against Botting and RMT",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1790889360,
+            url = "https://eu.forums.blizzard.com/en/wow/t/632993/1",
+            content = {
+            { type = "p", text = "Since our previous note on the subject of addressing Real Money Transactions (RMT) in WoW: Forever, we have been continuously actioning accounts that were found to be botting to amass gold in the WoW: Forever Beta, as well as the accounts of those who were found to have purchased or knowingly received illicit gold. We will continue to take action against RMT in both the Beta and the live game after the launch of WoW: Forever." },
+            { type = "p", text = "We will soon add a warning to the game that will appear whenever you trade with strangers. The warning reads:" },
+            { type = "p", text = "Be wary of accepting gold from unknown or suspicious sources. If the provider is engaged in Real Money Transactions, you could put your account at risk of closure. Please see the following support article for more information: https://support.blizzard.com/help/article/379634" },
+            { type = "p", text = "Our stance on RMT in World of Warcraft is crystal clear: any account belonging to any player that is found to have participated in generating, selling, buying, or receiving illicit gold is subject to the gold being removed, account suspensions, or permanent account closures." },
+            { type = "p", text = "Thank you to every player who has provided feedback on this subject. You’ve participated in making this Beta invaluable to us as we refine our processes around this and many other issues." },
+            },
+        },
         ["2026-10-01-1215-content-update-notes-40462c9040"] = {
             id = "2026-10-01-1215-content-update-notes-40462c9040",
             post_key = "40462c9040",
