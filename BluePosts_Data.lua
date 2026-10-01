@@ -1,11 +1,21 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790873108,
+    package_timestamp = 1790874114,
     new_post_ids = {
-        "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-5ce599032c",
-        "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-9101855ffd",
+        "2026-10-01-the-wow-forever-podcast-episode-2-speed-running-classes-ft-sodapoppin-52ece1a2e7",
     },
     posts = {
+        ["2026-10-01-the-wow-forever-podcast-episode-2-speed-running-classes-ft-sodapoppin-52ece1a2e7"] = {
+            id = "2026-10-01-the-wow-forever-podcast-episode-2-speed-running-classes-ft-sodapoppin-52ece1a2e7",
+            post_key = "52ece1a2e7",
+            title = "The WoW: Forever Podcast: Episode 2 - Speed Running Classes ft. ‪@sodapoppin‬",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1790873151,
+            url = "https://us.forums.blizzard.com/en/wow/t/2368192/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-01-the-wow-forever-podcast-episode-2-speed-running-classes-ft-sodapoppin-52ece1a2e7\\image-1.jpg" },
+            },
+        },
         ["2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-5ce599032c"] = {
             id = "2026-10-01-watch-now-wow-forever-podcast-ep2-speedrunning-classes-5ce599032c",
             post_key = "5ce599032c",

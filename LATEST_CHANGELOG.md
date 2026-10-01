@@ -1,2 +1,2 @@
-## 4.0.6
-- Added: Watch Now! WoW: Forever Podcast Ep.2, Speedrunning Classes
+## 4.0.7
+- Added: The WoW: Forever Podcast: Episode 2 - Speed Running Classes ft. ‪@sodapoppin‬
