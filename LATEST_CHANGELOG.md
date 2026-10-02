@@ -1,3 +1,3 @@
-## 4.1.6
-- Added: WoW: Forever Classes Take Center Stage in This Week’s Wow Weekly
-- Added: Warrior Updates in Today's Beta Build
+## 4.1.7
+- Added: Incoming Class Tuning - October 6
+- Added: Incoming Class Tuning - 6 October

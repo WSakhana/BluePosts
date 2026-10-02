@@ -1,3 +1,7 @@
+## 4.1.7
+- Added: Incoming Class Tuning - October 6
+- Added: Incoming Class Tuning - 6 October
+
 ## 4.1.6
 - Added: WoW: Forever Classes Take Center Stage in This Week’s Wow Weekly
 - Added: Warrior Updates in Today's Beta Build
@@ -1245,6 +1249,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
