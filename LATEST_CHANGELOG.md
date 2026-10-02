@@ -1,4 +1,5 @@
-## 4.1.4
-- Added: Temporary Dialog Bug for Australian Testers
-- Added: WoW Forever Beta Development Notes – Updated 1 October
-- Added: WoW Forever Beta Known Issues - 1 October
+## 4.1.5
+- Added: Hotfixes: October 1, 2026
+- Added: Beta Service Issue - October 1
+- Added: Beta Service Issue - 2 October
+- Updated: Hotfixes: October 1, 2026
