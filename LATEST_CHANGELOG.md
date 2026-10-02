@@ -1,5 +1,3 @@
-## 4.1.5
-- Added: Hotfixes: October 1, 2026
-- Added: Beta Service Issue - October 1
-- Added: Beta Service Issue - 2 October
-- Updated: Hotfixes: October 1, 2026
+## 4.1.6
+- Added: WoW: Forever Classes Take Center Stage in This Week’s Wow Weekly
+- Added: Warrior Updates in Today's Beta Build

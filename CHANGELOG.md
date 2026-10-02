@@ -1,3 +1,7 @@
+## 4.1.6
+- Added: WoW: Forever Classes Take Center Stage in This Week’s Wow Weekly
+- Added: Warrior Updates in Today's Beta Build
+
 ## 4.1.5
 - Added: Hotfixes: October 1, 2026
 - Added: Beta Service Issue - October 1
@@ -1241,6 +1245,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
