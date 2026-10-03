@@ -1,3 +1,6 @@
+## 4.1.8
+- Updated: Dialog Bug for Australian Testers -- fixed
+
 ## 4.1.7
 - Added: Incoming Class Tuning - October 6
 - Added: Incoming Class Tuning - 6 October
@@ -1249,6 +1252,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

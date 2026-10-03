@@ -1,11 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1790982012,
+    package_timestamp = 1791050361,
     new_post_ids = {
-        "2026-10-02-incoming-class-tuning-october-6-303f0ba7f9",
-        "2026-10-02-incoming-class-tuning-6-october-df02cfcdfe",
     },
     posts = {
+        ["2026-10-03-dialog-bug-for-australian-testers-fixed-f5296b52ca"] = {
+            id = "2026-10-03-dialog-bug-for-australian-testers-fixed-f5296b52ca",
+            post_key = "f5296b52ca",
+            title = "Dialog Bug for Australian Testers -- fixed",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1791049535,
+            url = "https://us.forums.blizzard.com/en/wow/t/2368931/1",
+            content = {
+            { type = "h2", text = "UPDATE 04:00 AEDT OCTOBER 4" },
+            { type = "h3", text = "We’ve fixed the bug that was causing this." },
+            { type = "hr" },
+            { type = "p", text = "With the new build of the WoW Forever Beta, we have an unexpected bug where Australian players are being presented with a dialog when they log in telling them their social features are locked down. This is not the case, of course." },
+            { type = "p", text = "We’ll get the bug fixed as soon as possible." },
+            },
+        },
         ["2026-10-02-incoming-class-tuning-october-6-303f0ba7f9"] = {
             id = "2026-10-02-incoming-class-tuning-october-6-303f0ba7f9",
             post_key = "303f0ba7f9",
@@ -3851,18 +3864,6 @@ BluePosts_Data = {
             content = {
             { type = "p", text = "We’re aware of and working to address an issue that appears to be preventing testers from logging into the WoW: Forever Beta." },
             { type = "p", text = "We will continue to work to fix this as swiftly as possible." },
-            },
-        },
-        ["2026-10-01-temporary-dialog-bug-for-australian-testers-f5296b52ca"] = {
-            id = "2026-10-01-temporary-dialog-bug-for-australian-testers-f5296b52ca",
-            post_key = "f5296b52ca",
-            title = "Temporary Dialog Bug for Australian Testers",
-            category = "WoW: Forever Beta Discussion (US)",
-            timestamp = 1790896571,
-            url = "https://us.forums.blizzard.com/en/wow/t/2368931/1",
-            content = {
-            { type = "p", text = "With the new build of the WoW Forever Beta, we have an unexpected bug where Australian players are being presented with a dialog when they log in telling them their social features are locked down. This is not the case, of course." },
-            { type = "p", text = "We’ll get the bug fixed as soon as possible." },
             },
         },
         ["2026-10-01-wow-forever-beta-development-notes-updated-1-october-891edae0fa"] = {
