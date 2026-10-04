@@ -1,9 +1,21 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791050361,
+    package_timestamp = 1791073757,
     new_post_ids = {
+        "2026-10-04-gnomeregan-who-broke-it-43a2e8c351",
     },
     posts = {
+        ["2026-10-04-gnomeregan-who-broke-it-43a2e8c351"] = {
+            id = "2026-10-04-gnomeregan-who-broke-it-43a2e8c351",
+            post_key = "43a2e8c351",
+            title = "Gnomeregan, Who broke it?!",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1791072934,
+            url = "https://us.forums.blizzard.com/en/wow/t/2370922/1",
+            content = {
+            { type = "p", text = "Bosses are not dropping loot in Gnomeregan, quest or otherwise. Bug report submitted. I’m just looking for any updates." },
+            },
+        },
         ["2026-10-03-dialog-bug-for-australian-testers-fixed-f5296b52ca"] = {
             id = "2026-10-03-dialog-bug-for-australian-testers-fixed-f5296b52ca",
             post_key = "f5296b52ca",

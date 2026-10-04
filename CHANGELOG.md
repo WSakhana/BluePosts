@@ -1,3 +1,6 @@
+## 4.1.9
+- Added: Gnomeregan, Who broke it?!
+
 ## 4.1.8
 - Updated: Dialog Bug for Australian Testers -- fixed
 
@@ -1252,6 +1255,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

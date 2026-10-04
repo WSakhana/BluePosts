@@ -1,2 +1,2 @@
-## 4.1.8
-- Updated: Dialog Bug for Australian Testers -- fixed
+## 4.1.9
+- Added: Gnomeregan, Who broke it?!
