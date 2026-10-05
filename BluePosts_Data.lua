@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791073757,
+    package_timestamp = 1791243878,
     new_post_ids = {
-        "2026-10-04-gnomeregan-who-broke-it-43a2e8c351",
+        "2026-10-05-brief-realm-maintenance-october-5-1238344f20",
+        "2026-10-05-brief-realm-maintenance-6-october-276a18df93",
     },
     posts = {
+        ["2026-10-05-brief-realm-maintenance-october-5-1238344f20"] = {
+            id = "2026-10-05-brief-realm-maintenance-october-5-1238344f20",
+            post_key = "1238344f20",
+            title = "Brief Realm Maintenance - October 5",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1791243048,
+            url = "https://us.forums.blizzard.com/en/wow/t/2373436/1",
+            content = {
+            { type = "p", text = "We’re going to do realm restarts in a few minutes, to apply some fixes that should improve the quality of the game service." },
+            { type = "p", text = "Beta testers who are in-game will see server messages counting down to the restart time." },
+            { type = "p", text = "And the Beta will re-open a few minutes after it goes offline." },
+            },
+        },
+        ["2026-10-05-brief-realm-maintenance-6-october-276a18df93"] = {
+            id = "2026-10-05-brief-realm-maintenance-6-october-276a18df93",
+            post_key = "276a18df93",
+            title = "Brief Realm Maintenance - 6 October",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1791243041,
+            url = "https://eu.forums.blizzard.com/en/wow/t/633813/1",
+            content = {
+            { type = "p", text = "We’re going to do realm restarts in a few minutes, to apply some fixes that should improve the quality of the game service." },
+            { type = "p", text = "Beta testers who are in-game will see server messages counting down to the restart time." },
+            { type = "p", text = "And the Beta will re-open a few minutes after it goes offline." },
+            },
+        },
         ["2026-10-04-gnomeregan-who-broke-it-43a2e8c351"] = {
             id = "2026-10-04-gnomeregan-who-broke-it-43a2e8c351",
             post_key = "43a2e8c351",
