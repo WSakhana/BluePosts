@@ -1,9 +1,7 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791323076,
+    package_timestamp = 1791324887,
     new_post_ids = {
-        "2026-10-06-brief-beta-realm-maintenance-october-6-a8a6f3bf71",
-        "2026-10-06-brief-beta-realm-maintenance-6-october-3f112ba964",
     },
     posts = {
         ["2026-10-06-brief-beta-realm-maintenance-october-6-a8a6f3bf71"] = {
@@ -11,7 +9,7 @@ BluePosts_Data = {
             post_key = "a8a6f3bf71",
             title = "Brief Beta Realm Maintenance - October 6",
             category = "WoW: Forever Beta Discussion (US)",
-            timestamp = 1791322244,
+            timestamp = 1791324045,
             url = "https://us.forums.blizzard.com/en/wow/t/2374348/1",
             content = {
             { type = "p", text = "We’re planning to do realm restarts at 3:00 p.m. PDT (about 40 minutes from now), to pick up some priority fixes for the Beta." },
@@ -24,7 +22,7 @@ BluePosts_Data = {
             post_key = "3f112ba964",
             title = "Brief Beta Realm Maintenance - 6 October",
             category = "WoW Forever Beta Discussion (EU)",
-            timestamp = 1791322240,
+            timestamp = 1791324040,
             url = "https://eu.forums.blizzard.com/en/wow/t/634008/1",
             content = {
             { type = "p", text = "We’re planning to do realm restarts at 23:59 CEST (about 40 minutes from now), to pick up some priority fixes for the Beta." },
