@@ -1,3 +1,6 @@
+## 4.2.2
+- Added: Incoming Ula’tek Raid Encounter Tuning - 6 October
+
 ## 4.2.1
 - Added: Incoming Ula'tek Raid Encounter Tuning - October 6
 
@@ -1262,6 +1265,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
