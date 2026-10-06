@@ -1,3 +1,7 @@
+## 4.2.3
+- Added: Brief Beta Realm Maintenance - October 6
+- Added: Brief Beta Realm Maintenance - 6 October
+
 ## 4.2.2
 - Added: Incoming Ula’tek Raid Encounter Tuning - 6 October
 
@@ -1265,6 +1269,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
