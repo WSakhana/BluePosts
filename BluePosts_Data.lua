@@ -1,11 +1,40 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791243878,
+    package_timestamp = 1791255556,
     new_post_ids = {
-        "2026-10-05-brief-realm-maintenance-october-5-1238344f20",
-        "2026-10-05-brief-realm-maintenance-6-october-276a18df93",
+        "2026-10-06-incoming-ulax27tek-raid-encounter-tuning-october-6-d79b9ef947",
     },
     posts = {
+        ["2026-10-06-incoming-ulax27tek-raid-encounter-tuning-october-6-d79b9ef947"] = {
+            id = "2026-10-06-incoming-ulax27tek-raid-encounter-tuning-october-6-d79b9ef947",
+            post_key = "d79b9ef947",
+            title = "Incoming Ula'tek Raid Encounter Tuning - October 6",
+            category = "General Discussion (US)",
+            timestamp = 1791254735,
+            url = "https://us.forums.blizzard.com/en/wow/t/2373623/1",
+            content = {
+            { type = "p", text = "Hello raiders!" },
+            { type = "p", text = "The following Ula’tek raid encounter adjustments will arrive with scheduled weekly maintenance (October 6 in this region)." },
+            { type = "h2", text = "DUNGEONS AND RAIDS" },
+            { type = "list_item", text = "The Venomous Abyss", level = 0 },
+            { type = "list_item", text = "Ula’tek", level = 1 },
+            { type = "list_item", text = "General", level = 2 },
+            { type = "list_item", text = "Spectral Coils damage reduced by 20% on Heroic and Mythic difficulties.", level = 3 },
+            { type = "list_item", text = "Stage 02", level = 2 },
+            { type = "list_item", text = "Warden’s Protection damage reduced by 80%.", level = 3 },
+            { type = "list_item", text = "Reduced the number of ground targets during Virulent Spit.", level = 3 },
+            { type = "list_item", text = "Grasping Fangs periodic damage reduced by 30% on Heroic and Mythic difficulties.", level = 3 },
+            { type = "list_item", text = "Blight Vein duration reduced to 4 seconds on Heroic and Mythic difficulties (was 6 seconds).", level = 3 },
+            { type = "list_item", text = "Stage 03", level = 2 },
+            { type = "list_item", text = "Blightscale Shrieker health reduced by 20% on Heroic and Mythic difficulties.", level = 3 },
+            { type = "list_item", text = "Blightscale Clutch health reduced by 20% on Heroic and Mythic difficulties.", level = 3 },
+            { type = "list_item", text = "Slithering Clutch health reduced by 20% on Mythic difficulties.", level = 3 },
+            { type = "list_item", text = "Circling Prey raid damage reduced by 30% on Heroic and Mythic difficulties.", level = 3 },
+            { type = "list_item", text = "Adjusted the Drain Rate of Serpent’s Bite so you no longer need more than 3 people to soak regardless of raid size.", level = 3 },
+            { type = "list_item", text = "Toxic Burn damage reduced by 30% on Mythic difficulty.", level = 3 },
+            { type = "list_item", text = "The number of waves that emit from a tail during Caustic Waves reduced to 3 on Mythic difficulty (was 7).", level = 3 },
+            },
+        },
         ["2026-10-05-brief-realm-maintenance-october-5-1238344f20"] = {
             id = "2026-10-05-brief-realm-maintenance-october-5-1238344f20",
             post_key = "1238344f20",
