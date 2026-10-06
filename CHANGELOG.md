@@ -1,3 +1,7 @@
+## 4.2.5
+- Added: Hotfixes: October 6, 2026
+- Updated: Hotfixes: October 6, 2026
+
 ## 4.2.4
 - Updated bundled blue post data.
 
@@ -1272,6 +1276,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

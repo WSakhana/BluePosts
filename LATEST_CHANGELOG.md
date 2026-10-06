@@ -1,2 +1,3 @@
-## 4.2.4
-- Updated bundled blue post data.
+## 4.2.5
+- Added: Hotfixes: October 6, 2026
+- Updated: Hotfixes: October 6, 2026
