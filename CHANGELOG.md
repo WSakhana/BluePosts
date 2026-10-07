@@ -1,3 +1,7 @@
+## 4.2.9
+- Added: World of Warcraft: Forever Class Deep Dives — Mage and Shaman
+- Added: World of Warcraft: Forever Class Deep Dives — Rogue and Warlock
+
 ## 4.2.8
 - Added: World of Warcraft: Forever- The Future of Skyborne Visual Updates
 
@@ -1285,6 +1289,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

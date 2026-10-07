@@ -1,2 +1,3 @@
-## 4.2.8
-- Added: World of Warcraft: Forever- The Future of Skyborne Visual Updates
+## 4.2.9
+- Added: World of Warcraft: Forever Class Deep Dives — Mage and Shaman
+- Added: World of Warcraft: Forever Class Deep Dives — Rogue and Warlock
