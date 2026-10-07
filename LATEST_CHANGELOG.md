@@ -1,2 +1,2 @@
-## 4.2.6
-- Added: How PvP Progression in World of Warcraft: Forever Works
+## 4.2.7
+- Added: Battle for the Darkspear Islands in World of Warcraft: Forever
