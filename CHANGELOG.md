@@ -1,3 +1,6 @@
+## 4.2.8
+- Added: World of Warcraft: Forever- The Future of Skyborne Visual Updates
+
 ## 4.2.7
 - Added: Battle for the Darkspear Islands in World of Warcraft: Forever
 
@@ -1282,6 +1285,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
