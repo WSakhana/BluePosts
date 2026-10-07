@@ -1,3 +1,2 @@
-## 4.2.5
-- Added: Hotfixes: October 6, 2026
-- Updated: Hotfixes: October 6, 2026
+## 4.2.6
+- Added: How PvP Progression in World of Warcraft: Forever Works

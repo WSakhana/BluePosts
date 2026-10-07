@@ -1,3 +1,6 @@
+## 4.2.6
+- Added: How PvP Progression in World of Warcraft: Forever Works
+
 ## 4.2.5
 - Added: Hotfixes: October 6, 2026
 - Updated: Hotfixes: October 6, 2026
@@ -1276,6 +1279,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
