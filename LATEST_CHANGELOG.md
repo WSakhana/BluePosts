@@ -1,3 +1,2 @@
-## 4.2.9
-- Added: World of Warcraft: Forever Class Deep Dives — Mage and Shaman
-- Added: World of Warcraft: Forever Class Deep Dives — Rogue and Warlock
+## 4.3.0
+- Added: Beta Realm Maintenance - October 8

@@ -1,3 +1,6 @@
+## 4.3.0
+- Added: Beta Realm Maintenance - October 8
+
 ## 4.2.9
 - Added: World of Warcraft: Forever Class Deep Dives — Mage and Shaman
 - Added: World of Warcraft: Forever Class Deep Dives — Rogue and Warlock
@@ -1289,6 +1292,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

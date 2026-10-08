@@ -1,13 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791412193,
+    package_timestamp = 1791472520,
     new_post_ids = {
-        "2026-10-07-world-of-warcraft-forever-class-deep-dives-mage-and-shaman-de03e301d2",
-        "2026-10-07-world-of-warcraft-forever-class-deep-dives-rogue-and-warlock-fcc1c1adcc",
-        "2026-10-07-world-of-warcraft-forever-class-deep-dives-mage-and-shaman-db8e0a2119",
-        "2026-10-07-world-of-warcraft-forever-class-deep-dives-rogue-and-warlock-3153c46a2b",
+        "2026-10-08-beta-realm-maintenance-october-8-7def4c2233",
     },
     posts = {
+        ["2026-10-08-beta-realm-maintenance-october-8-7def4c2233"] = {
+            id = "2026-10-08-beta-realm-maintenance-october-8-7def4c2233",
+            post_key = "7def4c2233",
+            title = "Beta Realm Maintenance - October 8",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1791471635,
+            url = "https://us.forums.blizzard.com/en/wow/t/2375900/1",
+            content = {
+            { type = "p", text = "Starting in one hour at 9:00 a.m. PDT, we will take the WoW Forever Beta down for maintenance and updates. We’re starting a bit earlier today than we have on previous Thursdays, because we’ve gathered up several fixes for behind-the-scenes, non-gameplay issues that we’re going to deploy and then test internally, in addition to a full suite of bug fixes and gameplay adjustments." },
+            { type = "p", text = "If this was a live game, we’d post in the Breaking News banner that we expect to bring realms back online by 3:00 p.m. PDT." },
+            { type = "p", text = "We’ll have a full update of our Development Notes and Known Issues posts later today." },
+            { type = "p", text = "Thank you for joining us on this adventure!" },
+            },
+        },
         ["2026-10-07-world-of-warcraft-forever-class-deep-dives-mage-and-shaman-de03e301d2"] = {
             id = "2026-10-07-world-of-warcraft-forever-class-deep-dives-mage-and-shaman-de03e301d2",
             post_key = "de03e301d2",
