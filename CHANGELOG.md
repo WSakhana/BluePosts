@@ -1,3 +1,9 @@
+## 4.3.7
+- Updated: WoW Forever Beta Development Notes – Updated October 8
+- Updated: WoW Forever Beta Development Notes – Updated 8 October
+- Updated: WoW Forever Beta Known Issues - October 8
+- Updated: WoW Forever Beta Known Issues - 8 October
+
 ## 4.3.6
 - Added: Owltastic Adventures Await with Whoofle Bramblewing
 
@@ -1312,6 +1318,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
