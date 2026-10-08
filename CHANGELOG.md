@@ -1,3 +1,6 @@
+## 4.3.5
+- Added: Brew Up Trouble with the Hexed Witchwick Collection
+
 ## 4.3.4
 - Added: BCCA: Face the Gods of Zul’Aman on October 22
 - Added: BCCA: Face the Gods of Zul’Aman on 22 October
@@ -1306,6 +1309,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
