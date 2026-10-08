@@ -1,3 +1,7 @@
+## 4.3.4
+- Added: BCCA: Face the Gods of Zul’Aman on October 22
+- Added: BCCA: Face the Gods of Zul’Aman on 22 October
+
 ## 4.3.3
 - Updated bundled blue post data.
 
@@ -1302,6 +1306,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
