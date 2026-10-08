@@ -1,10 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791472520,
+    package_timestamp = 1791473393,
     new_post_ids = {
-        "2026-10-08-beta-realm-maintenance-october-8-7def4c2233",
+        "2026-10-08-beta-realm-maintenance-8-october-f1981a342b",
     },
     posts = {
+        ["2026-10-08-beta-realm-maintenance-8-october-f1981a342b"] = {
+            id = "2026-10-08-beta-realm-maintenance-8-october-f1981a342b",
+            post_key = "f1981a342b",
+            title = "Beta Realm Maintenance - 8 October",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1791472534,
+            url = "https://eu.forums.blizzard.com/en/wow/t/634315/1",
+            content = {
+            { type = "p", text = "Starting in one hour at 18:00 CEST, we will take the WoW Forever Beta down for maintenance and updates. We’re starting a bit earlier today than we have on previous Thursdays, because we’ve gathered up several fixes for behind-the-scenes, non-gameplay issues that we’re going to deploy and then test internally, in addition to a full suite of bug fixes and gameplay adjustments." },
+            { type = "p", text = "If this was a live game, we’d post in the Breaking News banner that we expect to bring realms back online by Midnight, 00:00 CEST." },
+            { type = "p", text = "We’ll have a full update of our Development Notes and Known Issues posts later today." },
+            { type = "p", text = "Thank you for joining us on this adventure!" },
+            },
+        },
         ["2026-10-08-beta-realm-maintenance-october-8-7def4c2233"] = {
             id = "2026-10-08-beta-realm-maintenance-october-8-7def4c2233",
             post_key = "7def4c2233",

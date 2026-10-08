@@ -1,2 +1,2 @@
-## 4.3.0
-- Added: Beta Realm Maintenance - October 8
+## 4.3.1
+- Added: Beta Realm Maintenance - 8 October

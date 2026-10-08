@@ -1,3 +1,6 @@
+## 4.3.1
+- Added: Beta Realm Maintenance - 8 October
+
 ## 4.3.0
 - Added: Beta Realm Maintenance - October 8
 
@@ -1292,6 +1295,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
