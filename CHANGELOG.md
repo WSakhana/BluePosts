@@ -1,3 +1,6 @@
+## 4.3.3
+- Updated bundled blue post data.
+
 ## 4.3.2
 - Added: Check Out Episode 3 of the WoW: Forever Podcast
 - Added: The WoW: Forever Podcast: Episode 3 - Dive Into Dungeons With Devs ft. @Hammerdancegaming
@@ -1299,6 +1302,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
