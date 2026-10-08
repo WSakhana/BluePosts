@@ -1,3 +1,6 @@
+## 4.3.9
+- Added: Crafted Decor Cost Reduction in 12.1.5
+
 ## 4.3.8
 - Added: Twitch Drop: Get the Cuddly Gold-Colored Grrgle Housing Decor Item October 13!
 
@@ -1321,6 +1324,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

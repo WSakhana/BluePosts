@@ -1,11 +1,41 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791498560,
+    package_timestamp = 1791503073,
     new_post_ids = {
-        "2026-10-08-twitch-drop-get-the-cuddly-gold-colored-grrgle-housing-decor-item-octo-8b8ecb8e23",
-        "2026-10-08-twitch-drop-get-the-cuddly-gold-colored-grrgle-housing-decor-item-octo-a22e0bca7d",
+        "2026-10-08-crafted-decor-cost-reduction-in-1215-9fcab2d550",
+        "2026-10-08-crafted-decor-cost-reduction-in-1215-a27677de2c",
     },
     posts = {
+        ["2026-10-08-crafted-decor-cost-reduction-in-1215-9fcab2d550"] = {
+            id = "2026-10-08-crafted-decor-cost-reduction-in-1215-9fcab2d550",
+            post_key = "9fcab2d550",
+            title = "Crafted Decor Cost Reduction in 12.1.5",
+            category = "Midnight: 12.1.5 Public Test Realm (EU)",
+            timestamp = 1791502243,
+            url = "https://eu.forums.blizzard.com/en/wow/t/634448/1",
+            content = {
+            { type = "p", text = "We’ve been reviewing decor collection patterns, among other housing-related data, and based on that internal data (and player feedback as well!) we’re making a change in 12.1.5 that I’d like to highlight now that the patch release is right around the corner. All crafted decor from pre-Midnight professions will be getting their crafting cost reduced. 12.1 saw us do the same for Midnight profession recipes, and now we’re following it up with a significant reduction in decor crafting costs from all professions in all other expansions." },
+            { type = "p", text = "Some of these reductions are dramatic, some are merely significant. But this isn’t just a reduction in general reagent costs; lumber costs are coming down as well. We want players to craft and enjoy this decor, and we want players who have older professions leveled to see the benefit of those professions, and that will all be easier after the release of 12.1.5." },
+            { type = "p", text = "While some of the details may have changed, it looks like wowhead did a pretty good job collecting these changes a few weeks ago here: https://www.wowhead.com/news/over-200-decor-recipe-costs-nerfed-in-patch-12-1-5-382919" },
+            { type = "p", text = "Happy crafting!" },
+            { type = "p", text = "Chimes" },
+            },
+        },
+        ["2026-10-08-crafted-decor-cost-reduction-in-1215-a27677de2c"] = {
+            id = "2026-10-08-crafted-decor-cost-reduction-in-1215-a27677de2c",
+            post_key = "a27677de2c",
+            title = "Crafted Decor Cost Reduction in 12.1.5",
+            category = "Midnight: 12.1.5 Public Test Realm (US)",
+            timestamp = 1791502239,
+            url = "https://us.forums.blizzard.com/en/wow/t/2376676/1",
+            content = {
+            { type = "p", text = "We’ve been reviewing decor collection patterns, among other housing-related data, and based on that internal data (and player feedback as well!) we’re making a change in 12.1.5 that I’d like to highlight now that the patch release is right around the corner. All crafted decor from pre-Midnight professions will be getting their crafting cost reduced. 12.1 saw us do the same for Midnight profession recipes, and now we’re following it up with a significant reduction in decor crafting costs from all professions in all other expansions." },
+            { type = "p", text = "Some of these reductions are dramatic, some are merely significant. But this isn’t just a reduction in general reagent costs; lumber costs are coming down as well. We want players to craft and enjoy this decor, and we want players who have older professions leveled to see the benefit of those professions, and that will all be easier after the release of 12.1.5." },
+            { type = "p", text = "While some of the details may have changed, it looks like wowhead did a pretty good job collecting these changes a few weeks ago here: https://www.wowhead.com/news/over-200-decor-recipe-costs-nerfed-in-patch-12-1-5-382919" },
+            { type = "p", text = "Happy crafting!" },
+            { type = "p", text = "Chimes" },
+            },
+        },
         ["2026-10-08-twitch-drop-get-the-cuddly-gold-colored-grrgle-housing-decor-item-octo-8b8ecb8e23"] = {
             id = "2026-10-08-twitch-drop-get-the-cuddly-gold-colored-grrgle-housing-decor-item-octo-8b8ecb8e23",
             post_key = "8b8ecb8e23",

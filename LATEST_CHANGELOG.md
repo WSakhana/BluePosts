@@ -1,2 +1,2 @@
-## 4.3.8
-- Added: Twitch Drop: Get the Cuddly Gold-Colored Grrgle Housing Decor Item October 13!
+## 4.3.9
+- Added: Crafted Decor Cost Reduction in 12.1.5
