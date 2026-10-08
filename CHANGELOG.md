@@ -1,3 +1,6 @@
+## 4.3.8
+- Added: Twitch Drop: Get the Cuddly Gold-Colored Grrgle Housing Decor Item October 13!
+
 ## 4.3.7
 - Updated: WoW Forever Beta Development Notes – Updated October 8
 - Updated: WoW Forever Beta Development Notes – Updated 8 October
@@ -1318,6 +1321,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
