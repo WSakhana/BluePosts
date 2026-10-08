@@ -1,10 +1,57 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791473393,
+    package_timestamp = 1791477901,
     new_post_ids = {
-        "2026-10-08-beta-realm-maintenance-8-october-f1981a342b",
+        "2026-10-08-check-out-episode-3-of-the-wow-forever-podcast-277860829d",
+        "2026-10-08-check-out-episode-3-of-the-wow-forever-podcast-6bd3741dfc",
+        "2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-64109a3fcc",
+        "2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-c308030ae6",
     },
     posts = {
+        ["2026-10-08-check-out-episode-3-of-the-wow-forever-podcast-277860829d"] = {
+            id = "2026-10-08-check-out-episode-3-of-the-wow-forever-podcast-277860829d",
+            post_key = "277860829d",
+            title = "Check Out Episode 3 of the WoW: Forever Podcast",
+            category = "Blogs (EU)",
+            timestamp = 1791477064,
+            url = "https://news.blizzard.com/en-gb/article/24310653/check-out-episode-3-of-the-wow-forever-podcast",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guest Hammerdance as they sit down with Senior Game Designers Josh “Aggrend” Greenfield, Jay Hartman, and Rowan Ryder as they dive into dungeon leveling, questing, and more." },
+            },
+        },
+        ["2026-10-08-check-out-episode-3-of-the-wow-forever-podcast-6bd3741dfc"] = {
+            id = "2026-10-08-check-out-episode-3-of-the-wow-forever-podcast-6bd3741dfc",
+            post_key = "6bd3741dfc",
+            title = "Check Out Episode 3 of the WoW: Forever Podcast",
+            category = "Blogs (US)",
+            timestamp = 1791477061,
+            url = "https://news.blizzard.com/en-us/article/24310653/check-out-episode-3-of-the-wow-forever-podcast",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guest Hammerdance as they sit down with Senior Game Designers Josh “Aggrend” Greenfield, Jay Hartman, and Rowan Ryder as they dive into dungeon leveling, questing, and more." },
+            },
+        },
+        ["2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-64109a3fcc"] = {
+            id = "2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-64109a3fcc",
+            post_key = "64109a3fcc",
+            title = "The WoW: Forever Podcast: Episode 3 - Dive Into Dungeons With Devs ft. @Hammerdancegaming",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1791477057,
+            url = "https://us.forums.blizzard.com/en/wow/t/2376010/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-64109a3fcc\\image-1.jpg" },
+            },
+        },
+        ["2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-c308030ae6"] = {
+            id = "2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-c308030ae6",
+            post_key = "c308030ae6",
+            title = "The WoW: Forever Podcast: Episode 3 - Dive Into Dungeons With Devs ft. @Hammerdancegaming",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1791477053,
+            url = "https://eu.forums.blizzard.com/en/wow/t/634342/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-08-the-wow-forever-podcast-episode-3-dive-into-dungeons-with-devs-ft-hamm-c308030ae6\\image-1.jpg" },
+            },
+        },
         ["2026-10-08-beta-realm-maintenance-8-october-f1981a342b"] = {
             id = "2026-10-08-beta-realm-maintenance-8-october-f1981a342b",
             post_key = "f1981a342b",
