@@ -1,3 +1,6 @@
+## 4.3.6
+- Added: Owltastic Adventures Await with Whoofle Bramblewing
+
 ## 4.3.5
 - Added: Brew Up Trouble with the Hexed Witchwick Collection
 
@@ -1309,6 +1312,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

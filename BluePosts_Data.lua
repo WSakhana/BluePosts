@@ -1,11 +1,45 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791485966,
+    package_timestamp = 1791486884,
     new_post_ids = {
-        "2026-10-08-brew-up-trouble-with-the-hexed-witchwick-collection-c083689b5c",
-        "2026-10-08-brew-up-trouble-with-the-hexed-witchwick-collection-2d7e66ff54",
+        "2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-2e3a6ff1d6",
+        "2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-3d782cdb6e",
     },
     posts = {
+        ["2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-2e3a6ff1d6"] = {
+            id = "2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-2e3a6ff1d6",
+            post_key = "2e3a6ff1d6",
+            title = "Owltastic Adventures Await with Whoofle Bramblewing",
+            category = "Blogs (EU)",
+            timestamp = 1791486044,
+            url = "https://news.blizzard.com/en-gb/article/24310650/owltastic-adventures-await-with-whoofle-bramblewing",
+            content = {
+            { type = "p", text = "Swoop over the treetops or scamper across the countryside in the saddle of Whoofle Bramblewing*. With bright eyes, ruffled feathers, and keen curiosity, this inquisitive owl eagerly seeks out hidden wonders and untrodden paths wherever they may lead." },
+            { type = "p", text = "Visit the Shop" },
+            { type = "p", text = "This mount is shared across all present and future characters in modern World of Warcraft® (currently Midnight™) and automatically scales to each character's fastest riding skill. If an adventurer isn't ready to take to the skies yet, Whoofle Bramblewing serves as a wise, watchful ground mount until the time comes to spread their wings." },
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-2e3a6ff1d6\\image-1.jpg" },
+            { type = "hr" },
+            { type = "p", text = "Purchase Whoofle Bramblewing today through the in-game Shop or at Battle.net. Some restrictions apply, so visit the shop for full details." },
+            { type = "p", text = "*Not available in World of Warcraft Classic® games and requires a World of Warcraft® subscription or Game Time." },
+            },
+        },
+        ["2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-3d782cdb6e"] = {
+            id = "2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-3d782cdb6e",
+            post_key = "3d782cdb6e",
+            title = "Owltastic Adventures Await with Whoofle Bramblewing",
+            category = "Blogs (US)",
+            timestamp = 1791486039,
+            url = "https://news.blizzard.com/en-us/article/24310650/owltastic-adventures-await-with-whoofle-bramblewing",
+            content = {
+            { type = "p", text = "Swoop over the treetops or scamper across the countryside in the saddle of Whoofle Bramblewing*. With bright eyes, ruffled feathers, and keen curiosity, this inquisitive owl eagerly seeks out hidden wonders and untrodden paths wherever they may lead." },
+            { type = "p", text = "Visit the Shop" },
+            { type = "p", text = "This mount is shared across all present and future characters in modern World of Warcraft® (currently Midnight™) and automatically scales to each character's fastest riding skill. If an adventurer isn't ready to take to the skies yet, Whoofle Bramblewing serves as a wise, watchful ground mount until the time comes to spread their wings." },
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-08-owltastic-adventures-await-with-whoofle-bramblewing-3d782cdb6e\\image-1.jpg" },
+            { type = "hr" },
+            { type = "p", text = "Purchase Whoofle Bramblewing today through the in-game Shop or at Battle.net. Some restrictions apply, so visit the shop for full details." },
+            { type = "p", text = "*Not available in World of Warcraft Classic® games and requires a World of Warcraft® subscription or Game Time." },
+            },
+        },
         ["2026-10-08-brew-up-trouble-with-the-hexed-witchwick-collection-c083689b5c"] = {
             id = "2026-10-08-brew-up-trouble-with-the-hexed-witchwick-collection-c083689b5c",
             post_key = "c083689b5c",

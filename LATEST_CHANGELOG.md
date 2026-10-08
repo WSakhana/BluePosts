@@ -1,2 +1,2 @@
-## 4.3.5
-- Added: Brew Up Trouble with the Hexed Witchwick Collection
+## 4.3.6
+- Added: Owltastic Adventures Await with Whoofle Bramblewing
