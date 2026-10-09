@@ -1,2 +1,3 @@
-## 4.3.9
-- Added: Crafted Decor Cost Reduction in 12.1.5
+## 4.4.0
+- Added: Enter the World of Warcraft Student Art Contest 2026
+- Added: Battlegrounds, Builds, and Beyond in This Week's WoW Weekly
