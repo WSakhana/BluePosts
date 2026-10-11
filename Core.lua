@@ -732,6 +732,7 @@ function Core:RegisterGuildSharePopup()
 end
 
 function Core:ConfirmAnnounceGuild(post)
+    if not self:CanAnnounceGuild() then return end
     if not post then
         return
     end
@@ -754,7 +755,17 @@ function Core:ConfirmAnnounceGuild(post)
     self:AnnounceGuild(post)
 end
 
+function Core:CanAnnounceGuild()
+    if ns.ClientCompat.IsForever and ((InCombatLockdown and InCombatLockdown())
+        or (IsInInstance and IsInInstance())) then
+        self:Print("Guild sharing is unavailable in combat or instances. Copy the source link instead.")
+        return false
+    end
+    return true
+end
+
 function Core:AnnounceGuild(post)
+    if not self:CanAnnounceGuild() then return end
     if not post then
         return
     end

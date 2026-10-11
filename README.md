@@ -1,3 +1,5 @@
+Experimental WoW Forever support is available in this development branch. See [FOREVER.md](FOREVER.md) for the supported behavior, draft packages and pending in-game checks.
+
 # BluePosts - Blizzard Blue Posts Reader for WoW
 
 **BluePosts** is a lightweight World of Warcraft Retail addon for Midnight that lets you read bundled Blizzard blue posts directly in game.

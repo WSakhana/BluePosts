@@ -29,3 +29,7 @@ BluePosts-*.zip
 .Tools/**/bin/
 .Tools/**/obj/
 .Tools/**/artifacts/
+# Local migration QA outputs
+.release/
+__pycache__/
+.Tools/ForeverMigration/.cache/

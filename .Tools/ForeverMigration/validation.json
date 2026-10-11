@@ -1,0 +1,20 @@
+{
+  "static": "PASS",
+  "forever_runtime": "PENDING_NO_CLIENT",
+  "retail_runtime": "PENDING_IN_GAME",
+  "dependencies": "PENDING_IN_GAME",
+  "forever_build": null,
+  "tested_by": null,
+  "evidence": [],
+  "static_evidence": {
+    "lua_version": "Lua 5.1",
+    "lua_files": 14,
+    "errors": []
+  },
+  "reference_build": "1.60.1.70338",
+  "mock_tests": "PASS",
+  "mock_evidence": "Workspace .forever-migration/mock-report.json (Lua 5.1; not in-game QA)",
+  "generator_compatibility": "PASS",
+  "source_reference": "3e1030e1148dda2c23b27ba4db0d9cf9970cb826",
+  "generator_evidence": "Unchanged .NET build-data command on isolated index.html/metadata.json/PNG fixtures; generated Lua loaded in both client modes. No pipeline command, downloads, commit or tag."
+}
