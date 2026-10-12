@@ -1,2 +1,2 @@
-## 4.4.1
-- Added: Dungeon and Raid Tuning -- October 13
+## 4.4.2
+- Added: Dungeon and Raid Tuning – 14 October

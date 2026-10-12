@@ -1,3 +1,6 @@
+## 4.4.2
+- Added: Dungeon and Raid Tuning – 14 October
+
 ## 4.4.1
 - Added: Dungeon and Raid Tuning -- October 13
 
@@ -1331,6 +1334,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
