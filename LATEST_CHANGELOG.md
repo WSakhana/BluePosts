@@ -1,3 +1,2 @@
-## 4.4.0
-- Added: Enter the World of Warcraft Student Art Contest 2026
-- Added: Battlegrounds, Builds, and Beyond in This Week's WoW Weekly
+## 4.4.1
+- Added: Dungeon and Raid Tuning -- October 13

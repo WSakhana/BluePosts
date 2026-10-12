@@ -1,3 +1,6 @@
+## 4.4.1
+- Added: Dungeon and Raid Tuning -- October 13
+
 ## 4.4.0
 - Added: Enter the World of Warcraft Student Art Contest 2026
 - Added: Battlegrounds, Builds, and Beyond in This Week's WoW Weekly
@@ -1328,6 +1331,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
