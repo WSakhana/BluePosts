@@ -1,3 +1,6 @@
+## 4.4.3
+- Added: The Venomous Abyss Hall of Fame is Closing Soon
+
 ## 4.4.2
 - Added: Dungeon and Raid Tuning – 14 October
 
@@ -1334,6 +1337,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,10 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791846859,
+    package_timestamp = 1791849610,
     new_post_ids = {
-        "2026-10-12-dungeon-and-raid-tuning-14-october-cf06817ef0",
+        "2026-10-12-the-venomous-abyss-hall-of-fame-is-closing-soon-34ed8bf22b",
+        "2026-10-12-the-venomous-abyss-hall-of-fame-is-closing-soon-8c5ccb8569",
     },
     posts = {
+        ["2026-10-12-the-venomous-abyss-hall-of-fame-is-closing-soon-34ed8bf22b"] = {
+            id = "2026-10-12-the-venomous-abyss-hall-of-fame-is-closing-soon-34ed8bf22b",
+            post_key = "34ed8bf22b",
+            title = "The Venomous Abyss Hall of Fame is Closing Soon",
+            category = "General Discussion (US)",
+            timestamp = 1791848745,
+            url = "https://us.forums.blizzard.com/en/wow/t/2380548/1",
+            content = {
+            { type = "p", text = "The Hall of Fame for The Venomous Abyss is now full, and we will close it for further entries with the next weekly reset (tomorrow in this region)." },
+            { type = "p", text = "Congratulations to all who made it, and good luck to all of those who are pushing to complete The Venomous Abyss before weekly resets!" },
+            },
+        },
+        ["2026-10-12-the-venomous-abyss-hall-of-fame-is-closing-soon-8c5ccb8569"] = {
+            id = "2026-10-12-the-venomous-abyss-hall-of-fame-is-closing-soon-8c5ccb8569",
+            post_key = "8c5ccb8569",
+            title = "The Venomous Abyss Hall of Fame is Closing Soon",
+            category = "General Discussion (EU)",
+            timestamp = 1791848741,
+            url = "https://eu.forums.blizzard.com/en/wow/t/635196/1",
+            content = {
+            { type = "p", text = "The Hall of Fame for The Venomous Abyss is now full, and we will close it for further entries with the next weekly reset (tomorrow in this region)." },
+            { type = "p", text = "Congratulations to all who made it, and good luck to all of those who are pushing to complete The Venomous Abyss before weekly resets!" },
+            },
+        },
         ["2026-10-12-dungeon-and-raid-tuning-14-october-cf06817ef0"] = {
             id = "2026-10-12-dungeon-and-raid-tuning-14-october-cf06817ef0",
             post_key = "cf06817ef0",
