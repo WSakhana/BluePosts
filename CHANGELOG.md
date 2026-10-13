@@ -1,3 +1,7 @@
+## 4.4.4
+- Added: Twitch Drop Now Live! Get the Cuddly Gold-Colored Grrgle Housing Decor Item
+- Updated: Twitch Drop Now Live! Get the Cuddly Gold-Colored Grrgle Housing Decor Item
+
 ## 4.4.3
 - Added: The Venomous Abyss Hall of Fame is Closing Soon
 
@@ -1337,6 +1341,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
