@@ -1,3 +1,6 @@
+## 4.4.6
+- Updated: Midnight's 12.1.5 Content Update is Now Live
+
 ## 4.4.5
 - Updated: Dungeon and Raid Tuning -- October 13
 - Updated: Dungeon and Raid Tuning – 14 October
@@ -1345,6 +1348,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

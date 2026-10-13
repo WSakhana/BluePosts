@@ -1,3 +1,2 @@
-## 4.4.5
-- Updated: Dungeon and Raid Tuning -- October 13
-- Updated: Dungeon and Raid Tuning – 14 October
+## 4.4.6
+- Updated: Midnight's 12.1.5 Content Update is Now Live
