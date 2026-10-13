@@ -1,3 +1,7 @@
+## 4.4.5
+- Updated: Dungeon and Raid Tuning -- October 13
+- Updated: Dungeon and Raid Tuning – 14 October
+
 ## 4.4.4
 - Added: Twitch Drop Now Live! Get the Cuddly Gold-Colored Grrgle Housing Decor Item
 - Updated: Twitch Drop Now Live! Get the Cuddly Gold-Colored Grrgle Housing Decor Item
@@ -1341,6 +1345,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

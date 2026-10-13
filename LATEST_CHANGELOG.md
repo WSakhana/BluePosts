@@ -1,3 +1,3 @@
-## 4.4.4
-- Added: Twitch Drop Now Live! Get the Cuddly Gold-Colored Grrgle Housing Decor Item
-- Updated: Twitch Drop Now Live! Get the Cuddly Gold-Colored Grrgle Housing Decor Item
+## 4.4.5
+- Updated: Dungeon and Raid Tuning -- October 13
+- Updated: Dungeon and Raid Tuning – 14 October
