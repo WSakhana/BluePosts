@@ -1,3 +1,6 @@
+## 4.4.9
+- Added: Midnight's 12.1.5 Content Update is Now Live
+
 ## 4.4.8
 - Added: Hotfixes: October 13, 2026
 - Updated: Hotfixes: October 13, 2026
@@ -1355,6 +1358,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
