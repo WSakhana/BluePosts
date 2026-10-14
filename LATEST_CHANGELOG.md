@@ -1,2 +1,3 @@
-## 4.4.7
-- Added: Temporary Economy Holds For RMT
+## 4.4.8
+- Added: Hotfixes: October 13, 2026
+- Updated: Hotfixes: October 13, 2026

@@ -1,3 +1,7 @@
+## 4.4.8
+- Added: Hotfixes: October 13, 2026
+- Updated: Hotfixes: October 13, 2026
+
 ## 4.4.7
 - Added: Temporary Economy Holds For RMT
 
@@ -1351,6 +1355,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
