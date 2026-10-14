@@ -1,3 +1,7 @@
+## 4.5.0
+- Added: Beta Maintenance - October 14
+- Added: Beta Maintenance - 14 October
+
 ## 4.4.9
 - Added: Midnight's 12.1.5 Content Update is Now Live
 
@@ -1358,6 +1362,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

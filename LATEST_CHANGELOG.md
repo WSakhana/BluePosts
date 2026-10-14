@@ -1,2 +1,3 @@
-## 4.4.9
-- Added: Midnight's 12.1.5 Content Update is Now Live
+## 4.5.0
+- Added: Beta Maintenance - October 14
+- Added: Beta Maintenance - 14 October
