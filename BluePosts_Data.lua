@@ -1,9 +1,7 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791990955,
+    package_timestamp = 1791994521,
     new_post_ids = {
-        "2026-10-14-beta-maintenance-october-14-1273ac5686",
-        "2026-10-14-beta-maintenance-14-october-1d71dbc44a",
     },
     posts = {
         ["2026-10-14-beta-maintenance-october-14-1273ac5686"] = {
@@ -11,7 +9,7 @@ BluePosts_Data = {
             post_key = "1273ac5686",
             title = "Beta Maintenance - October 14",
             category = "WoW: Forever Beta Discussion (US)",
-            timestamp = 1791990046,
+            timestamp = 1791993643,
             url = "https://us.forums.blizzard.com/en/wow/t/2382032/1",
             content = {
             { type = "p", text = "We’re taking the WoW Forever Beta offline in a few minutes for maintenance. We’re going to run some internal tests, and we don’t expect it to be down for more than a couple of hours." },
@@ -24,7 +22,7 @@ BluePosts_Data = {
             post_key = "1d71dbc44a",
             title = "Beta Maintenance - 14 October",
             category = "WoW Forever Beta Discussion (EU)",
-            timestamp = 1791990041,
+            timestamp = 1791993639,
             url = "https://eu.forums.blizzard.com/en/wow/t/635488/1",
             content = {
             { type = "p", text = "We’re taking the WoW Forever Beta offline in a few minutes for maintenance. We’re going to run some internal tests, and we don’t expect it to be down for more than a couple of hours." },

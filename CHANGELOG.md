@@ -1,3 +1,6 @@
+## 4.5.1
+- Updated bundled blue post data.
+
 ## 4.5.0
 - Added: Beta Maintenance - October 14
 - Added: Beta Maintenance - 14 October
@@ -1362,6 +1365,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
