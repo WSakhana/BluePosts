@@ -1,9 +1,43 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1791929697,
+    package_timestamp = 1791936900,
     new_post_ids = {
+        "2026-10-14-temporary-economy-holds-for-rmt-23c9174099",
+        "2026-10-14-temporary-economy-holds-for-rmt-c297e6c665",
     },
     posts = {
+        ["2026-10-14-temporary-economy-holds-for-rmt-23c9174099"] = {
+            id = "2026-10-14-temporary-economy-holds-for-rmt-23c9174099",
+            post_key = "23c9174099",
+            title = "Temporary Economy Holds For RMT",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1791936047,
+            url = "https://us.forums.blizzard.com/en/wow/t/2381433/1",
+            content = {
+            { type = "p", text = "Hello!" },
+            { type = "p", text = "Some players have started to encounter our latest weapon in our efforts against the Real Money Trade (RMT) aka gold buying. If your account is suspected of being involved in RMT, either the selling or receiving of illicit gains, you may find your account subject to a Temporary Economy Hold. You will have restricted use of trade, mail, guild banks and the Auction House while this economic hold is in place." },
+            { type = "p", text = "Our aim with this new system is to aggressively shut down the flow of suspicious gold before it has been transferred or put into circulation into the economy, while providing us the time needed to investigate more thoroughly." },
+            { type = "p", text = "If you are just playing the game normally, it is unlikely you will ever see this restriction applied to your account. If this restriction is applied to your account, it will be either automatically removed when the actions that triggered it have been investigated and found false, or you will receive account actions if found to have been involved in RMT." },
+            { type = "p", text = "This system is new. There may be false positives while things are fine tuned, but merely having a Temporary Economy Hold will leave no permanent strikes against your account unless also later proven to be RMT motivated." },
+            { type = "p", text = "Thank you for joining us! We remain committed to ensure that WoW Forever is not marred by the Real Money Trade, and all of these systems will also be deployed to all versions of World of Warcraft if proven successful." },
+            },
+        },
+        ["2026-10-14-temporary-economy-holds-for-rmt-c297e6c665"] = {
+            id = "2026-10-14-temporary-economy-holds-for-rmt-c297e6c665",
+            post_key = "c297e6c665",
+            title = "Temporary Economy Holds For RMT",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1791936041,
+            url = "https://eu.forums.blizzard.com/en/wow/t/635356/1",
+            content = {
+            { type = "p", text = "Hello!" },
+            { type = "p", text = "Some players have started to encounter our latest weapon in our efforts against the Real Money Trade (RMT) aka gold buying. If your account is suspected of being involved in RMT, either the selling or receiving of illicit gains, you may find your account subject to a Temporary Economy Hold. You will have restricted use of trade, mail, guild banks and the Auction House while this economic hold is in place." },
+            { type = "p", text = "Our aim with this new system is to aggressively shut down the flow of suspicious gold before it has been transferred or put into circulation into the economy, while providing us the time needed to investigate more thoroughly." },
+            { type = "p", text = "If you are just playing the game normally, it is unlikely you will ever see this restriction applied to your account. If this restriction is applied to your account, it will be either automatically removed when the actions that triggered it have been investigated and found false, or you will receive account actions if found to have been involved in RMT." },
+            { type = "p", text = "This system is new. There may be false positives while things are fine tuned, but merely having a Temporary Economy Hold will leave no permanent strikes against your account unless also later proven to be RMT motivated." },
+            { type = "p", text = "Thank you for joining us! We remain committed to ensure that WoW Forever is not marred by the Real Money Trade, and all of these systems will also be deployed to all versions of World of Warcraft if proven successful." },
+            },
+        },
         ["2026-10-13-midnightx27s-1215-content-update-is-now-live-a74a9dec1f"] = {
             id = "2026-10-13-midnightx27s-1215-content-update-is-now-live-a74a9dec1f",
             post_key = "a74a9dec1f",

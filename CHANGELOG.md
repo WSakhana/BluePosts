@@ -1,3 +1,6 @@
+## 4.4.7
+- Added: Temporary Economy Holds For RMT
+
 ## 4.4.6
 - Updated: Midnight's 12.1.5 Content Update is Now Live
 
@@ -1348,6 +1351,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

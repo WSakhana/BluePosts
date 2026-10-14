@@ -1,2 +1,2 @@
-## 4.4.6
-- Updated: Midnight's 12.1.5 Content Update is Now Live
+## 4.4.7
+- Added: Temporary Economy Holds For RMT
