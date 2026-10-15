@@ -1,3 +1,7 @@
+## 4.5.4
+- Added: Explore PvP in Episode 4 of the WoW: Forever Podcast
+- Added: The WoW: Forever Podcast: Episode 4 - The PvP Episode ft. ‪@TipsOutBaby‬ & ‪@Savixirl
+
 ## 4.5.3
 - Added: Midnight: Echoes of the Worldcore Overview
 
@@ -1373,6 +1377,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

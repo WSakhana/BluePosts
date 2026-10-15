@@ -1,11 +1,59 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792081852,
+    package_timestamp = 1792082726,
     new_post_ids = {
-        "2026-10-15-midnight-echoes-of-the-worldcore-overview-982f24bf72",
-        "2026-10-15-midnight-echoes-of-the-worldcore-overview-ec5b9971cc",
+        "2026-10-15-explore-pvp-in-episode-4-of-the-wow-forever-podcast-ff189e7a8b",
+        "2026-10-15-explore-pvp-in-episode-4-of-the-wow-forever-podcast-95e90c82b9",
+        "2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-c7fbb0f2e1",
+        "2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-b0828bffbf",
     },
     posts = {
+        ["2026-10-15-explore-pvp-in-episode-4-of-the-wow-forever-podcast-ff189e7a8b"] = {
+            id = "2026-10-15-explore-pvp-in-episode-4-of-the-wow-forever-podcast-ff189e7a8b",
+            post_key = "ff189e7a8b",
+            title = "Explore PvP in Episode 4 of the WoW: Forever Podcast",
+            category = "Blogs (EU)",
+            timestamp = 1792081870,
+            url = "https://news.blizzard.com/en-gb/article/24304079/explore-pvp-in-episode-4-of-the-wow-forever-podcast",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guests Savix and Tips Out as they sit down with Senior Game Designer Josh “Aggrend” Greenfield and Lead Designer Tim Jones as they dive into Player-vs-Player (PvP) in World of Warcraft: Forever." },
+            { type = "p", text = "Watch the episode for a closer look at the team’s approach to PvP and what it means for players as they prepare to enter the fray." },
+            },
+        },
+        ["2026-10-15-explore-pvp-in-episode-4-of-the-wow-forever-podcast-95e90c82b9"] = {
+            id = "2026-10-15-explore-pvp-in-episode-4-of-the-wow-forever-podcast-95e90c82b9",
+            post_key = "95e90c82b9",
+            title = "Explore PvP in Episode 4 of the WoW: Forever Podcast",
+            category = "Blogs (US)",
+            timestamp = 1792081866,
+            url = "https://news.blizzard.com/en-us/article/24304079/explore-pvp-in-episode-4-of-the-wow-forever-podcast",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guests Savix and Tips Out as they sit down with Senior Game Designer Josh “Aggrend” Greenfield and Lead Designer Tim Jones as they dive into Player-vs-Player (PvP) in World of Warcraft: Forever." },
+            { type = "p", text = "Watch the episode for a closer look at the team’s approach to PvP and what it means for players as they prepare to enter the fray." },
+            },
+        },
+        ["2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-c7fbb0f2e1"] = {
+            id = "2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-c7fbb0f2e1",
+            post_key = "c7fbb0f2e1",
+            title = "The WoW: Forever Podcast: Episode 4 - The PvP Episode ft. ‪@TipsOutBaby‬ & ‪@Savixirl",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1792081862,
+            url = "https://us.forums.blizzard.com/en/wow/t/2383164/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-c7fbb0f2e1\\image-1.jpg" },
+            },
+        },
+        ["2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-b0828bffbf"] = {
+            id = "2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-b0828bffbf",
+            post_key = "b0828bffbf",
+            title = "The WoW: Forever Podcast: Episode 4 - The PvP Episode ft. ‪@TipsOutBaby‬ & ‪@Savixirl",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1792081856,
+            url = "https://eu.forums.blizzard.com/en/wow/t/635761/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-15-the-wow-forever-podcast-episode-4-the-pvp-episode-ft-tipsoutbaby-savix-b0828bffbf\\image-1.jpg" },
+            },
+        },
         ["2026-10-15-midnight-echoes-of-the-worldcore-overview-982f24bf72"] = {
             id = "2026-10-15-midnight-echoes-of-the-worldcore-overview-982f24bf72",
             post_key = "982f24bf72",
