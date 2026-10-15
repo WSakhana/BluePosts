@@ -1,11 +1,65 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792092627,
+    package_timestamp = 1792096245,
     new_post_ids = {
-        "2026-10-15-world-of-warcraft-forever-class-deep-dives-paladin-43f79642b3",
-        "2026-10-15-world-of-warcraft-forever-class-deep-dives-paladin-4d252db511",
+        "2026-10-15-beta-realm-maintenance-october-15-695d232d15",
+        "2026-10-15-beta-realm-maintenance-15-october-f42d8407b1",
+        "2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8540972ce8",
+        "2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8cd3f54664",
     },
     posts = {
+        ["2026-10-15-beta-realm-maintenance-october-15-695d232d15"] = {
+            id = "2026-10-15-beta-realm-maintenance-october-15-695d232d15",
+            post_key = "695d232d15",
+            title = "Beta Realm Maintenance - October 15",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792095371,
+            url = "https://us.forums.blizzard.com/en/wow/t/2383475/1",
+            content = {
+            { type = "p", text = "We’re planning to take the WoW Forever Beta down in about 15 minutes, at 1:15 p.m. PDT." },
+            { type = "p", text = "This will be a maintenance period that includes deploying and testing a new build of the game, and that build has quite a few changes and fixes." },
+            { type = "p", text = "We’ll have a full update to the Development Notes for you when we get through the updating and the testing. See you on the other side!" },
+            },
+        },
+        ["2026-10-15-beta-realm-maintenance-15-october-f42d8407b1"] = {
+            id = "2026-10-15-beta-realm-maintenance-15-october-f42d8407b1",
+            post_key = "f42d8407b1",
+            title = "Beta Realm Maintenance - 15 October",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1792095366,
+            url = "https://eu.forums.blizzard.com/en/wow/t/635803/1",
+            content = {
+            { type = "p", text = "We’re planning to take the WoW Forever Beta down in about 15 minutes, at 22:15 CEST." },
+            { type = "p", text = "This will be a maintenance period that includes deploying and testing a new build of the game, and that build has quite a few changes and fixes." },
+            { type = "p", text = "We’ll have a full update to the Development Notes for you when we get through the updating and the testing. See you on the other side!" },
+            },
+        },
+        ["2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8540972ce8"] = {
+            id = "2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8540972ce8",
+            post_key = "8540972ce8",
+            title = "Unlock a Year of World of Warcraft® and Get Bonus Treasures",
+            category = "General Discussion (US)",
+            timestamp = 1792095362,
+            url = "https://us.forums.blizzard.com/en/wow/t/2383492/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8540972ce8\\image-1.jpg" },
+            { type = "p", text = "Claim a 12-Month Subscription or 365-Days Game Time and get bonus in-game cosmetic items, including several for use in World of Warcraft: Forever!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8cd3f54664"] = {
+            id = "2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8cd3f54664",
+            post_key = "8cd3f54664",
+            title = "Unlock a Year of World of Warcraft® and Get Bonus Treasures",
+            category = "General Discussion (EU)",
+            timestamp = 1792095356,
+            url = "https://eu.forums.blizzard.com/en/wow/t/635806/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-15-unlock-a-year-of-world-of-warcraft-and-get-bonus-treasures-8cd3f54664\\image-1.jpg" },
+            { type = "p", text = "Claim a 12-Month Subscription or 365-Days Game Time and get bonus in-game cosmetic items, including several for use in World of Warcraft: Forever!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-10-15-world-of-warcraft-forever-class-deep-dives-paladin-43f79642b3"] = {
             id = "2026-10-15-world-of-warcraft-forever-class-deep-dives-paladin-43f79642b3",
             post_key = "43f79642b3",

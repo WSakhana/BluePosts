@@ -1,4 +1,9 @@
 ## 4.5.5
+- Added: Beta Realm Maintenance - October 15
+- Added: Beta Realm Maintenance - 15 October
+- Added: Unlock a Year of World of Warcraft® and Get Bonus Treasures
+
+## 4.5.5
 - Added: World of Warcraft: Forever Class Deep Dives — Paladin
 
 ## 4.5.4
@@ -1380,6 +1385,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
