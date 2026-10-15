@@ -1,3 +1,6 @@
+## 4.5.5
+- Added: World of Warcraft: Forever Class Deep Dives — Paladin
+
 ## 4.5.4
 - Added: Explore PvP in Episode 4 of the WoW: Forever Podcast
 - Added: The WoW: Forever Podcast: Episode 4 - The PvP Episode ft. ‪@TipsOutBaby‬ & ‪@Savixirl
@@ -1377,6 +1380,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
