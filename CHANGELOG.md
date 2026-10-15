@@ -1,3 +1,7 @@
+## 4.5.7
+- Added: WoW Forever Stress Test October 19
+- Added: WoW Forever Stress Test 19 October
+
 ## 4.5.6
 - Added: Join the World of Warcraft: Forever Stress Test
 
@@ -1388,6 +1392,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

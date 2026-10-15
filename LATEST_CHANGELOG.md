@@ -1,2 +1,3 @@
-## 4.5.6
-- Added: Join the World of Warcraft: Forever Stress Test
+## 4.5.7
+- Added: WoW Forever Stress Test October 19
+- Added: WoW Forever Stress Test 19 October
