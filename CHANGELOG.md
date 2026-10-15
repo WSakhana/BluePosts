@@ -1,3 +1,6 @@
+## 4.5.3
+- Added: Midnight: Echoes of the Worldcore Overview
+
 ## 4.5.2
 - Added: Hotfixes: October 14, 2026
 - Added: World of Warcraft: Midnight Hotfixes - October 14
@@ -1370,6 +1373,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
