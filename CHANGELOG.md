@@ -1,3 +1,8 @@
+## 4.5.2
+- Added: Hotfixes: October 14, 2026
+- Added: World of Warcraft: Midnight Hotfixes - October 14
+- Added: World of Warcraft: Midnight Hotfixes - 14 October
+
 ## 4.5.1
 - Updated bundled blue post data.
 
@@ -1365,6 +1370,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
