@@ -1,3 +1,6 @@
+## 4.5.6
+- Added: Join the World of Warcraft: Forever Stress Test
+
 ## 4.5.5
 - Added: Beta Realm Maintenance - October 15
 - Added: Beta Realm Maintenance - 15 October
@@ -1385,6 +1388,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
