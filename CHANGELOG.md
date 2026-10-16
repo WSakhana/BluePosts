@@ -1,3 +1,7 @@
+## 4.5.8
+- Updated: WoW Forever Beta Development Notes – Updated October 15
+- Updated: WoW Forever Beta Development Notes – Updated 15 October
+
 ## 4.5.7
 - Added: WoW Forever Stress Test October 19
 - Added: WoW Forever Stress Test 19 October
@@ -1392,6 +1396,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
