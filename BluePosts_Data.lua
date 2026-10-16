@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792171819,
+    package_timestamp = 1792174515,
     new_post_ids = {
-        "2026-10-16-wow-weekly-highlights-midnight-1215-worldcore-wow-forever-and-more-f7f9a5d953",
-        "2026-10-16-wow-weekly-highlights-midnight-1215-worldcore-wow-forever-and-more-18f4e9ba47",
+        "2026-10-16-druid-cat-form-quest-2994d5c9df",
+        "2026-10-16-druid-cat-form-quest-995e71593a",
     },
     posts = {
+        ["2026-10-16-druid-cat-form-quest-2994d5c9df"] = {
+            id = "2026-10-16-druid-cat-form-quest-2994d5c9df",
+            post_key = "2994d5c9df",
+            title = "Druid cat form quest",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792173648,
+            url = "https://us.forums.blizzard.com/en/wow/t/2384010/1",
+            content = {
+            { type = "p", text = "At time of writing, it’s still impossible to loot the Relic of the Fang and complete the quest The Great Cat Spirit, and so it’s impossible to unlock cat form." },
+            },
+        },
+        ["2026-10-16-druid-cat-form-quest-995e71593a"] = {
+            id = "2026-10-16-druid-cat-form-quest-995e71593a",
+            post_key = "995e71593a",
+            title = "Druid cat form quest",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1792173645,
+            url = "https://eu.forums.blizzard.com/en/wow/t/636086/1",
+            content = {
+            { type = "p", text = "Currently no druid can finish the quest and obtain the cat form. Hundreds of players are stuck at Moonglade unable to progress. Please fix this as soon as possible." },
+            },
+        },
         ["2026-10-16-wow-weekly-highlights-midnight-1215-worldcore-wow-forever-and-more-f7f9a5d953"] = {
             id = "2026-10-16-wow-weekly-highlights-midnight-1215-worldcore-wow-forever-and-more-f7f9a5d953",
             post_key = "f7f9a5d953",

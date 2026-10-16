@@ -1,3 +1,6 @@
+## 4.6.2
+- Added: Druid cat form quest
+
 ## 4.6.1
 - Added: WoW Weekly Highlights Midnight 12.1.5, Worldcore, WoW: Forever, and More
 
@@ -1408,6 +1411,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
