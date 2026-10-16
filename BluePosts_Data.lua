@@ -1,9 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792111542,
+    package_timestamp = 1792114227,
     new_post_ids = {
     },
     posts = {
+        ["2026-10-16-beta-realm-maintenance-october-15-695d232d15"] = {
+            id = "2026-10-16-beta-realm-maintenance-october-15-695d232d15",
+            post_key = "695d232d15",
+            title = "Beta Realm Maintenance - October 15",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792113337,
+            url = "https://us.forums.blizzard.com/en/wow/t/2383475/1",
+            content = {
+            { type = "p", text = "We’re planning to take the WoW Forever Beta down in about 15 minutes, at 1:15 p.m. PDT." },
+            { type = "p", text = "This will be a maintenance period that includes deploying and testing a new build of the game, and that build has quite a few changes and fixes." },
+            { type = "p", text = "We’ll have a full update to the Development Notes for you when we get through the updating and the testing. See you on the other side!" },
+            },
+        },
         ["2026-10-16-wow-forever-beta-development-notes-updated-october-15-ee947de7e1"] = {
             id = "2026-10-16-wow-forever-beta-development-notes-updated-october-15-ee947de7e1",
             post_key = "ee947de7e1",
@@ -496,19 +509,6 @@ BluePosts_Data = {
             { type = "p", text = "As a reminder, October 21 is the last full day of beta testing as we prepare for the global launch on November 4!" },
             { type = "p", text = "Players who pre-purchase the Skyborne Heroic Pack, Skyborne Epic Pack, or limited-time Warcraft Forever Collection will have access to WoW®: Forever Early Name Reservation from October 27 through November 3. Character names will be available on a first-come, first-served basis, and desired names cannot be guaranteed." },
             { type = "p", text = "We’ll see you in Azeroth!" },
-            },
-        },
-        ["2026-10-15-beta-realm-maintenance-october-15-695d232d15"] = {
-            id = "2026-10-15-beta-realm-maintenance-october-15-695d232d15",
-            post_key = "695d232d15",
-            title = "Beta Realm Maintenance - October 15",
-            category = "WoW: Forever Beta Discussion (US)",
-            timestamp = 1792095371,
-            url = "https://us.forums.blizzard.com/en/wow/t/2383475/1",
-            content = {
-            { type = "p", text = "We’re planning to take the WoW Forever Beta down in about 15 minutes, at 1:15 p.m. PDT." },
-            { type = "p", text = "This will be a maintenance period that includes deploying and testing a new build of the game, and that build has quite a few changes and fixes." },
-            { type = "p", text = "We’ll have a full update to the Development Notes for you when we get through the updating and the testing. See you on the other side!" },
             },
         },
         ["2026-10-15-beta-realm-maintenance-15-october-f42d8407b1"] = {
