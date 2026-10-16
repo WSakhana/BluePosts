@@ -1,3 +1,7 @@
+## 4.6.4
+- Updated: WoW Forever Stress Test October 21
+- Updated: WoW Forever Stress Test 21 October
+
 ## 4.6.3
 - Added: Datamined in the Latest Beta Build
 
@@ -1414,6 +1418,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
