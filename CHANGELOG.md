@@ -1,3 +1,6 @@
+## 4.6.3
+- Added: Datamined in the Latest Beta Build
+
 ## 4.6.2
 - Added: Druid cat form quest
 
@@ -1411,6 +1414,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

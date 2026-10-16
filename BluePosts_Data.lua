@@ -1,11 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792174515,
+    package_timestamp = 1792189795,
     new_post_ids = {
-        "2026-10-16-druid-cat-form-quest-2994d5c9df",
-        "2026-10-16-druid-cat-form-quest-995e71593a",
+        "2026-10-16-datamined-in-the-latest-beta-build-aad9a2a07b",
+        "2026-10-16-datamined-in-the-latest-beta-build-b5d7f5c8af",
     },
     posts = {
+        ["2026-10-16-datamined-in-the-latest-beta-build-aad9a2a07b"] = {
+            id = "2026-10-16-datamined-in-the-latest-beta-build-aad9a2a07b",
+            post_key = "aad9a2a07b",
+            title = "Datamined in the Latest Beta Build",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1792188946,
+            url = "https://us.forums.blizzard.com/en/wow/t/2385060/1",
+            content = {
+            { type = "p", text = "A number of art assets were recently datamined in the latest Beta build of WoW Forever." },
+            { type = "p", text = "While we appreciate the feedback and discussion online, please be advised that these assets are not intended for this version of World of Warcraft." },
+            },
+        },
+        ["2026-10-16-datamined-in-the-latest-beta-build-b5d7f5c8af"] = {
+            id = "2026-10-16-datamined-in-the-latest-beta-build-b5d7f5c8af",
+            post_key = "b5d7f5c8af",
+            title = "Datamined in the Latest Beta Build",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1792188942,
+            url = "https://eu.forums.blizzard.com/en/wow/t/636148/1",
+            content = {
+            { type = "p", text = "A number of art assets were recently datamined in the latest Beta build of WoW Forever." },
+            { type = "p", text = "While we appreciate the feedback and discussion online, please be advised that these assets are not intended for this version of World of Warcraft." },
+            },
+        },
         ["2026-10-16-druid-cat-form-quest-2994d5c9df"] = {
             id = "2026-10-16-druid-cat-form-quest-2994d5c9df",
             post_key = "2994d5c9df",

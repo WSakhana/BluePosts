@@ -1,2 +1,2 @@
-## 4.6.2
-- Added: Druid cat form quest
+## 4.6.3
+- Added: Datamined in the Latest Beta Build
