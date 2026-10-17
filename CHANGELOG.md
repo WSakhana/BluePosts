@@ -1,3 +1,8 @@
+## 4.6.5
+- Added: Hotfixes: October 16, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - October 16
+- Updated: World of Warcraft: Midnight Hotfixes - 16 October
+
 ## 4.6.4
 - Updated: WoW Forever Stress Test October 21
 - Updated: WoW Forever Stress Test 21 October
@@ -1418,6 +1423,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
