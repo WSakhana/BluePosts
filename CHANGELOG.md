@@ -1,3 +1,7 @@
+## 4.6.8
+- Added: Fabled Let Me Solo Him: Kindo'jan Achievement Extended an Additional Week
+- Added: Fabled Let Me Solo Him: Kindo’jan Achievement Extended an Additional Week
+
 ## 4.6.7
 - Added: Hallow’s End Brings Frights, Delights, and Haunting Rewards
 
@@ -1429,6 +1433,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

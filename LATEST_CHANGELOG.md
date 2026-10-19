@@ -1,2 +1,3 @@
-## 4.6.7
-- Added: Hallow’s End Brings Frights, Delights, and Haunting Rewards
+## 4.6.8
+- Added: Fabled Let Me Solo Him: Kindo'jan Achievement Extended an Additional Week
+- Added: Fabled Let Me Solo Him: Kindo’jan Achievement Extended an Additional Week

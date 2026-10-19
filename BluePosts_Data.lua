@@ -1,10 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792431002,
+    package_timestamp = 1792436431,
     new_post_ids = {
-        "2026-10-19-hallows-end-brings-frights-delights-and-haunting-rewards-b0574bc5d9",
+        "2026-10-19-fabled-let-me-solo-him-kindox27jan-achievement-extended-an-additional--a94135b3e0",
+        "2026-10-19-fabled-let-me-solo-him-kindojan-achievement-extended-an-additional-wee-b2f24220a3",
     },
     posts = {
+        ["2026-10-19-fabled-let-me-solo-him-kindox27jan-achievement-extended-an-additional--a94135b3e0"] = {
+            id = "2026-10-19-fabled-let-me-solo-him-kindox27jan-achievement-extended-an-additional--a94135b3e0",
+            post_key = "a94135b3e0",
+            title = "Fabled Let Me Solo Him: Kindo'jan Achievement Extended an Additional Week",
+            category = "General Discussion (US)",
+            timestamp = 1792435549,
+            url = "https://us.forums.blizzard.com/en/wow/t/2387015/1",
+            content = {
+            { type = "p", text = "We acknowledge that there were bugs in the first week of the 12.1.5 content update that impacted the ability to complete Labyrinth runs, including those pursuing the Fabled Let Me Solo Him: Kindo’jan achievement. We have now addressed the vast majority of these bugs, and to accommodate players who may have had their experience impacted in the first week, we are extending the deadline to complete the achievement by an additional week. This gives players the chance to earn this achievement until scheduled weekly maintenance on October 27 in this region." },
+            { type = "p", text = "Good luck conquering Kindo’jan and earning your place among the Fabled Vanquishers!" },
+            },
+        },
+        ["2026-10-19-fabled-let-me-solo-him-kindojan-achievement-extended-an-additional-wee-b2f24220a3"] = {
+            id = "2026-10-19-fabled-let-me-solo-him-kindojan-achievement-extended-an-additional-wee-b2f24220a3",
+            post_key = "b2f24220a3",
+            title = "Fabled Let Me Solo Him: Kindo’jan Achievement Extended an Additional Week",
+            category = "General Discussion (EU)",
+            timestamp = 1792435544,
+            url = "https://eu.forums.blizzard.com/en/wow/t/636594/1",
+            content = {
+            { type = "p", text = "We acknowledge that there were bugs in the first week of the 12.1.5 content update that impacted the ability to complete Labyrinth runs, including those pursuing the Fabled Let Me Solo Him: Kindo’jan achievement. We have now addressed the vast majority of these bugs, and to accommodate players who may have had their experience impacted in the first week, we are extending the deadline to complete the achievement by an additional week. This gives players the chance to earn this achievement until scheduled weekly maintenance the week of 27 October." },
+            { type = "p", text = "Good luck conquering Kindo’jan and earning your place among the Fabled Vanquishers!" },
+            },
+        },
         ["2026-10-19-hallows-end-brings-frights-delights-and-haunting-rewards-b0574bc5d9"] = {
             id = "2026-10-19-hallows-end-brings-frights-delights-and-haunting-rewards-b0574bc5d9",
             post_key = "b0574bc5d9",
