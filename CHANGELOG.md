@@ -1,3 +1,6 @@
+## 4.6.7
+- Added: Hallow’s End Brings Frights, Delights, and Haunting Rewards
+
 ## 4.6.6
 - Added: Hallow’s End Brings Frights, Delights, and Haunting Rewards
 
@@ -1426,6 +1429,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
