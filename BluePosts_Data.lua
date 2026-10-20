@@ -1,11 +1,43 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792524646,
+    package_timestamp = 1792529989,
     new_post_ids = {
-        "2026-10-20-world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attune-244a16f129",
-        "2026-10-20-world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attune-e249827d11",
+        "2026-10-20-heads-up-wow-forever-stress-test-on-october-21-8b70974883",
+        "2026-10-20-heads-up-wow-forever-stress-test-on-21-october-f815d9297b",
     },
     posts = {
+        ["2026-10-20-heads-up-wow-forever-stress-test-on-october-21-8b70974883"] = {
+            id = "2026-10-20-heads-up-wow-forever-stress-test-on-october-21-8b70974883",
+            post_key = "8b70974883",
+            title = "Heads Up -- WoW Forever Stress Test on October 21",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792529148,
+            url = "https://us.forums.blizzard.com/en/wow/t/2387920/1",
+            content = {
+            { type = "p", text = "Tomorrow, October 21, we will take the WoW Forever Beta offline and we will then open WoW Forever on its proper regional hardware." },
+            { type = "p", text = "Any player with a WoW account is eligible to play the WoW Forever Stress Test. No active subscription is needed." },
+            { type = "h3", text = "How to Join" },
+            { type = "p", text = "When we shut down the Stress Test, all Stress Test characters, including names, will be deleted and we will re-open the Beta." },
+            { type = "p", text = "We plan to close the WoW Forever Beta … forever at 10:00 a.m. PDT on Friday, October 23." },
+            { type = "p", text = "Thank you very much for joining us. We’ll see you there!" },
+            },
+        },
+        ["2026-10-20-heads-up-wow-forever-stress-test-on-21-october-f815d9297b"] = {
+            id = "2026-10-20-heads-up-wow-forever-stress-test-on-21-october-f815d9297b",
+            post_key = "f815d9297b",
+            title = "Heads Up -- WoW Forever Stress Test on 21 October",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1792529144,
+            url = "https://eu.forums.blizzard.com/en/wow/t/636749/1",
+            content = {
+            { type = "p", text = "Tomorrow, October 21, we will take the WoW Forever Beta offline and we will then open WoW Forever on its proper regional hardware." },
+            { type = "p", text = "Any player with a WoW account is eligible to play the WoW Forever Stress Test. No active subscription is needed." },
+            { type = "h3", text = "How to Join" },
+            { type = "p", text = "When we shut down the Stress Test, all Stress Test characters, including names, will be deleted and we will re-open the Beta." },
+            { type = "p", text = "We plan to close the WoW Forever Beta … forever at 19:00 CEST on Friday, October 23." },
+            { type = "p", text = "Thank you very much for joining us. We’ll see you there!" },
+            },
+        },
         ["2026-10-20-world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attune-244a16f129"] = {
             id = "2026-10-20-world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attune-244a16f129",
             post_key = "244a16f129",

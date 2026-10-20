@@ -1,2 +1,3 @@
-## 4.7.1
-- Added: World of Warcraft: Forever Raid Overview—Locations, Raid Sizes, and Attunement
+## 4.7.2
+- Added: Heads Up -- WoW Forever Stress Test on October 21
+- Added: Heads Up -- WoW Forever Stress Test on 21 October
