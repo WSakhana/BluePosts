@@ -1,3 +1,6 @@
+## 4.7.1
+- Added: World of Warcraft: Forever Raid Overview—Locations, Raid Sizes, and Attunement
+
 ## 4.7.0
 - Added: Explore the New Dungeons of World of Warcraft: Forever
 
@@ -1439,6 +1442,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

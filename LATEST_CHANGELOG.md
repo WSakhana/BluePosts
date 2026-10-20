@@ -1,2 +1,2 @@
-## 4.7.0
-- Added: Explore the New Dungeons of World of Warcraft: Forever
+## 4.7.1
+- Added: World of Warcraft: Forever Raid Overview—Locations, Raid Sizes, and Attunement
