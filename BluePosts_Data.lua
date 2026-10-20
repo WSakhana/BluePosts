@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792436431,
+    package_timestamp = 1792454533,
     new_post_ids = {
-        "2026-10-19-fabled-let-me-solo-him-kindox27jan-achievement-extended-an-additional--a94135b3e0",
-        "2026-10-19-fabled-let-me-solo-him-kindojan-achievement-extended-an-additional-wee-b2f24220a3",
+        "2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-50e8ec6e7f",
+        "2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-f41ede4862",
     },
     posts = {
+        ["2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-50e8ec6e7f"] = {
+            id = "2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-50e8ec6e7f",
+            post_key = "50e8ec6e7f",
+            title = "Channel Your Inner Rexxar with this Beastly Bundle",
+            category = "General Discussion (US)",
+            timestamp = 1792453636,
+            url = "https://us.forums.blizzard.com/en/wow/t/2387205/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-50e8ec6e7f\\image-1.jpg" },
+            { type = "p", text = "The wildest pack filled with in-game items that invoke the Spirit of Rexxar awaits your modern World of Warcraft (currently Midnight™) characters. For a limited time, get a transmog set, a toy to make Hunter combat pets look like Rexxar’s loyal combat pets, and a housing decor item worthy of a Beastmaster!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-f41ede4862"] = {
+            id = "2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-f41ede4862",
+            post_key = "f41ede4862",
+            title = "Channel Your Inner Rexxar with this Beastly Bundle",
+            category = "General Discussion (EU)",
+            timestamp = 1792453543,
+            url = "https://eu.forums.blizzard.com/en/wow/t/636628/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-19-channel-your-inner-rexxar-with-this-beastly-bundle-f41ede4862\\image-1.jpg" },
+            { type = "p", text = "The wildest pack filled with in-game items that invoke the Spirit of Rexxar awaits your modern World of Warcraft (currently Midnight™) characters. For a limited time, get a transmog set, a toy to make Hunter combat pets look like Rexxar’s loyal combat pets, and a housing decor item worthy of a Beastmaster!" },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-10-19-fabled-let-me-solo-him-kindox27jan-achievement-extended-an-additional--a94135b3e0"] = {
             id = "2026-10-19-fabled-let-me-solo-him-kindox27jan-achievement-extended-an-additional--a94135b3e0",
             post_key = "a94135b3e0",

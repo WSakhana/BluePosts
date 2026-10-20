@@ -1,3 +1,6 @@
+## 4.6.9
+- Added: Channel Your Inner Rexxar with this Beastly Bundle
+
 ## 4.6.8
 - Added: Fabled Let Me Solo Him: Kindo'jan Achievement Extended an Additional Week
 - Added: Fabled Let Me Solo Him: Kindo’jan Achievement Extended an Additional Week
@@ -1433,6 +1436,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
