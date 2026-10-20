@@ -1,2 +1,2 @@
-## 4.6.9
-- Added: Channel Your Inner Rexxar with this Beastly Bundle
+## 4.7.0
+- Added: Explore the New Dungeons of World of Warcraft: Forever

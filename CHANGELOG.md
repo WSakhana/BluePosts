@@ -1,3 +1,6 @@
+## 4.7.0
+- Added: Explore the New Dungeons of World of Warcraft: Forever
+
 ## 4.6.9
 - Added: Channel Your Inner Rexxar with this Beastly Bundle
 
@@ -1436,6 +1439,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
