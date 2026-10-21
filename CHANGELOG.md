@@ -1,3 +1,6 @@
+## 4.7.5
+- Added: Testing WoW Forever Today - October 21
+
 ## 4.7.4
 - Updated: World of Warcraft: Midnight Hotfixes - October 20
 - Updated: World of Warcraft: Midnight Hotfixes - 20 October
@@ -1456,6 +1459,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

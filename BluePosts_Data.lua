@@ -1,9 +1,25 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792542606,
+    package_timestamp = 1792601143,
     new_post_ids = {
+        "2026-10-21-testing-wow-forever-today-october-21-afbe71015e",
     },
     posts = {
+        ["2026-10-21-testing-wow-forever-today-october-21-afbe71015e"] = {
+            id = "2026-10-21-testing-wow-forever-today-october-21-afbe71015e",
+            post_key = "afbe71015e",
+            title = "Testing WoW Forever Today - October 21",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792600238,
+            url = "https://us.forums.blizzard.com/en/wow/t/2388547/1",
+            content = {
+            { type = "p", text = "The WoW Forever Beta is going offline in a few minutes." },
+            { type = "p", text = "In this region, the Stress Test will begin at 2:00 p.m. PDT." },
+            { type = "p", text = "To prepare for that, go to your Battle.net App and look for Stress Test under the Game Version selector on the WoW Forever playscreen." },
+            { type = "p", text = "It should look like this:" },
+            { type = "image", width = 720, height = 291, u = 0.703125, v = 0.568359, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-21-testing-wow-forever-today-october-21-afbe71015e\\image-1.jpg" },
+            },
+        },
         ["2026-10-21-world-of-warcraft-midnight-hotfixes-october-20-e1387ead79"] = {
             id = "2026-10-21-world-of-warcraft-midnight-hotfixes-october-20-e1387ead79",
             post_key = "e1387ead79",
