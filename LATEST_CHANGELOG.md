@@ -1,2 +1,2 @@
-## 4.7.6
-- Added: Testing WoW Forever Today - 21 October
+## 4.7.7
+- Added: Gather Around the Campfire in World of Warcraft: Forever

@@ -1,3 +1,6 @@
+## 4.7.7
+- Added: Gather Around the Campfire in World of Warcraft: Forever
+
 ## 4.7.6
 - Added: Testing WoW Forever Today - 21 October
 
@@ -1462,6 +1465,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
