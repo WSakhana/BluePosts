@@ -1,3 +1,7 @@
+## 4.7.9
+- Added: Get Up to 50% In Fall Savings Through 2 November
+- Added: Get Up to 50% In Fall Savings Through November 2
+
 ## 4.7.8
 - Updated bundled blue post data.
 
@@ -1468,6 +1472,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
