@@ -1,3 +1,7 @@
+## 4.7.4
+- Updated: World of Warcraft: Midnight Hotfixes - October 20
+- Updated: World of Warcraft: Midnight Hotfixes - 20 October
+
 ## 4.7.3
 - Added: Claim Your World of Warcraft: Forever Character Names
 - Added: World of Warcraft: Forever Class Deep Dives — Paladin
@@ -1452,6 +1456,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,5 +1,3 @@
-## 4.7.3
-- Added: Claim Your World of Warcraft: Forever Character Names
-- Added: World of Warcraft: Forever Class Deep Dives — Paladin
-- Added: Explore the New Dungeons of World of Warcraft: Forever
-- Added: World of Warcraft: Forever Raid Overview—Locations, Raid Sizes, and Attunement
+## 4.7.4
+- Updated: World of Warcraft: Midnight Hotfixes - October 20
+- Updated: World of Warcraft: Midnight Hotfixes - 20 October
