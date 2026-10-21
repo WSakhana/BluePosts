@@ -1,11 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792603841,
+    package_timestamp = 1792609209,
     new_post_ids = {
-        "2026-10-21-gather-around-the-campfire-in-world-of-warcraft-forever-4898558529",
-        "2026-10-21-gather-around-the-campfire-in-world-of-warcraft-forever-36c329d115",
     },
     posts = {
+        ["2026-10-21-testing-wow-forever-today-21-october-c5e33d5525"] = {
+            id = "2026-10-21-testing-wow-forever-today-21-october-c5e33d5525",
+            post_key = "c5e33d5525",
+            title = "Testing WoW Forever Today - 21 October",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1792608338,
+            url = "https://eu.forums.blizzard.com/en/wow/t/636859/1",
+            content = {
+            { type = "p", text = "The WoW Forever Beta is going offline in a few minutes." },
+            { type = "p", text = "In this region, the Stress Test will begin soon thereafter, at 19:00 CEST." },
+            { type = "p", text = "To prepare for that, go to your Battle.net App and look for Stress Test under the Game Version selector on the WoW Forever playscreen." },
+            { type = "p", text = "It should look like this:" },
+            { type = "image", width = 720, height = 291, u = 0.703125, v = 0.568359, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-21-testing-wow-forever-today-21-october-c5e33d5525\\image-1.jpg" },
+            },
+        },
         ["2026-10-21-gather-around-the-campfire-in-world-of-warcraft-forever-4898558529"] = {
             id = "2026-10-21-gather-around-the-campfire-in-world-of-warcraft-forever-4898558529",
             post_key = "4898558529",
@@ -160,21 +173,6 @@ BluePosts_Data = {
             { type = "hr" },
             { type = "p", text = "Choose your campsite carefully. Some places in Azeroth are better suited to a quiet rest than others, and danger can still find you when you stop. On a PvP Ruleset, that risk increases when enemy players come upon your camp." },
             { type = "p", text = "Whether you are repairing gear, preparing your group, or sharing a fire with passing adventurers, Camping offers another way to live in Azeroth—not just move through it. We’ll see you by the campfire!" },
-            },
-        },
-        ["2026-10-21-testing-wow-forever-today-21-october-c5e33d5525"] = {
-            id = "2026-10-21-testing-wow-forever-today-21-october-c5e33d5525",
-            post_key = "c5e33d5525",
-            title = "Testing WoW Forever Today - 21 October",
-            category = "WoW Forever Beta Discussion (EU)",
-            timestamp = 1792601138,
-            url = "https://eu.forums.blizzard.com/en/wow/t/636859/1",
-            content = {
-            { type = "p", text = "The WoW Forever Beta is going offline in a few minutes." },
-            { type = "p", text = "In this region, the Stress Test will begin soon thereafter, at 19:00 CEST." },
-            { type = "p", text = "To prepare for that, go to your Battle.net App and look for Stress Test under the Game Version selector on the WoW Forever playscreen." },
-            { type = "p", text = "It should look like this:" },
-            { type = "image", width = 720, height = 291, u = 0.703125, v = 0.568359, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-21-testing-wow-forever-today-21-october-c5e33d5525\\image-1.jpg" },
             },
         },
         ["2026-10-21-testing-wow-forever-today-october-21-afbe71015e"] = {

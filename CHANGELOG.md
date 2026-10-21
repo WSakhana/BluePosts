@@ -1,3 +1,6 @@
+## 4.7.8
+- Updated bundled blue post data.
+
 ## 4.7.7
 - Added: Gather Around the Campfire in World of Warcraft: Forever
 
@@ -1465,6 +1468,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

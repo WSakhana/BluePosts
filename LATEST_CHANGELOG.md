@@ -1,2 +1,2 @@
-## 4.7.7
-- Added: Gather Around the Campfire in World of Warcraft: Forever
+## 4.7.8
+- Updated bundled blue post data.
