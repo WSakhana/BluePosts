@@ -1,3 +1,6 @@
+## 4.7.6
+- Added: Testing WoW Forever Today - 21 October
+
 ## 4.7.5
 - Added: Testing WoW Forever Today - October 21
 
@@ -1459,6 +1462,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
