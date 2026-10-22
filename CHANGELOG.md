@@ -1,3 +1,6 @@
+## 4.8.4
+- Added: The WoW Forever Beta Celebration is Underway
+
 ## 4.8.3
 - Added: Dive into the End of Beta Special!
 - Added: The WoW: Forever Podcast: Episode 5 - End of Beta Special
@@ -1488,6 +1491,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

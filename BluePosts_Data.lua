@@ -1,15 +1,39 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792687561,
+    package_timestamp = 1792690221,
     new_post_ids = {
-        "2026-10-22-dive-into-the-end-of-beta-special-c6496665e9",
-        "2026-10-22-dive-into-the-end-of-beta-special-85a31f6cef",
-        "2026-10-22-the-wow-forever-podcast-episode-5-end-of-beta-special-5fbbb3d5ec",
-        "2026-10-22-the-wow-forever-podcast-episode-5-end-of-beta-special-dbd2be58c0",
-        "2026-10-22-updated-1022-choose-your-ruleset-in-world-of-warcraft-forever-8a7d65b314",
-        "2026-10-22-updated-1022-choose-your-ruleset-in-world-of-warcraft-forever-854acac4d0",
+        "2026-10-22-the-wow-forever-beta-celebration-is-underway-4cd283ad91",
+        "2026-10-22-the-wow-forever-beta-celebration-is-underway-c8591144a3",
     },
     posts = {
+        ["2026-10-22-the-wow-forever-beta-celebration-is-underway-4cd283ad91"] = {
+            id = "2026-10-22-the-wow-forever-beta-celebration-is-underway-4cd283ad91",
+            post_key = "4cd283ad91",
+            title = "The WoW Forever Beta Celebration is Underway",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1792689350,
+            url = "https://us.forums.blizzard.com/en/wow/t/2389633/1",
+            content = {
+            { type = "p", text = "The WoW Forever Beta will end 24 hours from now, at 10:00 a.m. PDT on Friday, October 23, and until that fateful moment, we’re celebrating the joy and wonder of WoW Forever with 24 hours of shenanigans and upheaval in Zephras Isle, Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Tirisfal Glades, and Mulgore." },
+            { type = "p", text = "Log into the WoW Forever Beta for one last time and head to one of those zones to experience the madness, and join us in saying goodbye to the Beta." },
+            { type = "p", text = "Please note: Shenanigans and upheaval in this one-time-only celebration almost certainly include items and experiences that will not be a part of WoW Forever after it launches on November 4." },
+            { type = "p", text = "We hope everyone has fun on this last day of the WoW Forever Beta. Thank you so much for testing the game with us!" },
+            },
+        },
+        ["2026-10-22-the-wow-forever-beta-celebration-is-underway-c8591144a3"] = {
+            id = "2026-10-22-the-wow-forever-beta-celebration-is-underway-c8591144a3",
+            post_key = "c8591144a3",
+            title = "The WoW Forever Beta Celebration is Underway",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1792689346,
+            url = "https://eu.forums.blizzard.com/en/wow/t/637055/1",
+            content = {
+            { type = "p", text = "The WoW Forever Beta will end 24 hours from now, at 19:00 CEST on Friday, October 23, and until that fateful moment, we’re celebrating the joy and wonder of WoW Forever with 24 hours of shenanigans and upheaval in Zephras Isle, Dun Morogh, Elwynn Forest, Teldrassil, Durotar, Tirisfal Glades, and Mulgore." },
+            { type = "p", text = "Log into the WoW Forever Beta for one last time and head to one of those zones to experience the madness, and join us in saying goodbye to the Beta." },
+            { type = "p", text = "Please note: Shenanigans and upheaval in this one-time-only celebration almost certainly include items and experiences that will not be a part of WoW Forever after it launches on November 4." },
+            { type = "p", text = "We hope everyone has fun on this last day of the WoW Forever Beta. Thank you so much for testing the game with us!" },
+            },
+        },
         ["2026-10-22-dive-into-the-end-of-beta-special-c6496665e9"] = {
             id = "2026-10-22-dive-into-the-end-of-beta-special-c6496665e9",
             post_key = "c6496665e9",
