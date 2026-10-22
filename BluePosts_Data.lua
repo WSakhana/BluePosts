@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792690221,
+    package_timestamp = 1792701945,
     new_post_ids = {
-        "2026-10-22-the-wow-forever-beta-celebration-is-underway-4cd283ad91",
-        "2026-10-22-the-wow-forever-beta-celebration-is-underway-c8591144a3",
+        "2026-10-22-beta-realm-restart-today-at-200-pm-pdt-e7fa2cfea3",
+        "2026-10-22-beta-realm-restart-today-at-2300-cest-facd6fbfde",
     },
     posts = {
+        ["2026-10-22-beta-realm-restart-today-at-200-pm-pdt-e7fa2cfea3"] = {
+            id = "2026-10-22-beta-realm-restart-today-at-200-pm-pdt-e7fa2cfea3",
+            post_key = "e7fa2cfea3",
+            title = "Beta Realm Restart Today At 2:00 p.m. PDT",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792701050,
+            url = "https://us.forums.blizzard.com/en/wow/t/2389801/1",
+            content = {
+            { type = "p", text = "In about 40 minutes, at 2:00 p.m. PDT (4:00 p.m. CDT, 5:00 p.m. EDT), we will quickly restart the WoW Forever Beta." },
+            { type = "p", text = "Players who are currently in game will receive messages from our server team warning them of the restart, beginning 15 minutes before the Beta goes offline." },
+            { type = "p", text = "See you on the other side!" },
+            },
+        },
+        ["2026-10-22-beta-realm-restart-today-at-2300-cest-facd6fbfde"] = {
+            id = "2026-10-22-beta-realm-restart-today-at-2300-cest-facd6fbfde",
+            post_key = "facd6fbfde",
+            title = "Beta Realm Restart Today At 23:00 CEST",
+            category = "WoW Forever Beta Discussion (EU)",
+            timestamp = 1792701043,
+            url = "https://eu.forums.blizzard.com/en/wow/t/637088/1",
+            content = {
+            { type = "p", text = "In about 40 minutes, at 23:00 CEST, we will quickly restart the WoW Forever Beta." },
+            { type = "p", text = "Players who are currently in game will receive messages from our server team warning them of the restart, beginning 15 minutes before the Beta goes offline." },
+            { type = "p", text = "See you on the other side!" },
+            },
+        },
         ["2026-10-22-the-wow-forever-beta-celebration-is-underway-4cd283ad91"] = {
             id = "2026-10-22-the-wow-forever-beta-celebration-is-underway-4cd283ad91",
             post_key = "4cd283ad91",

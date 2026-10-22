@@ -1,3 +1,7 @@
+## 4.8.5
+- Added: Beta Realm Restart Today At 2:00 p.m. PDT
+- Added: Beta Realm Restart Today At 23:00 CEST
+
 ## 4.8.4
 - Added: The WoW Forever Beta Celebration is Underway
 
@@ -1491,6 +1495,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
