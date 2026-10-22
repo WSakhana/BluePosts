@@ -1,10 +1,24 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792634422,
+    package_timestamp = 1792635334,
     new_post_ids = {
-        "2026-10-22-hotfixes-october-21-2026-c3e8c0bca1",
+        "2026-10-22-forever-beta-will-return-shortly-a4a04f5df2",
     },
     posts = {
+        ["2026-10-22-forever-beta-will-return-shortly-a4a04f5df2"] = {
+            id = "2026-10-22-forever-beta-will-return-shortly-a4a04f5df2",
+            post_key = "a4a04f5df2",
+            title = "Forever Beta Will Return Shortly",
+            category = "WoW: Forever Beta Discussion (US)",
+            timestamp = 1792634437,
+            url = "https://us.forums.blizzard.com/en/wow/t/2389150/1",
+            content = {
+            { type = "p", text = "Good evening folks," },
+            { type = "p", text = "We hit a small snag while turning the WoW Forever Beta back online. We’re working right now to get it back." },
+            { type = "p", text = "In the meantime, you can speed this up by fully exiting the Battle.net Desktop App to force the update to happen manually." },
+            { type = "p", text = "Thanks!" },
+            },
+        },
         ["2026-10-22-hotfixes-october-21-2026-c3e8c0bca1"] = {
             id = "2026-10-22-hotfixes-october-21-2026-c3e8c0bca1",
             post_key = "c3e8c0bca1",

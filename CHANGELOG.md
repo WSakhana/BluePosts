@@ -1,3 +1,6 @@
+## 4.8.1
+- Added: Forever Beta Will Return Shortly
+
 ## 4.8.0
 - Added: Hotfixes: October 21, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - October 21
@@ -1477,6 +1480,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
