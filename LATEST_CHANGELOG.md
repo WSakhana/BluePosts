@@ -1,2 +1,2 @@
-## 4.8.1
-- Added: Forever Beta Will Return Shortly
+## 4.8.2
+- Added: The Roleplay-PvP Ruleset is Coming to WoW Forever

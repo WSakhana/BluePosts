@@ -1,3 +1,6 @@
+## 4.8.2
+- Added: The Roleplay-PvP Ruleset is Coming to WoW Forever
+
 ## 4.8.1
 - Added: Forever Beta Will Return Shortly
 
@@ -1480,6 +1483,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

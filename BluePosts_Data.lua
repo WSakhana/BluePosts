@@ -1,10 +1,57 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792635334,
+    package_timestamp = 1792685039,
     new_post_ids = {
-        "2026-10-22-forever-beta-will-return-shortly-a4a04f5df2",
+        "2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-4f617a9b6f",
+        "2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-794c310d11",
+        "2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-b17f891930",
     },
     posts = {
+        ["2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-4f617a9b6f"] = {
+            id = "2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-4f617a9b6f",
+            post_key = "4f617a9b6f",
+            title = "The Roleplay-PvP Ruleset is Coming to WoW Forever",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1792683959,
+            url = "https://eu.forums.blizzard.com/en/wow/t/637031/1",
+            content = {
+            { type = "p", text = "Greetings," },
+            { type = "p", text = "In a recent episode of the WoW Forever Podcast we discussed some of our concerns with adding a Roleplay-PVP ruleset in WoW Forever, but we also mentioned that we were still discussing the topic internally and watching player feedback. Over the last few days, we’ve carefully examined what it would take to add it to WoW Forever and decided to go for it. We will add a Roleplay-PVP Ruleset for launch on November 4." },
+            { type = "p", text = "We’re also working hard to make it so that you can select the Roleplay-PvP ruleset and reserve names there next week when our Name Reservation period begins on Tuesday, October 27." },
+            { type = "p", text = "We really appreciate the feedback and comments on this." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
+        ["2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-794c310d11"] = {
+            id = "2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-794c310d11",
+            post_key = "794c310d11",
+            title = "The Roleplay-PvP Ruleset is Coming to WoW Forever",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1792683954,
+            url = "https://eu.forums.blizzard.com/en/wow/t/637032/1",
+            content = {
+            { type = "p", text = "Greetings," },
+            { type = "p", text = "In a recent episode of the WoW Forever Podcast we discussed some of our concerns with adding a Roleplay-PVP ruleset in WoW Forever, but we also mentioned that we were still discussing the topic internally and watching player feedback. Over the last few days, we’ve carefully examined what it would take to add it to WoW Forever and decided to go for it. We will add a Roleplay-PVP Ruleset for launch on November 4." },
+            { type = "p", text = "We’re also working hard to make it so that you can select the Roleplay-PvP ruleset and reserve names there next week when our Name Reservation period begins on Tuesday, October 27." },
+            { type = "p", text = "We really appreciate the feedback and comments on this." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
+        ["2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-b17f891930"] = {
+            id = "2026-10-22-the-roleplay-pvp-ruleset-is-coming-to-wow-forever-b17f891930",
+            post_key = "b17f891930",
+            title = "The Roleplay-PvP Ruleset is Coming to WoW Forever",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1792683950,
+            url = "https://us.forums.blizzard.com/en/wow/t/2389502/1",
+            content = {
+            { type = "p", text = "Greetings," },
+            { type = "p", text = "In a recent episode of the WoW Forever Podcast we discussed some of our concerns with adding a Roleplay-PVP ruleset in WoW Forever, but we also mentioned that we were still discussing the topic internally and watching player feedback. Over the last few days, we’ve carefully examined what it would take to add it to WoW Forever and decided to go for it. We will add a Roleplay-PVP Ruleset for launch on November 4." },
+            { type = "p", text = "We’re also working hard to make it so that you can select the Roleplay-PvP ruleset and reserve names there next week when our Name Reservation period begins on Tuesday, October 27." },
+            { type = "p", text = "We really appreciate the feedback and comments on this." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
         ["2026-10-22-forever-beta-will-return-shortly-a4a04f5df2"] = {
             id = "2026-10-22-forever-beta-will-return-shortly-a4a04f5df2",
             post_key = "a4a04f5df2",
