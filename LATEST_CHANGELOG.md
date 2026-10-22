@@ -1,3 +1,4 @@
-## 4.7.9
-- Added: Get Up to 50% In Fall Savings Through 2 November
-- Added: Get Up to 50% In Fall Savings Through November 2
+## 4.8.0
+- Added: Hotfixes: October 21, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - October 21
+- Updated: World of Warcraft: Midnight Hotfixes - 21 October

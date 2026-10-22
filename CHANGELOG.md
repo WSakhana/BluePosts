@@ -1,3 +1,8 @@
+## 4.8.0
+- Added: Hotfixes: October 21, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - October 21
+- Updated: World of Warcraft: Midnight Hotfixes - 21 October
+
 ## 4.7.9
 - Added: Get Up to 50% In Fall Savings Through 2 November
 - Added: Get Up to 50% In Fall Savings Through November 2
@@ -1472,6 +1477,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
