@@ -1,2 +1,4 @@
-## 4.8.6
-- Added: BCCA: The Gods of Zul'Aman Now Live
+## 4.8.7
+- Added: Watch the World of Warcraft: Midnight Motion Comic, “Singularity”
+- Added: Thank You For Testing the WoW Forever Beta
+- Added: Dive Into WoW: Forever, the Gods of Zul’Aman, Hallow’s End, and More in WoW Weekly
