@@ -1,3 +1,7 @@
+## 4.8.8
+- Added: Class Tuning Incoming - October 27
+- Added: Class Tuning Incoming - 27 October
+
 ## 4.8.7
 - Added: Watch the World of Warcraft: Midnight Motion Comic, “Singularity”
 - Added: Thank You For Testing the WoW Forever Beta
@@ -1503,6 +1507,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
