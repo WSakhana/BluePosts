@@ -1,3 +1,7 @@
+## 4.8.9
+- Added: Hotfixes: October 23, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - October 23
+
 ## 4.8.8
 - Added: Class Tuning Incoming - October 27
 - Added: Class Tuning Incoming - 27 October
@@ -1507,6 +1511,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
