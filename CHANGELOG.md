@@ -1,3 +1,6 @@
+## 4.9.0
+- Updated: World of Warcraft: Midnight Hotfixes - 23 October
+
 ## 4.8.9
 - Added: Hotfixes: October 23, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - October 23
@@ -1511,6 +1514,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
