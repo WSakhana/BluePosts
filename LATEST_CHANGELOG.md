@@ -1,2 +1,3 @@
-## 4.9.0
-- Updated: World of Warcraft: Midnight Hotfixes - 23 October
+## 4.9.1 - WoW 12.1.5 Compatibility
+
+- Updated Retail compatibility for WoW 12.1.5.
