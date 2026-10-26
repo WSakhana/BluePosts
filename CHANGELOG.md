@@ -1,3 +1,6 @@
+## 4.9.2
+- Added: Watch the WoW: Forever Short Story, “Unbowed”
+
 ## 4.9.1 - WoW 12.1.5 Compatibility
 
 - Updated Retail compatibility for WoW 12.1.5.
@@ -1518,6 +1521,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

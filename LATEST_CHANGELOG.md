@@ -1,3 +1,2 @@
-## 4.9.1 - WoW 12.1.5 Compatibility
-
-- Updated Retail compatibility for WoW 12.1.5.
+## 4.9.2
+- Added: Watch the WoW: Forever Short Story, “Unbowed”

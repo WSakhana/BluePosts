@@ -1,9 +1,43 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1792802737,
+    package_timestamp = 1793035867,
     new_post_ids = {
+        "2026-10-26-watch-the-wow-forever-short-story-unbowed-25a97772ed",
+        "2026-10-26-watch-the-wow-forever-short-story-unbowed-baa0794c86",
     },
     posts = {
+        ["2026-10-26-watch-the-wow-forever-short-story-unbowed-25a97772ed"] = {
+            id = "2026-10-26-watch-the-wow-forever-short-story-unbowed-25a97772ed",
+            post_key = "25a97772ed",
+            title = "Watch the WoW: Forever Short Story, “Unbowed”",
+            category = "Blogs (EU)",
+            timestamp = 1793034949,
+            url = "https://news.blizzard.com/en-gb/article/24313105/watch-the-wow-forever-short-story-unbowed",
+            content = {
+            { type = "p", text = "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence. After confronting both his past and the beliefs that defined him, he is left to ask himself: can a Forsaken still serve the Light?" },
+            { type = "p", text = "Join Cormack for a special fireside telling of our newest short story, “Unbowed”." },
+            { type = "p", text = "Written By: Sean CopelandIllustrated By: Surfside 3DNarrated By: Jesse Burch as Cormack" },
+            { type = "h3", text = "Downloadable PDF" },
+            { type = "hr" },
+            { type = "p", text = "Read more stories and stay up to date on the latest World of Warcraft news at worldofwarcraft.blizzard.com/news." },
+            },
+        },
+        ["2026-10-26-watch-the-wow-forever-short-story-unbowed-baa0794c86"] = {
+            id = "2026-10-26-watch-the-wow-forever-short-story-unbowed-baa0794c86",
+            post_key = "baa0794c86",
+            title = "Watch the WoW: Forever Short Story, “Unbowed”",
+            category = "Blogs (US)",
+            timestamp = 1793034945,
+            url = "https://news.blizzard.com/en-us/article/24313105/watch-the-wow-forever-short-story-unbowed",
+            content = {
+            { type = "p", text = "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence. After confronting both his past and the beliefs that defined him, he is left to ask himself: can a Forsaken still serve the Light?" },
+            { type = "p", text = "Join Cormack for a special fireside telling of our newest short story, “Unbowed”." },
+            { type = "p", text = "Written By: Sean CopelandIllustrated By: Surfside 3DNarrated By: Jesse Burch as Cormack" },
+            { type = "h3", text = "Downloadable PDF" },
+            { type = "hr" },
+            { type = "p", text = "Read more stories and stay up to date on the latest World of Warcraft news at worldofwarcraft.blizzard.com/news." },
+            },
+        },
         ["2026-10-24-world-of-warcraft-midnight-hotfixes-23-october-2978094fe1"] = {
             id = "2026-10-24-world-of-warcraft-midnight-hotfixes-23-october-2978094fe1",
             post_key = "2978094fe1",
