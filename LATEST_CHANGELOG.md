@@ -1,2 +1,2 @@
-## 4.9.2
-- Added: Watch the WoW: Forever Short Story, “Unbowed”
+## 4.9.3
+- Added: Join in WoW: Midnight’s Talebound Demo on October 30

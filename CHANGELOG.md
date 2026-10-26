@@ -1,3 +1,6 @@
+## 4.9.3
+- Added: Join in WoW: Midnight’s Talebound Demo on October 30
+
 ## 4.9.2
 - Added: Watch the WoW: Forever Short Story, “Unbowed”
 
@@ -1521,6 +1524,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
