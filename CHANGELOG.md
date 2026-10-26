@@ -1,3 +1,7 @@
+## 4.9.5
+- Updated: WoW Forever Beta Development Notes – Updated October 26
+- Updated: WoW Forever Beta Development Notes – Updated 26 October
+
 ## 4.9.4
 - Added: Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv
 
@@ -1527,6 +1531,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

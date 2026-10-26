@@ -1,2 +1,3 @@
-## 4.9.4
-- Added: Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv
+## 4.9.5
+- Updated: WoW Forever Beta Development Notes – Updated October 26
+- Updated: WoW Forever Beta Development Notes – Updated 26 October
