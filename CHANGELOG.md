@@ -1,3 +1,6 @@
+## 4.9.4
+- Added: Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv
+
 ## 4.9.3
 - Added: Join in WoW: Midnight’s Talebound Demo on October 30
 
@@ -1524,6 +1527,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,2 +1,2 @@
-## 4.9.3
-- Added: Join in WoW: Midnight’s Talebound Demo on October 30
+## 4.9.4
+- Added: Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv
