@@ -1,3 +1,6 @@
+## 5.0.3
+- Added: Gold Transactions Must Be Direct
+
 ## 5.0.2
 - Added: Bring the Spirit of the Sea Home with the New Grimtide Estate and Grimtide Decor Packs!
 
@@ -1553,6 +1556,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

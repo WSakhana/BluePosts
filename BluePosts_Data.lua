@@ -1,11 +1,39 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793133952,
+    package_timestamp = 1793139294,
     new_post_ids = {
-        "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad",
-        "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-b020b9164c",
+        "2026-10-27-gold-transactions-must-be-direct-128c88f153",
+        "2026-10-27-gold-transactions-must-be-direct-e325fcb7fa",
     },
     posts = {
+        ["2026-10-27-gold-transactions-must-be-direct-128c88f153"] = {
+            id = "2026-10-27-gold-transactions-must-be-direct-128c88f153",
+            post_key = "128c88f153",
+            title = "Gold Transactions Must Be Direct",
+            category = "General Discussion (US)",
+            timestamp = 1793138451,
+            url = "https://us.forums.blizzard.com/en/wow/t/2394005/1",
+            content = {
+            { type = "p", text = "We’ve recently completed a round of actions taken against accounts that were found to have participated in spending real money on gold provided by a third party (RMT). Some of the accounts actioned purchased the illicit gold and had the seller deliver it to a different player who provided a service to the purchaser, such as a raid carry." },
+            { type = "p", text = "Please be reminded that gold received from an intermediate player has an extremely high likelihood of being illicit gold that was part of an RMT. To avoid actions such as account suspension and the removal of illicit gold, players should always directly transfer gold from the player buying the carry (or other activity) to the player providing the carry." },
+            { type = "p", text = "Guilds that provide carries to players, who pay for them with gold that comes from an intermediate, are at risk of seeing that gold removed by Blizzard." },
+            { type = "p", text = "Thank you very much!" },
+            },
+        },
+        ["2026-10-27-gold-transactions-must-be-direct-e325fcb7fa"] = {
+            id = "2026-10-27-gold-transactions-must-be-direct-e325fcb7fa",
+            post_key = "e325fcb7fa",
+            title = "Gold Transactions Must Be Direct",
+            category = "General Discussion (EU)",
+            timestamp = 1793138447,
+            url = "https://eu.forums.blizzard.com/en/wow/t/638111/1",
+            content = {
+            { type = "p", text = "We’ve recently completed a round of actions taken against accounts that were found to have participated in spending real money on gold provided by a third party (RMT). Some of the accounts actioned purchased the illicit gold and had the seller deliver it to a different player who provided a service to the purchaser, such as a raid carry." },
+            { type = "p", text = "Please be reminded that gold received from an intermediate player has an extremely high likelihood of being illicit gold that was part of an RMT. To avoid actions such as account suspension and the removal of illicit gold, players should always directly transfer gold from the player buying the carry (or other activity) to the player providing the carry." },
+            { type = "p", text = "Guilds that provide carries to players, who pay for them with gold that comes from an intermediate, are at risk of seeing that gold removed by Blizzard." },
+            { type = "p", text = "Thank you very much!" },
+            },
+        },
         ["2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad"] = {
             id = "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad",
             post_key = "dd7afe0cad",

@@ -1,2 +1,2 @@
-## 5.0.2
-- Added: Bring the Spirit of the Sea Home with the New Grimtide Estate and Grimtide Decor Packs!
+## 5.0.3
+- Added: Gold Transactions Must Be Direct
