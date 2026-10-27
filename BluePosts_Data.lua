@@ -1,9 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793116856,
+    package_timestamp = 1793129585,
     new_post_ids = {
+        "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8",
+        "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-3fbb696ebf",
     },
     posts = {
+        ["2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8"] = {
+            id = "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8",
+            post_key = "c7bf52a5c8",
+            title = "Your Next Adventure in WoW: Forever Starts in the WoW Portal Room",
+            category = "General Discussion (US)",
+            timestamp = 1793128550,
+            url = "https://us.forums.blizzard.com/en/wow/t/2393349/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8\\image-1.jpg" },
+            { type = "p", text = "Whether you’re new to Azeroth, returning after a break, or have made World of Warcraft part of your life for years, the WoW Portal Room is a welcoming Discord server where you can meet fellow adventurers and find your next community." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-3fbb696ebf"] = {
+            id = "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-3fbb696ebf",
+            post_key = "3fbb696ebf",
+            title = "Your Next Adventure in WoW: Forever Starts in the WoW Portal Room",
+            category = "General Discussion (EU)",
+            timestamp = 1793128546,
+            url = "https://eu.forums.blizzard.com/en/wow/t/637932/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-3fbb696ebf\\image-1.jpg" },
+            { type = "p", text = "Whether you’re new to Azeroth, returning after a break, or have made World of Warcraft part of your life for years, the WoW Portal Room is a welcoming Discord server where you can meet fellow adventurers and find your next community." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-10-27-wow-forever-beta-development-notes-updated-october-26-ee947de7e1"] = {
             id = "2026-10-27-wow-forever-beta-development-notes-updated-october-26-ee947de7e1",
             post_key = "ee947de7e1",

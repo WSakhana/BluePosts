@@ -1,3 +1,6 @@
+## 4.9.8
+- Added: Your Next Adventure in WoW: Forever Starts in the WoW Portal Room
+
 ## 4.9.7
 - Updated bundled blue post data.
 
@@ -1538,6 +1541,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
