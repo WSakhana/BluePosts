@@ -1,2 +1,2 @@
-## 4.9.9
-- Updated bundled blue post data.
+## 5.0.0
+- Added: Add the Living Heartsbane Cauldron Mount to your Collection

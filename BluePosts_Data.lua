@@ -1,9 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793130290,
+    package_timestamp = 1793131231,
     new_post_ids = {
+        "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2",
+        "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-3f2fbc8dff",
     },
     posts = {
+        ["2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2"] = {
+            id = "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2",
+            post_key = "541e6bbba2",
+            title = "Add the Living Heartsbane Cauldron Mount to your Collection",
+            category = "General Discussion (EU)",
+            timestamp = 1793130347,
+            url = "https://eu.forums.blizzard.com/en/wow/t/637974/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2\\image-1.jpg" },
+            { type = "p", text = "Take command of this cursed creation and ride across Azeroth in wicked style. The Living Heartsbane Cauldron is a delightfully macabre mount, ready to whisk you into adventures by ground or sky." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-3f2fbc8dff"] = {
+            id = "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-3f2fbc8dff",
+            post_key = "3f2fbc8dff",
+            title = "Add the Living Heartsbane Cauldron Mount to your Collection",
+            category = "General Discussion (US)",
+            timestamp = 1793130343,
+            url = "https://us.forums.blizzard.com/en/wow/t/2393388/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-3f2fbc8dff\\image-1.jpg" },
+            { type = "p", text = "Take command of this cursed creation and ride across Azeroth in wicked style. The Living Heartsbane Cauldron is a delightfully macabre mount, ready to whisk you into adventures by ground or sky." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8"] = {
             id = "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8",
             post_key = "c7bf52a5c8",
