@@ -1,2 +1,2 @@
-## 5.0.1
-- Added: Name Reservation Issue for Oceanic Players
+## 5.0.2
+- Added: Bring the Spirit of the Sea Home with the New Grimtide Estate and Grimtide Decor Packs!

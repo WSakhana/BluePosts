@@ -1,10 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793133027,
+    package_timestamp = 1793133952,
     new_post_ids = {
-        "2026-10-27-name-reservation-issue-for-oceanic-players-c9d491e6c4",
+        "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad",
+        "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-b020b9164c",
     },
     posts = {
+        ["2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad"] = {
+            id = "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad",
+            post_key = "dd7afe0cad",
+            title = "Bring the Spirit of the Sea Home with the New Grimtide Estate and Grimtide Decor Packs!",
+            category = "General Discussion (EU)",
+            timestamp = 1793133049,
+            url = "https://eu.forums.blizzard.com/en/wow/t/638041/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-dd7afe0cad\\image-1.jpg" },
+            { type = "p", text = "Bring the haunting spirit of the sea home with the Grimtide collection for World of Warcraft Housing, featuring the Spirited Grimtide Manse exterior, Spirited Grimtide Foyer interior, and a coordinated pack of eerie nautical decor." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-b020b9164c"] = {
+            id = "2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-b020b9164c",
+            post_key = "b020b9164c",
+            title = "Bring the Spirit of the Sea Home with the New Grimtide Estate and Grimtide Decor Packs!",
+            category = "General Discussion (US)",
+            timestamp = 1793133046,
+            url = "https://us.forums.blizzard.com/en/wow/t/2393487/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-bring-the-spirit-of-the-sea-home-with-the-new-grimtide-estate-and-grim-b020b9164c\\image-1.jpg" },
+            { type = "p", text = "Bring the haunting spirit of the sea home with the Grimtide collection for World of Warcraft Housing, featuring the Spirited Grimtide Manse exterior, Spirited Grimtide Foyer interior, and a coordinated pack of eerie nautical decor." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-10-27-name-reservation-issue-for-oceanic-players-c9d491e6c4"] = {
             id = "2026-10-27-name-reservation-issue-for-oceanic-players-c9d491e6c4",
             post_key = "c9d491e6c4",

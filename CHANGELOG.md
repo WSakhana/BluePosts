@@ -1,3 +1,6 @@
+## 5.0.2
+- Added: Bring the Spirit of the Sea Home with the New Grimtide Estate and Grimtide Decor Packs!
+
 ## 5.0.1
 - Added: Name Reservation Issue for Oceanic Players
 
@@ -1550,6 +1553,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
