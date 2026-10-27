@@ -1,3 +1,6 @@
+## 5.0.1
+- Added: Name Reservation Issue for Oceanic Players
+
 ## 5.0.0
 - Added: Add the Living Heartsbane Cauldron Mount to your Collection
 
@@ -1547,6 +1550,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,11 +1,25 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793131231,
+    package_timestamp = 1793133027,
     new_post_ids = {
-        "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2",
-        "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-3f2fbc8dff",
+        "2026-10-27-name-reservation-issue-for-oceanic-players-c9d491e6c4",
     },
     posts = {
+        ["2026-10-27-name-reservation-issue-for-oceanic-players-c9d491e6c4"] = {
+            id = "2026-10-27-name-reservation-issue-for-oceanic-players-c9d491e6c4",
+            post_key = "c9d491e6c4",
+            title = "Name Reservation Issue for Oceanic Players",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793132141,
+            url = "https://us.forums.blizzard.com/en/wow/t/2393431/1",
+            content = {
+            { type = "p", text = "Attention Oceanic players connecting to Australian-based servers!" },
+            { type = "p", text = "Due to a bug, you must create any characters on Roleplay or Roleplay-PvP rulesets before creating characters on Normal or PvP rulesets." },
+            { type = "p", text = "If you first create a character on the Normal or PvP ruleset, the Roleplay and Roleplay-PvP rulesets will no longer be available for subsequent characters." },
+            { type = "p", text = "This issue should only be present for players in the Oceanic region who are connecting to Australian servers, and we’re working on a fix for it urgently." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
         ["2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2"] = {
             id = "2026-10-27-add-the-living-heartsbane-cauldron-mount-to-your-collection-541e6bbba2",
             post_key = "541e6bbba2",

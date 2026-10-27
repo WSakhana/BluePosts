@@ -1,2 +1,2 @@
-## 5.0.0
-- Added: Add the Living Heartsbane Cauldron Mount to your Collection
+## 5.0.1
+- Added: Name Reservation Issue for Oceanic Players
