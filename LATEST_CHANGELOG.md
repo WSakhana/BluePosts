@@ -1,2 +1,2 @@
-## 4.9.8
-- Added: Your Next Adventure in WoW: Forever Starts in the WoW Portal Room
+## 4.9.9
+- Updated bundled blue post data.

@@ -1,9 +1,7 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793129585,
+    package_timestamp = 1793130290,
     new_post_ids = {
-        "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8",
-        "2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-3fbb696ebf",
     },
     posts = {
         ["2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8"] = {
@@ -11,7 +9,7 @@ BluePosts_Data = {
             post_key = "c7bf52a5c8",
             title = "Your Next Adventure in WoW: Forever Starts in the WoW Portal Room",
             category = "General Discussion (US)",
-            timestamp = 1793128550,
+            timestamp = 1793129438,
             url = "https://us.forums.blizzard.com/en/wow/t/2393349/1",
             content = {
             { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-27-your-next-adventure-in-wow-forever-starts-in-the-wow-portal-room-c7bf52a5c8\\image-1.jpg" },
