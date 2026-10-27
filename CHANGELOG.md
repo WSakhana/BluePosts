@@ -1,3 +1,7 @@
+## 4.9.6
+- Updated: World of Warcraft: Midnight Hotfixes - 26 October
+- Updated: World of Warcraft: Midnight Hotfixes - October 26
+
 ## 4.9.5
 - Updated: WoW Forever Beta Development Notes – Updated October 26
 - Updated: WoW Forever Beta Development Notes – Updated 26 October
@@ -1531,6 +1535,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
