@@ -1,3 +1,6 @@
+## 5.0.6
+- Added: New Player’s Starter Guide: Welcome to World of Warcraft: Forever
+
 ## 5.0.5
 - Added: Overly Restrictive Name Check and Fix Incoming - October 27
 - Added: Overly Restrictive Name Check and Fix Incoming - 28 October
@@ -1566,6 +1569,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

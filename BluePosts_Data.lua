@@ -1,11 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793151944,
+    package_timestamp = 1793208628,
     new_post_ids = {
-        "2026-10-28-overly-restrictive-name-check-and-fix-incoming-october-27-e01f8aa14d",
-        "2026-10-28-overly-restrictive-name-check-and-fix-incoming-28-october-8c9e935eb0",
+        "2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4526616bc7",
+        "2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4b2b6eda86",
     },
     posts = {
+        ["2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4526616bc7"] = {
+            id = "2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4526616bc7",
+            post_key = "4526616bc7",
+            title = "New Player’s Starter Guide: Welcome to World of Warcraft: Forever",
+            category = "General Discussion (EU)",
+            timestamp = 1793207750,
+            url = "https://eu.forums.blizzard.com/en/wow/t/638305/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4526616bc7\\image-1.jpg" },
+            { type = "p", text = "World of Warcraft: Forever invites players into a reimagined original Azeroth where exploration, community, and the journey itself take center stage. Begin at level one, shape a character of your own, and learn the essentials for finding your place in a world designed to unfold for years to come." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
+        ["2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4b2b6eda86"] = {
+            id = "2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4b2b6eda86",
+            post_key = "4b2b6eda86",
+            title = "New Player’s Starter Guide: Welcome to World of Warcraft: Forever",
+            category = "General Discussion (US)",
+            timestamp = 1793207745,
+            url = "https://us.forums.blizzard.com/en/wow/t/2394974/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-28-new-players-starter-guide-welcome-to-world-of-warcraft-forever-4b2b6eda86\\image-1.jpg" },
+            { type = "p", text = "World of Warcraft: Forever invites players into a reimagined original Azeroth where exploration, community, and the journey itself take center stage. Begin at level one, shape a character of your own, and learn the essentials for finding your place in a world designed to unfold for years to come." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-10-28-overly-restrictive-name-check-and-fix-incoming-october-27-e01f8aa14d"] = {
             id = "2026-10-28-overly-restrictive-name-check-and-fix-incoming-october-27-e01f8aa14d",
             post_key = "e01f8aa14d",
