@@ -1,9 +1,39 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793149215,
+    package_timestamp = 1793151944,
     new_post_ids = {
+        "2026-10-28-overly-restrictive-name-check-and-fix-incoming-october-27-e01f8aa14d",
+        "2026-10-28-overly-restrictive-name-check-and-fix-incoming-28-october-8c9e935eb0",
     },
     posts = {
+        ["2026-10-28-overly-restrictive-name-check-and-fix-incoming-october-27-e01f8aa14d"] = {
+            id = "2026-10-28-overly-restrictive-name-check-and-fix-incoming-october-27-e01f8aa14d",
+            post_key = "e01f8aa14d",
+            title = "Overly Restrictive Name Check and Fix Incoming - October 27",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793151046,
+            url = "https://us.forums.blizzard.com/en/wow/t/2394467/1",
+            content = {
+            { type = "p", text = "In WoW Forever, we’ve been working on the restricted name list, which is a list the game uses to check for non-profane names that we wish to restrict, such as major Warcraft lore characters or names that are blocked for technical reasons." },
+            { type = "p", text = "Today we’ve determined that we have a bug in the process that caused the game to be overly restrictive with some names. For example, it has been incorrectly restricting names containing “c-o-n”." },
+            { type = "p", text = "With the next realm restarts in each region, we’re going to implement the fix. Afterward, if you previously received a message that said “That name is restricted” for a name that you think should have been allowed, please feel free to try again." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
+        ["2026-10-28-overly-restrictive-name-check-and-fix-incoming-28-october-8c9e935eb0"] = {
+            id = "2026-10-28-overly-restrictive-name-check-and-fix-incoming-28-october-8c9e935eb0",
+            post_key = "8c9e935eb0",
+            title = "Overly Restrictive Name Check and Fix Incoming - 28 October",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1793151043,
+            url = "https://eu.forums.blizzard.com/en/wow/t/638147/1",
+            content = {
+            { type = "p", text = "In WoW Forever, we’ve been working on the restricted name list, which is a list the game uses to check for non-profane names that we wish to restrict, such as major Warcraft lore characters or names that are blocked for technical reasons." },
+            { type = "p", text = "Today we’ve determined that we have a bug in the process that caused the game to be overly restrictive with some names. For example, it has been incorrectly restricting names containing “c-o-n”." },
+            { type = "p", text = "With the next realm restarts in each region, we’re going to implement the fix. Afterward, if you previously received a message that said “That name is restricted” for a name that you think should have been allowed, please feel free to try again." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
         ["2026-10-28-world-of-warcraft-midnight-hotfixes-october-27-e1387ead79"] = {
             id = "2026-10-28-world-of-warcraft-midnight-hotfixes-october-27-e1387ead79",
             post_key = "e1387ead79",

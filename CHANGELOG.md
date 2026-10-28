@@ -1,3 +1,7 @@
+## 5.0.5
+- Added: Overly Restrictive Name Check and Fix Incoming - October 27
+- Added: Overly Restrictive Name Check and Fix Incoming - 28 October
+
 ## 5.0.4
 - Updated: World of Warcraft: Midnight Hotfixes - October 27
 - Updated: World of Warcraft: Midnight Hotfixes - 27 October
@@ -1562,6 +1566,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
