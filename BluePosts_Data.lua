@@ -1,10 +1,59 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793282454,
+    package_timestamp = 1793292457,
     new_post_ids = {
-        "2026-10-29-now-live-get-your-ticket-to-the-wow-forever-poster-signing-at-the-irvi-9292ae655f",
+        "2026-10-29-watch-the-wow-forever-podcast-all-about-tech-4fc780c61c",
+        "2026-10-29-watch-the-wow-forever-podcast-all-about-tech-967792bc42",
+        "2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e175b817b0",
+        "2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e872261710",
     },
     posts = {
+        ["2026-10-29-watch-the-wow-forever-podcast-all-about-tech-4fc780c61c"] = {
+            id = "2026-10-29-watch-the-wow-forever-podcast-all-about-tech-4fc780c61c",
+            post_key = "4fc780c61c",
+            title = "Watch the WoW: Forever Podcast: All About Tech",
+            category = "Blogs (EU)",
+            timestamp = 1793291473,
+            url = "https://news.blizzard.com/en-gb/article/24315819/watch-the-wow-forever-podcast-all-about-tech",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guest Shobek as they talk tech with Senior Game Designer Josh “Aggrend” Greenfield, Lead Software Engineer Ana Resendez, and Principal Software Engineer Frank Williams." },
+            { type = "p", text = "Watch the episode to get insights from the development team about World of Warcraft: Forever arriving globally on November 4 at 3:00 p.m. PST!" },
+            },
+        },
+        ["2026-10-29-watch-the-wow-forever-podcast-all-about-tech-967792bc42"] = {
+            id = "2026-10-29-watch-the-wow-forever-podcast-all-about-tech-967792bc42",
+            post_key = "967792bc42",
+            title = "Watch the WoW: Forever Podcast: All About Tech",
+            category = "Blogs (US)",
+            timestamp = 1793291469,
+            url = "https://news.blizzard.com/en-us/article/24315819/watch-the-wow-forever-podcast-all-about-tech",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guest Shobek as they talk tech with Senior Game Designer Josh “Aggrend” Greenfield, Lead Software Engineer Ana Resendez, and Principal Software Engineer Frank Williams." },
+            { type = "p", text = "Watch the episode to get insights from the development team about World of Warcraft: Forever arriving globally on November 4 at 3:00 p.m. PST!" },
+            },
+        },
+        ["2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e175b817b0"] = {
+            id = "2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e175b817b0",
+            post_key = "e175b817b0",
+            title = "The WoW: Forever Podcast: Episode 6 - All About Tech ft. ‪@Shobek",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793291462,
+            url = "https://us.forums.blizzard.com/en/wow/t/2395799/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e175b817b0\\image-1.jpg" },
+            },
+        },
+        ["2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e872261710"] = {
+            id = "2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e872261710",
+            post_key = "e872261710",
+            title = "The WoW: Forever Podcast: Episode 6 - All About Tech ft. ‪@Shobek",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1793291457,
+            url = "https://eu.forums.blizzard.com/en/wow/t/638462/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-10-29-the-wow-forever-podcast-episode-6-all-about-tech-ft-shobek-e872261710\\image-1.jpg" },
+            },
+        },
         ["2026-10-29-now-live-get-your-ticket-to-the-wow-forever-poster-signing-at-the-irvi-9292ae655f"] = {
             id = "2026-10-29-now-live-get-your-ticket-to-the-wow-forever-poster-signing-at-the-irvi-9292ae655f",
             post_key = "9292ae655f",
