@@ -1,3 +1,6 @@
+## 5.0.7
+- Added: Now Live! Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv
+
 ## 5.0.6
 - Added: New Player’s Starter Guide: Welcome to World of Warcraft: Forever
 
@@ -1569,6 +1572,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
