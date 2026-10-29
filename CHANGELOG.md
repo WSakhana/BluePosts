@@ -1,3 +1,6 @@
+## 5.0.9
+- Added: Return to Azeroth in World of Warcraft: Forever
+
 ## 5.0.8
 - Added: Watch the WoW: Forever Podcast: All About Tech
 - Added: The WoW: Forever Podcast: Episode 6 - All About Tech ft. ‪@Shobek
@@ -1576,6 +1579,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
