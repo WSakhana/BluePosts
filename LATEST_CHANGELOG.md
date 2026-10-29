@@ -1,2 +1,3 @@
-## 5.0.9
-- Added: Return to Azeroth in World of Warcraft: Forever
+## 5.1.0
+- Added: World of Warcraft: Forever Goes Live Globally 4 November!
+- Added: World of Warcraft: Forever Goes Live Globally November 4!

@@ -1,3 +1,7 @@
+## 5.1.0
+- Added: World of Warcraft: Forever Goes Live Globally 4 November!
+- Added: World of Warcraft: Forever Goes Live Globally November 4!
+
 ## 5.0.9
 - Added: Return to Azeroth in World of Warcraft: Forever
 
@@ -1579,6 +1583,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
