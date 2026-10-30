@@ -1,3 +1,7 @@
+## 5.1.1
+- Added: WoW: Midnight’s Talebound Demo is Now Live
+- Added: Prepare for Forever, Try Midnight’s Talebound, and Discover Sweet Treats in WoW Weekly
+
 ## 5.1.0
 - Added: World of Warcraft: Forever Goes Live Globally 4 November!
 - Added: World of Warcraft: Forever Goes Live Globally November 4!
@@ -1583,6 +1587,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
