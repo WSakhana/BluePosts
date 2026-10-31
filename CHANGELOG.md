@@ -1,3 +1,8 @@
+## 5.1.2
+- Added: Hotfixes: October 30, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - 30 October
+- Updated: World of Warcraft: Midnight Hotfixes - October 30
+
 ## 5.1.1
 - Added: WoW: Midnight’s Talebound Demo is Now Live
 - Added: Prepare for Forever, Try Midnight’s Talebound, and Discover Sweet Treats in WoW Weekly
@@ -1587,6 +1592,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
