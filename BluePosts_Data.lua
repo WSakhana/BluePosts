@@ -1,10 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793737049,
+    package_timestamp = 1793743232,
     new_post_ids = {
-        "2026-11-03-explore-wow-forever-with-a-gamepad-b125bac5d1",
+        "2026-11-03-trading-post-hot-motocross-bunmover-4400-is-bugged-1c9d400a48",
     },
     posts = {
+        ["2026-11-03-trading-post-hot-motocross-bunmover-4400-is-bugged-1c9d400a48"] = {
+            id = "2026-11-03-trading-post-hot-motocross-bunmover-4400-is-bugged-1c9d400a48",
+            post_key = "1c9d400a48",
+            title = "Trading Post Hot Motocross Bunmover 4400 is bugged",
+            category = "General Discussion (EU)",
+            timestamp = 1793742353,
+            url = "https://eu.forums.blizzard.com/en/wow/t/638839/1",
+            content = {
+            { type = "p", text = "Wheels don’t spin and character do not hold handlebars." },
+            { type = "p", text = "You are going for the record with the bugs every single patch. It’s getting worse and worse." },
+            },
+        },
         ["2026-11-03-explore-wow-forever-with-a-gamepad-b125bac5d1"] = {
             id = "2026-11-03-explore-wow-forever-with-a-gamepad-b125bac5d1",
             post_key = "b125bac5d1",
