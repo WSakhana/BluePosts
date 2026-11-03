@@ -1,4 +1,3 @@
-## 5.1.2
-- Added: Hotfixes: October 30, 2026
-- Updated: World of Warcraft: Midnight Hotfixes - 30 October
-- Updated: World of Warcraft: Midnight Hotfixes - October 30
+## 5.1.3
+- Updated: WoW Forever Beta Development Notes – Updated November 2
+- Updated: WoW Forever Beta Development Notes – Updated 3 November

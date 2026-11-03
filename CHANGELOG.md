@@ -1,3 +1,7 @@
+## 5.1.3
+- Updated: WoW Forever Beta Development Notes – Updated November 2
+- Updated: WoW Forever Beta Development Notes – Updated 3 November
+
 ## 5.1.2
 - Added: Hotfixes: October 30, 2026
 - Updated: World of Warcraft: Midnight Hotfixes - 30 October
@@ -1592,6 +1596,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
