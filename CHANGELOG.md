@@ -1,3 +1,6 @@
+## 5.1.5
+- Added: Explore WoW: Forever with a Gamepad
+
 ## 5.1.4
 - Added: WoW: Forever—What’s New and What Feels Familiar
 
@@ -1599,6 +1602,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
