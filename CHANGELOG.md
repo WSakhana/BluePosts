@@ -1,3 +1,6 @@
+## 5.1.4
+- Added: WoW: Forever—What’s New and What Feels Familiar
+
 ## 5.1.3
 - Updated: WoW Forever Beta Development Notes – Updated November 2
 - Updated: WoW Forever Beta Development Notes – Updated 3 November
@@ -1596,6 +1599,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
