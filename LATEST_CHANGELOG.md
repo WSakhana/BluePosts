@@ -1,2 +1,2 @@
-## 5.1.7
-- Added: Stay Connected in World of Warcraft with Discord
+## 5.1.8
+- Added: World of Warcraft: Forever Launch Time

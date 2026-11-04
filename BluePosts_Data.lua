@@ -1,10 +1,22 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793816210,
+    package_timestamp = 1793817078,
     new_post_ids = {
-        "2026-11-04-stay-connected-in-world-of-warcraft-with-discord-8d91ae60b2",
+        "2026-11-04-world-of-warcraft-forever-launch-time-95041c0dc7",
     },
     posts = {
+        ["2026-11-04-world-of-warcraft-forever-launch-time-95041c0dc7"] = {
+            id = "2026-11-04-world-of-warcraft-forever-launch-time-95041c0dc7",
+            post_key = "95041c0dc7",
+            title = "World of Warcraft: Forever Launch Time",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793816155,
+            url = "https://us.forums.blizzard.com/en/wow/t/2400905/1",
+            content = {
+            { type = "p", text = "WoW Forever launches simultaneously in all regions today at 3:00 p.m. PST. That’s:" },
+            { type = "p", text = "Until then," },
+            },
+        },
         ["2026-11-04-stay-connected-in-world-of-warcraft-with-discord-8d91ae60b2"] = {
             id = "2026-11-04-stay-connected-in-world-of-warcraft-with-discord-8d91ae60b2",
             post_key = "8d91ae60b2",

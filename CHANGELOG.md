@@ -1,3 +1,6 @@
+## 5.1.8
+- Added: World of Warcraft: Forever Launch Time
+
 ## 5.1.7
 - Added: Stay Connected in World of Warcraft with Discord
 
@@ -1608,6 +1611,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
