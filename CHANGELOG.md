@@ -1,3 +1,6 @@
+## 5.1.9
+- Updated bundled blue post data.
+
 ## 5.1.8
 - Added: World of Warcraft: Forever Launch Time
 
@@ -1611,6 +1614,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

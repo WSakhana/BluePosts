@@ -1,2 +1,2 @@
-## 5.1.8
-- Added: World of Warcraft: Forever Launch Time
+## 5.1.9
+- Updated bundled blue post data.
