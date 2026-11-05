@@ -1,3 +1,7 @@
+## 5.2.3
+- Added: Why do I see maybe 8 people inside the main city?
+- Added: Zeppelins broken?
+
 ## 5.2.2
 - Added: Issues Resolved for Invite-a-Friend Players
 
@@ -1624,6 +1628,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

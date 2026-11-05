@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793847637,
+    package_timestamp = 1793862113,
     new_post_ids = {
-        "2026-11-05-issues-resolved-for-invite-a-friend-players-4401d36f3d",
-        "2026-11-05-issues-resolved-for-invite-a-friend-players-c98416428d",
+        "2026-11-05-why-do-i-see-maybe-8-people-inside-the-main-city-7f614e69fe",
+        "2026-11-05-zeppelins-broken-2d04a936d1",
     },
     posts = {
+        ["2026-11-05-why-do-i-see-maybe-8-people-inside-the-main-city-7f614e69fe"] = {
+            id = "2026-11-05-why-do-i-see-maybe-8-people-inside-the-main-city-7f614e69fe",
+            post_key = "7f614e69fe",
+            title = "Why do I see maybe 8 people inside the main city?",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793861165,
+            url = "https://us.forums.blizzard.com/en/wow/t/2401806/1",
+            content = {
+            { type = "p", text = "I went in to ironforge expecting to see everyone on launch day! All excited! I get in there to see trade say “english - 46” and barely anyone is chatting in trade, and i saw maybe 8 people AT BEST. This was very sad to see :// am i going to be stuck to this “46” forever ? how do i change out??" },
+            },
+        },
+        ["2026-11-05-zeppelins-broken-2d04a936d1"] = {
+            id = "2026-11-05-zeppelins-broken-2d04a936d1",
+            post_key = "2d04a936d1",
+            title = "Zeppelins broken?",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793861162,
+            url = "https://us.forums.blizzard.com/en/wow/t/2401777/1",
+            content = {
+            { type = "p", text = "I have been standing in the tower in Tirisfal for over 10 minutes. I have heard the horn for it but the zeo is not appealing" },
+            },
+        },
         ["2026-11-05-issues-resolved-for-invite-a-friend-players-4401d36f3d"] = {
             id = "2026-11-05-issues-resolved-for-invite-a-friend-players-4401d36f3d",
             post_key = "4401d36f3d",

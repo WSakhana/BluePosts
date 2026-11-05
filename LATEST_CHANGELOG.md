@@ -1,2 +1,3 @@
-## 5.2.2
-- Added: Issues Resolved for Invite-a-Friend Players
+## 5.2.3
+- Added: Why do I see maybe 8 people inside the main city?
+- Added: Zeppelins broken?
