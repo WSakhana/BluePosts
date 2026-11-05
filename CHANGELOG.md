@@ -1,3 +1,6 @@
+## 5.2.4
+- Added: WoW: Forever– Watch Forging Forever
+
 ## 5.2.3
 - Added: Why do I see maybe 8 people inside the main city?
 - Added: Zeppelins broken?
@@ -1628,6 +1631,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

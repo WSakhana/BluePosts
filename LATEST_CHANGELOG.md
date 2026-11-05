@@ -1,3 +1,2 @@
-## 5.2.3
-- Added: Why do I see maybe 8 people inside the main city?
-- Added: Zeppelins broken?
+## 5.2.4
+- Added: WoW: Forever– Watch Forging Forever

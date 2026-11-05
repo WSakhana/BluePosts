@@ -1,11 +1,21 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793862113,
+    package_timestamp = 1793916990,
     new_post_ids = {
-        "2026-11-05-why-do-i-see-maybe-8-people-inside-the-main-city-7f614e69fe",
-        "2026-11-05-zeppelins-broken-2d04a936d1",
+        "2026-11-05-wow-forever-watch-forging-forever-e5101bb5dd",
     },
     posts = {
+        ["2026-11-05-wow-forever-watch-forging-forever-e5101bb5dd"] = {
+            id = "2026-11-05-wow-forever-watch-forging-forever-e5101bb5dd",
+            post_key = "e5101bb5dd",
+            title = "WoW: Forever– Watch Forging Forever",
+            category = "Blogs (EU)",
+            timestamp = 1793916054,
+            url = "https://news.blizzard.com/en-gb/article/24317865/wow-forever-watch-forging-forever",
+            content = {
+            { type = "p", text = "Forged by Wētā, wielded by adventurers like you." },
+            },
+        },
         ["2026-11-05-why-do-i-see-maybe-8-people-inside-the-main-city-7f614e69fe"] = {
             id = "2026-11-05-why-do-i-see-maybe-8-people-inside-the-main-city-7f614e69fe",
             post_key = "7f614e69fe",
