@@ -1,3 +1,7 @@
+## 5.2.1
+- Added: Set Your Campfire Ablaze with the Pouch of Violet Dust!
+- Added: Language and Social Settings
+
 ## 5.2.0
 - Added: World of Warcraft: Forever Now Live!
 
@@ -1617,6 +1621,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
