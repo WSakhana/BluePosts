@@ -1,12 +1,37 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793840456,
+    package_timestamp = 1793847637,
     new_post_ids = {
-        "2026-11-05-set-your-campfire-ablaze-with-the-pouch-of-violet-dust-8804ff904f",
-        "2026-11-05-set-your-campfire-ablaze-with-the-pouch-of-violet-dust-2b8c212752",
-        "2026-11-04-language-and-social-settings-4ab75b8d32",
+        "2026-11-05-issues-resolved-for-invite-a-friend-players-4401d36f3d",
+        "2026-11-05-issues-resolved-for-invite-a-friend-players-c98416428d",
     },
     posts = {
+        ["2026-11-05-issues-resolved-for-invite-a-friend-players-4401d36f3d"] = {
+            id = "2026-11-05-issues-resolved-for-invite-a-friend-players-4401d36f3d",
+            post_key = "4401d36f3d",
+            title = "Issues Resolved for Invite-a-Friend Players",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793846763,
+            url = "https://us.forums.blizzard.com/en/wow/t/2401646/1",
+            content = {
+            { type = "p", text = "With a hotfix that is now live, we’ve fixed an issue where players who joined WoW Forever by using an Invite-a-Friend Code were unexpectedly restricted from using certain chat channels, leveling past 10, participating in guilds, forming parties, or trading items with other players." },
+            { type = "p", text = "If you experienced this, you may wish to log out and back into WoW Forever." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
+        ["2026-11-05-issues-resolved-for-invite-a-friend-players-c98416428d"] = {
+            id = "2026-11-05-issues-resolved-for-invite-a-friend-players-c98416428d",
+            post_key = "c98416428d",
+            title = "Issues Resolved for Invite-a-Friend Players",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1793846759,
+            url = "https://eu.forums.blizzard.com/en/wow/t/639604/1",
+            content = {
+            { type = "p", text = "With a hotfix that is now live, we’ve fixed an issue where players who joined WoW Forever by using an Invite-a-Friend Code were unexpectedly restricted from using certain chat channels, leveling past 10, participating in guilds, forming parties, or trading items with other players." },
+            { type = "p", text = "If you experienced this, you may wish to log out and back into WoW Forever." },
+            { type = "p", text = "Thank you!" },
+            },
+        },
         ["2026-11-05-set-your-campfire-ablaze-with-the-pouch-of-violet-dust-8804ff904f"] = {
             id = "2026-11-05-set-your-campfire-ablaze-with-the-pouch-of-violet-dust-8804ff904f",
             post_key = "8804ff904f",

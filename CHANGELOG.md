@@ -1,3 +1,6 @@
+## 5.2.2
+- Added: Issues Resolved for Invite-a-Friend Players
+
 ## 5.2.1
 - Added: Set Your Campfire Ablaze with the Pouch of Violet Dust!
 - Added: Language and Social Settings
@@ -1621,6 +1624,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
