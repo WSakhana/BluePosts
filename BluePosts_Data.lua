@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793916990,
+    package_timestamp = 1793917864,
     new_post_ids = {
-        "2026-11-05-wow-forever-watch-forging-forever-e5101bb5dd",
+        "2026-11-05-wow-forever-watch-forging-forever-483f0c9e81",
     },
     posts = {
+        ["2026-11-05-wow-forever-watch-forging-forever-483f0c9e81"] = {
+            id = "2026-11-05-wow-forever-watch-forging-forever-483f0c9e81",
+            post_key = "483f0c9e81",
+            title = "WoW: Forever– Watch Forging Forever",
+            category = "General Discussion (US)",
+            timestamp = 1793916953,
+            url = "https://us.forums.blizzard.com/en/wow/t/2402801/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-05-wow-forever-watch-forging-forever-483f0c9e81\\image-1.jpg" },
+            { type = "p", text = "Witness the creation of World of Warcraft: Forever's first legendary: Taldramir, the Whispering Wood." },
+            { type = "p", text = "View Full Article" },
+            },
+        },
         ["2026-11-05-wow-forever-watch-forging-forever-e5101bb5dd"] = {
             id = "2026-11-05-wow-forever-watch-forging-forever-e5101bb5dd",
             post_key = "e5101bb5dd",

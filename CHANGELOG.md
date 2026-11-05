@@ -1,3 +1,6 @@
+## 5.2.5
+- Added: WoW: Forever– Watch Forging Forever
+
 ## 5.2.4
 - Added: WoW: Forever– Watch Forging Forever
 
@@ -1631,6 +1634,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

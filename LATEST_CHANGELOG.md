@@ -1,2 +1,2 @@
-## 5.2.4
+## 5.2.5
 - Added: WoW: Forever– Watch Forging Forever
