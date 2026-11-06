@@ -1,2 +1,2 @@
-## 5.2.6
-- Added: The Venomous Abyss Raid Tuning Incoming
+## 5.2.7
+- Added: Hotfixes: November 5, 2026

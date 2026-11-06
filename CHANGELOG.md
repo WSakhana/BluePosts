@@ -1,3 +1,6 @@
+## 5.2.7
+- Added: Hotfixes: November 5, 2026
+
 ## 5.2.6
 - Added: The Venomous Abyss Raid Tuning Incoming
 
@@ -1637,6 +1640,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
