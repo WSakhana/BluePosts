@@ -1,3 +1,6 @@
+## 5.2.9
+- Updated: The Venomous Abyss Raid Tuning Incoming
+
 ## 5.2.8
 - Added: The Adventure Begins in WoW: Forever, Stay Connected with Discord, and Taldramir Takes Shape in WoW Weekly
 - Added: WoW: Forever Hotfixes - November 5, 2026
@@ -1644,6 +1647,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
