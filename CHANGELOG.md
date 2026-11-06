@@ -1,3 +1,6 @@
+## 5.3.0
+- Updated: The Venomous Abyss Raid Tuning Incoming
+
 ## 5.2.9
 - Updated: The Venomous Abyss Raid Tuning Incoming
 
@@ -1647,6 +1650,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
