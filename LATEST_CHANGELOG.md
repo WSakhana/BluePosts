@@ -1,2 +1,2 @@
-## 5.2.5
-- Added: WoW: Forever– Watch Forging Forever
+## 5.2.6
+- Added: The Venomous Abyss Raid Tuning Incoming
