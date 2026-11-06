@@ -1,2 +1,3 @@
-## 5.3.0
-- Updated: The Venomous Abyss Raid Tuning Incoming
+## 5.3.1
+- Added: Class Tuning Incoming - November 10
+- Added: Class Tuning Incoming - 10 November

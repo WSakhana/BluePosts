@@ -1,9 +1,43 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1793993466,
+    package_timestamp = 1794000660,
     new_post_ids = {
+        "2026-11-06-class-tuning-incoming-november-10-4135525930",
+        "2026-11-06-class-tuning-incoming-10-november-201576e797",
     },
     posts = {
+        ["2026-11-06-class-tuning-incoming-november-10-4135525930"] = {
+            id = "2026-11-06-class-tuning-incoming-november-10-4135525930",
+            post_key = "4135525930",
+            title = "Class Tuning Incoming - November 10",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1793999749,
+            url = "https://us.forums.blizzard.com/en/wow/t/2404092/1",
+            content = {
+            { type = "p", text = "Now that players around the world are leveling up in WoW: Forever, we’ve identified a few class issues that we feel need some immediate changes. Today, we’re still investigating these issues and working through them with a plan to release hotfixes on Tuesday, November 10 to address:" },
+            { type = "list_item", text = "We’ve seen that Hunter pets and Warlock Voidwalkers are not as durable as tanks as we would like them to be. Our intent is for their effectiveness to be relatively the same as in Classic Era. We will adjust their stats as necessary to accomplish this.", level = 0 },
+            { type = "list_item", text = "Affliction Warlock reports indicate that always channeling Wrack is superior to also casting damage-over-time abilities like Siphon Life, Corruption, and Bane of Agony. We will make adjustments to make sure those are always worthwhile to cast combined with Wrack, without affecting Affliction Warlocks’ total damage output.", level = 0 },
+            { type = "list_item", text = "Enhancement Shamans are finding that Intellect and Spellpower are superior stats compared to Strength and Attack Power. We plan to make changes so that Strength is always their strongest stat, and Enhancement Shamans will not prefer gear intended for Mages and Warlocks. Ideally, Enhancement’s best items have Strength or Attack Power, along with some Intellect and/or Spell Power.", level = 0 },
+            { type = "p", text = "Please note: Enhancement Shaman players who are leveling up will want to collect Strength and Attack Power gear from now on." },
+            { type = "p", text = "We may find new issues over the weekend, and we will keep you updated. Our plan is to make class balance changes on Tuesday, and then on future Tuesdays if necessary. Thank you very much for your feedback!" },
+            },
+        },
+        ["2026-11-06-class-tuning-incoming-10-november-201576e797"] = {
+            id = "2026-11-06-class-tuning-incoming-10-november-201576e797",
+            post_key = "201576e797",
+            title = "Class Tuning Incoming - 10 November",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1793999745,
+            url = "https://eu.forums.blizzard.com/en/wow/t/640100/1",
+            content = {
+            { type = "p", text = "Now that players around the world are leveling up in WoW: Forever, we’ve identified a few class issues that we feel need some immediate changes. Today, we’re still investigating these issues and working through them with a plan to release hotfixes on Tuesday, November 10 to address:" },
+            { type = "list_item", text = "We’ve seen that Hunter pets and Warlock Voidwalkers are not as durable as tanks as we would like them to be. Our intent is for their effectiveness to be relatively the same as in Classic Era. We will adjust their stats as necessary to accomplish this.", level = 0 },
+            { type = "list_item", text = "Affliction Warlock reports indicate that always channeling Wrack is superior to also casting damage-over-time abilities like Siphon Life, Corruption, and Bane of Agony. We will make adjustments to make sure those are always worthwhile to cast combined with Wrack, without affecting Affliction Warlocks’ total damage output.", level = 0 },
+            { type = "list_item", text = "Enhancement Shamans are finding that Intellect and Spellpower are superior stats compared to Strength and Attack Power. We plan to make changes so that Strength is always their strongest stat, and Enhancement Shamans will not prefer gear intended for Mages and Warlocks. Ideally, Enhancement’s best items have Strength or Attack Power, along with some Intellect and/or Spell Power.", level = 0 },
+            { type = "p", text = "Please note: Enhancement Shaman players who are leveling up will want to collect Strength and Attack Power gear from now on." },
+            { type = "p", text = "We may find new issues over the weekend, and we will keep you updated. Our plan is to make class balance changes on Tuesday, and then on future Tuesdays if necessary. Thank you very much for your feedback!" },
+            },
+        },
         ["2026-11-06-the-venomous-abyss-raid-tuning-incoming-b4dcb53a69"] = {
             id = "2026-11-06-the-venomous-abyss-raid-tuning-incoming-b4dcb53a69",
             post_key = "b4dcb53a69",
