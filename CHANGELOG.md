@@ -1,3 +1,10 @@
+## 5.3.2
+- Added: WoW: Forever Hotfixes - November 6, 2026
+- Added: Hotfixes: November 6, 2026
+- Updated: WoW: Forever Hotfixes - November 6, 2026
+- Updated: World of Warcraft: Midnight Hotfixes - November 6
+- Updated: World of Warcraft: Midnight Hotfixes - 6 November
+
 ## 5.3.1
 - Added: Class Tuning Incoming - November 10
 - Added: Class Tuning Incoming - 10 November
@@ -1654,6 +1661,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
