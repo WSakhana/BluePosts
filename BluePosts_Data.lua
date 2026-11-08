@@ -1,13 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794015134,
+    package_timestamp = 1794168953,
     new_post_ids = {
-        "2026-11-07-wow-forever-hotfixes-november-6-2026-bacb1c91fe",
-        "2026-11-07-wow-forever-hotfixes-november-6-2026-ddfdd47e7a",
-        "2026-11-07-hotfixes-november-6-2026-ad55e58893",
-        "2026-11-07-hotfixes-november-6-2026-f9c0de9e43",
+        "2026-11-08-dungeon-enemy-xp-increased-november-8-787630fc35",
+        "2026-11-08-dungeon-enemy-xp-increased-8-november-b7713e8f68",
     },
     posts = {
+        ["2026-11-08-dungeon-enemy-xp-increased-november-8-787630fc35"] = {
+            id = "2026-11-08-dungeon-enemy-xp-increased-november-8-787630fc35",
+            post_key = "787630fc35",
+            title = "Dungeon Enemy XP Increased - November 8",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1794168050,
+            url = "https://us.forums.blizzard.com/en/wow/t/2406595/1",
+            content = {
+            { type = "p", text = "At about 11:05 PST today, we deployed a hotfix that increased kill experience in dungeons by 50%, so it feels better to go back in for more runs." },
+            { type = "p", text = "Happy dungeon crawling, and good luck with those Deviate Hides!" },
+            },
+        },
+        ["2026-11-08-dungeon-enemy-xp-increased-8-november-b7713e8f68"] = {
+            id = "2026-11-08-dungeon-enemy-xp-increased-8-november-b7713e8f68",
+            post_key = "b7713e8f68",
+            title = "Dungeon Enemy XP Increased - 8 November",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794168045,
+            url = "https://eu.forums.blizzard.com/en/wow/t/640598/1",
+            content = {
+            { type = "p", text = "At about 20:05 CET today, we deployed a hotfix that increased kill experience in dungeons by 50%, so it feels better to go back in for more runs." },
+            { type = "p", text = "Happy dungeon crawling, and good luck with those Deviate Hides!" },
+            },
+        },
         ["2026-11-07-wow-forever-hotfixes-november-6-2026-bacb1c91fe"] = {
             id = "2026-11-07-wow-forever-hotfixes-november-6-2026-bacb1c91fe",
             post_key = "bacb1c91fe",

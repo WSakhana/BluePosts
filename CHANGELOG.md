@@ -1,3 +1,7 @@
+## 5.3.3
+- Added: Dungeon Enemy XP Increased - November 8
+- Added: Dungeon Enemy XP Increased - 8 November
+
 ## 5.3.2
 - Added: WoW: Forever Hotfixes - November 6, 2026
 - Added: Hotfixes: November 6, 2026
@@ -1661,6 +1665,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
