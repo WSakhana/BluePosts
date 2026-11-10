@@ -1,3 +1,7 @@
+## 5.3.7
+- Added: Gold at 60 for quests
+- Added: No gold from quests at lvl 60? Seriously?
+
 ## 5.3.6
 - Added: The majority WANTS increased dungeon XP
 - Added: Dungeon xp still not enough
@@ -1678,6 +1682,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

@@ -1,13 +1,34 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794348065,
+    package_timestamp = 1794348972,
     new_post_ids = {
-        "2026-11-10-the-majority-wants-increased-dungeon-xp-a60ed34d7c",
-        "2026-11-10-dungeon-xp-still-not-enough-3667a22481",
-        "2026-11-10-wow-forever-hotfixes-november-9-2026-e489113fd7",
-        "2026-11-10-wow-forever-hotfixes-november-9-2026-490c7104cb",
+        "2026-11-10-gold-at-60-for-quests-a4b0ec325a",
+        "2026-11-10-no-gold-from-quests-at-lvl-60-seriously-32e33c1ee4",
     },
     posts = {
+        ["2026-11-10-gold-at-60-for-quests-a4b0ec325a"] = {
+            id = "2026-11-10-gold-at-60-for-quests-a4b0ec325a",
+            post_key = "a4b0ec325a",
+            title = "Gold at 60 for quests",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1794348051,
+            url = "https://us.forums.blizzard.com/en/wow/t/2405161/1",
+            content = {
+            { type = "p", text = "The change to not give additional gold in exchange for EXP at 60 needs to be reverted. Quests are basically useless at 60 if they don’t have a reward. This was one of the easy ways to make gold to afford spells and mounts. This is a horrible design and change." },
+            { type = "p", text = "it feels good to complete quests and now this just feels BAD at 60. Change this back ASAP." },
+            },
+        },
+        ["2026-11-10-no-gold-from-quests-at-lvl-60-seriously-32e33c1ee4"] = {
+            id = "2026-11-10-no-gold-from-quests-at-lvl-60-seriously-32e33c1ee4",
+            post_key = "32e33c1ee4",
+            title = "No gold from quests at lvl 60? Seriously?",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794348045,
+            url = "https://eu.forums.blizzard.com/en/wow/t/640380/1",
+            content = {
+            { type = "p", text = "This is a joke right? Surely this isn’t really final? Because it has to be the dumbest change to the game ever made. Who thought this would be a good idea? Are we really expected to grind on mobs now?! I thought the idea of Forever was about new storylines and the world? So what exactly would be the point of doing quests at max level now??? Why bother with them? And what’s this about a stupid weekly quest giving you random amount of gold? Are you guys serious? Are we really going back into retail with a mandatory daily/weekly checklist??? Seriously, come on! As a semi casual whose primary income is from doing quests, this change is making me consider quitting altogether." },
+            },
+        },
         ["2026-11-10-the-majority-wants-increased-dungeon-xp-a60ed34d7c"] = {
             id = "2026-11-10-the-majority-wants-increased-dungeon-xp-a60ed34d7c",
             post_key = "a60ed34d7c",
