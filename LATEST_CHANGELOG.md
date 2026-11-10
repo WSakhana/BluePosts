@@ -1,3 +1,2 @@
-## 5.3.4
-- Added: PvP Faction Balance Updates - November 10
-- Added: PvP Faction Balance Updates - 11 November
+## 5.3.5
+- Updated: Hotfixes: October 13, 2026

@@ -1,3 +1,6 @@
+## 5.3.5
+- Updated: Hotfixes: October 13, 2026
+
 ## 5.3.4
 - Added: PvP Faction Balance Updates - November 10
 - Added: PvP Faction Balance Updates - 11 November
@@ -1669,6 +1672,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
