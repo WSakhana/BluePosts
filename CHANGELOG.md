@@ -1,3 +1,9 @@
+## 5.3.6
+- Added: The majority WANTS increased dungeon XP
+- Added: Dungeon xp still not enough
+- Added: WoW: Forever Hotfixes - November 9, 2026
+- Updated: Hotfixes: October 13, 2026
+
 ## 5.3.5
 - Updated: Hotfixes: October 13, 2026
 
@@ -1672,6 +1678,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
