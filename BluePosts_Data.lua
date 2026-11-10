@@ -1,11 +1,39 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794168953,
+    package_timestamp = 1794278075,
     new_post_ids = {
-        "2026-11-08-dungeon-enemy-xp-increased-november-8-787630fc35",
-        "2026-11-08-dungeon-enemy-xp-increased-8-november-b7713e8f68",
+        "2026-11-10-pvp-faction-balance-updates-november-10-f3ade64bad",
+        "2026-11-10-pvp-faction-balance-updates-11-november-e091899444",
     },
     posts = {
+        ["2026-11-10-pvp-faction-balance-updates-november-10-f3ade64bad"] = {
+            id = "2026-11-10-pvp-faction-balance-updates-november-10-f3ade64bad",
+            post_key = "f3ade64bad",
+            title = "PvP Faction Balance Updates - November 10",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1794276947,
+            url = "https://us.forums.blizzard.com/en/wow/t/2408781/1",
+            content = {
+            { type = "p", text = "It’s vitally important that the PvP rulesets in WoW: Forever have balanced factions where both factions vie for supremacy, creating memories of epic victories and stunning defeats that we all remember for years to come. While even the most extreme case in a region is currently at roughly a 55/45 split, that is not as close as we want it to be." },
+            { type = "p", text = "To better set the stage for the neck-and-neck conflicts we all want, we’ve adjusted the character creation system to better recognize the overall state of faction balance in each region’s PvP rulesets, rather than what may feel like snapshots of points in time. Our goal is to bring things as close to a 50/50 faction balance as possible." },
+            { type = "p", text = "In the short term, that means that it will become increasingly difficult to create characters on the more populous faction in each region – currently Horde on North American PvP rulesets or Alliance in EU Roleplay-PvP. As everyone settles and shifts, these may flip to the other side. We recognize that while restrictions are in place, it can be frustrating to not be able to start playing a specific faction in that moment, but this is a necessary trade-off for the long-term health of the ruleset, especially early on when guilds are being established and rivalries developed." },
+            { type = "p", text = "World of Warcraft: Forever’s PvP is at its best when the Alliance and Horde are on equal footing, and we are dedicated to helping maintain that balance so that we can all witness battles at the epic scale that has made WoW Forever PvP so memorable thus far." },
+            },
+        },
+        ["2026-11-10-pvp-faction-balance-updates-11-november-e091899444"] = {
+            id = "2026-11-10-pvp-faction-balance-updates-11-november-e091899444",
+            post_key = "e091899444",
+            title = "PvP Faction Balance Updates - 11 November",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794276943,
+            url = "https://eu.forums.blizzard.com/en/wow/t/641169/1",
+            content = {
+            { type = "p", text = "It’s vitally important that the PvP rulesets in WoW: Forever have balanced factions where both factions vie for supremacy, creating memories of epic victories and stunning defeats that we all remember for years to come. While even the most extreme case in a region is currently at roughly a 55/45 split, that is not as close as we want it to be." },
+            { type = "p", text = "To better set the stage for the neck-and-neck conflicts we all want, we’ve adjusted the character creation system to better recognize the overall state of faction balance in each region’s PvP rulesets, rather than what may feel like snapshots of points in time. Our goal is to bring things as close to a 50/50 faction balance as possible." },
+            { type = "p", text = "In the short term, that means that it will become increasingly difficult to create characters on the more populous faction in each region – currently Horde on North American PvP rulesets or Alliance in EU Roleplay-PvP. As everyone settles and shifts, these may flip to the other side. We recognize that while restrictions are in place, it can be frustrating to not be able to start playing a specific faction in that moment, but this is a necessary trade-off for the long-term health of the ruleset, especially early on when guilds are being established and rivalries developed." },
+            { type = "p", text = "World of Warcraft: Forever’s PvP is at its best when the Alliance and Horde are on equal footing, and we are dedicated to helping maintain that balance so that we can all witness battles at the epic scale that has made WoW Forever PvP so memorable thus far." },
+            },
+        },
         ["2026-11-08-dungeon-enemy-xp-increased-november-8-787630fc35"] = {
             id = "2026-11-08-dungeon-enemy-xp-increased-november-8-787630fc35",
             post_key = "787630fc35",

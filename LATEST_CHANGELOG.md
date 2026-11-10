@@ -1,3 +1,3 @@
-## 5.3.3
-- Added: Dungeon Enemy XP Increased - November 8
-- Added: Dungeon Enemy XP Increased - 8 November
+## 5.3.4
+- Added: PvP Faction Balance Updates - November 10
+- Added: PvP Faction Balance Updates - 11 November
