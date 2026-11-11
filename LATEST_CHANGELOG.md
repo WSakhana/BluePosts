@@ -1,3 +1,2 @@
-## 5.3.7
-- Added: Gold at 60 for quests
-- Added: No gold from quests at lvl 60? Seriously?
+## 5.3.8
+- Added: WoW: Forever Hotfixes - November 10, 2026

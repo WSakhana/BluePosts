@@ -1,3 +1,6 @@
+## 5.3.8
+- Added: WoW: Forever Hotfixes - November 10, 2026
+
 ## 5.3.7
 - Added: Gold at 60 for quests
 - Added: No gold from quests at lvl 60? Seriously?
@@ -1682,6 +1685,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
