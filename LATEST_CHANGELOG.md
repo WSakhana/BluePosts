@@ -1,2 +1,2 @@
-## 5.3.8
-- Added: WoW: Forever Hotfixes - November 10, 2026
+## 5.3.9
+- Added: Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth
