@@ -1,11 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794446168,
+    package_timestamp = 1794506477,
     new_post_ids = {
-        "2026-11-12-wow-forever-hotfixes-november-11-2026-d2afb982a6",
-        "2026-11-12-wow-forever-hotfixes-november-11-2026-4a3d4f69ea",
+        "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-66baf12f2f",
+        "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-3c36178137",
     },
     posts = {
+        ["2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-66baf12f2f"] = {
+            id = "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-66baf12f2f",
+            post_key = "66baf12f2f",
+            title = "Watch the WoW: Forever Podcast – The Lore Episode",
+            category = "Blogs (EU)",
+            timestamp = 1794505548,
+            url = "https://news.blizzard.com/en-gb/article/24316981/watch-the-wow-forever-podcast-the-lore-episode",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guests PlatinumWoW and Nobbel for a conversation with Senior Game Designer Josh “Aggrend” Greenfield and Lore Historian Lead Sean Copeland. Together, they dive deeper into the lore and story of World of Warcraft: Forever." },
+            { type = "p", text = "Press play to go behind the lore with the developers." },
+            },
+        },
+        ["2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-3c36178137"] = {
+            id = "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-3c36178137",
+            post_key = "3c36178137",
+            title = "Watch the WoW: Forever Podcast – The Lore Episode",
+            category = "Blogs (US)",
+            timestamp = 1794505545,
+            url = "https://news.blizzard.com/en-us/article/24316981/watch-the-wow-forever-podcast-the-lore-episode",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic and special guests PlatinumWoW and Nobbel for a conversation with Senior Game Designer Josh “Aggrend” Greenfield and Lore Historian Lead Sean Copeland. Together, they dive deeper into the lore and story of World of Warcraft: Forever." },
+            { type = "p", text = "Press play to go behind the lore with the developers." },
+            },
+        },
         ["2026-11-12-wow-forever-hotfixes-november-11-2026-d2afb982a6"] = {
             id = "2026-11-12-wow-forever-hotfixes-november-11-2026-d2afb982a6",
             post_key = "d2afb982a6",

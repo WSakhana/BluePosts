@@ -1,3 +1,6 @@
+## 5.4.1
+- Added: Watch the WoW: Forever Podcast – The Lore Episode
+
 ## 5.4.0
 - Added: WoW: Forever Hotfixes - November 11, 2026
 - Updated: WoW: Forever Hotfixes - November 11, 2026
@@ -1692,6 +1695,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
