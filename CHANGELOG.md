@@ -1,3 +1,6 @@
+## 5.4.3
+- Updated bundled blue post data.
+
 ## 5.4.2
 - Added: The WoW Forever Podcast: Episode 7 - Turbo Nerds Lore-ing Out ft. @Nobbel87 & Platinum WoW
 
@@ -1698,6 +1701,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
