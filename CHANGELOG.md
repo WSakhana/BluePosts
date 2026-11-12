@@ -1,3 +1,7 @@
+## 5.4.0
+- Added: WoW: Forever Hotfixes - November 11, 2026
+- Updated: WoW: Forever Hotfixes - November 11, 2026
+
 ## 5.3.9
 - Added: Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth
 
@@ -1688,6 +1692,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
