@@ -1,3 +1,6 @@
+## 5.4.2
+- Added: The WoW Forever Podcast: Episode 7 - Turbo Nerds Lore-ing Out ft. @Nobbel87 & Platinum WoW
+
 ## 5.4.1
 - Added: Watch the WoW: Forever Podcast – The Lore Episode
 
@@ -1695,6 +1698,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

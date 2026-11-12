@@ -1,2 +1,2 @@
-## 5.4.1
-- Added: Watch the WoW: Forever Podcast – The Lore Episode
+## 5.4.2
+- Added: The WoW Forever Podcast: Episode 7 - Turbo Nerds Lore-ing Out ft. @Nobbel87 & Platinum WoW

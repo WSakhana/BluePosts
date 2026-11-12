@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794506477,
+    package_timestamp = 1794507375,
     new_post_ids = {
-        "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-66baf12f2f",
-        "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-3c36178137",
+        "2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-eb1fd0042c",
+        "2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-4713235440",
     },
     posts = {
+        ["2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-eb1fd0042c"] = {
+            id = "2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-eb1fd0042c",
+            post_key = "eb1fd0042c",
+            title = "The WoW Forever Podcast: Episode 7 - Turbo Nerds Lore-ing Out ft. @Nobbel87 & Platinum WoW",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1794506447,
+            url = "https://us.forums.blizzard.com/en/wow/t/2412856/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-eb1fd0042c\\image-1.jpg" },
+            },
+        },
+        ["2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-4713235440"] = {
+            id = "2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-4713235440",
+            post_key = "4713235440",
+            title = "The WoW Forever Podcast: Episode 7 - Turbo Nerds Lore-ing Out ft. @Nobbel87 & Platinum WoW",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794506443,
+            url = "https://eu.forums.blizzard.com/en/wow/t/642185/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-12-the-wow-forever-podcast-episode-7-turbo-nerds-lore-ing-out-ft-nobbel87-4713235440\\image-1.jpg" },
+            },
+        },
         ["2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-66baf12f2f"] = {
             id = "2026-11-12-watch-the-wow-forever-podcast-the-lore-episode-66baf12f2f",
             post_key = "66baf12f2f",
