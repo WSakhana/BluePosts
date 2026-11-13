@@ -1,3 +1,6 @@
+## 5.4.5
+- Added: Raid Encounter Design in Season 3
+
 ## 5.4.4
 - Added: Watch the WoW: Forever Short Story, “Cost of Honor”
 - Added: WoW Weekly Highlights the WoW: Forever Podcast, a New Short Story, This Week’s Videos, and More!
@@ -1705,6 +1708,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

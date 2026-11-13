@@ -1,3 +1,2 @@
-## 5.4.4
-- Added: Watch the WoW: Forever Short Story, “Cost of Honor”
-- Added: WoW Weekly Highlights the WoW: Forever Podcast, a New Short Story, This Week’s Videos, and More!
+## 5.4.5
+- Added: Raid Encounter Design in Season 3

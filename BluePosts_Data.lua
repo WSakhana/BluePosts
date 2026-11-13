@@ -1,13 +1,31 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794594723,
+    package_timestamp = 1794607287,
     new_post_ids = {
-        "2026-11-13-watch-the-wow-forever-short-story-cost-of-honor-17dfe1619b",
-        "2026-11-13-watch-the-wow-forever-short-story-cost-of-honor-cfa5ec9dac",
-        "2026-11-13-wow-weekly-highlights-the-wow-forever-podcast-a-new-short-story-this-w-204543a4d0",
-        "2026-11-13-wow-weekly-highlights-the-wow-forever-podcast-a-new-short-story-this-w-d108eee8f8",
+        "2026-11-13-raid-encounter-design-in-season-3-94b414b1e0",
     },
     posts = {
+        ["2026-11-13-raid-encounter-design-in-season-3-94b414b1e0"] = {
+            id = "2026-11-13-raid-encounter-design-in-season-3-94b414b1e0",
+            post_key = "94b414b1e0",
+            title = "Raid Encounter Design in Season 3",
+            category = "Dungeons, Raids and Scenarios (US)",
+            timestamp = 1794606337,
+            url = "https://us.forums.blizzard.com/en/wow/t/2414817/1",
+            content = {
+            { type = "p", text = "Last week we made several adjustments to The Venomous Abyss with the intent of reducing the number of damage events that could kill you or your entire raid with a single individual mistake. We believe this type of severe mechanical penalty was used too often in The Venomous Abyss, causing the associated mechanics to become frustrating as the season wore on. Our goal with these changes was to ensure that damage events feel more proportional to player mistakes and to reduce the number of instances where individual mistakes could easily trigger group wipes. A couple examples from that list of changes:" },
+            { type = "list_item", text = "Malice damage was reduced by 45% on Mythic and 63% on Normal/Heroic, which should now help a failed interrupt feel like a punishing but recoverable group mistake.", level = 0 },
+            { type = "list_item", text = "Reductions to Noxious Splash’s initial damage (33%) and damage-over-time component (84%) should help ensure that a single individual’s mistake no longer feels like a death sentence.", level = 0 },
+            { type = "p", text = "We feel that our design has shifted over time at the expense of the average Mythic player’s experience. Going forward into Season 3, we’d like to intentionally pull back on some of these severe mechanical penalties, even at the start of the season. Once Season 3 launches on the Public Test Realm, we’d like to invite you to test each difficulty of the new raid and see for yourselves." },
+            { type = "p", text = "What is a “mechanical penalty”? Generally, when an encounter designer creates a mechanic, they also design a corresponding penalty to reinforce the gameplay that the mechanic is intended to incentivize." },
+            { type = "p", text = "Sometimes this can be very simple. If an add spawns in the encounter and the tank doesn’t establish threat on it quickly, it can melee and endanger other players. The tank needs to pick that add up quickly, which is hopefully fun gameplay for the tank. That’s pretty straightforward." },
+            { type = "p", text = "Other times, these penalties can be complex. Let’s use Heroic Ula’tek as an example. If enough individual players don’t contribute to soaking Stone Venom, a player will be affected by Calcified Corpse and very likely wipe the raid. Players need to split into roughly equal groups, react quickly, and ensure that they’re staying with their assigned player until the Stone Venom aura has expired. Calcified Corpse exists only to reinforce gameplay that we want players to enjoy in that phase." },
+            { type = "p", text = "“The Punishment Must Fit the Crime” When we design mechanics and their corresponding penalties, it’s important for them to be proportional to each other. For example, a small missile landing on a character should generally not kill an appropriately geared character from 100% HP. However, if every player in the raid collectively ignores Malacrass’ cast of Eternal Nightfall, he will eventually complete his cast and destroy the raid." },
+            { type = "p", text = "When mechanics and their penalties are out of proportion, a sense of frustration usually sets in. This threshold (what feels “unfair”) can be very different from player to player, and we spend a lot of time internally discussing what will feel right for each raid difficulty." },
+            { type = "p", text = "We’ve heard a lot of player feedback about this element of raid difficulty. Going forward, we want to be more lenient in places where we’ve previously killed players in a single damage event or quickly wiped the raid as a result of a single point of failure. Our hope is to retain the challenge and sense of achievement you feel from completing encounters - but allow for more satisfying progression along the way. Fewer wipes that feel like “instant death” and more wipes that feel like a slow unraveling as the group makes mistakes and productively learns from them." },
+            { type = "p", text = "Again, we invite you to join us on the Season 3 PTR once it begins. Please join us for raid testing and let us know your thoughts." },
+            },
+        },
         ["2026-11-13-watch-the-wow-forever-short-story-cost-of-honor-17dfe1619b"] = {
             id = "2026-11-13-watch-the-wow-forever-short-story-cost-of-honor-17dfe1619b",
             post_key = "17dfe1619b",
