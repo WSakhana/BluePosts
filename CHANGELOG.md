@@ -1,3 +1,6 @@
+## 5.4.6
+- Added: Raid Encounter Design in Season 3
+
 ## 5.4.5
 - Added: Raid Encounter Design in Season 3
 
@@ -1708,6 +1711,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
