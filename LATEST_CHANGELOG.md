@@ -1,2 +1,2 @@
-## 5.4.6
-- Added: Raid Encounter Design in Season 3
+## 5.4.7
+- Added: Lost Training Purchase Refunds - 13 November

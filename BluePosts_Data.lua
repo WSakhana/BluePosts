@@ -1,10 +1,23 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794608111,
+    package_timestamp = 1794621657,
     new_post_ids = {
-        "2026-11-13-raid-encounter-design-in-season-3-e48d6c2b76",
+        "2026-11-14-lost-training-purchase-refunds-13-november-be1db935e8",
     },
     posts = {
+        ["2026-11-14-lost-training-purchase-refunds-13-november-be1db935e8"] = {
+            id = "2026-11-14-lost-training-purchase-refunds-13-november-be1db935e8",
+            post_key = "be1db935e8",
+            title = "Lost Training Purchase Refunds - 13 November",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794620740,
+            url = "https://eu.forums.blizzard.com/en/wow/t/642655/1",
+            content = {
+            { type = "p", text = "With in-game mail that has now gone out to all affected players, we have refunded the cost of skill purchases that were made on Monday, November 9 between 22:17 CET and 23:17 CET when the WoW: Forever servers experienced issues that caused some players to lose training they purchased." },
+            { type = "p", text = "If you were affected by this issue during that timeframe, check your in-game mail for gold equaling the cost of training that you purchased and lost." },
+            { type = "p", text = "Thank you very much for your patience and understanding." },
+            },
+        },
         ["2026-11-13-raid-encounter-design-in-season-3-e48d6c2b76"] = {
             id = "2026-11-13-raid-encounter-design-in-season-3-e48d6c2b76",
             post_key = "e48d6c2b76",
