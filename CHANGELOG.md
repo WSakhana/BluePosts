@@ -1,3 +1,7 @@
+## 5.4.8
+- Added: WoW: Forever Hotfixes - November 13, 2026
+- Updated: WoW: Forever Hotfixes - November 11, 2026
+
 ## 5.4.7
 - Added: Lost Training Purchase Refunds - 13 November
 
@@ -1714,6 +1718,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
