@@ -1,11 +1,39 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794622523,
+    package_timestamp = 1794706676,
     new_post_ids = {
-        "2026-11-14-wow-forever-hotfixes-november-13-2026-2e598caced",
-        "2026-11-14-wow-forever-hotfixes-november-13-2026-ba3f39a45a",
+        "2026-11-15-player-level-dungeon-xp-adjustment-november-14-8501e615b9",
+        "2026-11-15-player-level-dungeon-xp-adjustment-15-november-2ed3877366",
     },
     posts = {
+        ["2026-11-15-player-level-dungeon-xp-adjustment-november-14-8501e615b9"] = {
+            id = "2026-11-15-player-level-dungeon-xp-adjustment-november-14-8501e615b9",
+            post_key = "8501e615b9",
+            title = "Player-Level Dungeon XP Adjustment - November 14",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1794705728,
+            url = "https://us.forums.blizzard.com/en/wow/t/2416343/1",
+            content = {
+            { type = "p", text = "Yesterday, we updated dungeon play so that experience granted by an enemy in an instance is nullified if a high level player is in the group and enemy is trivial to that player. For some dungeons, the new restriction missed the mark because of the overall level range of the enemies in the dungeon." },
+            { type = "p", text = "With hotfixes that are now live, we’ve just deployed a further change to this restriction, making it so that the XP nullification only kicks in when the high-level player is more than 12 levels above the level of the enemies." },
+            { type = "p", text = "Please note that this adjustment will not apply in instances that were already underway when it was deployed (a few minutes ago)." },
+            { type = "p", text = "Thank you very much!" },
+            },
+        },
+        ["2026-11-15-player-level-dungeon-xp-adjustment-15-november-2ed3877366"] = {
+            id = "2026-11-15-player-level-dungeon-xp-adjustment-15-november-2ed3877366",
+            post_key = "2ed3877366",
+            title = "Player-Level Dungeon XP Adjustment -15 November",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794705723,
+            url = "https://eu.forums.blizzard.com/en/wow/t/642962/1",
+            content = {
+            { type = "p", text = "Yesterday, we updated dungeon play so that experience gains in instances are nullified if a high level player is in the group and enemies are trivial to that player. For some dungeons, the new restriction missed the mark because of the overall level range of the enemies in the dungeon." },
+            { type = "p", text = "With hotfixes that are now live, we’ve just deployed a further change to this restriction, making it so that the XP nullification only kicks in when the high-level player is more than 12 levels above the level of the enemies." },
+            { type = "p", text = "Please note that this adjustment will not apply in instances that were already underway when it was deployed (a few minutes ago)." },
+            { type = "p", text = "Thank you very much!" },
+            },
+        },
         ["2026-11-14-wow-forever-hotfixes-november-13-2026-2e598caced"] = {
             id = "2026-11-14-wow-forever-hotfixes-november-13-2026-2e598caced",
             post_key = "2e598caced",
