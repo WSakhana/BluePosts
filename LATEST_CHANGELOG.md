@@ -1,3 +1,2 @@
-## 5.4.9
-- Added: Player-Level Dungeon XP Adjustment - November 14
-- Added: Player-Level Dungeon XP Adjustment -15 November
+## 5.5.0
+- Added: Last Call to Pre-Purchase: Craft New Adventures with D&D: World of Warcraft

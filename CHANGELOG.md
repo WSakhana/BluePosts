@@ -1,3 +1,6 @@
+## 5.5.0
+- Added: Last Call to Pre-Purchase: Craft New Adventures with D&D: World of Warcraft
+
 ## 5.4.9
 - Added: Player-Level Dungeon XP Adjustment - November 14
 - Added: Player-Level Dungeon XP Adjustment -15 November
@@ -1722,6 +1725,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
