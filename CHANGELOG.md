@@ -1,3 +1,6 @@
+## 5.5.1
+- Added: WoW: Forever Hotfixes - November 16, 2026
+
 ## 5.5.0
 - Added: Last Call to Pre-Purchase: Craft New Adventures with D&D: World of Warcraft
 
@@ -1725,6 +1728,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
