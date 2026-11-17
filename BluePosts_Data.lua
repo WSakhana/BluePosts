@@ -1,15 +1,43 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794940314,
+    package_timestamp = 1794942030,
     new_post_ids = {
-        "2026-11-17-talebounds-twisted-tales-and-deadly-fates-arrive-december-1-b3d9d591f6",
-        "2026-11-17-talebounds-twisted-tales-and-deadly-fates-arrive-december-1-2cc05a3544",
-        "2026-11-17-midnight-echoes-of-the-worldcore-arrives-on-1-december-6b9faf30f0",
-        "2026-11-17-join-the-world-of-warcraft-22nd-anniversary-celebration-5fdf30f457",
-        "2026-11-17-midnight-echoes-of-the-worldcore-arrives-on-december-1-a3a699aabb",
-        "2026-11-17-join-the-world-of-warcraft-22nd-anniversary-celebration-d3004db84d",
+        "2026-11-17-actions-for-blackmaw-hold-abuse-november-17-76a08bf63e",
+        "2026-11-17-actions-for-blackmaw-hold-abuse-17-november-583aa64e43",
     },
     posts = {
+        ["2026-11-17-actions-for-blackmaw-hold-abuse-november-17-76a08bf63e"] = {
+            id = "2026-11-17-actions-for-blackmaw-hold-abuse-november-17-76a08bf63e",
+            post_key = "76a08bf63e",
+            title = "Actions For Blackmaw Hold Abuse - November 17",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1794941144,
+            url = "https://us.forums.blizzard.com/en/wow/t/2419757/1",
+            content = {
+            { type = "p", text = "As players continue their journey into WoW Forever’s higher-level content, we are closely monitoring the game economy to ensure that gold sources and costs are well balanced. Finding efficient farming spots has always been part of the game, and is how most players have earned their epic mounts since 2004. When a single location proves so lucrative that it overshadows all other sources, we generally adjust it to bring it in line with the rest." },
+            { type = "p", text = "Over the past weekend, some players discovered a large group of non-elite enemies in the Blackmaw Hold dungeon that were incorrectly dropping the full amount of dungeon loot that would be expected from an elite. Early yesterday, we addressed this with a hotfix, and since then, we have been investigating the overall economic impact." },
+            { type = "p", text = "Players who simply ran Blackmaw Hold a few times and benefited organically from the extra loot did nothing wrong, and no one should worry that they’re putting their account at risk if they accidentally benefit from a bug. But there were a couple hundred players worldwide who recognized that this was unintended and spent significant time exclusively farming that group of enemies." },
+            { type = "p", text = "Yesterday, we put an economy lock on their accounts to prevent broader impact to the game economy while we investigated the extent of the exploitative gains, including gold earned by vendoring bugged drops. Today, we are in the process of removing all such gold earned, as well as applying account suspensions to significant abusers." },
+            { type = "p", text = "As always, we advise all players to refrain from abusing game mechanics that are clearly unintended. We will continue to take action against intentional abuse." },
+            { type = "p", text = "Thank you very much for your feedback!" },
+            },
+        },
+        ["2026-11-17-actions-for-blackmaw-hold-abuse-17-november-583aa64e43"] = {
+            id = "2026-11-17-actions-for-blackmaw-hold-abuse-17-november-583aa64e43",
+            post_key = "583aa64e43",
+            title = "Actions For Blackmaw Hold Abuse - 17 November",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1794941139,
+            url = "https://eu.forums.blizzard.com/en/wow/t/643759/1",
+            content = {
+            { type = "p", text = "As players continue their journey into WoW Forever’s higher-level content, we are closely monitoring the game economy to ensure that gold sources and costs are well balanced. Finding efficient farming spots has always been part of the game, and is how most players have earned their epic mounts since 2004. When a single location proves so lucrative that it overshadows all other sources, we generally adjust it to bring it in line with the rest." },
+            { type = "p", text = "Over the past weekend, some players discovered a large group of non-elite enemies in the Blackmaw Hold dungeon that were incorrectly dropping the full amount of dungeon loot that would be expected from an elite. Early yesterday, we addressed this with a hotfix, and since then, we have been investigating the overall economic impact." },
+            { type = "p", text = "Players who simply ran Blackmaw Hold a few times and benefited organically from the extra loot did nothing wrong, and no one should worry that they’re putting their account at risk if they accidentally benefit from a bug. But there were a couple hundred players worldwide who recognized that this was unintended and spent significant time exclusively farming that group of enemies." },
+            { type = "p", text = "Yesterday, we put an economy lock on their accounts to prevent broader impact to the game economy while we investigated the extent of the exploitative gains, including gold earned by vendoring bugged drops. Today, we are in the process of removing all such gold earned, as well as applying account suspensions to significant abusers." },
+            { type = "p", text = "As always, we advise all players to refrain from abusing game mechanics that are clearly unintended. We will continue to take action against intentional abuse." },
+            { type = "p", text = "Thank you very much for your feedback!" },
+            },
+        },
         ["2026-11-17-talebounds-twisted-tales-and-deadly-fates-arrive-december-1-b3d9d591f6"] = {
             id = "2026-11-17-talebounds-twisted-tales-and-deadly-fates-arrive-december-1-b3d9d591f6",
             post_key = "b3d9d591f6",
