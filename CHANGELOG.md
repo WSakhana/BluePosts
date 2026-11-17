@@ -1,3 +1,9 @@
+## 5.5.2
+- Added: Talebound’s Twisted Tales and Deadly Fates Arrive December 1
+- Added: Midnight: Echoes of the Worldcore Arrives on 1 December
+- Added: Join the World of Warcraft 22nd Anniversary Celebration
+- Added: Midnight: Echoes of the Worldcore Arrives on December 1
+
 ## 5.5.1
 - Added: WoW: Forever Hotfixes - November 16, 2026
 
@@ -1728,6 +1734,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
