@@ -1,3 +1,6 @@
+## 5.5.4
+- Added: WoW: Forever Hotfixes - November 17, 2026
+
 ## 5.5.3
 - Added: Actions For Blackmaw Hold Abuse - November 17
 - Added: Actions For Blackmaw Hold Abuse - 17 November
@@ -1738,6 +1741,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
