@@ -1,3 +1,6 @@
+## 5.5.7
+- Added: Macabre Rewards Await in Talebound
+
 ## 5.5.6
 - Added: The WoW Forever Podcast: Episode 8 - Catching Up On Classes
 
@@ -1747,6 +1750,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
