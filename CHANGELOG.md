@@ -1,3 +1,6 @@
+## 5.5.6
+- Added: The WoW Forever Podcast: Episode 8 - Catching Up On Classes
+
 ## 5.5.5
 - Added: Watch the WoW: Forever Podcast – Catching up on Classes
 
@@ -1744,6 +1747,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 

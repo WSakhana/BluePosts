@@ -1,2 +1,2 @@
-## 5.5.5
-- Added: Watch the WoW: Forever Podcast – Catching up on Classes
+## 5.5.6
+- Added: The WoW Forever Podcast: Episode 8 - Catching Up On Classes

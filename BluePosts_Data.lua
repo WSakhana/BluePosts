@@ -1,11 +1,33 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1795110410,
+    package_timestamp = 1795111259,
     new_post_ids = {
-        "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-3167ac016e",
-        "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-cc6c0aaed1",
+        "2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-7a739770dc",
+        "2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-c1cbf8ce5b",
     },
     posts = {
+        ["2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-7a739770dc"] = {
+            id = "2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-7a739770dc",
+            post_key = "7a739770dc",
+            title = "The WoW Forever Podcast: Episode 8 - Catching Up On Classes",
+            category = "World of Warcraft: Forever General Discussion (US)",
+            timestamp = 1795110341,
+            url = "https://us.forums.blizzard.com/en/wow/t/2422535/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-7a739770dc\\image-1.jpg" },
+            },
+        },
+        ["2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-c1cbf8ce5b"] = {
+            id = "2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-c1cbf8ce5b",
+            post_key = "c1cbf8ce5b",
+            title = "The WoW Forever Podcast: Episode 8 - Catching Up On Classes",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1795110336,
+            url = "https://eu.forums.blizzard.com/en/wow/t/644354/1",
+            content = {
+            { type = "image", width = 720, height = 405, u = 0.703125, v = 0.791016, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-19-the-wow-forever-podcast-episode-8-catching-up-on-classes-c1cbf8ce5b\\image-1.jpg" },
+            },
+        },
         ["2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-3167ac016e"] = {
             id = "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-3167ac016e",
             post_key = "3167ac016e",
