@@ -1,11 +1,35 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1794973622,
+    package_timestamp = 1795110410,
     new_post_ids = {
-        "2026-11-18-wow-forever-hotfixes-november-17-2026-b0377c4265",
-        "2026-11-18-wow-forever-hotfixes-november-17-2026-caca466456",
+        "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-3167ac016e",
+        "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-cc6c0aaed1",
     },
     posts = {
+        ["2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-3167ac016e"] = {
+            id = "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-3167ac016e",
+            post_key = "3167ac016e",
+            title = "Watch the WoW: Forever Podcast – Catching up on Classes",
+            category = "Blogs (EU)",
+            timestamp = 1795109445,
+            url = "https://news.blizzard.com/en-gb/article/24317086/watch-the-wow-forever-podcast-catching-up-on-classes",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic for a conversation with Senior Game Designer Aidan Moon and Principal Game Designer Kris Zierhut as they take careful aim on class design." },
+            { type = "p", text = "Watch now to bring class design into focus." },
+            },
+        },
+        ["2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-cc6c0aaed1"] = {
+            id = "2026-11-19-watch-the-wow-forever-podcast-catching-up-on-classes-cc6c0aaed1",
+            post_key = "cc6c0aaed1",
+            title = "Watch the WoW: Forever Podcast – Catching up on Classes",
+            category = "Blogs (US)",
+            timestamp = 1795109441,
+            url = "https://news.blizzard.com/en-us/article/24317086/watch-the-wow-forever-podcast-catching-up-on-classes",
+            content = {
+            { type = "p", text = "Join WoW: Forever Podcast host Countdown To Classic for a conversation with Senior Game Designer Aidan Moon and Principal Game Designer Kris Zierhut as they take careful aim on class design." },
+            { type = "p", text = "Watch now to bring class design into focus." },
+            },
+        },
         ["2026-11-18-wow-forever-hotfixes-november-17-2026-b0377c4265"] = {
             id = "2026-11-18-wow-forever-hotfixes-november-17-2026-b0377c4265",
             post_key = "b0377c4265",

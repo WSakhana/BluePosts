@@ -1,2 +1,2 @@
-## 5.5.4
-- Added: WoW: Forever Hotfixes - November 17, 2026
+## 5.5.5
+- Added: Watch the WoW: Forever Podcast – Catching up on Classes

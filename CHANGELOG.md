@@ -1,3 +1,6 @@
+## 5.5.5
+- Added: Watch the WoW: Forever Podcast – Catching up on Classes
+
 ## 5.5.4
 - Added: WoW: Forever Hotfixes - November 17, 2026
 
@@ -1741,6 +1744,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
