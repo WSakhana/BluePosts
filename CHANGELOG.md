@@ -1,3 +1,6 @@
+## 5.5.9
+- Added: WoW: Forever Class Design, Echoes of the Worldcore, and More in WoW Weekly
+
 ## 5.5.8
 - Added: WoW: Forever Hotfixes - November 19, 2026
 
@@ -1753,6 +1756,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
