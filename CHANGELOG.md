@@ -1,3 +1,6 @@
+## 5.5.8
+- Added: WoW: Forever Hotfixes - November 19, 2026
+
 ## 5.5.7
 - Added: Macabre Rewards Await in Talebound
 
@@ -1750,6 +1753,7 @@
 - Added external link copy and guild chat sharing for selected posts.
 - Added login toasts for recent posts.
 - Added class section shortcuts for class hotfix posts.
+
 
 
 
