@@ -1,2 +1,2 @@
-## 5.5.9
-- Added: WoW: Forever Class Design, Echoes of the Worldcore, and More in WoW Weekly
+## 5.6.0
+- Added: WoW: Forever Hotfixes - November 20, 2026
