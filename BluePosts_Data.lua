@@ -1,11 +1,27 @@
 -- Generated data. Do not edit manually.
 BluePosts_Data = {
-    package_timestamp = 1795221945,
+    package_timestamp = 1795452359,
     new_post_ids = {
-        "2026-11-21-wow-forever-hotfixes-november-20-2026-58801ad3c6",
-        "2026-11-21-wow-forever-hotfixes-november-20-2026-bcb4ab18ea",
+        "2026-11-23-another-exploit-504219baae",
     },
     posts = {
+        ["2026-11-23-another-exploit-504219baae"] = {
+            id = "2026-11-23-another-exploit-504219baae",
+            post_key = "504219baae",
+            title = "Another exploit",
+            category = "WoW: Forever General Discussion (EU)",
+            timestamp = 1795451432,
+            url = "https://eu.forums.blizzard.com/en/wow/t/645296/1",
+            content = {
+            { type = "p", text = "Seems another exploit has been shut down." },
+            { type = "image", width = 72, height = 72, u = 0.5625, v = 0.5625, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-23-another-exploit-504219baae\\image-1.jpg" },
+            { type = "p", text = "Not saying they did, but very sus." },
+            { type = "image", width = 48, height = 48, u = 0.75, v = 0.75, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-23-another-exploit-504219baae\\image-2.jpg" },
+            { type = "image", width = 327, height = 200, u = 0.638672, v = 0.78125, file = "Interface\\AddOns\\BluePosts\\Media\\Posts\\2026-11-23-another-exploit-504219baae\\image-3.jpg" },
+            { type = "h3", text = "Players Can No Longer Peek Inside Lockboxes in WoW: Forever to Fix New Exploit" },
+            { type = "p", text = "With recent hotfixes, players can no longer peek inside lockboxes in WoW: Forever, likely due to a Lockbox exploit." },
+            },
+        },
         ["2026-11-21-wow-forever-hotfixes-november-20-2026-58801ad3c6"] = {
             id = "2026-11-21-wow-forever-hotfixes-november-20-2026-58801ad3c6",
             post_key = "58801ad3c6",

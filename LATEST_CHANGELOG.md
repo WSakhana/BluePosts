@@ -1,2 +1,2 @@
-## 5.6.0
-- Added: WoW: Forever Hotfixes - November 20, 2026
+## 5.6.1
+- Added: Another exploit
